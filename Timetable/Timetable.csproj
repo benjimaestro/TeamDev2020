@@ -71,6 +71,10 @@
     <Content Include="AdminLogin.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DeleteTeacher.aspx" />
+    <Content Include="DeleteRoom.aspx" />
+    <Content Include="ManageRooms.aspx" />
+    <Content Include="ManageTeachers.aspx" />
     <Content Include="TeacherDefault.aspx" />
     <Content Include="TeacherLogin.aspx" />
     <Content Include="Web.config" />
@@ -103,6 +107,34 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteTeacher.aspx.cs">
+      <DependentUpon>DeleteTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteTeacher.aspx.designer.cs">
+      <DependentUpon>DeleteTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteRoom.aspx.cs">
+      <DependentUpon>DeleteRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteRoom.aspx.designer.cs">
+      <DependentUpon>DeleteRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageRooms.aspx.cs">
+      <DependentUpon>ManageRooms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageRooms.aspx.designer.cs">
+      <DependentUpon>ManageRooms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTeachers.aspx.cs">
+      <DependentUpon>ManageTeachers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageTeachers.aspx.designer.cs">
+      <DependentUpon>ManageTeachers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeacherDefault.aspx.cs">
