@@ -79,6 +79,7 @@
     <Content Include="Teacher.aspx" />
     <Content Include="TeacherDefault.aspx" />
     <Content Include="TeacherLogin.aspx" />
+    <Content Include="Timetable.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +167,13 @@
     </Compile>
     <Compile Include="TeacherLogin.aspx.designer.cs">
       <DependentUpon>TeacherLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable.aspx.cs">
+      <DependentUpon>Timetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Timetable.aspx.designer.cs">
+      <DependentUpon>Timetable.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
