@@ -75,6 +75,8 @@
     <Content Include="DeleteRoom.aspx" />
     <Content Include="ManageRooms.aspx" />
     <Content Include="ManageTeachers.aspx" />
+    <Content Include="Room.aspx" />
+    <Content Include="Teacher.aspx" />
     <Content Include="TeacherDefault.aspx" />
     <Content Include="TeacherLogin.aspx" />
     <Content Include="Web.config" />
@@ -137,6 +139,20 @@
       <DependentUpon>ManageTeachers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.aspx.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Room.aspx.designer.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher.aspx.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher.aspx.designer.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TeacherDefault.aspx.cs">
       <DependentUpon>TeacherDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

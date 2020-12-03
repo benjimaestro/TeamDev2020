@@ -13,5 +13,15 @@ namespace Timetable
         {
 
         }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageTeachers.aspx");
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageTeachers.aspx");
+        }
     }
 }

@@ -18,7 +18,7 @@
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 156px; top: 120px; position: absolute; width: 256px"></asp:TextBox>
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 90px; position: absolute; width: 120px" Text="Username:"></asp:Label>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 120px; position: absolute; width: 120px" Text="Password:"></asp:Label>
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 156px; top: 150px; position: absolute; width: 256px;" Text="Log in" />
+        <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 156px; top: 150px; position: absolute; width: 256px;" Text="Log in" OnClick="btnLogin_Click" />
         <a href="TeacherLogin.aspx">
             <asp:Label ID="lblHyperlink" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 120px" Text='Teacher login' Font-Underline="True" />
         </a>

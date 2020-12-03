@@ -13,5 +13,20 @@ namespace Timetable
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Room.aspx");
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Room.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DeleteRoom.aspx");
+        }
     }
 }

@@ -12,16 +12,16 @@
         <br/>
         <br/>
         <br/>
-        <a href="TeacherLogin.aspx">
-            <asp:Label ID="lblContact" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 120px" Text='Contact messages' Font-Underline="True" />
+        <a href="Contact.aspx">
+            <asp:Label ID="lblContact" runat="server" style="z-index: 1; left: 10px; top: 100px; position: absolute; width: 120px" Text='Contact messages' Font-Underline="True" />
         </a>
         <br/>
-        <a href="TeacherLogin.aspx">
-            <asp:Label ID="lblTeacherAccounts" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 120px" Text='Manage teacher accounts' Font-Underline="True" />
+        <a href="ManageTeachers.aspx">
+            <asp:Label ID="lblTeacherAccounts" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 160px" Text='Manage teacher accounts' Font-Underline="True" />
         </a>
         <br/>
-        <a href="TeacherLogin.aspx">
-            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 120px" Text='Manage rooms' Font-Underline="True" />
+        <a href="ManageRooms.aspx">
+            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 200px; position: absolute; width: 120px" Text='Manage rooms' Font-Underline="True" />
         </a>
     </form>
 </body>
