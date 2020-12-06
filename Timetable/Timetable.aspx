@@ -11,6 +11,8 @@
         <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 10px; top: 34px; position: absolute; height: 42px; width: 310px" Text="(Add/edit) Timetable"></asp:Label>
         <br/>
         <br/>
+        <br/>
+        <br/>
         <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;}
         .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;

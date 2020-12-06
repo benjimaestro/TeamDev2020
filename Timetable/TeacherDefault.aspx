@@ -12,7 +12,7 @@
         <br/>
         <br/>
         <br/>
-        <a href="TeacherLogin.aspx">
+        <a href="Timetable.aspx">
             <asp:Label ID="lblContact" runat="server" style="z-index: 1; left: 10px; top: 100px; position: absolute; width: 120px" Text='View timetable' Font-Underline="True" />
         </a>
         <br/>
