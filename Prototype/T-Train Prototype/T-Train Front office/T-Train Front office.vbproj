@@ -92,15 +92,143 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
+    <Content Include="Forms\User\ActionSuccess.aspx" />
+    <Content Include="Forms\Ticket\Cancel.aspx" />
+    <Content Include="Forms\Connection\Connection.aspx" />
+    <Content Include="Forms\Connection\Connections.aspx" />
+    <Content Include="Forms\Customer\Customer.aspx" />
+    <Content Include="Forms\Customer\Customers.aspx" />
+    <Content Include="Forms\Default.aspx" />
+    <Content Include="Forms\User\Login.aspx" />
+    <Content Include="Forms\Ticket\MyTickets.aspx" />
+    <Content Include="Forms\Payment\Payment.aspx" />
+    <Content Include="Forms\Ticket\Refund.aspx" />
+    <Content Include="Forms\User\ResetPassword.aspx" />
+    <Content Include="Forms\User\Settings.aspx" />
+    <Content Include="Forms\User\Signup.aspx" />
+    <Content Include="Forms\User\StaffDashboard.aspx" />
+    <Content Include="Forms\Ticket Type\TicketType.aspx" />
+    <Content Include="Forms\Ticket Type\TicketTypes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.designer.vb">
+    <Compile Include="Forms\User\ActionSuccess.aspx.designer.vb">
+      <DependentUpon>ActionSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\ActionSuccess.aspx.vb">
+      <DependentUpon>ActionSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\Cancel.aspx.designer.vb">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\Cancel.aspx.vb">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Connection\Connection.aspx.designer.vb">
+      <DependentUpon>Connection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Connection\Connection.aspx.vb">
+      <DependentUpon>Connection.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Connection\Connections.aspx.designer.vb">
+      <DependentUpon>Connections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Connection\Connections.aspx.vb">
+      <DependentUpon>Connections.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\Customer.aspx.designer.vb">
+      <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\Customer.aspx.vb">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\Customers.aspx.designer.vb">
+      <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\Customers.aspx.vb">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.vb">
+    <Compile Include="Forms\Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\MyTickets.aspx.designer.vb">
+      <DependentUpon>MyTickets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\MyTickets.aspx.vb">
+      <DependentUpon>MyTickets.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Payment\Payment.aspx.designer.vb">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Payment\Payment.aspx.vb">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\Refund.aspx.designer.vb">
+      <DependentUpon>Refund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\Refund.aspx.vb">
+      <DependentUpon>Refund.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\ResetPassword.aspx.designer.vb">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\ResetPassword.aspx.vb">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Settings.aspx.designer.vb">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Settings.aspx.vb">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Signup.aspx.designer.vb">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Signup.aspx.vb">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\StaffDashboard.aspx.designer.vb">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\StaffDashboard.aspx.vb">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket Type\TicketType.aspx.designer.vb">
+      <DependentUpon>TicketType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket Type\TicketType.aspx.vb">
+      <DependentUpon>TicketType.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket Type\TicketTypes.aspx.designer.vb">
+      <DependentUpon>TicketTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket Type\TicketTypes.aspx.vb">
+      <DependentUpon>TicketTypes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
