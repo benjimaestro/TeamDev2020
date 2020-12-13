@@ -1,293 +1,3675 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <doc>
-<assembly>
-<name>
-T-Train Front office
-</name>
-</assembly>
-<members>
-<member name="T:T_Train_Front_office.My.MyWebExtension">
- <summary>
- Module used to define the properties that are available in the My Namespace for Web projects.
- </summary>
- <remarks></remarks>
-</member>
-<member name="P:T_Train_Front_office.My.MyWebExtension.Computer">
- <summary>
- Returns information about the host computer.
- </summary>
-</member>
-<member name="P:T_Train_Front_office.My.MyWebExtension.User">
- <summary>
- Returns information for the current Web user.
- </summary>
-</member>
-<member name="P:T_Train_Front_office.My.MyWebExtension.Request">
- <summary>
- Returns Request object.
- </summary>
-</member>
-<member name="P:T_Train_Front_office.My.MyWebExtension.Response">
- <summary>
- Returns Response object.
- </summary>
-</member>
-<member name="P:T_Train_Front_office.My.MyWebExtension.Log">
- <summary>
- Returns the Asp log object.
- </summary>
-</member>
-<member name="F:T_Train_Front_office._Default._form1">
-<summary>
-form1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._lblHeaderWelcome">
-<summary>
-lblHeaderWelcome control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._lblHeaderSubtitle">
-<summary>
-lblHeaderSubtitle control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label1">
-<summary>
-Label1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Button1">
-<summary>
-Button1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Button2">
-<summary>
-Button2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Button3">
-<summary>
-Button3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label2">
-<summary>
-Label2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._DropDownList1">
-<summary>
-DropDownList1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label3">
-<summary>
-Label3 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._DropDownList2">
-<summary>
-DropDownList2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label4">
-<summary>
-Label4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._TextBox1">
-<summary>
-TextBox1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label5">
-<summary>
-Label5 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._TextBox2">
-<summary>
-TextBox2 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label6">
-<summary>
-Label6 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label7">
-<summary>
-Label7 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label8">
-<summary>
-Label8 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Button4">
-<summary>
-Button4 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label9">
-<summary>
-Label9 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label10">
-<summary>
-Label10 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label11">
-<summary>
-Label11 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label12">
-<summary>
-Label12 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label13">
-<summary>
-Label13 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label14">
-<summary>
-Label14 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label15">
-<summary>
-Label15 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label16">
-<summary>
-Label16 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:T_Train_Front_office._Default._Label17">
-<summary>
-Label17 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-</members>
+    <assembly>
+        <name>T-Train Front office</name>
+    </assembly>
+    <members>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label12">
+            <summary>
+            Label12 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label10">
+            <summary>
+            Label10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label13">
+            <summary>
+            Label13 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label14">
+            <summary>
+            Label14 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label15">
+            <summary>
+            Label15 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.DropDownList1">
+            <summary>
+            DropDownList1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label3">
+            <summary>
+            Label3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.DropDownList2">
+            <summary>
+            DropDownList2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label6">
+            <summary>
+            Label6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label4">
+            <summary>
+            Label4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label16">
+            <summary>
+            Label16 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label5">
+            <summary>
+            Label5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.TextBox4">
+            <summary>
+            TextBox4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.btnDelConnection">
+            <summary>
+            btnDelConnection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.TextBox3">
+            <summary>
+            TextBox3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connection.btnSaveConnection">
+            <summary>
+            btnSaveConnection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnTickets">
+            <summary>
+            btnTickets control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnSettings">
+            <summary>
+            btnSettings control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnSignup">
+            <summary>
+            btnSignup control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnLogin">
+            <summary>
+            btnLogin control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label8">
+            <summary>
+            Label8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.DropDownList1">
+            <summary>
+            DropDownList1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label6">
+            <summary>
+            Label6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label3">
+            <summary>
+            Label3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.DropDownList2">
+            <summary>
+            DropDownList2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label7">
+            <summary>
+            Label7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label4">
+            <summary>
+            Label4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label5">
+            <summary>
+            Label5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.TextBox3">
+            <summary>
+            TextBox3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnFilterConnections">
+            <summary>
+            btnFilterConnections control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnConnections">
+            <summary>
+            btnConnections control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label10">
+            <summary>
+            Label10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label12">
+            <summary>
+            Label12 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.btnBookTicket">
+            <summary>
+            btnBookTicket control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Button1">
+            <summary>
+            Button1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Connection.Connections.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnCustomers">
+            <summary>
+            btnCustomers control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label6">
+            <summary>
+            Label6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label7">
+            <summary>
+            Label7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label8">
+            <summary>
+            Label8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.TextBox4">
+            <summary>
+            TextBox4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.TextBox5">
+            <summary>
+            TextBox5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.TextBox6">
+            <summary>
+            TextBox6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.TextBox7">
+            <summary>
+            TextBox7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label10">
+            <summary>
+            Label10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label12">
+            <summary>
+            Label12 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnCancelTicket">
+            <summary>
+            btnCancelTicket control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label21">
+            <summary>
+            Label21 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnCancelTicket2">
+            <summary>
+            btnCancelTicket2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnPayment">
+            <summary>
+            btnPayment control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label23">
+            <summary>
+            Label23 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label24">
+            <summary>
+            Label24 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label22">
+            <summary>
+            Label22 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label25">
+            <summary>
+            Label25 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label26">
+            <summary>
+            Label26 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label27">
+            <summary>
+            Label27 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.Label28">
+            <summary>
+            Label28 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnPayment3">
+            <summary>
+            btnPayment3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customer.btnPayment2">
+            <summary>
+            btnPayment2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label24">
+            <summary>
+            Label24 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.TextBox3">
+            <summary>
+            TextBox3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label23">
+            <summary>
+            Label23 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.TextBox4">
+            <summary>
+            TextBox4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label25">
+            <summary>
+            Label25 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.TextBox5">
+            <summary>
+            TextBox5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.btnFilterCustomers">
+            <summary>
+            btnFilterCustomers control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.btnCustomer">
+            <summary>
+            btnCustomer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label26">
+            <summary>
+            Label26 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label27">
+            <summary>
+            Label27 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label28">
+            <summary>
+            Label28 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.btnCustomer3">
+            <summary>
+            btnCustomer3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.btnCustomer2">
+            <summary>
+            btnCustomer2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.Label29">
+            <summary>
+            Label29 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Customer.Customers.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.lblHeaderSubtitle">
+            <summary>
+            lblHeaderSubtitle control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.btnTickets">
+            <summary>
+            btnTickets control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.btnSignup">
+            <summary>
+            btnSignup control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.btnLogin">
+            <summary>
+            btnLogin control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.DropDownList1">
+            <summary>
+            DropDownList1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label3">
+            <summary>
+            Label3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.DropDownList2">
+            <summary>
+            DropDownList2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label4">
+            <summary>
+            Label4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label5">
+            <summary>
+            Label5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label6">
+            <summary>
+            Label6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label7">
+            <summary>
+            Label7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label8">
+            <summary>
+            Label8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.btnFilterConnections">
+            <summary>
+            btnFilterConnections control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label10">
+            <summary>
+            Label10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label12">
+            <summary>
+            Label12 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label13">
+            <summary>
+            Label13 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label14">
+            <summary>
+            Label14 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label15">
+            <summary>
+            Label15 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label16">
+            <summary>
+            Label16 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.btnConnections">
+            <summary>
+            btnConnections control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Defaul.btnSettings">
+            <summary>
+            btnSettings control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.btnCustomer">
+            <summary>
+            btnCustomer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label21">
+            <summary>
+            Label21 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label22">
+            <summary>
+            Label22 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label23">
+            <summary>
+            Label23 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.Label24">
+            <summary>
+            Label24 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Payment.Payment.btnCustomer2">
+            <summary>
+            btnCustomer2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnTickets">
+            <summary>
+            btnTickets control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnSettings">
+            <summary>
+            btnSettings control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label26">
+            <summary>
+            Label26 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnFindConnection">
+            <summary>
+            btnFindConnection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnConnections">
+            <summary>
+            btnConnections control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnAddConnection">
+            <summary>
+            btnAddConnection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label21">
+            <summary>
+            Label21 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnFindTicketType">
+            <summary>
+            btnFindTicketType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnTicketTypes">
+            <summary>
+            btnTicketTypes control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnAddTicketType">
+            <summary>
+            btnAddTicketType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label22">
+            <summary>
+            Label22 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label23">
+            <summary>
+            Label23 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.TextBox3">
+            <summary>
+            TextBox3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.btnFilterCustomers">
+            <summary>
+            btnFilterCustomers control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label24">
+            <summary>
+            Label24 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label25">
+            <summary>
+            Label25 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.TextBox4">
+            <summary>
+            TextBox4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.TextBox5">
+            <summary>
+            TextBox5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.StaffDashboard.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.btnTicketTypes">
+            <summary>
+            btnTicketTypes control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label10">
+            <summary>
+            Label10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label12">
+            <summary>
+            Label12 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label14">
+            <summary>
+            Label14 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label15">
+            <summary>
+            Label15 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label16">
+            <summary>
+            Label16 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.CheckBox1">
+            <summary>
+            CheckBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.CheckBox2">
+            <summary>
+            CheckBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.btnTicketType">
+            <summary>
+            btnTicketType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.btnDelTicketType">
+            <summary>
+            btnDelTicketType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketType.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label5">
+            <summary>
+            Label5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label4">
+            <summary>
+            Label4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.CheckBox1">
+            <summary>
+            CheckBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.btnTicketTypes">
+            <summary>
+            btnTicketTypes control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label10">
+            <summary>
+            Label10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label12">
+            <summary>
+            Label12 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.btnTicketType">
+            <summary>
+            btnTicketType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label21">
+            <summary>
+            Label21 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.btnTicketType2">
+            <summary>
+            btnTicketType2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label22">
+            <summary>
+            Label22 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket_Type.TicketTypes.Label23">
+            <summary>
+            Label23 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.btnCustomer">
+            <summary>
+            btnCustomer control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label14">
+            <summary>
+            Label14 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label16">
+            <summary>
+            Label16 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.btnCustomer2">
+            <summary>
+            btnCustomer2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label21">
+            <summary>
+            Label21 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label22">
+            <summary>
+            Label22 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.Label23">
+            <summary>
+            Label23 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.btnCancelTicket">
+            <summary>
+            btnCancelTicket control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Cancel.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnSettings">
+            <summary>
+            btnSettings control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnFilterFirst">
+            <summary>
+            btnFilterFirst control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnFilterLast">
+            <summary>
+            btnFilterLast control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label3">
+            <summary>
+            Label3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label4">
+            <summary>
+            Label4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label5">
+            <summary>
+            Label5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.DropDownList3">
+            <summary>
+            DropDownList3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.DropDownList2">
+            <summary>
+            DropDownList2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnReissue2">
+            <summary>
+            btnReissue2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label6">
+            <summary>
+            Label6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnFilterTickets">
+            <summary>
+            btnFilterTickets control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label7">
+            <summary>
+            Label7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnHomepage3">
+            <summary>
+            btnHomepage3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label8">
+            <summary>
+            Label8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnConnections2">
+            <summary>
+            btnConnections2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label10">
+            <summary>
+            Label10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label12">
+            <summary>
+            Label12 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label13">
+            <summary>
+            Label13 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label14">
+            <summary>
+            Label14 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label15">
+            <summary>
+            Label15 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label16">
+            <summary>
+            Label16 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnReissue">
+            <summary>
+            btnReissue control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnRefund">
+            <summary>
+            btnRefund control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnHomepage2">
+            <summary>
+            btnHomepage2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.MyTickets.btnConnections">
+            <summary>
+            btnConnections control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.btnTickets">
+            <summary>
+            btnTickets control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.btnSettings">
+            <summary>
+            btnSettings control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.Label14">
+            <summary>
+            Label14 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.Label11">
+            <summary>
+            Label11 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.Label16">
+            <summary>
+            Label16 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.btnRefund">
+            <summary>
+            btnRefund control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.btnCancel">
+            <summary>
+            btnCancel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.Label21">
+            <summary>
+            Label21 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.Ticket.Refund.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.btnMyTickets">
+            <summary>
+            btnMyTickets control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.btnSettings">
+            <summary>
+            btnSettings control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ActionSuccess.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.btnSignup">
+            <summary>
+            btnSignup control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.btnSignup2">
+            <summary>
+            btnSignup2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.Label3">
+            <summary>
+            Label3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.btnLogin">
+            <summary>
+            btnLogin control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.btnResetPassword">
+            <summary>
+            btnResetPassword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Login.Label4">
+            <summary>
+            Label4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.btnLogin">
+            <summary>
+            btnLogin control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.btnSignup">
+            <summary>
+            btnSignup control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.ResetPassword.btnResetPassword">
+            <summary>
+            btnResetPassword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnStaffDashboard">
+            <summary>
+            btnStaffDashboard control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnTickets">
+            <summary>
+            btnTickets control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnSettings">
+            <summary>
+            btnSettings control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label18">
+            <summary>
+            Label18 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label26">
+            <summary>
+            Label26 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label19">
+            <summary>
+            Label19 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label3">
+            <summary>
+            Label3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label6">
+            <summary>
+            Label6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox4">
+            <summary>
+            TextBox4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label7">
+            <summary>
+            Label7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label25">
+            <summary>
+            Label25 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox5">
+            <summary>
+            TextBox5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label8">
+            <summary>
+            Label8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox6">
+            <summary>
+            TextBox6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox7">
+            <summary>
+            TextBox7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label5">
+            <summary>
+            Label5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox3">
+            <summary>
+            TextBox3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnPassword">
+            <summary>
+            btnPassword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label20">
+            <summary>
+            Label20 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label21">
+            <summary>
+            Label21 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label22">
+            <summary>
+            Label22 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label23">
+            <summary>
+            Label23 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label24">
+            <summary>
+            Label24 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox8">
+            <summary>
+            TextBox8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnDetails">
+            <summary>
+            btnDetails control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.CheckBox1">
+            <summary>
+            CheckBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.CheckBox2">
+            <summary>
+            CheckBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnTwoFactor">
+            <summary>
+            btnTwoFactor control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label27">
+            <summary>
+            Label27 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label28">
+            <summary>
+            Label28 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.Label29">
+            <summary>
+            Label29 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.TextBox9">
+            <summary>
+            TextBox9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Settings.btnLogout">
+            <summary>
+            btnLogout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.form2">
+            <summary>
+            form2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label17">
+            <summary>
+            Label17 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.lblHeaderWelcome">
+            <summary>
+            lblHeaderWelcome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.btnHomepage">
+            <summary>
+            btnHomepage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.btnLogin">
+            <summary>
+            btnLogin control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label2">
+            <summary>
+            Label2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.TextBox1">
+            <summary>
+            TextBox1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label3">
+            <summary>
+            Label3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.TextBox2">
+            <summary>
+            TextBox2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.btnSignup">
+            <summary>
+            btnSignup control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label4">
+            <summary>
+            Label4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.btnLogin2">
+            <summary>
+            btnLogin2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label9">
+            <summary>
+            Label9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label5">
+            <summary>
+            Label5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.TextBox3">
+            <summary>
+            TextBox3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label6">
+            <summary>
+            Label6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label7">
+            <summary>
+            Label7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.Label8">
+            <summary>
+            Label8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.TextBox4">
+            <summary>
+            TextBox4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.TextBox5">
+            <summary>
+            TextBox5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.TextBox6">
+            <summary>
+            TextBox6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:T_Train_Front_office.Forms.User.Signup.TextBox7">
+            <summary>
+            TextBox7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:T_Train_Front_office.My.MyWebExtension">
+            <summary>
+            Module used to define the properties that are available in the My Namespace for Web projects.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:T_Train_Front_office.My.MyWebExtension.Computer">
+            <summary>
+            Returns information about the host computer.
+            </summary>
+        </member>
+        <member name="P:T_Train_Front_office.My.MyWebExtension.User">
+            <summary>
+            Returns information for the current Web user.
+            </summary>
+        </member>
+        <member name="P:T_Train_Front_office.My.MyWebExtension.Request">
+            <summary>
+            Returns Request object.
+            </summary>
+        </member>
+        <member name="P:T_Train_Front_office.My.MyWebExtension.Response">
+            <summary>
+            Returns Response object.
+            </summary>
+        </member>
+        <member name="P:T_Train_Front_office.My.MyWebExtension.Log">
+            <summary>
+            Returns the Asp log object.
+            </summary>
+        </member>
+    </members>
 </doc>

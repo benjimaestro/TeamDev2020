@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Signup.aspx.vb" Inherits="T_Train_Front_office.Signup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="T_Train_Front_office.Forms.User.Signup" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form2" runat="server">
         <p>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 350px; top: 450px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         </p>
@@ -20,17 +20,17 @@
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 399px; top: 112px; position: absolute" Text="Create your account now"></asp:Label>
         </p>
         <p>
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" />
-            <asp:Button ID="Button5" runat="server" style="z-index: 1; left: 856px; top: 36px; position: absolute" Text="Login" />
+        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
+            <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 856px; top: 36px; position: absolute" Text="Login" OnClick="btnLogin_Click" />
         </p>
         <p>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 156px; top: 181px; position: absolute; height: 19px" Text="Email:"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 217px; top: 180px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 126px; top: 219px; position: absolute" Text="Password:"></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 218px; top: 221px; position: absolute"></asp:TextBox>
-        <asp:Button ID="Button3" runat="server" style="z-index: 1; left: 422px; top: 355px; position: absolute" Text="Register" />
+        <asp:Button ID="btnSignup" runat="server" style="z-index: 1; left: 422px; top: 355px; position: absolute" Text="Register" OnClick="btnSignup_Click" />
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 351px; top: 402px; position: absolute" Text="Already registered?"></asp:Label>
-            <asp:Button ID="Button2" runat="server" style="z-index: 1; left: 489px; top: 396px; position: absolute" Text="Login" />
+            <asp:Button ID="btnLogin2" runat="server" style="z-index: 1; left: 489px; top: 396px; position: absolute" Text="Login" OnClick="btnLogin2_Click" />
             <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 729px; top: 189px; position: absolute" Text="Date of Birth:"></asp:Label>
         </p>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 82px; top: 267px; position: absolute" Text="Repeat Password:"></asp:Label>
