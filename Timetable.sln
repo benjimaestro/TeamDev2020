@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timetable", "Timetable\Timetable.csproj", "{D78F16B4-D4A4-48C0-8B45-B2A6B1819A89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{B6CC2867-08AE-43B2-9095-AC82A1C2D864}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedClassLibrary", "ClassLibrary\SharedClassLibrary.csproj", "{B6CC2867-08AE-43B2-9095-AC82A1C2D864}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
