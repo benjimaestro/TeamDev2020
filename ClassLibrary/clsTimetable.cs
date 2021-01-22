@@ -16,6 +16,7 @@ namespace ClassLibrary
         private Int32 mP3;
         private Int32 mP4;
         private Int32 mP5;
+        private Int32 mWeekNo;
 
         public int ID
         {
@@ -58,13 +59,19 @@ namespace ClassLibrary
             set { mP5 = value; }
         }
 
+        public int WeekNo
+        {
+            get { return mWeekNo; }
+            set { mWeekNo = value; }
+        }
+
 
         public bool Find(int ID)
         {
             //FINISH MEEEEEEEEEEEEEEE
             return true;
         }
-        public string Validate(int ID, int UserID, int Day, int P1, int P2, int P3, int P4, int P5)
+        public string Validate(int ID, int UserID, int Day, int P1, int P2, int P3, int P4, int P5, int WeekNo)
         {
             //Finish me also!!!!!!!
             string Error = "";

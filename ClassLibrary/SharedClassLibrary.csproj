@@ -43,9 +43,13 @@
   <ItemGroup>
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsMessage.cs" />
+    <Compile Include="clsMessageCollection.cs" />
     <Compile Include="clsRoom.cs" />
+    <Compile Include="clsRoomCollection.cs" />
     <Compile Include="clsTimetable.cs" />
+    <Compile Include="clsTimetableCollection.cs" />
     <Compile Include="clsUser.cs" />
+    <Compile Include="clsUserCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
