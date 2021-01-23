@@ -35,8 +35,19 @@ namespace ClassLibrary
         }
         public bool Find(int ID)
         {
-            //FINISH MEEEEEEEEEEEEEEE
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("Id", ID);
+            DB.Execute("sproc_tblRoom_FilterByID");
+
+            if (DB.Count == 1)
+            {
+                mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
+                mNumber = Convert.ToInt32(DB.DataTable.Rows[0]["Number"]);
+                mBlock = Convert.ToString(DB.DataTable.Rows[0]["Block"]);
+                mSubject = Convert.ToString(DB.DataTable.Rows[0]["Subject"]);
+                return true;
+            }
+            else { return false; }
         }
         public string Validate(int ID, int Number, string Block, int Subject)
         {

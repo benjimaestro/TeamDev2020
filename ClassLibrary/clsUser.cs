@@ -53,8 +53,22 @@ namespace ClassLibrary
         }
         public bool Find(int ID)
         {
-            //FINISH MEEEEEEEEEEEEEEE
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("Id", ID);
+            DB.Execute("sproc_tblUser_FilterByID");
+
+            if (DB.Count == 1)
+            {
+                mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
+                mEMail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
+                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mSecondName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mAdmin = Convert.ToBoolean(DB.DataTable.Rows[0]["Admin"]);
+                mSubject = Convert.ToString(DB.DataTable.Rows[0]["Subject"]);
+                return true;
+            }
+            else { return false; }
         }
         public string Validate(int ID, string EMail, string FirstName, string SecondName, string Subject)
         {

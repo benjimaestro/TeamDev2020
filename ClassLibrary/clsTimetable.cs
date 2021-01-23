@@ -68,8 +68,24 @@ namespace ClassLibrary
 
         public bool Find(int ID)
         {
-            //FINISH MEEEEEEEEEEEEEEE
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("Id", ID);
+            DB.Execute("sproc_tblTimetable_FilterByID");
+
+            if (DB.Count == 1)
+            {
+                mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["Number"]);
+                mDay = Convert.ToInt32(DB.DataTable.Rows[0]["Block"]);
+                mP1 = Convert.ToInt32(DB.DataTable.Rows[0]["P1"]);
+                mP2 = Convert.ToInt32(DB.DataTable.Rows[0]["P2"]);
+                mP3 = Convert.ToInt32(DB.DataTable.Rows[0]["P3"]);
+                mP4 = Convert.ToInt32(DB.DataTable.Rows[0]["P4"]);
+                mP5 = Convert.ToInt32(DB.DataTable.Rows[0]["P5"]);
+                mWeekNo = Convert.ToInt32(DB.DataTable.Rows[0]["WeekNo"]);
+                return true;
+            }
+            else { return false; }
         }
         public string Validate(int ID, int UserID, int Day, int P1, int P2, int P3, int P4, int P5, int WeekNo)
         {
