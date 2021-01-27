@@ -51,6 +51,10 @@ namespace ClassLibrary
             get { return mSubject; }
             set { mSubject = value; }
         }
+        public string FullNameEmail
+        {
+            get { return $"{mSecondName.ToUpper()} {mFirstName} ({mEMail})"; }
+        }
         public bool Find(int ID)
         {
             clsDataConnection DB = new clsDataConnection();

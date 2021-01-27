@@ -24,7 +24,7 @@ namespace Timetable
             lstTeachers.Items.Clear();
             lstTeachers.DataSource = Users.Userlist;
             lstTeachers.DataValueField = "Id";
-            lstTeachers.DataTextField = "EMail";
+            lstTeachers.DataTextField = "FullNameEmail";
             lstTeachers.DataBind();
         }
 

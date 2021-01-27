@@ -47,11 +47,11 @@ namespace ClassLibrary
                 clsUser User = new clsUser();
                 User.ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Id"]);
                 User.EMail = Convert.ToString(DB.DataTable.Rows[Index]["EMail"]);
-                User.EMail = Convert.ToString(DB.DataTable.Rows[Index]["Password"]);
-                User.EMail = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
-                User.EMail = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                User.Password = Convert.ToString(DB.DataTable.Rows[Index]["Password"]);
+                User.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                User.SecondName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
                 User.Admin = Convert.ToBoolean(DB.DataTable.Rows[Index]["Admin"]);
-                User.EMail = Convert.ToString(DB.DataTable.Rows[Index]["EMail"]);
+                User.Subject = Convert.ToString(DB.DataTable.Rows[Index]["Subject"]);
 
                 mUserList.Add(User);
 

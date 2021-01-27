@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class clsRoomCollection
+    public class clsRoomCollection
     {
         List<clsRoom> mRoomList = new List<clsRoom>();
         clsRoom mThisRoom = new clsRoom();
@@ -30,12 +30,29 @@ namespace ClassLibrary
 
         public clsRoomCollection()
         {
-            //FINISH MEEEEEE
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblRoom_SelectAll");
+            PopulateList(DB);
         }
 
         void PopulateList(clsDataConnection DB)
         {
-            //FINISH MEEEEEEEEEEEEEE
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mRoomList = new List<clsRoom>();
+            while (Index < RecordCount)
+            {
+                clsRoom Room = new clsRoom();
+                Room.ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Id"]);
+                Room.Subject = Convert.ToString(DB.DataTable.Rows[Index]["Subject"]);
+                Room.Number = Convert.ToInt32(DB.DataTable.Rows[Index]["Number"]);
+                Room.Block = Convert.ToString(DB.DataTable.Rows[Index]["Block"]);
+
+                mRoomList.Add(Room);
+
+                Index++;
+            }
         }
 
         public int Add()

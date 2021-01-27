@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class clsRoom
+    public class clsRoom
     {
         private Int32 mID;
         private Int32 mNumber;
@@ -33,6 +33,11 @@ namespace ClassLibrary
             get { return mSubject; }
             set { mSubject = value; }
         }
+        public string RoomName
+        {
+            get { return $"{mBlock.ToUpper()}.{mNumber.ToString()}"; }
+        }
+
         public bool Find(int ID)
         {
             clsDataConnection DB = new clsDataConnection();
