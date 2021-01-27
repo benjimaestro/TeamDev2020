@@ -10,6 +10,8 @@ namespace ClassLibrary
     {
         List<clsRoom> mRoomList = new List<clsRoom>();
         clsRoom mThisRoom = new clsRoom();
+        List<string> Blocks = new List<string>() { "A","B","C","D","E" };
+        List<string> Subjects = new List<string>() { "English", "Maths", "Sciences", "Languages", "I.T.", "D.T.","Any" };
 
         public List<clsRoom> Roomlist
         {
@@ -28,6 +30,16 @@ namespace ClassLibrary
             set { mThisRoom = value; }
         }
 
+        public List<string> AvailableBlocks
+        {
+            get { return Blocks; }
+        }
+
+        public List<string> AvailableSubjects
+        {
+            get { return Subjects; }
+        }
+
         public clsRoomCollection()
         {
             clsDataConnection DB = new clsDataConnection();
@@ -37,6 +49,7 @@ namespace ClassLibrary
 
         public void Find(Int32 Id)
         {
+            //Loops through mRoomList until it finds a value with the provided ID
             Int32 Index = 0;
             while (mRoomList.Count > Index)
             {
@@ -50,6 +63,7 @@ namespace ClassLibrary
 
         void PopulateList(clsDataConnection DB)
         {
+            //Populates the mRoomList list by looping through rows in tblRoom
             Int32 Index = 0;
             Int32 RecordCount;
             RecordCount = DB.Count;
@@ -70,13 +84,17 @@ namespace ClassLibrary
 
         public int Add()
         {
-            //Finish MEEEEEEEEE
-            return 0;
+            //Function to add new record to tblRoom
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Number", mThisRoom.Number);
+            DB.AddParameter("@Block", mThisRoom.Block);
+            DB.AddParameter("@Subject", mThisRoom.Subject);
+            return DB.Execute("sproc_tblRoom_AddRoom");
         }
 
         public void Delete(Int32 Id)
         {
-            //Function to delete an instance of a Room from the mRoomList and DB based on provided ID
+            //Function to delete record from tblRoom based on ID
             clsDataConnection DB = new clsDataConnection();
             Int32 Index = 0;
             while (mRoomList.Count > Index)
@@ -90,6 +108,19 @@ namespace ClassLibrary
 
             DB.AddParameter("@Id", Id);
             DB.Execute("sproc_tblRoom_DeleteRoom");
+        }
+        public void FindExistingRoom(string Block, Int32 Number)
+        {
+            //Function to set ThisCustomer clsCustomer instance to whichever entry in the mCustomerList matches the EMail
+            Int32 Index = 0;
+            while (mRoomList.Count > Index)
+            {
+                if (mRoomList[Index].Number == Number && mRoomList[Index].Block == Block)
+                {
+                    ThisRoom = mRoomList[Index];
+                }
+                Index++;
+            }
         }
 
         public void Edit()
