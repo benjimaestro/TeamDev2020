@@ -40,7 +40,15 @@ namespace Timetable
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DeleteRoom.aspx");
+            Int32 RoomID;
+            if (lstRooms.SelectedIndex != -1)
+            {
+                RoomID = Convert.ToInt32(lstRooms.SelectedValue);
+                Session["RoomID"] = RoomID;
+                Session["Mode"] = "Admin";
+                Response.Redirect("DeleteRoom.aspx");
+            }
+            else { lblError.Text = "Select a room to delete"; }
         }
     }
 }

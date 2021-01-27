@@ -35,6 +35,19 @@ namespace ClassLibrary
             PopulateList(DB);
         }
 
+        public void Find(Int32 Id)
+        {
+            Int32 Index = 0;
+            while (mRoomList.Count > Index)
+            {
+                if (mRoomList[Index].ID == Id)
+                {
+                    ThisRoom = mRoomList[Index];
+                }
+                Index++;
+            }
+        }
+
         void PopulateList(clsDataConnection DB)
         {
             Int32 Index = 0;
@@ -61,9 +74,22 @@ namespace ClassLibrary
             return 0;
         }
 
-        public void Delete()
+        public void Delete(Int32 Id)
         {
-            //Me too!
+            //Function to delete an instance of a Room from the mRoomList and DB based on provided ID
+            clsDataConnection DB = new clsDataConnection();
+            Int32 Index = 0;
+            while (mRoomList.Count > Index)
+            {
+                if (mRoomList[Index].ID == Id)
+                {
+                    mRoomList.RemoveAt(Index);
+                }
+                Index++;
+            }
+
+            DB.AddParameter("@Id", Id);
+            DB.Execute("sproc_tblRoom_DeleteRoom");
         }
 
         public void Edit()
