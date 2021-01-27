@@ -28,6 +28,8 @@ public class clsDataConnection
 
     public clsDataConnection()
     {
+        //string pw = Environment.GetEnvironmentVariable("TD2020");
+        //connectionString = $"Server=tcp:dmuteamdev.database.windows.net,1433;Initial Catalog=db_TeamDev;Persist Security Info=False;User ID=dmuteamdevadmin;Password={pw};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         connectionString = GetConnectionString();
     }
 
