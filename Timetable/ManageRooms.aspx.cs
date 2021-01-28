@@ -21,6 +21,13 @@ namespace Timetable
         void DisplayRooms()
         {
             clsRoomCollection Rooms = new clsRoomCollection();
+
+            foreach (string subject in Rooms.AvailableSubjects)
+            {
+                ddlSubjectSearch.Items.Add(subject);
+            }
+            ddlSubjectSearch.SelectedValue = "Any";
+
             lstRooms.Items.Clear();
             lstRooms.DataSource = Rooms.Roomlist;
             lstRooms.DataValueField = "Id";
@@ -37,7 +44,15 @@ namespace Timetable
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Room.aspx");
+            Int32 RoomID;
+            if (lstRooms.SelectedIndex != -1)
+            {
+                RoomID = Convert.ToInt32(lstRooms.SelectedValue);
+                Session["RoomID"] = RoomID;
+                Session["Mode"] = "Admin";
+                Response.Redirect("Room.aspx");
+            }
+            else { lblError.Text = "You must select a room to modify"; }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -51,6 +66,18 @@ namespace Timetable
                 Response.Redirect("DeleteRoom.aspx");
             }
             else { lblError.Text = "Select a room to delete"; }
+        }
+
+        protected void ddlSubjectSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Search = ddlSubjectSearch.SelectedValue;
+            clsRoomCollection Rooms = new clsRoomCollection();
+            Rooms.FilterBySubject(Search);
+            lstRooms.Items.Clear();
+            lstRooms.DataSource = Rooms.Roomlist;
+            lstRooms.DataValueField = "Id";
+            lstRooms.DataTextField = "RoomName";
+            lstRooms.DataBind();
         }
     }
 }

@@ -123,14 +123,30 @@ namespace ClassLibrary
             }
         }
 
-        public void Edit()
+        public int Edit()
         {
             //Function to edit an existing record in tblRoom with new details
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Id", mThisRoom.ID);
+            DB.AddParameter("@Number", mThisRoom.Number);
+            DB.AddParameter("@Block", mThisRoom.Block);
+            DB.AddParameter("@Subject", mThisRoom.Subject);
+            return DB.Execute("sproc_tblRoom_EditRoom");
         }
 
-        public void FilterBySubject()
+        public void FilterBySubject(string Subject)
         {
-            //Finish!!!
+            clsDataConnection DB = new clsDataConnection();
+            if (Subject == "Any")
+            {
+                DB.Execute("sproc_tblRoom_SelectAll");
+            }
+            else
+            {
+                DB.AddParameter("@Subject", Subject);
+                DB.Execute("sproc_tblRoom_FilterBySubject");
+            }
+            PopulateList(DB);
         }
     }
 }

@@ -32,9 +32,11 @@ namespace Timetable
             {
                 if (IsPostBack == false)
                 {
-                    lblTitle.Text = "Change account details";
+                    lblTitle.Text = "Change room details";
                     Rooms.Find(RoomID);
                     txtRoomNo.Text = Convert.ToString(Rooms.ThisRoom.Number);
+                    ddlBlock.SelectedValue = Rooms.ThisRoom.Block;
+                    ddlSubject.SelectedValue = Rooms.ThisRoom.Subject;
                 }
             }
             else { lblTitle.Text = "New Room"; }
@@ -56,17 +58,46 @@ namespace Timetable
             {
                 Rooms.ThisRoom.Block = Convert.ToString(ddlBlock.SelectedValue);
                 Rooms.ThisRoom.Number = Convert.ToInt32(txtRoomNo.Text);
-                if (ddlSubject.SelectedValue != "Any")
-                {
-                    Rooms.ThisRoom.Subject = Convert.ToString(ddlSubject.SelectedValue);
-                }
-                else { Rooms.ThisRoom.Subject = null; }
+                Rooms.ThisRoom.Subject = Convert.ToString(ddlSubject.SelectedValue);
                 Rooms.Add();
                 return Error;
             }
             else
             {
                 lblError.Text = Error;
+                return Error;
+            }
+        }
+
+        string edit()
+        {
+            String Error = "";
+            clsRoomCollection PreRooms = new clsRoomCollection();
+            clsRoomCollection Rooms = new clsRoomCollection();
+            PreRooms.FindExistingRoom(ddlBlock.Text, Convert.ToInt32(txtRoomNo.Text));
+            Rooms.FindExistingRoom(ddlBlock.Text, Convert.ToInt32(txtRoomNo.Text));
+
+            //Doesn't work!!!! Fix me so room cannot be changed to a room that already exists!!!!!
+            if (PreRooms.ThisRoom.Number.ToString() != null && PreRooms.ThisRoom.Number != Rooms.ThisRoom.Number && PreRooms.ThisRoom.Block != Rooms.ThisRoom.Block)
+            {
+                Error = Error + "Room number already exists in block </br>";
+            }
+            //Fix meeeeeeeeeeeeeeeeee
+            //Error = Error + Rooms.ThisRoom.Validate();
+            if (Error == "")
+            {
+                Rooms.Find(RoomID);
+                Rooms.ThisRoom.Number = Convert.ToInt32(txtRoomNo.Text);
+                Rooms.ThisRoom.Block = ddlBlock.SelectedValue;
+                Rooms.ThisRoom.Subject = ddlSubject.SelectedValue;
+                Rooms.Edit();
+                Session["RoomID"] = Rooms.ThisRoom.ID;
+                Response.Redirect("ManageRooms.aspx");
+                return Error;
+            }
+            else
+            {
+                lblError.Text = Error;//Display errors
                 return Error;
             }
         }
@@ -84,14 +115,14 @@ namespace Timetable
             }
             else
             {
-                //string Error = update();
-                //if (Error == "")
-                //{
-                //    if (Mode != "Admin")
-                //    {
-                //        Response.Redirect("Default.aspx");
-                //    }
-                //}
+                string Error = edit();
+                if (Error == "")
+                {
+                    if (Mode != "Admin")
+                    {
+                        Response.Redirect("Default.aspx");
+                    }
+                }
             }
         }
 
