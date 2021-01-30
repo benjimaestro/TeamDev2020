@@ -53,7 +53,7 @@ namespace Timetable
             }
             clsRoomCollection Rooms = new clsRoomCollection();
 
-            //Error = Error + Rooms.ThisRoom.Valid();
+            Error = Error + Rooms.ThisRoom.Validate(ddlBlock.SelectedValue, txtRoomNo.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
                 Rooms.ThisRoom.Block = Convert.ToString(ddlBlock.SelectedValue);
@@ -82,8 +82,8 @@ namespace Timetable
             {
                 Error = Error + "Room number already exists in block </br>";
             }
-            //Fix meeeeeeeeeeeeeeeeee
-            //Error = Error + Rooms.ThisRoom.Validate();
+
+            Error = Error + Rooms.ThisRoom.Validate(ddlBlock.SelectedValue,txtRoomNo.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
                 Rooms.Find(RoomID);

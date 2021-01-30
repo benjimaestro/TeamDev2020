@@ -62,7 +62,7 @@ namespace Timetable
             }
             clsUserCollection Users = new clsUserCollection();
 
-            //Error = Error + Users.ThisUser.Valid();
+            Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
                 Users.ThisUser.EMail = txtEmail.Text;
@@ -98,8 +98,8 @@ namespace Timetable
             {
                 Error = Error + "Passwords do not match!</br>";
             }
-            //Fix meeeeeeeeeeeeeeeeee
-            //Error = Error + Rooms.ThisRoom.Validate();
+
+            Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
                 Users.ThisUser.EMail = txtEmail.Text;
@@ -113,7 +113,7 @@ namespace Timetable
             }
             else
             {
-                lblError.Text = Error;//Display errors
+                lblError.Text = Error;//Display errors, but intentionally!
                 return Error;
             }
         }

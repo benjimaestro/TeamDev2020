@@ -54,10 +54,16 @@ namespace ClassLibrary
             }
             else { return false; }
         }
-        public string Validate(int ID, int Number, string Block, int Subject)
+        public string Validate(string Block, string Number, string Subject)
         {
-            //Finish me also!!!!!!!
+            Int32 IntNumber = 1;
             string Error = "";
+            try { IntNumber = Convert.ToInt32(Number); }
+            catch { Error = Error + "Room number must be a number</br>"; }
+
+            if (IntNumber < 2 || IntNumber > 99) { Error = Error + "Room number must be 1-99</br>"; }
+            if (Block.Length != 1) { Error = Error + "Block must be a single character</br>"; }
+            if (Subject.Length < 1 || Subject.Length > 10) { Error = Error + "Subject must be 1-10 characters</br>"; }
             return Error;
         }
     }

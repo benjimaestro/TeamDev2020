@@ -36,7 +36,7 @@
         <asp:DropDownList ID="ddlBlock" runat="server" style="z-index: 1; left: 10px; top: 80px; position: absolute; height: 16px; width: 130px;"></asp:DropDownList>
 
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 10px; top: 110px; position: absolute" Text="Room number"></asp:Label>
-        <asp:TextBox ID="txtRoomNo" runat="server" style="z-index: 1; left: 10px; top: 140px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtRoomNo" runat="server" style="z-index: 1; left: 10px; top: 140px; position: absolute" TextMode="Number"></asp:TextBox>
 
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 10px; top: 170px; position: absolute" Text="Subject taught in room"></asp:Label>
         <asp:DropDownList ID="ddlSubject" runat="server" CssClass="auto-style3"></asp:DropDownList>
