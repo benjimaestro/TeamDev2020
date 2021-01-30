@@ -20,6 +20,9 @@
             <asp:Label ID="lblTeacherAccounts" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 120px" Text='Contact messages' Font-Underline="True" />
         </a>
         <br/>
+        <a href="Teacher.aspx">
+            <asp:Label ID="lblChangePassword" runat="server" style="z-index: 1; left: 10px; top: 200px; position: absolute; width: 120px" Text='Change password' Font-Underline="True" />
+        </a>
     </form>
 </body>
 </html>

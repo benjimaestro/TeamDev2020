@@ -58,7 +58,7 @@ namespace Timetable
             if (Error == "")
             {
                 Users.ThisUser.EMail = txtEmail.Text;
-                Users.ThisUser.Password = Users.GetHashPassword(txtEmail.Text);
+                Users.ThisUser.Password = Users.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
                 Users.ThisUser.SecondName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
@@ -90,7 +90,7 @@ namespace Timetable
             if (Error == "")
             {
                 Users.ThisUser.EMail = txtEmail.Text;
-                Users.ThisUser.Password = Users.GetHashPassword(txtEmail.Text);
+                Users.ThisUser.Password = Users.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
                 Users.ThisUser.SecondName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);

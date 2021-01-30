@@ -66,9 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminDefault.aspx" />
-    <Content Include="AdminLogin.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="Default.aspx" />
     <Content Include="DeleteTeacher.aspx" />
     <Content Include="DeleteRoom.aspx" />
     <Content Include="ManageRooms.aspx" />
@@ -88,26 +86,12 @@
     <Compile Include="AdminDefault.aspx.designer.cs">
       <DependentUpon>AdminDefault.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminLogin.aspx.cs">
-      <DependentUpon>AdminLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminLogin.aspx.designer.cs">
-      <DependentUpon>AdminLogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteTeacher.aspx.cs">
       <DependentUpon>DeleteTeacher.aspx</DependentUpon>

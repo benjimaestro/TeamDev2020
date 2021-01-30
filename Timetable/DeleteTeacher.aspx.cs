@@ -17,7 +17,7 @@ namespace Timetable
             if (Session["UserID"] == null) { Response.Redirect("Default.aspx"); }
             clsUserCollection Users = new clsUserCollection();
             Users.Find(UserID);
-            lblDelete.Text = $"Are you sure you want to delete User {Users.ThisUser.FullNameEmail}";
+            lblDelete.Text = $"Are you sure you want to delete the account for {Users.ThisUser.FullNameEmail}";
         }
 
         protected void btnNo_Click(object sender, EventArgs e)

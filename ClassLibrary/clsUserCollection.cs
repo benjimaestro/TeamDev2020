@@ -154,6 +154,27 @@ namespace ClassLibrary
             }
         }
 
+        public Int32 Login(string EMail, string Password)
+        {
+            //Loops through mUserList until it finds a value with matching EMail and a correct password
+            Int32 Index = 0;
+            Int32 ID = -1;
+            while (mUserList.Count > Index)
+            {
+                if (mUserList[Index].EMail == EMail)
+                {
+                    if (mUserList[Index].Password == Password)
+                    {
+                        ThisUser = mUserList[Index];
+                        ID = ThisUser.ID;
+                    }
+                    else { ID = 0; }
+                }
+                Index++;
+            }
+            return ID;
+        }
+
         public string GetHashPassword(string ToHash)
         {
             if (ToHash != "")
