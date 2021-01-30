@@ -115,6 +115,7 @@ namespace ClassLibrary
         {
             //Function to edit an existing record in tblUser with new details
             clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Id", mThisUser.ID);
             DB.AddParameter("@EMail", mThisUser.EMail);
             DB.AddParameter("@Password", mThisUser.Password);
             DB.AddParameter("@FirstName", mThisUser.FirstName);

@@ -33,30 +33,30 @@ namespace Timetable
         protected global::System.Web.UI.WebControls.Label lblTitle;
 
         /// <summary>
-        /// lblContact control.
+        /// btnViewTimetable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContact;
+        protected global::System.Web.UI.WebControls.Button btnViewTimetable;
 
         /// <summary>
-        /// lblTeacherAccounts control.
+        /// btnContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTeacherAccounts;
+        protected global::System.Web.UI.WebControls.Button btnContact;
 
         /// <summary>
-        /// lblChangePassword control.
+        /// btnChangePassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblChangePassword;
+        protected global::System.Web.UI.WebControls.Button btnChangePassword;
     }
 }

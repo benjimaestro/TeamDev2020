@@ -5,6 +5,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            z-index: 1;
+            width: 160px;
+        }
+        .auto-style2 {
+            position: absolute;
+            top: 150px;
+            left: 10px;
+            z-index: 1;
+            width: 160px;
+        }
+        .auto-style3 {
+            position: absolute;
+            top: 200px;
+            left: 10px;
+            z-index: 1;
+            width: 160px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,17 +35,11 @@
         <br/>
         <br/>
         <br/>
-        <a href="Timetable.aspx">
-            <asp:Label ID="lblContact" runat="server" style="z-index: 1; left: 10px; top: 100px; position: absolute; width: 120px" Text='View timetable' Font-Underline="True" />
-        </a>
         <br/>
-        <a href="Contact.aspx">
-            <asp:Label ID="lblTeacherAccounts" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 120px" Text='Contact messages' Font-Underline="True" />
-        </a>
         <br/>
-        <a href="Teacher.aspx">
-            <asp:Label ID="lblChangePassword" runat="server" style="z-index: 1; left: 10px; top: 200px; position: absolute; width: 120px" Text='Change password' Font-Underline="True" />
-        </a>
+        <asp:Button ID="btnViewTimetable" runat="server" CssClass="auto-style1" Text="View Timetable" OnClick="btnViewTimetable_Click" />
+        <asp:Button ID="btnContact" runat="server" CssClass="auto-style2" Text="Contact Admins" OnClick="btnContact_Click" />
+        <asp:Button ID="btnChangePassword" runat="server" CssClass="auto-style3" Text="Change Password" OnClick="btnChangePassword_Click" />
     </form>
 </body>
 </html>

@@ -27,12 +27,20 @@ namespace Timetable
             {
                 if (IsPostBack == false)
                 {
-                    lblTitle.Text = "Change user details";
+                    lblTitle.Text = "Change User Details";
                     Users.Find(UserID);
                     txtEmail.Text = Convert.ToString(Users.ThisUser.EMail);
                     txtFirstName.Text = Convert.ToString(Users.ThisUser.FirstName);
                     txtLastName.Text = Convert.ToString(Users.ThisUser.SecondName);
                     ddlSubject.SelectedValue = Users.ThisUser.Subject;
+                }
+                if (Mode != "Admin")
+                {
+                    lblTitle.Text = "Change Password";
+                    txtEmail.Enabled = false;
+                    txtFirstName.Enabled = false;
+                    txtLastName.Enabled = false;
+                    ddlSubject.Enabled = false;
                 }
             }
             else { lblTitle.Text = "New User Account"; }
@@ -84,6 +92,11 @@ namespace Timetable
             if (PreUsers.ThisUser != null && PreUsers.ThisUser.EMail != Users.ThisUser.EMail)
             {
                 Error = Error + "User already exists with that EMail!</br>";
+            }
+
+            if (txtPassword.Text != txtPasswordConfirm.Text)
+            {
+                Error = Error + "Passwords do not match!</br>";
             }
             //Fix meeeeeeeeeeeeeeeeee
             //Error = Error + Rooms.ThisRoom.Validate();
