@@ -111,7 +111,7 @@ namespace ClassLibrary
         }
         public void FindExistingRoom(string Block, Int32 Number)
         {
-            //Function to set ThisCustomer clsCustomer instance to whichever entry in the mCustomerList matches the EMail
+            //Sets the ThisRoom to whatever is found with the same room number and block, indicating that a room already exists
             Int32 Index = 0;
             while (mRoomList.Count > Index)
             {

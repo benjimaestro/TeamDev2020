@@ -92,7 +92,6 @@ namespace Timetable
                 Rooms.ThisRoom.Subject = ddlSubject.SelectedValue;
                 Rooms.Edit();
                 Session["RoomID"] = Rooms.ThisRoom.ID;
-                Response.Redirect("ManageRooms.aspx");
                 return Error;
             }
             else
@@ -112,17 +111,17 @@ namespace Timetable
                     if (Mode != "Admin") { Response.Redirect("Default"); }
                     else { Response.Redirect("ManageRooms.aspx"); }
                 }
+                else { lblError.Text = Error; }
             }
             else
             {
                 string Error = edit();
                 if (Error == "")
                 {
-                    if (Mode != "Admin")
-                    {
-                        Response.Redirect("Default.aspx");
-                    }
+                    if (Mode != "Admin") { Response.Redirect("Default"); }
+                    else { Response.Redirect("ManageRooms.aspx"); }
                 }
+                else { lblError.Text = Error; }
             }
         }
 
