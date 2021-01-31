@@ -75,7 +75,6 @@ namespace ClassLibrary
             DB.AddParameter("@LastName", mThisUser.SecondName);
             DB.AddParameter("@Admin", mThisUser.Admin);
             DB.AddParameter("@Subject", mThisUser.Subject);
-
             return DB.Execute("sproc_tblUser_AddUser");
         }
 
@@ -92,7 +91,6 @@ namespace ClassLibrary
                 }
                 Index++;
             }
-
             DB.AddParameter("@Id", Id);
             DB.Execute("sproc_tblUser_DeleteUser");
         }
