@@ -58,11 +58,13 @@ namespace ClassLibrary
         {
             Int32 IntNumber = 1;
             string Error = "";
-            try { IntNumber = Convert.ToInt32(Number); }
+            try
+            { 
+                IntNumber = Convert.ToInt32(Number);
+                if (IntNumber < 1 || IntNumber > 99) { Error = Error + "Room number must be 1-99</br>"; }
+            }
             catch { Error = Error + "Room number must be a number</br>"; }
-
-            if (IntNumber < 2 || IntNumber > 99) { Error = Error + "Room number must be 1-99</br>"; }
-            if (Block.Length != 1) { Error = Error + "Block must be a single character</br>"; }
+            if (Block.Length != 1) { Error = Error + "Block must be a single A-Z character</br>"; }
             if (Subject.Length < 1 || Subject.Length > 10) { Error = Error + "Subject must be 1-10 characters</br>"; }
             return Error;
         }
