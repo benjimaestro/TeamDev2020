@@ -9,13 +9,6 @@ namespace Timetable_Testing
     [TestClass]
     public class tstUserCollection
     {
-        private TestContext testContextInstance;
-        public TestContext TestContext
-        {
-            get { return testContextInstance; }
-            set { testContextInstance = value; }
-        }
-
         [TestMethod]
         public void InstanceOK()
         {
@@ -24,7 +17,7 @@ namespace Timetable_Testing
         }
 
         [TestMethod]
-        public void CustomerListOK()
+        public void UserListOK()
         {
             clsUserCollection Users = new clsUserCollection();
             List<clsUser> TestList = new List<clsUser>();
@@ -91,6 +84,7 @@ namespace Timetable_Testing
             Assert.AreEqual(Users.ThisUser, TestItem);
             Users.Delete(ID);
         }
+        [TestMethod]
         public void EMailFilterMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
@@ -98,6 +92,7 @@ namespace Timetable_Testing
             FilteredUsers.FilterByEMail("");
             Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
         }
+        [TestMethod]
         public void EMailFilterMethodNone()
         {
             clsUserCollection Users = new clsUserCollection();
@@ -105,6 +100,7 @@ namespace Timetable_Testing
             FilteredUsers.FilterByEMail("sdfhjksdfksdfhjksdfksdfhjksdfk");
             Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
         }
+        [TestMethod]
         public void NameFilterMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
@@ -112,6 +108,7 @@ namespace Timetable_Testing
             FilteredUsers.FilterByEMail("");
             Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
         }
+        [TestMethod]
         public void NameFilterMethodNone()
         {
             clsUserCollection Users = new clsUserCollection();
@@ -119,18 +116,21 @@ namespace Timetable_Testing
             FilteredUsers.FilterByEMail("sdfhjksdfksdfhjksdfksdfhjksdfk");
             Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
         }
+        [TestMethod]
         public void FindExistingUserMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
             Users.FindExistingUser("johndoe@gmail.com");
             Assert.AreEqual(3, Users.ThisUser.ID);
         }
+        [TestMethod]
         public void LoginMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
             Users.Login("johndoe@gmail.com", "B109F3BBBC244EB82441917ED06D618B9008DD09B3BEFD1B5E07394C706A8BB980B1D7785E5976EC049B46DF5F1326AF5A2EA6D103FD07C95385FFAB0CACBC86");
             Assert.AreEqual(3, Users.ThisUser.ID);
         }
+        [TestMethod]
         public void GetHashPasswordMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
