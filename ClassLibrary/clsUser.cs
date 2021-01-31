@@ -86,10 +86,11 @@ namespace ClassLibrary
                 Error = Error + "Invalid EMail format</br>";
             }
             if (EMail.Length > 50 || EMail.Length < 6) { Error = Error + "EMail must be 6-50 characters</br>"; }
-            if (FirstName.Length > 50 || FirstName.Length < 0) { Error = Error + "First name must be 1-50 characters</br>"; }
-            if (SecondName.Length > 50 || SecondName.Length < 0) { Error = Error + "First name must be 1-50 characters</br>"; }
-            if (Password == "") { Error = Error + "Password cannot be blank</br>"; }
-            if (Subject.Length > 10 || Subject.Length < 0) { Error = Error + "Subject must be 1-10 characters</br>"; }
+            if (FirstName.Length > 50 || FirstName.Length < 1) { Error = Error + "First name must be 1-50 characters</br>"; }
+            if (SecondName.Length > 50 || SecondName.Length < 1) { Error = Error + "Last name must be 1-50 characters</br>"; }
+            if (Password.Length == 0) { Error = Error + "Password cannot be blank</br>"; }
+            if (Password.Length > 50) { Error = Error + "Password must be 50 characters or under</br>"; }
+            if (Subject.Length > 10 || Subject.Length < 1) { Error = Error + "Subject must be 1-10 characters</br>"; }
             return Error;
         }
     }
