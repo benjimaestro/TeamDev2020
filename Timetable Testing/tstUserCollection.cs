@@ -119,5 +119,23 @@ namespace Timetable_Testing
             FilteredUsers.FilterByEMail("sdfhjksdfksdfhjksdfksdfhjksdfk");
             Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
         }
+        public void FindExistingUserMethodOK()
+        {
+            clsUserCollection Users = new clsUserCollection();
+            Users.FindExistingUser("johndoe@gmail.com");
+            Assert.AreEqual(3, Users.ThisUser.ID);
+        }
+        public void LoginMethodOK()
+        {
+            clsUserCollection Users = new clsUserCollection();
+            Users.Login("johndoe@gmail.com", "B109F3BBBC244EB82441917ED06D618B9008DD09B3BEFD1B5E07394C706A8BB980B1D7785E5976EC049B46DF5F1326AF5A2EA6D103FD07C95385FFAB0CACBC86");
+            Assert.AreEqual(3, Users.ThisUser.ID);
+        }
+        public void GetHashPasswordMethodOK()
+        {
+            clsUserCollection Users = new clsUserCollection();
+            string password = "B109F3BBBC244EB82441917ED06D618B9008DD09B3BEFD1B5E07394C706A8BB980B1D7785E5976EC049B46DF5F1326AF5A2EA6D103FD07C95385FFAB0CACBC86";
+            Assert.AreEqual(password, Users.GetHashPassword("password"));
+        }
     }
 }
