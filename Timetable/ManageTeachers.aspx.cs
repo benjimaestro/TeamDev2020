@@ -87,5 +87,19 @@ namespace Timetable
         {
             DisplayUsers();
         }
+
+        protected void btnTimetable_Click(object sender, EventArgs e)
+        {
+            Int32 UserID;
+            if (lstTeachers.SelectedIndex != -1)
+            {
+                UserID = Convert.ToInt32(lstTeachers.SelectedValue);
+                Session["WeekNo"] = 1;
+                Session["UserID"] = UserID;
+                Session["Mode"] = "Admin";
+                Response.Redirect("Timetable.aspx");
+            }
+            else { lblError.Text = "You must select a user to modify"; }
+        }
     }
 }

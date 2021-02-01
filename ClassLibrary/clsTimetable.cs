@@ -10,11 +10,11 @@ namespace ClassLibrary
     {
         private Int32 mID;
         private Int32 mUserID;
-        private Int32 mP1;
-        private Int32 mP2;
-        private Int32 mP3;
-        private Int32 mP4;
-        private Int32 mP5;
+        private int mP1;
+        private int mP2;
+        private int mP3;
+        private int mP4;
+        private int mP5;
         private Int32 mWeekNo;
         private Int32 mDayNo;
 
@@ -74,11 +74,16 @@ namespace ClassLibrary
             {
                 mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
                 mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
-                mP1 = Convert.ToInt32(DB.DataTable.Rows[0]["P1"]);
-                mP2 = Convert.ToInt32(DB.DataTable.Rows[0]["P2"]);
-                mP3 = Convert.ToInt32(DB.DataTable.Rows[0]["P3"]);
-                mP4 = Convert.ToInt32(DB.DataTable.Rows[0]["P4"]);
-                mP5 = Convert.ToInt32(DB.DataTable.Rows[0]["P5"]);
+                try { mP1 = Convert.ToInt32(DB.DataTable.Rows[0]["P1"]); }
+                catch { mP1 = 0; }
+                try { mP2 = Convert.ToInt32(DB.DataTable.Rows[0]["P2"]); }
+                catch { mP2 = 0; }
+                try { mP3 = Convert.ToInt32(DB.DataTable.Rows[0]["P3"]); }
+                catch { mP3 = 0; }
+                try { mP4 = Convert.ToInt32(DB.DataTable.Rows[0]["P4"]); }
+                catch { mP4 = 0; }
+                try { mP5 = Convert.ToInt32(DB.DataTable.Rows[0]["P5"]); }
+                catch { mP5 = 0; }
                 mWeekNo = Convert.ToInt32(DB.DataTable.Rows[0]["WeekNo"]);
                 mDayNo = Convert.ToInt32(DB.DataTable.Rows[0]["DayNo"]);
                 return true;

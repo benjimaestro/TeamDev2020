@@ -148,5 +148,28 @@ namespace ClassLibrary
             }
             PopulateList(DB);
         }
+
+        public void RemoveRooms(List<Int32> Rooms, string Subject)
+        {
+            Int32 Index = 0;
+            while (mRoomList.Count > Index)
+            {
+                if (mRoomList[Index].Subject != "Any" && mRoomList[Index].Subject != Subject)
+                {
+                    mRoomList.RemoveAt(Index);
+                    Index--;
+                }
+                else
+                {
+                    if (Rooms.Contains(mRoomList[Index].ID))
+                    {
+                        mRoomList.RemoveAt(Index);
+                        Index--;
+                    }
+                }
+                Index++;
+            }
+            var x = mRoomList;
+        }
     }
 }

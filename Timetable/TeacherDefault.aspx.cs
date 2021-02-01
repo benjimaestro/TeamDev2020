@@ -21,6 +21,7 @@ namespace Timetable
 
         protected void btnViewTimetable_Click(object sender, EventArgs e)
         {
+            Session["WeekNo"] = 1;
             Session["Mode"] = "Teacher";
             Session["UserID"] = UserID;
             Response.Redirect("Timetable.aspx");
