@@ -133,10 +133,10 @@ namespace ClassLibrary
    
         public void FilterByName(string Name)
         {
-        clsDataConnection DB = new clsDataConnection();
-        DB.AddParameter("@Name", Name);
-        DB.Execute("sproc_tblUser_FilterByName");
-        PopulateList(DB);
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Name", Name);
+            DB.Execute("sproc_tblUser_FilterByName");
+            PopulateList(DB);
         }
 
         public void Find(Int32 Id)

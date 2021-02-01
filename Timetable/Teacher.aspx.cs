@@ -61,6 +61,7 @@ namespace Timetable
                 Error = Error + "Passwords do not match!</br>";
             }
             clsUserCollection Users = new clsUserCollection();
+            clsTimetableCollection Timetables = new clsTimetableCollection();
 
             Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
             if (Error == "")
@@ -70,7 +71,8 @@ namespace Timetable
                 Users.ThisUser.FirstName = txtFirstName.Text;
                 Users.ThisUser.SecondName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
-                Users.Add();
+                Int32 UserID = Users.Add();
+                Timetables.GenerateTimetable(UserID);
                 return Error;
             }
             else

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class clsTimetableCollection
+    public class clsTimetableCollection
     {
         List<clsTimetable> mTimetableList = new List<clsTimetable>();
         clsTimetable mThisTimetable = new clsTimetable();
@@ -30,26 +30,70 @@ namespace ClassLibrary
 
         public clsTimetableCollection()
         {
-            //FINISH MEEEEEE
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblTimetable_FilterByUserID");
+            PopulateList(DB);
         }
 
         void PopulateList(clsDataConnection DB)
         {
-            //FINISH MEEEEEEEEEEEEEE
-        }
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mTimetableList = new List<clsTimetable>();
+            while (Index < RecordCount)
+            {
+                clsTimetable Timetable = new clsTimetable();
+                Timetable.ID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
+                Timetable.UserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                Timetable.P1 = Convert.ToInt32(DB.DataTable.Rows[0]["P1"]);
+                Timetable.P2 = Convert.ToInt32(DB.DataTable.Rows[0]["P2"]);
+                Timetable.P3 = Convert.ToInt32(DB.DataTable.Rows[0]["P3"]);
+                Timetable.P4 = Convert.ToInt32(DB.DataTable.Rows[0]["P4"]);
+                Timetable.P5 = Convert.ToInt32(DB.DataTable.Rows[0]["P5"]);
+                Timetable.WeekNo = Convert.ToInt32(DB.DataTable.Rows[0]["WeekNo"]);
+                Timetable.DayNo = Convert.ToInt32(DB.DataTable.Rows[0]["DayNo"]);
 
-        public int Add()
+                mTimetableList.Add(Timetable);
+
+                Index++;
+            }
+        }
+        public void GenerateTimetable(Int32 UserID)
         {
-            //Finish MEEEEEEEEE
-            return 0;
+            Int32 IndexDay = 1;
+            Int32 IndexWeek = 1;
+            while (IndexWeek <= 5)
+            {
+                while (IndexDay <= 7)
+                {
+                    clsDataConnection DB = new clsDataConnection();
+                    DB.AddParameter("@UserID", UserID);
+                    DB.AddParameter("@WeekNo", IndexWeek);
+                    DB.AddParameter("@DayNo", IndexDay);
+                    DB.Execute("sproc_tblTimetable_GenerateTimetable");
+                    IndexDay++;
+                }
+                IndexWeek++;
+                IndexDay = 1;
+            }
         }
-
-        public void Delete()
+        public void DeleteTimetable(Int32 UserID)
         {
-            //Me too!
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@UserID", UserID);
+            DB.Execute("sproc_tblTimetable_DeleteTimetable");
+        }
+        public void FilterByWeekNo(Int32 UserID, Int32 WeekNo)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@UserID", UserID);
+            DB.AddParameter("@WeekNo", WeekNo);
+            DB.Execute("sproc_tblTimetable_FilterByWeekNo");
+            PopulateList(DB);
         }
 
-        public void Edit()
+        public void EditDay()
         {
             //Function to edit an existing record in tblTimetable with new details
         }

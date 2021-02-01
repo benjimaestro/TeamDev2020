@@ -28,9 +28,11 @@ namespace Timetable
         protected void btnYes_Click(object sender, EventArgs e)
         {
             clsUserCollection UserList = new clsUserCollection();
+            clsTimetableCollection Timetables = new clsTimetableCollection();
             if (Convert.ToString(Session["Mode"]) == "Admin")
             {
                 UserList.Delete(UserID);
+                Timetables.DeleteTimetable(UserID);
                 Response.Redirect("ManageTeachers.aspx");
             }
             else { Response.Redirect("Default.aspx"); }
