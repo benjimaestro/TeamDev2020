@@ -204,13 +204,13 @@ namespace Timetable
         protected global::System.Web.UI.WebControls.Button btn3P1;
 
         /// <summary>
-        /// btn3P control.
+        /// btn3P2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn3P;
+        protected global::System.Web.UI.WebControls.Button btn3P2;
 
         /// <summary>
         /// btn3P3 control.

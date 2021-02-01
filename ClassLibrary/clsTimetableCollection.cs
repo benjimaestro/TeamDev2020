@@ -30,9 +30,6 @@ namespace ClassLibrary
 
         public clsTimetableCollection()
         {
-            clsDataConnection DB = new clsDataConnection();
-            DB.Execute("sproc_tblTimetable_FilterByUserID");
-            PopulateList(DB);
         }
 
         void PopulateList(clsDataConnection DB)
@@ -65,7 +62,7 @@ namespace ClassLibrary
             Int32 IndexWeek = 1;
             while (IndexWeek <= 5)
             {
-                while (IndexDay <= 7)
+                while (IndexDay <= 5)
                 {
                     clsDataConnection DB = new clsDataConnection();
                     DB.AddParameter("@UserID", UserID);

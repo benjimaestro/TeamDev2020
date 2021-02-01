@@ -148,7 +148,7 @@
               </td>
             <td class="tg-0lax"> <asp:Button ID="btn3P1" runat="server" Text="Room A1" Height="68px" Width="78px" /> </td>
             <td class="tg-0lax"> &nbsp;</td>
-            <td class="tg-0lax"> <asp:Button ID="btn3P" runat="server" Text="Room A1" Height="68px" Width="78px" /> </td>
+            <td class="tg-0lax"> <asp:Button ID="btn3P2" runat="server" Text="Room A1" Height="68px" Width="78px" /> </td>
             <td class="tg-0lax"> <asp:Button ID="btn3P3" runat="server" Text="Room A1" Height="68px" Width="78px" /> </td>
             <td class="tg-0lax"> &nbsp;</td>
             <td class="tg-0lax"> <asp:Button ID="btn3P4" runat="server" Text="Room A1" Height="68px" Width="79px" /> </td>
