@@ -10,11 +10,11 @@ namespace ClassLibrary
     {
         private Int32 mID;
         private Int32 mUserID;
-        private int mP1;
-        private int mP2;
-        private int mP3;
-        private int mP4;
-        private int mP5;
+        private Int32 mP1;
+        private Int32 mP2;
+        private Int32 mP3;
+        private Int32 mP4;
+        private Int32 mP5;
         private Int32 mWeekNo;
         private Int32 mDayNo;
 
@@ -64,36 +64,30 @@ namespace ClassLibrary
             set { mDayNo = value; }
         }
 
-        public bool Find(int ID)
+        public string Validate(int UserID, int P1, int P2, int P3, int P4, int P5, int WeekNo, int DayNo)
         {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("Id", ID);
-            DB.Execute("sproc_tblTimetable_FilterByID");
-
-            if (DB.Count == 1)
-            {
-                mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
-                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
-                try { mP1 = Convert.ToInt32(DB.DataTable.Rows[0]["P1"]); }
-                catch { mP1 = 0; }
-                try { mP2 = Convert.ToInt32(DB.DataTable.Rows[0]["P2"]); }
-                catch { mP2 = 0; }
-                try { mP3 = Convert.ToInt32(DB.DataTable.Rows[0]["P3"]); }
-                catch { mP3 = 0; }
-                try { mP4 = Convert.ToInt32(DB.DataTable.Rows[0]["P4"]); }
-                catch { mP4 = 0; }
-                try { mP5 = Convert.ToInt32(DB.DataTable.Rows[0]["P5"]); }
-                catch { mP5 = 0; }
-                mWeekNo = Convert.ToInt32(DB.DataTable.Rows[0]["WeekNo"]);
-                mDayNo = Convert.ToInt32(DB.DataTable.Rows[0]["DayNo"]);
-                return true;
-            }
-            else { return false; }
-        }
-        public string Validate(int ID, int UserID, int P1, int P2, int P3, int P4, int P5, int WeekNo, int DayNo)
-        {
-            //Finish me also!!!!!!!
             string Error = "";
+            clsUserCollection Users = new clsUserCollection();
+            Users.Find(UserID);
+            if (Users.ThisUser.ID == 0) { Error = Error + "User ID does not exist </br>"; }
+            clsRoomCollection Rooms = new clsRoomCollection();
+            Rooms.Find(P1);
+            if (Rooms.ThisRoom.ID == 0) { Error = Error + "P1 ID does not exist </br>"; }
+            Rooms = new clsRoomCollection();
+            Rooms.Find(P2);
+            if (Rooms.ThisRoom.ID == 0) { Error = Error + "P2 ID does not exist </br>"; }
+            Rooms = new clsRoomCollection();
+            Rooms.Find(P3);
+            if (Rooms.ThisRoom.ID == 0) { Error = Error + "P3 ID does not exist </br>"; }
+            Rooms = new clsRoomCollection();
+            Rooms.Find(P4);
+            if (Rooms.ThisRoom.ID == 0) { Error = Error + "P4 ID does not exist </br>"; }
+            Rooms = new clsRoomCollection();
+            Rooms.Find(P5);
+            if (Rooms.ThisRoom.ID == 0) { Error = Error + "P5 ID does not exist </br>"; }
+            
+            if (WeekNo < 1 || WeekNo > 5) { Error = Error + "WeekNo must be 1-5 </br>"; }
+            if (DayNo < 1 || DayNo > 5) { Error = Error + "WeekNo must be 1-5 </br>"; }
             return Error;
         }
     }

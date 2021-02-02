@@ -116,7 +116,7 @@ namespace Timetable_Testing
             Boolean OK = true;
             Int32 RoomID = 1;
             Found = Room.Find(RoomID);
-            if (Room.Subject != "English")
+            if (Room.Subject != "Any")
             {
                 OK = false;
             }
