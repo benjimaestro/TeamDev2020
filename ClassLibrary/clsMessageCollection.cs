@@ -34,7 +34,7 @@ namespace ClassLibrary
 
         void PopulateList(clsDataConnection DB)
         {
-            //Populates the mMessageList list by looping through rows in tblMessage
+            //Populates the mMessageList list by looping through rows in tblMessage or output of stored procedure
             Int32 Index = 0;
             Int32 RecordCount;
             RecordCount = DB.Count;
@@ -56,6 +56,7 @@ namespace ClassLibrary
 
         public void FilterByUserID(Int32 UserID)
         {
+            //Gets output of stored procedure to pass to PopulateList() 
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("UserID", UserID);
             DB.Execute("sproc_tblMessage_FilterMessageByID");
@@ -64,18 +65,13 @@ namespace ClassLibrary
 
         public int Add()
         {
-            //Function to add new record to tblRoom
+            //Function to add new record to tblMessage
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@UserID", mThisMessage.UserID);
             DB.AddParameter("@ToAdmin", mThisMessage.ToAdmin);
             DB.AddParameter("@Content", mThisMessage.Content);
             DB.AddParameter("@Timestamp", mThisMessage.Timestamp);
             return DB.Execute("sproc_tblMessage_AddMessage");
-        }
-
-        public void Delete()
-        {
-            //Me too!
         }
     }
 }

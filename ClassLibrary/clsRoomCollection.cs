@@ -10,7 +10,9 @@ namespace ClassLibrary
     {
         List<clsRoom> mRoomList = new List<clsRoom>();
         clsRoom mThisRoom = new clsRoom();
+        //List of blocks that rooms can be in
         List<string> Blocks = new List<string>() { "A","B","C","D","E" };
+        //List of subjects rooms can be assigned to
         List<string> Subjects = new List<string>() { "English", "Maths", "Sciences", "Languages", "I.T.", "D.T.","Any" };
 
         public List<clsRoom> Roomlist
@@ -49,7 +51,7 @@ namespace ClassLibrary
 
         public void Find(Int32 Id)
         {
-            //Loops through mRoomList until it finds a value with the provided ID
+            //Loops through mRoomList until it finds a value with the provided ID, then sets the currently selected room to whatever was found
             Int32 Index = 0;
             while (mRoomList.Count > Index)
             {
@@ -136,6 +138,7 @@ namespace ClassLibrary
 
         public void FilterBySubject(string Subject)
         {
+            //Populates the mRoomList list by looping through rows in sproc_tblRoom_FilterBySubject based on the inputs
             clsDataConnection DB = new clsDataConnection();
             if (Subject == "Any")
             {
@@ -151,6 +154,8 @@ namespace ClassLibrary
 
         public void RemoveRooms(List<Int32> Rooms, string Subject)
         {
+            //Loops through mRoomList and removes any values that are not the provided subject and are not the "Any" subject
+            //as well as removing any rooms with IDs that are in the provided list
             Int32 Index = 0;
             while (mRoomList.Count > Index)
             {
@@ -169,7 +174,6 @@ namespace ClassLibrary
                 }
                 Index++;
             }
-            var x = mRoomList;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace ClassLibrary
     {
         List<clsUser> mUserList = new List<clsUser>();
         clsUser mThisUser = new clsUser();
+        //List of subjects that a teacher can teach
         List<string> Subjects = new List<string>() { "English", "Maths", "Sciences", "Languages", "I.T.", "D.T.", "Any" };
 
         public List<clsUser> Userlist
@@ -37,6 +38,8 @@ namespace ClassLibrary
 
         public clsUserCollection()
         {
+            //Runs when instance of class is created
+            //Populates list with all users
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblUser_SelectAll");
             PopulateList(DB);
@@ -44,6 +47,7 @@ namespace ClassLibrary
 
         void PopulateList(clsDataConnection DB)
         {
+            //Populates list with whatever table is given to it
             Int32 Index = 0;
             Int32 RecordCount;
             RecordCount = DB.Count;
@@ -125,6 +129,7 @@ namespace ClassLibrary
 
         public void FilterByEMail(string EMail)
         {
+            //Filters user list by provided EMail
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@EMail", EMail);
             DB.Execute("sproc_tblUser_FilterByEMail");
@@ -133,6 +138,7 @@ namespace ClassLibrary
    
         public void FilterByName(string Name)
         {
+            //Filters user list by provided name
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@Name", Name);
             DB.Execute("sproc_tblUser_FilterByName");
@@ -176,6 +182,10 @@ namespace ClassLibrary
 
         public string GetHashPassword(string ToHash)
         {
+            //Generates a SHA512 hash of a given password
+            //SHA512 is used here because it is the best hashing algorithm the System.Security.Cryptography provides
+            //In real world use, a better hashing algorithm would be used, like SHA3
+
             if (ToHash != "")
             {
                 SHA512Managed HashGen = new SHA512Managed();

@@ -34,6 +34,7 @@ namespace ClassLibrary
 
         void PopulateList(clsDataConnection DB)
         {
+            //Populates the mTimetableList by looping through rows in the provided table
             Int32 Index = 0;
             Int32 RecordCount;
             RecordCount = DB.Count;
@@ -58,6 +59,7 @@ namespace ClassLibrary
         }
         public void GenerateTimetable(Int32 UserID)
         {
+            //Generates rows in tblTimetable for when a new user is made
             Int32 IndexDay = 1;
             Int32 IndexWeek = 1;
             while (IndexWeek <= 5)
@@ -77,12 +79,14 @@ namespace ClassLibrary
         }
         public void DeleteTimetable(Int32 UserID)
         {
+            //Deletes the generated rows in tblTimetable for when a user is deleted
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@UserID", UserID);
             DB.Execute("sproc_tblTimetable_DeleteTimetable");
         }
         public void FilterByWeekNo(Int32 UserID, Int32 WeekNo)
         {
+            //Gets a week's worth of timetable rows for the provided user and provided week
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@UserID", UserID);
             DB.AddParameter("@WeekNo", WeekNo);
@@ -92,6 +96,7 @@ namespace ClassLibrary
 
         public clsTimetable FilterByUserDayWeek(Int32 UserID, Int32 DayNo, Int32 WeekNo)
         {
+            //Gets a day's worth of timetable rows for the provided user and provided week and provided day
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@UserID", UserID);
             DB.AddParameter("@DayNo", DayNo);
@@ -114,6 +119,8 @@ namespace ClassLibrary
 
         public List<Int32> CheckRoomBooked(Int32 Period, Int32 DayNo, Int32 WeekNo)
         {
+            //Gets a day's worth of timetables from all users
+            //This is used to check if a room is already booked in a specific period
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@DayNo", DayNo);
             DB.AddParameter("@WeekNo", WeekNo);
@@ -138,7 +145,7 @@ namespace ClassLibrary
 
         public int EditDay(clsTimetable Timetable)
         {
-            //Function to edit an existing record in tblUser with new details
+            //Function to edit an existing record/day in tblTimetable with new details
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@Id", Timetable.ID);
             DB.AddParameter("@P1", Timetable.P1);
@@ -147,15 +154,6 @@ namespace ClassLibrary
             DB.AddParameter("@P4", Timetable.P4);
             DB.AddParameter("@P5", Timetable.P5);
             return DB.Execute("sproc_tblTimetable_ChangeRoomBooking");
-        }
-
-        public void FilterByID()
-        {
-            //Finish!!!
-        }
-        public void FilterByRoomBooked()
-        {
-            //Finish!!!
         }
     }
 }

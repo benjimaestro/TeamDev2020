@@ -35,11 +35,13 @@ namespace ClassLibrary
         }
         public string RoomName
         {
+            //Returns full room name as Block.RoomNumber
             get { return $"{mBlock.ToUpper()}.{mNumber.ToString()}"; }
         }
 
         public bool Find(int ID)
         {
+            //Used for testing
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("Id", ID);
             DB.Execute("sproc_tblRoom_FilterByID");
@@ -56,6 +58,7 @@ namespace ClassLibrary
         }
         public string Validate(string Block, string Number, string Subject)
         {
+            //Function to validate inputs before they are used - returns error as string
             Int32 IntNumber = 1;
             string Error = "";
             try

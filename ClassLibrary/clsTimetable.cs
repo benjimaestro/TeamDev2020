@@ -66,6 +66,7 @@ namespace ClassLibrary
 
         public string Validate(int UserID, int P1, int P2, int P3, int P4, int P5, int WeekNo, int DayNo)
         {
+            //Function to validate inputs before they are used - returns error as string
             string Error = "";
             clsUserCollection Users = new clsUserCollection();
             Users.Find(UserID);
