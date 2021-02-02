@@ -397,7 +397,24 @@ namespace Timetable_Testing
         }
 
         [TestMethod]
-        public void TestValidateMidWeekNo()
+        public void TestValidate0WeekNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 0;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "WeekNo must be 1-5 </br>";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate1WeekNo()
         {
             clsTimetable TestItem = new clsTimetable();
             TestItem.UserID = 105;
@@ -411,7 +428,211 @@ namespace Timetable_Testing
 
             string ExpectedError = "";
             string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
-            Assert.AreEqual(true, false);/////////////FIXXXXXX
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate2WeekNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 2;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate4WeekNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 4;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate5WeekNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 5;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate6WeekNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 6;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "WeekNo must be 1-5 </br>";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidateExtremeWeekNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 999999;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "WeekNo must be 1-5 </br>";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate0DayNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 1;
+            TestItem.DayNo = 0;
+
+            string ExpectedError = "DayNo must be 1-5 </br>";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate1DayNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 1;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate2DayNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 1;
+            TestItem.DayNo = 2;
+
+            string ExpectedError = "";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate4DayNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 1;
+            TestItem.DayNo = 4;
+
+            string ExpectedError = "";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate5DayNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 1;
+            TestItem.DayNo = 5;
+
+            string ExpectedError = "";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidate6DayNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 1;
+            TestItem.DayNo = 6;
+
+            string ExpectedError = "DayNo must be 1-5 </br>";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
+        public void TestValidateExtremeDayNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = 1;
+            TestItem.DayNo = 999999;
+
+            string ExpectedError = "DayNo must be 1-5 </br>";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
         }
     }
 }

@@ -87,7 +87,7 @@ namespace ClassLibrary
             if (Rooms.ThisRoom.ID == 0) { Error = Error + "P5 ID does not exist </br>"; }
             
             if (WeekNo < 1 || WeekNo > 5) { Error = Error + "WeekNo must be 1-5 </br>"; }
-            if (DayNo < 1 || DayNo > 5) { Error = Error + "WeekNo must be 1-5 </br>"; }
+            if (DayNo < 1 || DayNo > 5) { Error = Error + "DayNo must be 1-5 </br>"; }
             return Error;
         }
     }
