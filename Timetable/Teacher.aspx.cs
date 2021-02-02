@@ -146,7 +146,8 @@ namespace Timetable
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ManageTeachers.aspx");
+            if (Mode != "Admin") { Response.Redirect("TeacherDefault.aspx"); }
+            else { Response.Redirect("ManageTeachers.aspx"); }
         }
     }
 }

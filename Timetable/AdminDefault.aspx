@@ -5,6 +5,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            z-index: 1;
+            left: 10px;
+            top: 90px;
+            position: absolute;
+            width: 248px;
+        }
+        .auto-style2 {
+            z-index: 1;
+            left: 10px;
+            top: 120px;
+            position: absolute;
+            width: 120px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,16 +28,13 @@
         <br/>
         <br/>
         <br/>
-        <a href="Contact.aspx">
-            <asp:Label ID="lblContact" runat="server" style="z-index: 1; left: 10px; top: 100px; position: absolute; width: 120px" Text='Contact messages' Font-Underline="True" />
-        </a>
         <br/>
         <a href="ManageTeachers.aspx">
-            <asp:Label ID="lblTeacherAccounts" runat="server" style="z-index: 1; left: 10px; top: 150px; position: absolute; width: 160px" Text='Manage teacher accounts' Font-Underline="True" />
+            <asp:Label ID="lblTeacherAccounts" runat="server" Text='Manage teacher accounts' Font-Underline="True" CssClass="auto-style1" />
         </a>
         <br/>
         <a href="ManageRooms.aspx">
-            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 200px; position: absolute; width: 120px" Text='Manage rooms' Font-Underline="True" />
+            <asp:Label ID="Label1" runat="server" Text='Manage rooms' Font-Underline="True" CssClass="auto-style2" />
         </a>
     </form>
 </body>

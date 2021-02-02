@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class clsMessageCollection
+    public class clsMessageCollection
     {
         List<clsMessage> mMessageList = new List<clsMessage>();
         clsMessage mThisMessage = new clsMessage();
@@ -30,28 +30,52 @@ namespace ClassLibrary
 
         public clsMessageCollection()
         {
-            //FINISH MEEEEEE
         }
 
         void PopulateList(clsDataConnection DB)
         {
-            //FINISH MEEEEEEEEEEEEEE
+            //Populates the mMessageList list by looping through rows in tblMessage
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mMessageList = new List<clsMessage>();
+            while (Index < RecordCount)
+            {
+                clsMessage Message = new clsMessage();
+                Message.ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Id"]);
+                Message.UserID = Convert.ToInt32(DB.DataTable.Rows[Index]["UserID"]);
+                Message.ToAdmin = Convert.ToBoolean(DB.DataTable.Rows[Index]["ToAdmin"]);
+                Message.Content = Convert.ToString(DB.DataTable.Rows[Index]["Content"]);
+                Message.Timestamp = Convert.ToString(DB.DataTable.Rows[Index]["Timestamp"]);
+
+                mMessageList.Add(Message);
+
+                Index++;
+            }
+        }
+
+        public void FilterByUserID(Int32 UserID)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("UserID", UserID);
+            DB.Execute("sproc_tblMessage_FilterMessageByID");
+            PopulateList(DB);
         }
 
         public int Add()
         {
-            //Finish MEEEEEEEEE
-            return 0;
+            //Function to add new record to tblRoom
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@UserID", mThisMessage.UserID);
+            DB.AddParameter("@ToAdmin", mThisMessage.ToAdmin);
+            DB.AddParameter("@Content", mThisMessage.Content);
+            DB.AddParameter("@Timestamp", mThisMessage.Timestamp);
+            return DB.Execute("sproc_tblMessage_AddMessage");
         }
 
         public void Delete()
         {
             //Me too!
-        }
-
-        public void FilterByUserID()
-        {
-            //Finish!!!
         }
     }
 }

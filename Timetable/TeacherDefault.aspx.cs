@@ -29,6 +29,8 @@ namespace Timetable
 
         protected void btnContact_Click(object sender, EventArgs e)
         {
+            Session["Mode"] = "Teacher";
+            Session["UserID"] = UserID;
             Response.Redirect("Contact.aspx");
         }
 

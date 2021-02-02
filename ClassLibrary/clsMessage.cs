@@ -6,60 +6,48 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class clsMessage
+    public class clsMessage
     {
         private Int32 mID;
-        private Int32 mFromID;
-        private Int32 mToID;
+        private Int32 mUserID;
+        private bool mToAdmin;
         private string mContent;
-        private DateTime mTimestamp;
+        private string mTimestamp;
 
         public int ID
         {
             get { return mID; }
             set { mID = value; }
         }
-        public int FromID
+        public int UserID
         {
-            get { return mFromID; }
-            set { mFromID = value; }
+            get { return mUserID; }
+            set { mUserID = value; }
         }
-        public int ToID
+        public bool ToAdmin
         {
-            get { return mToID; }
-            set { mToID = value; }
+            get { return mToAdmin; }
+            set { mToAdmin = value; }
         }
         public string Content
         {
             get { return mContent; }
             set { mContent = value; }
         }
-        public DateTime Timestamp
+        public string Timestamp
         {
             get { return mTimestamp; }
             set { mTimestamp = value; }
         }
-        public bool Find(int ID)
-        {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("Id", ID);
-            DB.Execute("sproc_tblUser_FilterByID");
 
-            if (DB.Count == 1)
-            {
-                mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
-                mFromID = Convert.ToInt32(DB.DataTable.Rows[0]["FromID"]);
-                mToID = Convert.ToInt32(DB.DataTable.Rows[0]["ToID"]);
-                mContent = Convert.ToString(DB.DataTable.Rows[0]["Content"]);
-                mTimestamp = Convert.ToDateTime(DB.DataTable.Rows[0]["Timestamp"]);
-                return true;
-            }
-            else { return false; }
-        }
-        public string Validate(int ID, int FromID, int ToID, int Content, DateTime Timestamp)
+        public string Validate(int UserID, bool ToAdmin, string Content, string Timestamp)
         {
-            //Finish me also!!!!!!!
             string Error = "";
+            clsUserCollection Users = new clsUserCollection();
+            Users.Find(UserID);
+            if (Users.ThisUser.ID == 0) { Error = Error + "User ID does not exist </br>"; }
+            if (Content.Length < 1 || Content.Length > 512) { Error = Error + "Message must be 1-512 characters long </br>"; }
+            if (Timestamp.Length < 1 || Timestamp.Length > 20) { Error = Error + "Timestamp must be 1-20 characters long </br>"; }
             return Error;
         }
     }
