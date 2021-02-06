@@ -64,6 +64,17 @@ namespace ClassLibrary
             set { mDayNo = value; }
         }
 
+        public bool FindByWeekNo(Int32 UserID, Int32 WeekNo)
+        {
+            //Used for testing only, gets a users timetable and checks to see if it is returned properly
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@UserID", UserID);
+            DB.AddParameter("@WeekNo", WeekNo);
+            DB.Execute("sproc_tblTimetable_FilterByWeekNo");
+            if (DB.Count == 5) { return true; }
+            else { return false; }
+        }
+
         public string Validate(int UserID, int P1, int P2, int P3, int P4, int P5, int WeekNo, int DayNo)
         {
             //Function to validate inputs before they are used - returns error as string

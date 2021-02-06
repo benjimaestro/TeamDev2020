@@ -17,7 +17,7 @@ namespace Timetable_Testing
         }
 
         [TestMethod]
-        public void CustomerListOK()
+        public void RoomListOK()
         {
             clsRoomCollection Rooms = new clsRoomCollection();
             List<clsRoom> TestList = new List<clsRoom>();

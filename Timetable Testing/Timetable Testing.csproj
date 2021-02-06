@@ -49,8 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="tstTimetableCollection.cs" />
     <Compile Include="tstTimetable.cs" />
     <Compile Include="tstRoom.cs" />
+    <Compile Include="tstMessage.cs" />
     <Compile Include="tstUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstRoomCollection.cs" />
