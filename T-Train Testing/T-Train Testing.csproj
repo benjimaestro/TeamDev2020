@@ -53,6 +53,7 @@
     <Compile Include="tstClsCustomer.cs" />
     <Compile Include="tstClsCustomerCollection.cs" />
     <Compile Include="tstClsTicketType.cs" />
+    <Compile Include="tstClsTicketTypeCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
