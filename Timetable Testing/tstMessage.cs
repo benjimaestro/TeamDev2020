@@ -21,13 +21,8 @@ namespace Timetable_Testing
         {
             clsMessage Message = new clsMessage();
             Boolean Found = false;
-            Boolean OK = true;
             Int32 MessageID = 1;
             Found = Message.Find(MessageID);
-            if (Message.ID != 105)
-            {
-                OK = false;
-            }
             Assert.IsTrue(Found);
         }
         [TestMethod]
