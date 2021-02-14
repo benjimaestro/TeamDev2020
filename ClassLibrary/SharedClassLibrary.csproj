@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsConnection.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsMessage.cs" />
     <Compile Include="clsMessageCollection.cs" />
