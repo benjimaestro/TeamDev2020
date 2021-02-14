@@ -5,10 +5,9 @@ using System;
 namespace TTrainConnection
 {
     [TestClass]
-    public class tstClsCustomer
+    public class tstClsConnection
     {
 
-        bool connectionActive = true;
         string connectionStartStation = "Leicester";
         string connectionEndStation = "Birmingham";
         DateTime connectionDate = new DateTime(2021, 7, 17, 16, 30, 0);

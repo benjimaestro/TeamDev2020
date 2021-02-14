@@ -42,8 +42,8 @@ namespace TTrainCustomer
             //test to see that the two values are the same
             Assert.AreEqual(ACustomerCollection.MyCustomers, testList);
         }
-        [TestMethod]
 
+        [TestMethod]
         public void ThisCustomerPropertyExists()
         {
             //create an instance of the class we want to create
