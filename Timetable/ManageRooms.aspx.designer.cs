@@ -78,6 +78,24 @@ namespace Timetable
         protected global::System.Web.UI.WebControls.Button btnDelete;
 
         /// <summary>
+        /// ddlSubjectSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubjectSearch;
+
+        /// <summary>
+        /// btnBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBack;
+
+        /// <summary>
         /// lblError control.
         /// </summary>
         /// <remarks>
@@ -87,12 +105,12 @@ namespace Timetable
         protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// ddlSubjectSearch control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSubjectSearch;
+        protected global::System.Web.UI.WebControls.Label Label2;
     }
 }

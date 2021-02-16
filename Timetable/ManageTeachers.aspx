@@ -89,6 +89,22 @@
             color: black;
             background-color: black;
         }
+        .auto-style13 {
+            width: 467px;
+            height: 1px;
+            position: absolute;
+            top: 453px;
+            left: 10px;
+            z-index: 1;
+            color: black;
+            background-color: black;
+        }
+        .auto-style14 {
+            position: absolute;
+            top: 475px;
+            left: 10px;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -107,7 +123,9 @@
         <asp:Button ID="btnTimetable" runat="server" CssClass="auto-style5" OnClick="btnTimetable_Click" Text="Manage Timetable" />
         <asp:Button ID="btnMessages" runat="server" CssClass="auto-style7" Text="View Messages" OnClick="btnMessages_Click" />
         <asp:Label ID="Label2" runat="server" CssClass="auto-style11" Text="Manage Selected User"></asp:Label>
-    </form>
     <hr class="auto-style12" />
-</body>
+    <hr class="auto-style13" />
+        <asp:Button ID="btnBack" runat="server" CssClass="auto-style14" OnClick="btnBack_Click" Text="Back" />
+    </form>
+    </body>
 </html>

@@ -27,7 +27,6 @@ namespace Timetable
                 ddlSubjectSearch.Items.Add(subject);
             }
             ddlSubjectSearch.SelectedValue = "Any";
-
             lstRooms.Items.Clear();
             lstRooms.DataSource = Rooms.Roomlist;
             lstRooms.DataValueField = "Id";
@@ -78,6 +77,11 @@ namespace Timetable
             lstRooms.DataValueField = "Id";
             lstRooms.DataTextField = "RoomName";
             lstRooms.DataBind();
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminDefault.aspx");
         }
     }
 }

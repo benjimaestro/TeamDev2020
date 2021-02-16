@@ -82,9 +82,19 @@
             }
             .auto-style10 {
                 position: absolute;
-                top: 500px;
+                top: 519px;
                 left: 10px;
                 z-index: 1;
+            }
+            .auto-style11 {
+                width: 1160px;
+                height: 1px;
+                position: absolute;
+                top: 494px;
+                left: 10px;
+                z-index: 1;
+                background-color: black;
+                color: black;
             }
             </style>
         <table class="tg">
@@ -180,6 +190,7 @@
           </tr>
         </tbody>
         </table>
+        <hr class="auto-style11" />
         <asp:Button ID="btnBack" runat="server" CssClass="auto-style10" OnClick="btnBack_Click" Text="Back" />
     </form>
 </body>

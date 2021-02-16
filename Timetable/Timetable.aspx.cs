@@ -114,6 +114,7 @@ namespace Timetable
 
             Int32 Index = 0;
             ddlRooms.Items.Clear();
+            ddlRooms.Items.Add("Select a room...");
             while (Index < Rooms.Roomlist.Count)
             {
                 ddlRooms.Items.Add(Rooms.Roomlist[Index].RoomName);
@@ -129,23 +130,26 @@ namespace Timetable
 
         protected void ddlRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            clsRoomCollection Rooms = new clsRoomCollection();
-            string Block= ddlRooms.SelectedValue.Substring(0, 1);
-            Int32 Number = Convert.ToInt32(ddlRooms.SelectedValue.Substring(2, 1));
-            Rooms.FindExistingRoom(Block,Number);
+            if (ddlRooms.SelectedValue != "Select a room...")
+            {
+                clsRoomCollection Rooms = new clsRoomCollection();
+                string Block = ddlRooms.SelectedValue.Substring(0, 1);
+                Int32 Number = Convert.ToInt32(ddlRooms.SelectedValue.Substring(2, 1));
+                Rooms.FindExistingRoom(Block, Number);
 
-            SelectedDayNo = Convert.ToInt32(Session["DayNo"]);
-            SelectedPNo = Convert.ToInt32(Session["Period"]);
+                SelectedDayNo = Convert.ToInt32(Session["DayNo"]);
+                SelectedPNo = Convert.ToInt32(Session["Period"]);
 
-            clsTimetableCollection Timetables = new clsTimetableCollection();
-            clsTimetable Timetable = Timetables.FilterByUserDayWeek(UserID, SelectedDayNo, WeekNo);
-            if (SelectedPNo == 1) { Timetable.P1 = Rooms.ThisRoom.ID; }
-            if (SelectedPNo == 2) { Timetable.P2 = Rooms.ThisRoom.ID; }
-            if (SelectedPNo == 3) { Timetable.P3 = Rooms.ThisRoom.ID; }
-            if (SelectedPNo == 4) { Timetable.P4 = Rooms.ThisRoom.ID; }
-            if (SelectedPNo == 5) { Timetable.P5 = Rooms.ThisRoom.ID; }
-            Timetables.EditDay(Timetable);
-            Response.Redirect("Timetable.aspx");
+                clsTimetableCollection Timetables = new clsTimetableCollection();
+                clsTimetable Timetable = Timetables.FilterByUserDayWeek(UserID, SelectedDayNo, WeekNo);
+                if (SelectedPNo == 1) { Timetable.P1 = Rooms.ThisRoom.ID; }
+                if (SelectedPNo == 2) { Timetable.P2 = Rooms.ThisRoom.ID; }
+                if (SelectedPNo == 3) { Timetable.P3 = Rooms.ThisRoom.ID; }
+                if (SelectedPNo == 4) { Timetable.P4 = Rooms.ThisRoom.ID; }
+                if (SelectedPNo == 5) { Timetable.P5 = Rooms.ThisRoom.ID; }
+                Timetables.EditDay(Timetable);
+                Response.Redirect("Timetable.aspx");
+            }
         }
 
         protected void btnUnbook_Click(object sender, EventArgs e)
