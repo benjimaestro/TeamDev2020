@@ -145,7 +145,6 @@ namespace TTrainConnection
         }
 
         [TestMethod]
-
         public void UpdateMethodOK()
         {
             //create an instance of the class we want to create
