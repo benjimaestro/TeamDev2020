@@ -36,7 +36,7 @@
                 top: 97px;
                 left: 698px;
                 z-index: 1;
-                width: 251px;
+                width: 394px;
             }
             .auto-style4 {
                 position: absolute;

@@ -96,7 +96,21 @@ namespace Timetable
 
         protected void TimetableButton_Click(object sender, EventArgs e)
         {
+            Int32 IndexDay = 0;
+            Int32 IndexPeriod = 0;
+            while (IndexDay < 5)
+            {
+                IndexPeriod = 0;
+                while (IndexPeriod < 5)
+                {
+                    ButtonList[IndexDay][IndexPeriod].BorderColor = System.Drawing.Color.Empty;
+                    IndexPeriod++;
+                }
+                IndexDay++;
+            }
+
             Button Button = (Button)sender;
+            Button.BorderColor = System.Drawing.Color.Red;
             SelectedDayNo = Convert.ToInt32(Button.ID.Substring(3, 1));
             SelectedPNo = Convert.ToInt32(Button.ID.Substring(5, 1));
 
