@@ -57,7 +57,7 @@ namespace ClassLibrary
         }
         public bool Find(int ID)
         {
-            //Used for testing purposes
+            //Used for testing purposes only for testing database connection and lookups
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("Id", ID);
             DB.Execute("sproc_tblUser_FilterByID");

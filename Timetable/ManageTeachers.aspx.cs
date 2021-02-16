@@ -20,6 +20,7 @@ namespace Timetable
 
         void DisplayUsers()
         {
+            //Function to populate lstTeachers with user accounts
             clsUserCollection Users = new clsUserCollection();
             lstTeachers.Items.Clear();
             lstTeachers.DataSource = Users.Userlist;
@@ -30,6 +31,10 @@ namespace Timetable
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            //Run when btnAdd is clicked
+            //Redirects to Teacher page but sets the UserID session object to
+            //-1 to indicate that a new User is being added, rather than editing
+            //an existing User
             Session["UserID"] = -1;
             Session["Mode"] = "Admin";
             Response.Redirect("Teacher.aspx");
@@ -37,6 +42,11 @@ namespace Timetable
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
+            //Run when btnEdit is clicked
+            //Redirects to Teacher page but sets the UserID session object to
+            //the ID of the selected User to indicate that an existing User is being edited, rather than adding
+            //a new User
+            //If no User is selected, show an error
             Int32 UserID;
             if (lstTeachers.SelectedIndex != -1)
             {
@@ -50,6 +60,10 @@ namespace Timetable
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
+            //Run when btnDelete is clicked
+            //Redirects to DeleteTeacher page but sets the UserID session object to
+            //the ID of the selected user to indicate which user needs to be deleted
+            //If no user is selected, show an error
             Int32 UserID;
             if (lstTeachers.SelectedIndex != -1)
             {
@@ -63,6 +77,7 @@ namespace Timetable
 
         protected void btnSearchNames_Click(object sender, EventArgs e)
         {
+            //Populates lstTeachers with a list of names filtered by name
             clsUserCollection Users = new clsUserCollection();
             Users.FilterByName(txtFilter.Text);
             lstTeachers.Items.Clear();
@@ -74,6 +89,7 @@ namespace Timetable
 
         protected void btnSearchEMails_Click(object sender, EventArgs e)
         {
+            //Populates lstTeachers with a list of names filtered by email
             clsUserCollection Users = new clsUserCollection();
             Users.FilterByEMail(txtFilter.Text);
             lstTeachers.Items.Clear();
@@ -85,11 +101,14 @@ namespace Timetable
 
         protected void btnClearFilter_Click(object sender, EventArgs e)
         {
+            //Populates lstTeachers with a list of names, unfiltered
             DisplayUsers();
         }
 
         protected void btnTimetable_Click(object sender, EventArgs e)
         {
+            //Redirects to the timetable page for the selected user
+            //Shows error if none selected
             Int32 UserID;
             if (lstTeachers.SelectedIndex != -1)
             {
@@ -104,6 +123,8 @@ namespace Timetable
 
         protected void btnMessages_Click(object sender, EventArgs e)
         {
+            //Redirects to the messages page for the selected user
+            //Shows error if none selected
             Int32 UserID;
             if (lstTeachers.SelectedIndex != -1)
             {
@@ -118,6 +139,7 @@ namespace Timetable
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
+            //Returns user to AdminDefault page
             Response.Redirect("AdminDefault.aspx");
         }
     }

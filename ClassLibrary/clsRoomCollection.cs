@@ -44,6 +44,7 @@ namespace ClassLibrary
 
         public clsRoomCollection()
         {
+            //Runs on class initialisation, populates list with all rooms
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblRoom_SelectAll");
             PopulateList(DB);
