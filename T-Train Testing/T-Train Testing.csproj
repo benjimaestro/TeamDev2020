@@ -57,6 +57,7 @@
     <Compile Include="tstClsConnection.cs" />
     <Compile Include="tstClsConnectionCollection.cs" />
     <Compile Include="tstClsPayment.cs" />
+    <Compile Include="tstClsPaymentCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

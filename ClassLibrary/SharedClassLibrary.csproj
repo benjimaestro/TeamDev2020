@@ -47,6 +47,7 @@
     <Compile Include="clsMessage.cs" />
     <Compile Include="clsMessageCollection.cs" />
     <Compile Include="clsPayment.cs" />
+    <Compile Include="clsPaymentCollection.cs" />
     <Compile Include="clsRoom.cs" />
     <Compile Include="clsRoomCollection.cs" />
     <Compile Include="clsTimetable.cs" />
