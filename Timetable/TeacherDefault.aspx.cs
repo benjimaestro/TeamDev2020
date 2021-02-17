@@ -13,14 +13,17 @@ namespace Timetable
         Int32 UserID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Sets UserID to the UserID session object, passed from the login oage
             UserID = Convert.ToInt32(Session["UserID"]);
             clsUserCollection Users = new clsUserCollection();
             Users.Find(UserID);
+            //Greet user with name retrieved with the ID
             lblTitle.Text = $"Hello, {Users.ThisUser.FirstName} {Users.ThisUser.SecondName}";
         }
 
         protected void btnViewTimetable_Click(object sender, EventArgs e)
         {
+            //Redirect user to their Timetable
             Session["WeekNo"] = 1;
             Session["Mode"] = "Teacher";
             Session["UserID"] = UserID;
@@ -29,6 +32,7 @@ namespace Timetable
 
         protected void btnContact_Click(object sender, EventArgs e)
         {
+            //Redirect user to their Contact messages
             Session["Mode"] = "Teacher";
             Session["UserID"] = UserID;
             Response.Redirect("Contact.aspx");
@@ -36,6 +40,7 @@ namespace Timetable
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
+            //Redirect user to change their password
             Session["Mode"] = "Teacher";
             Session["UserID"] = UserID;
             Response.Redirect("Teacher.aspx");
