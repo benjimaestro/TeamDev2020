@@ -63,6 +63,14 @@ namespace ClassLibrary
             PopulateList(DB);
         }
 
+        public void Delete(Int32 Id)
+        {
+            //Function to delete record from tblMessage based on UserID
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@UserID", Id);
+            DB.Execute("sproc_tblMessage_DeleteUserMessages");
+        }
+
         public int Add()
         {
             //Function to add new record to tblMessage

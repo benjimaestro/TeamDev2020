@@ -34,10 +34,12 @@ namespace Timetable
             //Run when btnYes is clicked, deletes teacher and their timetable if Mode is admin
             clsUserCollection UserList = new clsUserCollection();
             clsTimetableCollection Timetables = new clsTimetableCollection();
+            clsMessageCollection Messages = new clsMessageCollection();
             if (Convert.ToString(Session["Mode"]) == "Admin")
             {
                 UserList.Delete(UserID);
                 Timetables.DeleteTimetable(UserID);
+                Messages.Delete(UserID);
                 Response.Redirect("ManageTeachers.aspx");
             }
             else { Response.Redirect("Default.aspx"); }
