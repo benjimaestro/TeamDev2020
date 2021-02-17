@@ -41,11 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsCustomer.cs" />
-    <Compile Include="clsCustomerCollection.cs" />
-    <Compile Include="clsDataConnection.cs" />
-    <Compile Include="clsTicketType.cs" />
-    <Compile Include="clsTicketTypeCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
