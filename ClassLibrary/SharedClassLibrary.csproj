@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="clsConnection.cs" />
     <Compile Include="clsConnectionCollection.cs" />
+    <Compile Include="clsCustomer.cs" />
+    <Compile Include="clsCustomerCollection.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsMessage.cs" />
     <Compile Include="clsMessageCollection.cs" />
@@ -51,6 +53,9 @@
     <Compile Include="clsRoom.cs" />
     <Compile Include="clsRoomCollection.cs" />
     <Compile Include="clsTicket.cs" />
+    <Compile Include="clsTicketCollection.cs" />
+    <Compile Include="clsTicketType.cs" />
+    <Compile Include="clsTicketTypeCollection.cs" />
     <Compile Include="clsTimetable.cs" />
     <Compile Include="clsTimetableCollection.cs" />
     <Compile Include="clsUser.cs" />

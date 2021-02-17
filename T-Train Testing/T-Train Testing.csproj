@@ -59,6 +59,7 @@
     <Compile Include="tstClsPayment.cs" />
     <Compile Include="tstClsPaymentCollection.cs" />
     <Compile Include="tstClsTicket.cs" />
+    <Compile Include="tstClsTicketCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -67,10 +68,6 @@
     <ProjectReference Include="..\ClassLibrary\SharedClassLibrary.csproj">
       <Project>{B6CC2867-08AE-43B2-9095-AC82A1C2D864}</Project>
       <Name>SharedClassLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\T-Train Classes\T-Train Classes.csproj">
-      <Project>{FE907FD1-F32C-4EE1-9D46-71C1F5741191}</Project>
-      <Name>T-Train Classes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
