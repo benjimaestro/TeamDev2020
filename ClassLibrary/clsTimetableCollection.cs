@@ -155,5 +155,13 @@ namespace ClassLibrary
             DB.AddParameter("@P5", Timetable.P5);
             return DB.Execute("sproc_tblTimetable_ChangeRoomBooking");
         }
+
+        public int DeleteRoomFromTimetable(int RoomID)
+        {
+            //Function to delete references to a deleted room from all timetables
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@RoomID", RoomID);
+            return DB.Execute("sproc_tblTimetable_UpdateAll");
+        }
     }
 }

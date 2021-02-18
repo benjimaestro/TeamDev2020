@@ -33,9 +33,11 @@ namespace Timetable
         {
             //Run when btnYes is clicked, deletes room if Mode is admin
             clsRoomCollection RoomList = new clsRoomCollection();
+            clsTimetableCollection Timetables = new clsTimetableCollection();
             if (Convert.ToString(Session["Mode"]) == "Admin") 
             { 
                 RoomList.Delete(RoomID);
+                Timetables.DeleteRoomFromTimetable(RoomID);
                 Response.Redirect("ManageRooms.aspx");
             }
             else { Response.Redirect("Default.aspx"); }

@@ -173,7 +173,7 @@ namespace Timetable
                 //Get selected room number and block
                 clsRoomCollection Rooms = new clsRoomCollection();
                 string Block = ddlRooms.SelectedValue.Substring(0, 1);
-                Int32 Number = Convert.ToInt32(ddlRooms.SelectedValue.Substring(2, 1));
+                Int32 Number = Convert.ToInt32(ddlRooms.SelectedValue.Substring(2, ddlRooms.SelectedValue.Length-2));
 
                 //Finds room from block and number
                 Rooms.FindExistingRoom(Block, Number);
