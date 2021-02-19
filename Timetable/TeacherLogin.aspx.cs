@@ -13,6 +13,7 @@ namespace Timetable
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["UserID"] = -1;
+            Session["LoggedInID"] = -1;
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace Timetable
                 //and redirect to AdminDefault
                 //Otherwise, set Mode to teacher and redirect to TeacherDefault
                 Session["UserID"] = ID;
+                Session["LoggedInID"] = ID;
                 if (Users.ThisUser.Admin == true)
                 {
                     Session["Mode"] = "Admin";

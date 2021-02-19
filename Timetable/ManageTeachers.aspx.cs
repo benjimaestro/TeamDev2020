@@ -19,7 +19,7 @@ namespace Timetable
                 DisplayUsers(); 
             }
             UserID = Convert.ToInt32(Session["UserID"]);
-            LoggedInID = Convert.ToInt32(Session["UserID"]);
+            LoggedInID = Convert.ToInt32(Session["LoggedInID"]);
         }
 
         void DisplayUsers()
@@ -53,7 +53,6 @@ namespace Timetable
             //If no User is selected, show an error
             if (lstTeachers.SelectedIndex != -1)
             {
-                Session["LoggedInID"] = LoggedInID;
                 UserID = Convert.ToInt32(lstTeachers.SelectedValue);
                 Session["UserID"] = UserID;
                 Session["Mode"] = "Admin";
@@ -69,7 +68,7 @@ namespace Timetable
             //the ID of the selected user to indicate which user needs to be deleted
             //If no user is selected, show an error
             //User cannot delete their own account either
-            if (Convert.ToInt32(lstTeachers.SelectedValue) == UserID) { lblError.Text = "You cannot delete your own account"; }
+            if (Convert.ToInt32(lstTeachers.SelectedValue) == LoggedInID) { lblError.Text = "You cannot delete your own account"; }
             else
             {
                 if (lstTeachers.SelectedIndex != -1)
