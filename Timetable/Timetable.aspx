@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Timetable</title>
+    <link href="css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -65,7 +66,7 @@
                 top: 14px;
                 position: absolute;
                 height: 42px;
-                width: 310px;
+                width: 868px;
             }
             .auto-style8 {
                 position: absolute;

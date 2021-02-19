@@ -53,7 +53,7 @@ namespace ClassLibrary
         }
         public string FullNameEmail
         {
-            get { return $"{mSecondName.ToUpper()} {mFirstName} ({mEMail})"; }
+            get { return $"{mFirstName} {mSecondName} ({mEMail})"; }
         }
         public bool Find(int ID)
         {

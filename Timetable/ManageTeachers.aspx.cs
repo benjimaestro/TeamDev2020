@@ -10,12 +10,14 @@ namespace Timetable
 {
     public partial class ManageTeachers : System.Web.UI.Page
     {
+        Int32 UserID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
             { 
                 DisplayUsers(); 
             }
+            UserID = Convert.ToInt32(Session["UserID"]);
         }
 
         void DisplayUsers()
@@ -64,15 +66,19 @@ namespace Timetable
             //Redirects to DeleteTeacher page but sets the UserID session object to
             //the ID of the selected user to indicate which user needs to be deleted
             //If no user is selected, show an error
-            Int32 UserID;
-            if (lstTeachers.SelectedIndex != -1)
+            //User cannot delete their own account either
+            if (Convert.ToInt32(lstTeachers.SelectedValue) == UserID) { lblError.Text = "You cannot delete your own account"; }
+            else
             {
-                UserID = Convert.ToInt32(lstTeachers.SelectedValue);
-                Session["UserID"] = UserID;
-                Session["Mode"] = "Admin";
-                Response.Redirect("DeleteTeacher.aspx");
+                if (lstTeachers.SelectedIndex != -1)
+                {
+                    UserID = Convert.ToInt32(lstTeachers.SelectedValue);
+                    Session["UserID"] = UserID;
+                    Session["Mode"] = "Admin";
+                    Response.Redirect("DeleteTeacher.aspx");
+                }
+                else { lblError.Text = "You must select a user to modify"; }
             }
-            else { lblError.Text = "You must select a user to modify"; }
         }
 
         protected void btnSearchNames_Click(object sender, EventArgs e)
@@ -141,6 +147,14 @@ namespace Timetable
         {
             //Returns user to AdminDefault page
             Response.Redirect("AdminDefault.aspx");
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            //Button to change the admin status (promote or demote) for a user
+            //Cannot work on currently logged in user.
+            if (Convert.ToInt32(lstTeachers.SelectedValue) == UserID){ lblError.Text = "You cannot change your own admin status"; }
+            else { Response.Redirect("PromoteAdmin.aspx"); }
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Timetable
         Int32 UserID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Sets UserID to the UserID session object, passed from the login oage
+            //Sets UserID to the UserID session object, passed from the login page
             UserID = Convert.ToInt32(Session["UserID"]);
             clsUserCollection Users = new clsUserCollection();
             Users.Find(UserID);

@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Admin</title>
+    <link href="css.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .auto-style1 {
             z-index: 1;
@@ -20,11 +21,19 @@
             position: absolute;
             width: 120px;
         }
+        .auto-style3 {
+            z-index: 1;
+            left: 10px;
+            top: 34px;
+            position: absolute;
+            height: 42px;
+            width: 1152px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 10px; top: 34px; position: absolute; height: 42px; width: 312px" Text="Admin Page"></asp:Label>
+        <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" Text="Admin Page" CssClass="auto-style3"></asp:Label>
         <br/>
         <br/>
         <br/>

@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Timetable Login</title>
+    <link href="css.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .auto-style1 {
             z-index: 1;
@@ -26,8 +27,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
         <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" Text="Login" CssClass="auto-style1"></asp:Label>
         <br/>
         <br/>
@@ -36,7 +35,7 @@
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 156px; top: 120px; position: absolute; width: 256px" TextMode="Password"></asp:TextBox>
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 90px; position: absolute; width: 120px" Text="EMail:"></asp:Label>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 120px; position: absolute; width: 120px" Text="Password:"></asp:Label>
-        <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 156px; top: 150px; position: absolute; width: 256px;" Text="Log in" OnClick="btnLogin_Click" />
+        <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 156px; top: 150px; position: absolute; width: 266px;" Text="Log in" OnClick="btnLogin_Click" />
         <asp:Label ID="lblError" runat="server" CssClass="auto-style2"></asp:Label>
     </form>
 </body>

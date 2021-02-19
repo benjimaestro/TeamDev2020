@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Room</title>
+    <link href="css.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .auto-style1 {
             z-index: 1;

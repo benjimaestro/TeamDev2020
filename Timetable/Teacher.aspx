@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>User</title>
+    <link href="css.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
