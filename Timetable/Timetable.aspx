@@ -66,7 +66,7 @@
                 top: 14px;
                 position: absolute;
                 height: 42px;
-                width: 868px;
+                width: 1165px;
             }
             .auto-style8 {
                 position: absolute;
@@ -101,7 +101,7 @@
         <table class="tg">
         <thead>
           <tr>
-            <th class="tg-m9r4"></th>
+            <th class="tg-m9r4" style="width: 46px"></th>
             <th class="tg-m9r4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
             <th class="tg-m9r4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Break&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
             <th class="tg-m9r4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
@@ -113,8 +113,9 @@
         </thead>
         <tbody>
           <tr>
-            <td class="tg-m9r4">
+            <td class="tg-m9r4" style="width: 46px">
                 <br />
+                &nbsp;
                 Mon<br />
                 <br />
               </td>
@@ -135,9 +136,9 @@
               </td>
           </tr>
           <tr>
-            <td class="tg-m9r4">
+            <td class="tg-m9r4" style="width: 46px">
                 <br />
-                Tues<br />
+                &nbsp;Tues<br />
                 <br />
               </td>
             <td class="tg-0lax"> <asp:Button ID="btn2P1" runat="server" Text="Room A1" Height="68px" Width="78px" OnClick="TimetableButton_Click" /> </td>
@@ -150,8 +151,9 @@
               </td>
           </tr>
           <tr>
-            <td class="tg-m9r4">
+            <td class="tg-m9r4" style="width: 46px">
                 <br />
+                &nbsp;
                 Wed<br />
                 <br />
               </td>
@@ -164,9 +166,9 @@
             <td class="tg-0lax"> <asp:Button ID="btn3P5" runat="server" Text="Room A1" Height="68px" Width="78px" OnClick="TimetableButton_Click" /> </td>
           </tr>
           <tr>
-            <td class="tg-m9r4">
+            <td class="tg-m9r4" style="width: 46px">
                 <br />
-                Thurs<br />
+                &nbsp;Thurs<br />
                 <br />
               </td>
             <td class="tg-0lax"> <asp:Button ID="btn4P1" runat="server" Text="Room A1" Height="68px" Width="78px" OnClick="TimetableButton_Click" /> </td>
@@ -178,8 +180,9 @@
             <td class="tg-0lax"> <asp:Button ID="btn4P5" runat="server" Text="Room A1" Height="68px" Width="78px" OnClick="TimetableButton_Click" /> </td>
           </tr>
           <tr>
-            <td class="tg-m9r4">
+            <td class="tg-m9r4" style="width: 46px">
                 <br />
+                &nbsp;&nbsp;
                 Fri</td>
             <td class="tg-0lax"> <asp:Button ID="btn5P1" runat="server" Text="Room A1" Height="68px" Width="78px" OnClick="TimetableButton_Click" /> </td>
             <td class="tg-0lax"> &nbsp;</td>

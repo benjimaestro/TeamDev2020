@@ -40,7 +40,8 @@ namespace Timetable
             //Set title of page to indicate who's timetable it is
             clsUserCollection Users = new clsUserCollection();
             Users.Find(UserID);
-            lblTitle.Text = $"{Users.ThisUser.FirstName} {Users.ThisUser.SecondName}'s Timetable";
+            if (Users.ThisUser.Subject != "Any") { lblTitle.Text = $"{Users.ThisUser.FirstName} {Users.ThisUser.SecondName}'s Timetable ({Users.ThisUser.Subject} teacher)"; }
+            else { lblTitle.Text = $"{Users.ThisUser.FirstName} {Users.ThisUser.SecondName}'s Timetable (Any subject teacher)"; }
             DisplayTimetable(UserID, WeekNo);
 
             //Disables buttons if user has reached the end or beginning of timetable
