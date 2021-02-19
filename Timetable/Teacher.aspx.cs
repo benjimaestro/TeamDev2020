@@ -67,13 +67,13 @@ namespace Timetable
             PreUsers.FindExistingUser(txtEmail.Text);
             if (PreUsers.ThisUser.EMail != null)
             {
-                Error = Error + "User already exists with that EMail!</br>";
+                Error = Error + "User already exists with that EMail</br>";
             }
 
             //Password is checked for confirmatiom
             if (txtPassword.Text != txtPasswordConfirm.Text)
             {
-                Error = Error + "Passwords do not match!</br>";
+                Error = Error + "Passwords do not match</br>";
             }
 
             clsUserCollection Users = new clsUserCollection();
@@ -112,19 +112,19 @@ namespace Timetable
             //User is checked so see if the EMail being used already exists in the DB
             if (PreUsers.ThisUser != null && PreUsers.ThisUser.EMail == txtEmail.Text && PreUsers.ThisUser.ID != UserID)
             {
-                Error = Error + "User already exists with that EMail!</br>";
+                Error = Error + "User already exists with that EMail</br>";
             }
 
             //Check if password confirmation matches
             if (txtPassword.Text != txtPasswordConfirm.Text)
             {
-                Error = Error + "Passwords do not match!</br>";
+                Error = Error + "Passwords do not match</br>";
             }
 
             //Prevent currently logged in admin from demoting themself
             if (LoggedInUser == UserID && chkAdmin.Checked == false && Mode == "Admin")
             {
-                Error = Error + "You cannot demote yourself from admin!</br>";
+                Error = Error + "You cannot demote yourself from admin</br>";
             }
 
             Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
