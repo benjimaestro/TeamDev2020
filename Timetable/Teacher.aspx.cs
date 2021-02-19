@@ -11,6 +11,7 @@ namespace Timetable
     public partial class Teacher : System.Web.UI.Page
     {
         Int32 UserID;
+        Int32 LoggedInUser;
         string Mode;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,6 +25,7 @@ namespace Timetable
             //Get UserID and Mode session objects, if UserID is -1,
             //then a new User is being added, otherwise edit User of the provided ID.
             UserID = Convert.ToInt32(Session["UserID"]);
+            LoggedInUser = Convert.ToInt32(Session["LoggedInID"]);
             Mode = Convert.ToString(Session["Mode"]);
             if (UserID != -1)
             {
@@ -35,6 +37,7 @@ namespace Timetable
                     txtFirstName.Text = Convert.ToString(Users.ThisUser.FirstName);
                     txtLastName.Text = Convert.ToString(Users.ThisUser.SecondName);
                     ddlSubject.SelectedValue = Users.ThisUser.Subject;
+                    chkAdmin.Checked = Users.ThisUser.Admin;
                 }
                 if (Mode != "Admin")
                 {
@@ -78,6 +81,7 @@ namespace Timetable
                 Users.ThisUser.FirstName = txtFirstName.Text;
                 Users.ThisUser.SecondName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
+                Users.ThisUser.Admin = chkAdmin.Checked;
                 Int32 UserID = Users.Add();
                 Timetables.GenerateTimetable(UserID);
                 return Error;
@@ -99,7 +103,7 @@ namespace Timetable
             Users.FindExistingUser(txtEmail.Text);
 
             //User is checked so see if the EMail being used already exists in the DB
-            if (PreUsers.ThisUser != null && PreUsers.ThisUser.EMail != txtEmail.Text && PreUsers.ThisUser.ID != UserID)
+            if (PreUsers.ThisUser != null && PreUsers.ThisUser.EMail == txtEmail.Text && PreUsers.ThisUser.ID != UserID)
             {
                 Error = Error + "User already exists with that EMail!</br>";
             }
@@ -110,14 +114,22 @@ namespace Timetable
                 Error = Error + "Passwords do not match!</br>";
             }
 
+            //Prevent currently logged in admin from demoting themself
+            if (LoggedInUser == UserID && chkAdmin.Checked == false)
+            {
+                Error = Error + "You cannot demote yourself from admin!</br>";
+            }
+
             Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
+                Users.ThisUser.ID = UserID;
                 Users.ThisUser.EMail = txtEmail.Text;
                 Users.ThisUser.Password = Users.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
                 Users.ThisUser.SecondName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
+                Users.ThisUser.Admin = chkAdmin.Checked;
                 Users.Edit();
                 Session["UserID"] = Users.ThisUser.ID;
                 return Error;

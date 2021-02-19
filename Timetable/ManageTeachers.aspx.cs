@@ -11,6 +11,7 @@ namespace Timetable
     public partial class ManageTeachers : System.Web.UI.Page
     {
         Int32 UserID = 0;
+        Int32 LoggedInID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == false)
@@ -18,6 +19,7 @@ namespace Timetable
                 DisplayUsers(); 
             }
             UserID = Convert.ToInt32(Session["UserID"]);
+            LoggedInID = Convert.ToInt32(Session["UserID"]);
         }
 
         void DisplayUsers()
@@ -49,9 +51,9 @@ namespace Timetable
             //the ID of the selected User to indicate that an existing User is being edited, rather than adding
             //a new User
             //If no User is selected, show an error
-            Int32 UserID;
             if (lstTeachers.SelectedIndex != -1)
             {
+                Session["LoggedInID"] = LoggedInID;
                 UserID = Convert.ToInt32(lstTeachers.SelectedValue);
                 Session["UserID"] = UserID;
                 Session["Mode"] = "Admin";
@@ -147,14 +149,6 @@ namespace Timetable
         {
             //Returns user to AdminDefault page
             Response.Redirect("AdminDefault.aspx");
-        }
-
-        protected void btnAdmin_Click(object sender, EventArgs e)
-        {
-            //Button to change the admin status (promote or demote) for a user
-            //Cannot work on currently logged in user.
-            if (Convert.ToInt32(lstTeachers.SelectedValue) == UserID){ lblError.Text = "You cannot change your own admin status"; }
-            else { Response.Redirect("PromoteAdmin.aspx"); }
         }
     }
 }

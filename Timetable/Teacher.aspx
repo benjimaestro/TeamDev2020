@@ -6,6 +6,27 @@
 <head runat="server">
     <title>User</title>
     <link href="css.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            z-index: 1;
+            left: 10px;
+            top: 460px;
+            position: absolute;
+        }
+        .auto-style2 {
+            z-index: 1;
+            left: 64px;
+            top: 460px;
+            position: absolute;
+        }
+        .auto-style3 {
+            position: absolute;
+            top: 425px;
+            left: 10px;
+            z-index: 1;
+            width: 127px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,11 +43,12 @@
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 10px; top: 292px; position: absolute" Text="Last Name"></asp:Label>
         <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 10px; top: 328px; position: absolute" MaxLength="50"></asp:TextBox>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 10px; top: 360px; position: absolute" Text="Subject taught"></asp:Label>
-        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 10px; top: 430px; position: absolute; " Text="Apply" OnClick="btnRegister_Click" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 64px; top: 430px; position: absolute" Text="Cancel" OnClick="btnCancel_Click" />
+        <asp:Button ID="btnRegister" runat="server" Text="Apply" OnClick="btnRegister_Click" CssClass="auto-style1" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="auto-style2" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 254px; top: 82px; position: absolute; height: 195px; width: 672px" Font-Bold="True" ForeColor="Red"></asp:Label>
         <asp:DropDownList ID="ddlSubject" runat="server" style="z-index: 1; left: 10px; top: 389px; position: absolute; height: 38px; width: 129px;">
         </asp:DropDownList>
+        <asp:CheckBox ID="chkAdmin" runat="server" CssClass="auto-style3" Text="Admin" TextAlign="Left" />
     </form>
 </body>
 </html>

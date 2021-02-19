@@ -45,14 +45,14 @@
         }
         .auto-style6 {
             z-index: 1;
-            left: 125px;
-            top: 489px;
+            left: 374px;
+            top: 446px;
             position: absolute;
         }
         .auto-style7 {
             position: absolute;
             top: 446px;
-            left: 150px;
+            left: 148px;
             z-index: 1;
             width: 112px;
         }
@@ -73,9 +73,10 @@
         }
         .auto-style10 {
             z-index: 1;
-            left: 12px;
-            top: 488px;
+            left: 274px;
+            top: 446px;
             position: absolute;
+            width: 87px;
         }
         .auto-style11 {
             position: absolute;
@@ -107,7 +108,7 @@
             width: 467px;
             height: 1px;
             position: absolute;
-            top: 520px;
+            top: 490px;
             left: 10px;
             z-index: 1;
             color: black;
@@ -115,7 +116,7 @@
         }
         .auto-style14 {
             position: absolute;
-            top: 543px;
+            top: 513px;
             left: 15px;
             z-index: 1;
         }
@@ -141,15 +142,7 @@
             height: 42px;
             width: 488px;
         }
-        .auto-style18 {
-            position: absolute;
-            top: 446px;
-            left: 274px;
-            z-index: 1;
-            width: 152px;
-            right: 762px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -173,7 +166,6 @@
         <hr class="auto-style13" />
         <br/>
         <asp:Button ID="btnBack" runat="server" CssClass="auto-style14" OnClick="btnBack_Click" Text="Back" />
-        <asp:Button ID="btnAdmin" runat="server" CssClass="auto-style18" Text="Change Admin Status" OnClick="btnAdmin_Click" />
     </form>
     </body>
 </html>

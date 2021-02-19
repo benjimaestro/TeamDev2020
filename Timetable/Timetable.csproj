@@ -68,7 +68,6 @@
     <Content Include="AdminDefault.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css.css" />
-    <Content Include="PromoteAdmin.aspx" />
     <Content Include="DeleteTeacher.aspx" />
     <Content Include="DeleteRoom.aspx" />
     <Content Include="ManageRooms.aspx" />
@@ -94,13 +93,6 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PromoteAdmin.aspx.cs">
-      <DependentUpon>PromoteAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PromoteAdmin.aspx.designer.cs">
-      <DependentUpon>PromoteAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteTeacher.aspx.cs">
       <DependentUpon>DeleteTeacher.aspx</DependentUpon>

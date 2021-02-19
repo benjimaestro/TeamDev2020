@@ -28,11 +28,19 @@
             z-index: 1;
             width: 160px;
         }
+        .auto-style4 {
+            z-index: 1;
+            left: 10px;
+            top: 34px;
+            position: absolute;
+            height: 42px;
+            width: 1002px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 10px; top: 34px; position: absolute; height: 42px; width: 312px" Text="Hello, <teacher>"></asp:Label>
+        <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" Text="Hello, <teacher>" CssClass="auto-style4"></asp:Label>
         <br/>
         <br/>
         <br/>
