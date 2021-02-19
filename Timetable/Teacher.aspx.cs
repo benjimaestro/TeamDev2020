@@ -42,10 +42,17 @@ namespace Timetable
                 if (Mode != "Admin")
                 {
                     lblTitle.Text = "Change Password";
-                    txtEmail.Enabled = false;
-                    txtFirstName.Enabled = false;
-                    txtLastName.Enabled = false;
-                    ddlSubject.Enabled = false;
+                    txtEmail.Visible = false;
+                    txtFirstName.Visible = false;
+                    txtLastName.Visible = false;
+                    ddlSubject.Visible = false;
+                    chkAdmin.Visible = false;
+                    Label1.Visible = false;
+                    Label6.Visible = false;
+                    Label7.Visible = false;
+                    Label4.Visible = false;
+                    Label2.Text = "New Password";
+                    Label3.Text = "Confirm New Password";
                 }
             }
             else { lblTitle.Text = "New User Account"; }
@@ -115,7 +122,7 @@ namespace Timetable
             }
 
             //Prevent currently logged in admin from demoting themself
-            if (LoggedInUser == UserID && chkAdmin.Checked == false)
+            if (LoggedInUser == UserID && chkAdmin.Checked == false && Mode == "Admin")
             {
                 Error = Error + "You cannot demote yourself from admin!</br>";
             }

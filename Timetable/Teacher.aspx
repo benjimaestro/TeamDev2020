@@ -34,9 +34,9 @@
 
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 50px; position: absolute" Text="EMail"></asp:Label>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 10px; top: 80px; position: absolute" MaxLength="100"></asp:TextBox>
-        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 110px; position: absolute" Text="Password"></asp:Label>
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 110px; position: absolute" Text="User's Password"></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 10px; top: 140px; position: absolute; " MaxLength="50" TextMode="Password" EnableTheming="True"></asp:TextBox>
-        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 10px; top: 169px; position: absolute" Text="Confirm password"></asp:Label>
+        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 10px; top: 169px; position: absolute" Text="Confirm User's Password"></asp:Label>
         <asp:TextBox ID="txtPasswordConfirm" runat="server" style="z-index: 1; left: 10px; top: 189px; position: absolute" MaxLength="50" TextMode="Password"></asp:TextBox>
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 9px; top: 223px; position: absolute" Text="First Name"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 10px; top: 256px; position: absolute" MaxLength="50"></asp:TextBox>
