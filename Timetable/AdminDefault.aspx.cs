@@ -22,5 +22,21 @@ namespace Timetable
             //Greet user with name retrieved with the ID
             lblTitle.Text = $"Hello, {Users.ThisUser.FirstName} {Users.ThisUser.SecondName} (Admin Mode)";
         }
+
+        protected void btnTeachers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageTeachers.aspx");
+        }
+
+        protected void btnRooms_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageTeachers.aspx");
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["Mode"] = "Guest";
+            Response.Redirect("TeacherLogin.aspx");
+        }
     }
 }

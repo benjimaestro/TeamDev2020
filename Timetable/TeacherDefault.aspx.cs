@@ -45,5 +45,11 @@ namespace Timetable
             Session["UserID"] = UserID;
             Response.Redirect("Teacher.aspx");
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["Mode"] = "Guest";
+            Response.Redirect("TeacherLogin.aspx");
+        }
     }
 }

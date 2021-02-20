@@ -7,20 +7,6 @@
     <title>Admin</title>
     <link href="css.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
-        .auto-style1 {
-            z-index: 1;
-            left: 10px;
-            top: 90px;
-            position: absolute;
-            width: 248px;
-        }
-        .auto-style2 {
-            z-index: 1;
-            left: 10px;
-            top: 120px;
-            position: absolute;
-            width: 120px;
-        }
         .auto-style3 {
             z-index: 1;
             left: 10px;
@@ -28,6 +14,27 @@
             position: absolute;
             height: 42px;
             width: 1152px;
+        }
+        .auto-style4 {
+            position: absolute;
+            top: 185px;
+            left: 10px;
+            z-index: 1;
+            width: 175px;
+        }
+        .auto-style5 {
+            position: absolute;
+            top: 87px;
+            left: 10px;
+            z-index: 1;
+            width: 175px;
+        }
+        .auto-style6 {
+            position: absolute;
+            top: 137px;
+            left: 10px;
+            z-index: 1;
+            width: 175px;
         }
     </style>
 </head>
@@ -38,13 +45,10 @@
         <br/>
         <br/>
         <br/>
-        <a href="ManageTeachers.aspx">
-            <asp:Label ID="lblTeacherAccounts" runat="server" Text='Manage teacher accounts' Font-Underline="True" CssClass="auto-style1" />
-        </a>
+        <asp:Button ID="btnTeachers" runat="server" CssClass="auto-style5" OnClick="btnTeachers_Click" Text="Manage Accounts" />
         <br/>
-        <a href="ManageRooms.aspx">
-            <asp:Label ID="Label1" runat="server" Text='Manage rooms' Font-Underline="True" CssClass="auto-style2" />
-        </a>
+        <asp:Button ID="btnLogout" runat="server" CssClass="auto-style4" OnClick="btnLogout_Click" Text="Log Out" />
+        <asp:Button ID="btnRooms" runat="server" CssClass="auto-style6" OnClick="btnRooms_Click" Text="Manage Rooms" />
     </form>
 </body>
 </html>

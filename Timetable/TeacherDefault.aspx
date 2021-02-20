@@ -36,6 +36,13 @@
             height: 42px;
             width: 1002px;
         }
+        .auto-style5 {
+            position: absolute;
+            top: 245px;
+            left: 10px;
+            z-index: 1;
+            width: 160px;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +56,7 @@
         <asp:Button ID="btnViewTimetable" runat="server" CssClass="auto-style1" Text="View Timetable" OnClick="btnViewTimetable_Click" />
         <asp:Button ID="btnContact" runat="server" CssClass="auto-style2" Text="Contact Admins" OnClick="btnContact_Click" />
         <asp:Button ID="btnChangePassword" runat="server" CssClass="auto-style3" Text="Change Password" OnClick="btnChangePassword_Click" />
+        <asp:Button ID="btnLogout" runat="server" CssClass="auto-style5" OnClick="btnLogout_Click" Text="Log Out" />
     </form>
 </body>
 </html>

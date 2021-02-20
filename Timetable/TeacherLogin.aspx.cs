@@ -49,5 +49,29 @@ namespace Timetable
                 else { lblError.Text = "Incorrect password"; }
             }
         }
+
+        protected void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                lblError.Text = "Enter the EMail address for the account";
+            }
+            else
+            {
+                clsUserCollection Users = new clsUserCollection();
+                Users.FindExistingUser(txtUsername.Text);
+                if (Users.ThisUser == null)
+                {
+                    lblError.Text = "Account does not exist";
+                }
+                else
+                {
+                    Session["UserID"] = Users.ThisUser.ID;
+                    Session["LoggedInID"] = Users.ThisUser.ID;
+                    Session["Mode"] = "Guest";
+                    Response.Redirect("Teacher.aspx");
+                }
+            }
+        }
     }
 }

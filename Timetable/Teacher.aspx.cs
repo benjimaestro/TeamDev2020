@@ -41,7 +41,8 @@ namespace Timetable
                 }
                 if (Mode != "Admin")
                 {
-                    lblTitle.Text = "Change Password";
+                    if (Mode == "Guest") { lblTitle.Text = "Forgot Password"; }
+                    else { lblTitle.Text = "Change Password"; }
                     txtEmail.Visible = false;
                     txtFirstName.Visible = false;
                     txtLastName.Visible = false;
@@ -168,8 +169,9 @@ namespace Timetable
                 string Error = edit();
                 if (Error == "")
                 {
-                    if (Mode != "Admin") { Response.Redirect("TeacherDefault.aspx"); }
-                    else { Response.Redirect("ManageTeachers.aspx"); }
+                    if (Mode == "Admin") { Response.Redirect("ManageTeachers.aspx"); }
+                    else if (Mode == "Guest") { Response.Redirect("TeacherLogin.aspx"); }
+                    else { Response.Redirect("TeacherDefault.aspx"); }
                 }
                 else { lblError.Text = Error; }
             }

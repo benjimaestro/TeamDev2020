@@ -17,11 +17,18 @@
         }
         .auto-style2 {
             position: absolute;
-            top: 194px;
+            top: 224px;
             left: 156px;
             z-index: 1;
             width: 261px;
             height: 92px;
+        }
+        .auto-style3 {
+            position: absolute;
+            top: 179px;
+            left: 156px;
+            z-index: 1;
+            width: 266px;
         }
     </style>
 </head>
@@ -37,6 +44,7 @@
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 120px; position: absolute; width: 120px" Text="Password:"></asp:Label>
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 156px; top: 150px; position: absolute; width: 266px;" Text="Log in" OnClick="btnLogin_Click" />
         <asp:Label ID="lblError" runat="server" CssClass="auto-style2"></asp:Label>
+        <asp:Button ID="btnForgotPassword" runat="server" CssClass="auto-style3" OnClick="btnForgotPassword_Click" Text="Forgot Password" />
     </form>
 </body>
 </html>
