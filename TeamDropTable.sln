@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T-Train Front office", "T-T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T-Train Testing", "T-Train Testing\T-Train Testing.csproj", "{2BA5C33E-2AFB-48B7-A217-CA4CBD838606}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaptopLoanTesting", "LaptopLoanTesting\LaptopLoanTesting.csproj", "{BBBBA43F-FEA3-4893-8832-EF11D742E3D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2BA5C33E-2AFB-48B7-A217-CA4CBD838606}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BA5C33E-2AFB-48B7-A217-CA4CBD838606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BA5C33E-2AFB-48B7-A217-CA4CBD838606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBBBA43F-FEA3-4893-8832-EF11D742E3D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBBBA43F-FEA3-4893-8832-EF11D742E3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBBBA43F-FEA3-4893-8832-EF11D742E3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBBBA43F-FEA3-4893-8832-EF11D742E3D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
