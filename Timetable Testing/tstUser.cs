@@ -74,7 +74,7 @@ namespace Timetable_Testing
         public void PasswordPropertyOK()
         {
             clsUser User = new clsUser();
-            string TestData = "b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86";
+            string TestData = "E54EE7E285FBB0275279143ABC4C554E5314E7B417ECAC83A5984A964FACBAAD68866A2841C3E83DDF125A2985566261C4014F9F960EC60253AEBCDA9513A9B4";
             User.Password = TestData;
             Assert.AreEqual(User.Password, TestData);
         }
@@ -109,7 +109,7 @@ namespace Timetable_Testing
             Boolean OK = true;
             Int32 UserID = 3;
             Found = User.Find(UserID);
-            if (User.Password != "B109F3BBBC244EB82441917ED06D618B9008DD09B3BEFD1B5E07394C706A8BB980B1D7785E5976EC049B46DF5F1326AF5A2EA6D103FD07C95385FFAB0CACBC86")
+            if (User.Password != "E54EE7E285FBB0275279143ABC4C554E5314E7B417ECAC83A5984A964FACBAAD68866A2841C3E83DDF125A2985566261C4014F9F960EC60253AEBCDA9513A9B4")
             {
                 OK = false;
             }
@@ -176,7 +176,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "bademail";
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -190,7 +190,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "123456789@1234567890123456789012345678901234566.com";
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -204,7 +204,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "123456789@123456789012345678901234567890123456.com";
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -218,7 +218,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "123456789@12345678901234567890123456789012345.com";
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -231,7 +231,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "";
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -244,7 +244,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "a@a.com";
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -257,7 +257,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "aaaa@aaaa.com";
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -270,7 +270,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "aaaaa@aaaaa.com".PadRight(100);
-            string Password = "password";
+            string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -289,7 +289,7 @@ namespace Timetable_Testing
             string SecondName = "test";
             string Subject = "Any";
 
-            string ExpectedError = "Password cannot be blank</br>";
+            string ExpectedError = "Password cannot be blank</br>Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>";
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
@@ -303,7 +303,7 @@ namespace Timetable_Testing
             string SecondName = "test";
             string Subject = "Any";
 
-            string ExpectedError = "";
+            string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>";
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
@@ -312,12 +312,12 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "11";
+            string Password = "Ab";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
 
-            string ExpectedError = "";
+            string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>";
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
@@ -326,7 +326,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "1234512345123451234512345";
+            string Password = "Password123!Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -340,7 +340,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "1234567890123456789012345678901234567890123456789";
+            string Password = "ASDasd123!ASDasd123!ASDasd123!ASDasd123!ASDasd123";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -354,7 +354,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345678901234567890123456789012345678901234567890";
+            string Password = "Password123!11111111Password123!111111111111111111";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
@@ -368,12 +368,12 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "123456789012345678901234567890123456789012345678900";
+            string Password = "Password123!11111111Password123!11111111111111111111";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
 
-            string ExpectedError = "Password must be 50 characters or under</br>";
+            string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>Password must be 50 characters or under</br>";
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
@@ -382,12 +382,12 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "1".PadRight(100);
+            string Password = "Password123!".PadRight(100);
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
 
-            string ExpectedError = "Password must be 50 characters or under</br>";
+            string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>Password must be 50 characters or under</br>";
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
@@ -396,7 +396,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "";
             string SecondName = "test";
             string Subject = "Any";
@@ -410,7 +410,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "a";
             string SecondName = "test";
             string Subject = "Any";
@@ -424,7 +424,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "aa";
             string SecondName = "test";
             string Subject = "Any";
@@ -438,7 +438,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "1234512345123451234512345";
             string SecondName = "test";
             string Subject = "Any";
@@ -452,7 +452,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "1234512345123451234512345123451234512345123451234";
             string SecondName = "test";
             string Subject = "Any";
@@ -466,7 +466,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "12345123451234512345123451234512345123451234512345";
             string SecondName = "test";
             string Subject = "Any";
@@ -480,7 +480,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "123451234512345123451234512345123451234512345123451";
             string SecondName = "test";
             string Subject = "Any";
@@ -494,7 +494,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string FirstName = "1".PadRight(100);
             string SecondName = "test";
             string Subject = "Any";
@@ -508,7 +508,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "";
             string FirstName = "test";
             string Subject = "Any";
@@ -522,7 +522,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "a";
             string FirstName = "test";
             string Subject = "Any";
@@ -536,7 +536,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "aa";
             string FirstName = "test";
             string Subject = "Any";
@@ -550,7 +550,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "1234512345123451234512345";
             string FirstName = "test";
             string Subject = "Any";
@@ -564,7 +564,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "1234512345123451234512345123451234512345123451234";
             string FirstName = "test";
             string Subject = "Any";
@@ -578,7 +578,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "12345123451234512345123451234512345123451234512345";
             string FirstName = "test";
             string Subject = "Any";
@@ -592,7 +592,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "123451234512345123451234512345123451234512345123451";
             string FirstName = "test";
             string Subject = "Any";
@@ -606,7 +606,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName =  "1".PadRight(100);
             string FirstName = "test";
             string Subject = "Any";
@@ -623,7 +623,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "";
@@ -637,7 +637,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "A";
@@ -651,7 +651,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "An";
@@ -665,7 +665,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "Maths";
@@ -679,7 +679,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "AAAAAAAAA";
@@ -693,7 +693,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "AAAAAAAAAA";
@@ -707,7 +707,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "AAAAAAAAAAA";
@@ -721,7 +721,7 @@ namespace Timetable_Testing
         {
             clsUser TestItem = new clsUser();
             string EMail = "test@test.com";
-            string Password = "12345";
+            string Password = "Password123!";
             string SecondName = "test";
             string FirstName = "test";
             string Subject = "Any".PadRight(100);

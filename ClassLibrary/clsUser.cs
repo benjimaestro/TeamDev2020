@@ -88,7 +88,7 @@ namespace ClassLibrary
             {
                 Error = Error + "Invalid EMail format</br>";
             }
-            Regex PasswordRegex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{8,15}$");
+            Regex PasswordRegex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{4,50}$");
             
             if (EMail.Length > 50 || EMail.Length < 6) { Error = Error + "EMail must be 6-50 characters</br>"; }
             if (FirstName.Length > 50 || FirstName.Length < 1) { Error = Error + "First name must be 1-50 characters</br>"; }

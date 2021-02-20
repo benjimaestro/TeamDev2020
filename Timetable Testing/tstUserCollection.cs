@@ -127,15 +127,15 @@ namespace Timetable_Testing
         public void LoginMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
-            Users.Login("johndoe@gmail.com", "B109F3BBBC244EB82441917ED06D618B9008DD09B3BEFD1B5E07394C706A8BB980B1D7785E5976EC049B46DF5F1326AF5A2EA6D103FD07C95385FFAB0CACBC86");
+            Users.Login("johndoe@gmail.com", "E54EE7E285FBB0275279143ABC4C554E5314E7B417ECAC83A5984A964FACBAAD68866A2841C3E83DDF125A2985566261C4014F9F960EC60253AEBCDA9513A9B4");
             Assert.AreEqual(3, Users.ThisUser.ID);
         }
         [TestMethod]
         public void GetHashPasswordMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
-            string password = "B109F3BBBC244EB82441917ED06D618B9008DD09B3BEFD1B5E07394C706A8BB980B1D7785E5976EC049B46DF5F1326AF5A2EA6D103FD07C95385FFAB0CACBC86";
-            Assert.AreEqual(password, Users.GetHashPassword("password"));
+            string password = "E54EE7E285FBB0275279143ABC4C554E5314E7B417ECAC83A5984A964FACBAAD68866A2841C3E83DDF125A2985566261C4014F9F960EC60253AEBCDA9513A9B4";
+            Assert.AreEqual(password, Users.GetHashPassword("asd"));
         }
     }
 }
