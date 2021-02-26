@@ -5,7 +5,7 @@ using ClassLibrary;
 namespace Timetable_Testing
 {
     [TestClass]
-    public class txtMessage
+    public class tstMessage
     {
         [TestMethod]
         public void FindMethod()
@@ -21,9 +21,9 @@ namespace Timetable_Testing
         {
             clsMessage Message = new clsMessage();
             Boolean Found = false;
-            Int32 MessageID = 1;
+            Int32 MessageID = 99999;
             Found = Message.Find(MessageID);
-            Assert.IsTrue(Found);
+            Assert.IsFalse(Found);
         }
         [TestMethod]
         public void InstanceOK()
