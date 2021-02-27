@@ -153,6 +153,14 @@ namespace ClassLibrary
             PopulateList(DB);
         }
 
+        public void AllRooms()
+        {
+            //Populates the mRoomList list with all rooms, used for testing only
+            clsDataConnection DB = new clsDataConnection();
+            DB.Execute("sproc_tblRoom_SelectAll");
+            PopulateList(DB);
+        }
+
         public void RemoveRooms(List<Int32> Rooms, string Subject)
         {
             //Loops through mRoomList and removes any values that are not the provided subject and are not the "Any" subject

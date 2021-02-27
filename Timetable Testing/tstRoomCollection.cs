@@ -77,16 +77,16 @@ namespace Timetable_Testing
         {
             clsRoomCollection Rooms = new clsRoomCollection();
             clsRoomCollection FilteredRooms = new clsRoomCollection();
-            FilteredRooms.FilterBySubject("");
-            Assert.AreEqual(FilteredRooms.Count, FilteredRooms.Count);
+            Rooms.AllRooms();
+            FilteredRooms.FilterBySubject("Any");
+            Assert.AreEqual(Rooms.Count, FilteredRooms.Count);
         }
         [TestMethod]
         public void SubjectFilterMethodNone()
         {
-            clsRoomCollection Rooms = new clsRoomCollection();
             clsRoomCollection FilteredRooms = new clsRoomCollection();
             FilteredRooms.FilterBySubject("sdfsdfsdf");
-            Assert.AreEqual(FilteredRooms.Count, FilteredRooms.Count);
+            Assert.AreEqual(0, FilteredRooms.Count);
         }
         [TestMethod]
         public void FindMethodOK()
