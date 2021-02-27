@@ -28,9 +28,7 @@ namespace Timetable_Testing
         [TestMethod]
         public void InstanceOK()
         {
-
             clsMessage Message = new clsMessage();
-
             Assert.IsNotNull(Message);
         }
         [TestMethod]
@@ -69,7 +67,7 @@ namespace Timetable_Testing
         public void TimestampPropertyOK()
         {
             clsMessage Message = new clsMessage();
-            string TestData = "h";
+            string TestData = "02 / 02 / 2021 15:32:05";
             Message.Timestamp = TestData;
             Assert.AreEqual(Message.Timestamp, TestData);
         }
