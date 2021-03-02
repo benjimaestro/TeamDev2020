@@ -75,6 +75,29 @@ namespace ClassLibrary
             else { return false; }
         }
 
+        public bool Find(int ID)
+        {
+            //Used for testing
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("Id", ID);
+            DB.Execute("sproc_tblTimetable_FilterByID");
+
+            if (DB.Count == 1)
+            {
+                mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]);
+                mP1 = Convert.ToInt32(DB.DataTable.Rows[0]["P1"]);
+                mP2 = Convert.ToInt32(DB.DataTable.Rows[0]["P2"]);
+                mP3 = Convert.ToInt32(DB.DataTable.Rows[0]["P3"]);
+                mP4 = Convert.ToInt32(DB.DataTable.Rows[0]["P4"]);
+                mP5 = Convert.ToInt32(DB.DataTable.Rows[0]["P5"]);
+                WeekNo = Convert.ToInt32(DB.DataTable.Rows[0]["WeekNo"]);
+                DayNo = Convert.ToInt32(DB.DataTable.Rows[0]["DayNo"]);
+                return true;
+            }
+            else { return false; }
+        }
+
         public string Validate(int UserID, int P1, int P2, int P3, int P4, int P5, int WeekNo, int DayNo)
         {
             //Function to validate inputs before they are used - returns error as string

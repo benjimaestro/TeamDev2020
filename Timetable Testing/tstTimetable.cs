@@ -72,16 +72,32 @@ namespace Timetable_Testing
             Timetable.P5 = TestData;
             Assert.AreEqual(Timetable.P5, TestData);
         }
+        [TestMethod]
+        public void WeekNoIDPropertyOK()
+        {
+            clsTimetable Timetable = new clsTimetable();
+            Int32 TestData = 1;
+            Timetable.WeekNo = TestData;
+            Assert.AreEqual(Timetable.WeekNo, TestData);
+        }
+        [TestMethod]
+        public void DayNoIDPropertyOK()
+        {
+            clsTimetable Timetable = new clsTimetable();
+            Int32 TestData = 1;
+            Timetable.WeekNo = TestData;
+            Assert.AreEqual(Timetable.WeekNo, TestData);
+        }
 
         [TestMethod]
-        public void TestNumberFound()
+        public void TestIDFound()
         {
-            clsRoom Room = new clsRoom();
+            clsTimetable Timetable = new clsTimetable();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 RoomID = 1;
-            Found = Room.Find(RoomID);
-            if (Room.Number != 1)
+            Int32 ID = 103;
+            Found = Timetable.Find(ID);
+            if (Timetable.ID != 103)
             {
                 OK = false;
             }
@@ -414,6 +430,23 @@ namespace Timetable_Testing
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
+        public void TestValidateNegativeWeekNo()
+        {
+            clsTimetable TestItem = new clsTimetable();
+            TestItem.UserID = 105;
+            TestItem.P5 = 7;
+            TestItem.P2 = 7;
+            TestItem.P3 = 7;
+            TestItem.P4 = 7;
+            TestItem.P1 = 7;
+            TestItem.WeekNo = -1;
+            TestItem.DayNo = 1;
+
+            string ExpectedError = "WeekNo must be 1-5 </br>";
+            string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
+            Assert.AreEqual(Error, ExpectedError);
+        }
+        [TestMethod]
         public void TestValidate1WeekNo()
         {
             clsTimetable TestItem = new clsTimetable();
@@ -516,7 +549,7 @@ namespace Timetable_Testing
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidate0DayNo()
+        public void TestValidateNegativeDayNo()
         {
             clsTimetable TestItem = new clsTimetable();
             TestItem.UserID = 105;
@@ -526,7 +559,7 @@ namespace Timetable_Testing
             TestItem.P4 = 7;
             TestItem.P1 = 7;
             TestItem.WeekNo = 1;
-            TestItem.DayNo = 0;
+            TestItem.DayNo = -0;
 
             string ExpectedError = "DayNo must be 1-5 </br>";
             string Error = TestItem.Validate(TestItem.UserID, TestItem.P1, TestItem.P2, TestItem.P3, TestItem.P4, TestItem.P5, TestItem.WeekNo, TestItem.DayNo);
