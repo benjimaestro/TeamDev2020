@@ -7,40 +7,26 @@ using System.Text.RegularExpressions;
 
 namespace ClassLibrary
 {
-    public class clsUser
+    public class clsUser : clsAbstractUser
     {
-        private Int32 mID;
-        private string mEMail;
         private string mPassword;
-        private string mFirstName;
-        private string mSecondName;
         private Boolean mAdmin;
         private string mSubject;
 
-        public int ID
-        {
-            get { return mID; }
-            set { mID = value; }
-        }
         public string EMail
         {
-            get { return mEMail; }
-            set { mEMail = value; }
+            get { return mEmail; }
+            set { mEmail = value; }
         }
         public string Password
         {
             get { return mPassword; }
             set { mPassword = value; }
         }
-        public string FirstName
-        {
-            get { return mFirstName; }
-            set { mFirstName = value; }
-        }
         public string SecondName
         {
-            get { return mSecondName; }
-            set { mSecondName = value; }
+            get { return mLastName; }
+            set { mLastName = value; }
         }
         public bool Admin
         {
@@ -54,7 +40,7 @@ namespace ClassLibrary
         }
         public string FullNameEmail
         {
-            get { return $"{mFirstName} {mSecondName} ({mEMail})"; }
+            get { return $"{mFirstName} {mLastName} ({mEmail})"; }
         }
         public bool Find(int ID)
         {
@@ -66,10 +52,10 @@ namespace ClassLibrary
             if (DB.Count == 1)
             {
                 mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
-                mEMail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
                 mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
-                mSecondName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
                 mAdmin = Convert.ToBoolean(DB.DataTable.Rows[0]["Admin"]);
                 mSubject = Convert.ToString(DB.DataTable.Rows[0]["Subject"]);
                 return true;
