@@ -24,6 +24,7 @@ namespace Timetable
             string Password = Users.GetHashPassword(txtPassword.Text);
 
             //Run login function, check if EMail and password match records
+            Users.ThisUser.FindEMail(EMail);
             Int32 ID = Users.Login(EMail, Password);
             if (ID > 0)
             {
