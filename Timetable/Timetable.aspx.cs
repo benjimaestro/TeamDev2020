@@ -57,7 +57,7 @@ namespace Timetable
             }
             lblWeekNo.Text = $"Week {WeekNo.ToString()}/5";
             ddlRooms.Enabled = false;
-            btnUnbook.Enabled = false;
+            btnUnbook.Visible = false;
         }
         void IDToRoom(int ID, Button button)
         {
