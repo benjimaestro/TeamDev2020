@@ -4,7 +4,7 @@ using System;
 namespace LaptopLoanTesting
 {
     [TestClass]
-    public class tstClsLaptop
+    public class tstLaptop
     {
         [TestMethod]
         public void ClassInstanceOK()
