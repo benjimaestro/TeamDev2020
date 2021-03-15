@@ -7,7 +7,7 @@ namespace LaptopLoanTesting
     public class tstLaptop
     {
         [TestMethod]
-        public void ClassInstanceOK()
+        public void ClassInstanceOKk()
         {
             clsLaptop ALaptop = new clsLaptop();
             Assert.IsNotNull(ALaptop);
