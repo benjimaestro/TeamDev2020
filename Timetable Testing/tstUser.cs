@@ -17,20 +17,6 @@ namespace Timetable_Testing
             Assert.IsTrue(Found);
         }
         [TestMethod]
-        public void FindMethodNotFound()
-        {
-            clsUser User = new clsUser();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 UserID = 3;
-            Found = User.Find(UserID);
-            if (User.ID != 3)
-            {
-                OK = false;
-            }
-            Assert.IsTrue(Found);
-        }
-        [TestMethod]
         public void InstanceOK()
         {
 
@@ -266,16 +252,16 @@ namespace Timetable_Testing
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
-        public void TestValidateMaxEMail()
+        public void TestValidateExtremeEMail()
         {
             clsUser TestItem = new clsUser();
-            string EMail = "aaaaa@aaaaa.com".PadRight(100);
+            string EMail = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@aaaaaaaaaa.com";
             string Password = "Password123!";
             string FirstName = "test";
             string SecondName = "test";
             string Subject = "Any";
 
-            string ExpectedError = "";
+            string ExpectedError = "EMail must be 6-50 characters</br>";
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
@@ -615,9 +601,6 @@ namespace Timetable_Testing
             string Error = TestItem.Validate(EMail, FirstName, SecondName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
-
-
-
         [TestMethod]
         public void TestValidateBlankSubject()
         {

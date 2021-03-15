@@ -90,7 +90,7 @@ namespace Timetable_Testing
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
             FilteredUsers.FilterByEMail("");
-            Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
+            Assert.AreEqual(FilteredUsers.Count, Users.Count);
         }
         [TestMethod]
         public void EMailFilterMethodNone()
@@ -98,7 +98,7 @@ namespace Timetable_Testing
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
             FilteredUsers.FilterByEMail("sdfhjksdfksdfhjksdfksdfhjksdfk");
-            Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
+            Assert.AreEqual(FilteredUsers.Count, 0);
         }
         [TestMethod]
         public void NameFilterMethodOK()
@@ -106,7 +106,7 @@ namespace Timetable_Testing
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
             FilteredUsers.FilterByEMail("");
-            Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
+            Assert.AreEqual(FilteredUsers.Count, Users.Count);
         }
         [TestMethod]
         public void NameFilterMethodNone()
@@ -114,7 +114,7 @@ namespace Timetable_Testing
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
             FilteredUsers.FilterByEMail("sdfhjksdfksdfhjksdfksdfhjksdfk");
-            Assert.AreEqual(FilteredUsers.Count, FilteredUsers.Count);
+            Assert.AreEqual(FilteredUsers.Count, 0);
         }
         [TestMethod]
         public void FindExistingUserMethodOK()
