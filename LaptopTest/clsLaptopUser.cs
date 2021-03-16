@@ -40,6 +40,37 @@ class clsLaptopUser
 
             
         }
+
+        //Validation for last name
+        if (LaptopUserLastName.Length == 0)
+        {
+            errorMessage += "Last name is a required field!" + "<br />";
+        }
+        else if (LaptopUserLastName.Length > 14)
+        {
+            errorMessage += "Last name must be 50 characters or shorter!" + "<br />";
+        }
+        else if (LaptopUserLastName.Any(char.IsDigit))
+        {
+            errorMessage += "Last name must not contain any numbers!" + "<br />";
+        }
+        //Validation for email
+        if (LaptopUserEmail.Length == 0)
+        {
+            errorMessage += "E-Mail address is a required field!" + "<br />";
+        }
+        else if (LaptopUserEmail.Length > 30)
+        {
+            errorMessage += "E-Mail address must be 30 characters or shorter!" + "<br />";
+        }
+        else if (LaptopUserEmail.Length < 13) //shorted existing email is in format e@hotmail.com
+        {
+            errorMessage += "E-Mail address must be 8 characters or longer!" + "<br />";
+        }
+        else if (!LaptopUserEmail.Any(c => c == '@')) //Check if @ is present in string
+        {
+            errorMessage += "You must enter a valid E-Mail address!" + "<br />";
+        }
         return errorMessage;
     }
 }
