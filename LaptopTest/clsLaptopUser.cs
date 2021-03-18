@@ -48,7 +48,7 @@ class clsLaptopUser
         }
         else if (LaptopUserLastName.Length > 14)
         {
-            errorMessage += "Last name must be 50 characters or shorter!" + "<br />";
+            errorMessage += "Last name must be 14 characters or shorter!" + "<br />";
         }
         else if (LaptopUserLastName.Any(char.IsDigit))
         {
@@ -65,11 +65,40 @@ class clsLaptopUser
         }
         else if (LaptopUserEmail.Length < 13) //shorted existing email is in format e@hotmail.com
         {
-            errorMessage += "E-Mail address must be 8 characters or longer!" + "<br />";
+            errorMessage += "E-Mail address must be 13 characters or longer!" + "<br />";
         }
         else if (!LaptopUserEmail.Any(c => c == '@')) //Check if @ is present in string
         {
             errorMessage += "You must enter a valid E-Mail address!" + "<br />";
+   
+        }
+        
+        //Validation for address
+        if (LaptopUserAddress.Length == 0)
+        {
+            errorMessage += "Address is a required field!" + "<br />";
+        }
+        else if (LaptopUserAddress.Length > 100)
+        {
+            errorMessage += "Address must be 100 characters or shorter!" + "<br />";
+        }
+        else if (LaptopUserAddress.Length < 12)
+        {
+            errorMessage += "Address must be 12 characters or longer!" + "<br />";
+        }
+       
+        //Validation for TelephoneNumber
+        if (LaptopUserTelephoneNumber.Length == 0)
+        {
+            errorMessage += "TelephoneNumber is a required field!" + "<br />";
+        }
+        else if (LaptopUserTelephoneNumber.Length > 14)
+        {
+            errorMessage += "TelephoneNumber must be 14 characters or shorter!" + "<br />";
+        }
+        else if (LaptopUserTelephoneNumber.Length < 12)
+        {
+            errorMessage += "TelephoneNumber must be 12 characters or longer!" + "<br />";
         }
         return errorMessage;
     }
