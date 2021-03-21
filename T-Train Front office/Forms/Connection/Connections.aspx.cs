@@ -11,7 +11,33 @@ namespace T_Train_Front_office.Forms.Connection
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool loggedIn = true;
+            bool isStaff = false;
 
+            btnStaffDashboard.Visible = isStaff;
+            btnTickets.Visible = loggedIn;
+            btnSettings.Visible = loggedIn;
+            btnLogin.Visible = !loggedIn;
+            btnSignup.Visible = !loggedIn;
+            btnLogout.Visible = loggedIn;
+
+            bool filteringActive = true;
+
+            if(filteringActive)
+            {
+                lblConsDate.Visible = true;
+                lblConsHeader.Visible = true;
+                lblConsPublic.Visible = true;
+                lblConsRoute.Visible = true;
+                lblConsTime.Visible = true;
+                btnBookTicket.Visible = true;
+                btnManageConnection.Visible = true;
+            }
+
+            ddlFrom.Text = Request.Params["from"];
+            ddlTo.Text = Request.Params["to"];
+            txtDate.Text = Request.Params["date"];
+            ddlTime.Text = Request.Params["time"];
         }
 
         protected void btnHomepage_Click(object sender, EventArgs e)

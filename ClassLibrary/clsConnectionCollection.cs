@@ -6,6 +6,7 @@ namespace ClassLibrary
     public class clsConnectionCollection
     {
         public List<clsConnection> MyConnections { get; set; }
+
         public clsConnection ThisConnection { get; set; }
         public int Count
         {
