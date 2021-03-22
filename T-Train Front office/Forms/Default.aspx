@@ -38,7 +38,7 @@
             <asp:ListItem>Glasgow</asp:ListItem>
         </asp:DropDownList>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 115px; top: 318px; position: absolute" Text="Date:"></asp:Label>
-        <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 178px; top: 315px; position: absolute; margin-bottom: 5px; right: 654px;"></asp:TextBox>
+        <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 183px; top: 317px; position: absolute; margin-bottom: 5px; right: 645px;"></asp:TextBox>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 435px; top: 317px; position: absolute" Text="Time:"></asp:Label>
         <asp:Label ID="Label6" runat="server" Font-Size="X-Large" style="z-index: 1; left: 334px; top: 228px; position: absolute" Text="&lt;=&gt;"></asp:Label>
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 74px; top: 278px; position: absolute" Text="Departure Date &amp; Time:"></asp:Label>
