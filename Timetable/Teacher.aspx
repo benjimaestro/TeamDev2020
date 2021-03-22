@@ -32,7 +32,7 @@
     <form id="form1" runat="server">
         <asp:Label ID="lblTitle" runat="server" Font-Size="X-Large" style="z-index: 1; left: 17px; top: 15px; position: absolute" Text="(Add/Edit) Teacher"></asp:Label>
 
-        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 50px; position: absolute" Text="EMail"></asp:Label>
+        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 50px; position: absolute" Text="Email"></asp:Label>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 10px; top: 80px; position: absolute" MaxLength="100"></asp:TextBox>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 110px; position: absolute" Text="User's Password"></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 10px; top: 140px; position: absolute; " MaxLength="50" TextMode="Password" EnableTheming="True"></asp:TextBox>

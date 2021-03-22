@@ -11,7 +11,7 @@ namespace T_Train_Classes
         DateTime mCustomerCreatedAt;
         int mCustomerId;
         DateTime mDateOfBirth;
-        string mEmail;
+        string mEMail;
         string mFirstName;
         string mLastName;
 
@@ -71,15 +71,15 @@ namespace T_Train_Classes
                 mDateOfBirth = value; 
             } 
         }
-        public string Email 
+        public string EMail 
         { 
             get 
             { 
-                return mEmail; 
+                return mEMail; 
             } 
             set 
             { 
-                mEmail = value; 
+                mEMail = value; 
             } 
         }
         public string FirstName 
@@ -105,7 +105,7 @@ namespace T_Train_Classes
             } 
         }
 
-        public string ValidateCustomer(string customerAddress, DateTime customerDateOfBirth, string customerEmail, string customerFirstName, string customerLastName)
+        public string ValidateCustomer(string customerAddress, DateTime customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
         {
             string errorMessage = "";
 
@@ -169,20 +169,20 @@ namespace T_Train_Classes
                 errorMessage += "Address must be 11 characters or longer!" + "<br />";
             }
 
-            //Validation for email
-            if (customerEmail.Length == 0)
+            //Validation for EMail
+            if (customerEMail.Length == 0)
             {
                 errorMessage += "E-Mail address is a required field!" + "<br />";
             }
-            else if (customerEmail.Length > 30)
+            else if (customerEMail.Length > 30)
             {
                 errorMessage += "E-Mail address must be 30 characters or shorter!" + "<br />";
             }
-            else if (customerEmail.Length < 6) //shorted existing email is in format a@g.cn
+            else if (customerEMail.Length < 6) //shorted existing EMail is in format a@g.cn
             {
                 errorMessage += "E-Mail address must be 6 characters or longer!" + "<br />";
             }
-            else if (!customerEmail.Any(c => c == '@')) //Check if @ is present in string
+            else if (!customerEMail.Any(c => c == '@')) //Check if @ is present in string
             {
                 errorMessage += "You must enter a valid E-Mail address!" + "<br />";
             }
@@ -209,7 +209,7 @@ namespace T_Train_Classes
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
                 mDateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfBirth"]);
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
-                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mEMail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 //row was found so return true as "found" is positive, a member was found

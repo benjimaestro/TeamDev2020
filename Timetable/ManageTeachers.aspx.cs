@@ -94,11 +94,11 @@ namespace Timetable
             lstTeachers.DataBind();
         }
 
-        protected void btnSearchEMails_Click(object sender, EventArgs e)
+        protected void btnSearchEmails_Click(object sender, EventArgs e)
         {
-            //Populates lstTeachers with a list of names filtered by email
+            //Populates lstTeachers with a list of names filtered by Email
             clsUserCollection Users = new clsUserCollection();
-            Users.FilterByEMail(txtFilter.Text);
+            Users.FilterByEmail(txtFilter.Text);
             lstTeachers.Items.Clear();
             lstTeachers.DataSource = Users.Userlist;
             lstTeachers.DataValueField = "Id";

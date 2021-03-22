@@ -13,11 +13,6 @@ namespace ClassLibrary
         private Boolean mAdmin;
         private string mSubject;
 
-        public string EMail
-        {
-            get { return mEmail; }
-            set { mEmail = value; }
-        }
         public string Password
         {
             get { return mPassword; }
@@ -52,7 +47,7 @@ namespace ClassLibrary
             if (DB.Count == 1)
             {
                 mID = Convert.ToInt32(DB.DataTable.Rows[0]["Id"]);
-                mEmail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
                 mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
@@ -62,21 +57,21 @@ namespace ClassLibrary
             }
             else { return false; }
         }
-        public string Validate(string EMail, string FirstName, string SecondName, string Password, string Subject)
+        public string Validate(string Email, string FirstName, string SecondName, string Password, string Subject)
         {
             //Function to validate inputs before they are used - returns error as string
             string Error = "";
             try
             {
-                var addr = new System.Net.Mail.MailAddress(EMail);
+                var addr = new System.Net.Mail.MailAddress(Email);
             }
             catch
             {
-                Error = Error + "Invalid EMail format</br>";
+                Error = Error + "Invalid Email format</br>";
             }
             Regex PasswordRegex = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{4,50}$");
             
-            if (EMail.Length > 50 || EMail.Length < 6) { Error = Error + "EMail must be 6-50 characters</br>"; }
+            if (Email.Length > 50 || Email.Length < 6) { Error = Error + "Email must be 6-50 characters</br>"; }
             if (FirstName.Length > 50 || FirstName.Length < 1) { Error = Error + "First name must be 1-50 characters</br>"; }
             if (SecondName.Length > 50 || SecondName.Length < 1) { Error = Error + "Last name must be 1-50 characters</br>"; }
             if (Password.Length == 0) { Error = Error + "Password cannot be blank</br>"; }

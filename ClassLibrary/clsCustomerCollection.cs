@@ -51,7 +51,7 @@ namespace T_Train_Classes
             //set the parameters for the stored procedure
             DB.AddParameter("@customerAddress", ThisCustomer.Address);
             DB.AddParameter("@customerDateOfBirth", ThisCustomer.DateOfBirth);
-            DB.AddParameter("@customerEmail", ThisCustomer.Email);
+            DB.AddParameter("@customerEmail", ThisCustomer.EMail);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
             //execute the query returning the primary key value
@@ -76,7 +76,7 @@ namespace T_Train_Classes
             DB.AddParameter("@customerId", ThisCustomer.CustomerId);
             DB.AddParameter("@customerAddress", ThisCustomer.Address);
             DB.AddParameter("@customerDateOfBirth", ThisCustomer.DateOfBirth);
-            DB.AddParameter("@customerEmail", ThisCustomer.Email);
+            DB.AddParameter("@customerEmail", ThisCustomer.EMail);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
             //update the record

@@ -22,7 +22,7 @@ namespace Timetable_Testing
             clsUserCollection Users = new clsUserCollection();
             List<clsUser> TestList = new List<clsUser>();
             clsUser TestItem = new clsUser();
-            TestItem.EMail = "test@test.com";
+            TestItem.Email = "test@test.com";
             TestItem.Password = "password";
             TestItem.FirstName = "test";
             TestItem.SecondName = "test";
@@ -39,7 +39,7 @@ namespace Timetable_Testing
             List<clsUser> TestList = new List<clsUser>();
             clsUser TestItem = new clsUser();
             Int32 ID = 0;
-            TestItem.EMail = "test@test.com";
+            TestItem.Email = "test@test.com";
             TestItem.Password = "password";
             TestItem.FirstName = "test";
             TestItem.SecondName = "test";
@@ -61,7 +61,7 @@ namespace Timetable_Testing
             clsUser PreTestItem = new clsUser();
             clsUser TestItem = new clsUser();
             Int32 ID = 0;
-            TestItem.EMail = "test@test.com";
+            TestItem.Email = "test@test.com";
             TestItem.Password = "password";
             TestItem.FirstName = "test";
             TestItem.SecondName = "test";
@@ -72,7 +72,7 @@ namespace Timetable_Testing
             ID = Users.Add();
             TestItem.ID = ID;
 
-            TestItem.EMail = "hhhtest@test.com";
+            TestItem.Email = "hhhtest@test.com";
             TestItem.Password = "hhhpassword";
             TestItem.FirstName = "hhhtest";
             TestItem.SecondName = "hhhtest";
@@ -85,19 +85,19 @@ namespace Timetable_Testing
             Users.Delete(ID);
         }
         [TestMethod]
-        public void EMailFilterMethodOK()
+        public void EmailFilterMethodOK()
         {
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
-            FilteredUsers.FilterByEMail("");
+            FilteredUsers.FilterByEmail("");
             Assert.AreEqual(FilteredUsers.Count, Users.Count);
         }
         [TestMethod]
-        public void EMailFilterMethodNone()
+        public void EmailFilterMethodNone()
         {
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
-            FilteredUsers.FilterByEMail("sdfhjksdfksdfhjksdfksdfhjksdfk");
+            FilteredUsers.FilterByEmail("sdfhjksdfksdfhjksdfksdfhjksdfk");
             Assert.AreEqual(FilteredUsers.Count, 0);
         }
         [TestMethod]
@@ -105,7 +105,7 @@ namespace Timetable_Testing
         {
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
-            FilteredUsers.FilterByEMail("");
+            FilteredUsers.FilterByEmail("");
             Assert.AreEqual(FilteredUsers.Count, Users.Count);
         }
         [TestMethod]
@@ -113,7 +113,7 @@ namespace Timetable_Testing
         {
             clsUserCollection Users = new clsUserCollection();
             clsUserCollection FilteredUsers = new clsUserCollection();
-            FilteredUsers.FilterByEMail("sdfhjksdfksdfhjksdfksdfhjksdfk");
+            FilteredUsers.FilterByEmail("sdfhjksdfksdfhjksdfksdfhjksdfk");
             Assert.AreEqual(FilteredUsers.Count, 0);
         }
         [TestMethod]
@@ -129,13 +129,6 @@ namespace Timetable_Testing
             clsUserCollection Users = new clsUserCollection();
             Users.Login("johndoe@gmail.com", "E54EE7E285FBB0275279143ABC4C554E5314E7B417ECAC83A5984A964FACBAAD68866A2841C3E83DDF125A2985566261C4014F9F960EC60253AEBCDA9513A9B4");
             Assert.AreEqual(3, Users.ThisUser.ID);
-        }
-        [TestMethod]
-        public void GetHashPasswordMethodOK()
-        {
-            clsUserCollection Users = new clsUserCollection();
-            string password = "E54EE7E285FBB0275279143ABC4C554E5314E7B417ECAC83A5984A964FACBAAD68866A2841C3E83DDF125A2985566261C4014F9F960EC60253AEBCDA9513A9B4";
-            Assert.AreEqual(password, Users.GetHashPassword("asd"));
         }
     }
 }
