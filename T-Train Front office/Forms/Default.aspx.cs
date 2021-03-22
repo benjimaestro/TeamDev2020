@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ClassLibrary;
 
 namespace T_Train_Front_office.Forms
 {
@@ -11,7 +12,37 @@ namespace T_Train_Front_office.Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool loggedIn = false;
+            bool isStaff = false;
 
+            btnStaffDashboard.Visible = isStaff;
+            btnTickets.Visible = loggedIn;
+            btnSettings.Visible = loggedIn;
+            btnLogin.Visible = !loggedIn;
+            btnSignup.Visible = !loggedIn;
+            btnLogout.Visible = loggedIn;
+
+            //Fill the time dropdown list
+            for(int hour = 0; hour < 24; ++hour)
+            {
+                for(int minutes = 0; minutes < 60; minutes += 15)
+                {
+                    //format the hour
+                    string hourToAdd = Convert.ToString(hour);
+                    hourToAdd = hourToAdd.Length == 1 ? ("0" + hourToAdd) : hourToAdd;
+
+                    //format the minutes
+                    string minutesToAdd = Convert.ToString(minutes);
+                    minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
+
+                    //add the time to the dropdown list
+                    ddlTime.Items.Add(hourToAdd + ":" + minutesToAdd);
+                }
+            }
+            
+            //Fill the from ddl
+
+            //Fill the to ddl
         }
 
         protected void Button9_Click(object sender, EventArgs e)
@@ -52,8 +83,62 @@ namespace T_Train_Front_office.Forms
 
         protected void btnFilterConnections_Click(object sender, EventArgs e)
         {
-            //redirect to a filtered list of connections
-            Response.Redirect("Connection/Connections.aspx");
+            //first specify the filtering parameters
+            try
+            {
+                //first get the parameters from text
+                string from = ddlFrom.Text;
+                string to = ddlTo.Text;
+                DateTime date = Convert.ToDateTime(txtDate.Text);
+                string time = ddlTime.Text;
+
+                //next assign the parameters
+                clsConnection aConnection = new clsConnection();
+                aConnection.ConnectionStartStation = from;
+                aConnection.ConnectionEndStation = to;
+                aConnection.ConnectionDate = date;
+
+                //next validate the parameters
+                string error = aConnection.ValidateConnection(date, from, to, 0);
+
+                //check if the parameters are valid
+                bool valid = (error == "");
+
+                //if they are valid, filter connections
+                if (valid)
+                {
+                    //redirect to a filtered list of connections
+                    Response.Redirect($"Connection/Connections.aspx?from={from}&to={to}&date={date}&time={time}");
+                }
+                else
+                {
+                    //if invalid, display an error message on screen
+                    lblError.Text = "Entered data is invalid, please try again.";
+                }
+            }
+            catch
+            {
+                //if invalid, display an error message on screen
+                lblError.Text = "Entered data is invalid, please try again.";
+            }
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            //redirect to logout
+            Response.Redirect("../Default.aspx");
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime date = dtpDate.SelectedDate;
+            txtDate.Text = Convert.ToString(date).Substring(0, 10);
+            dtpDate.Visible = false;
+        }
+
+        protected void btnPick_Click(object sender, EventArgs e)
+        {
+            dtpDate.Visible = true;
         }
     }
 }
