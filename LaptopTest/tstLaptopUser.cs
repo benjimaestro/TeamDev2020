@@ -15,7 +15,7 @@ namespace LaptopLoanTest
         string LaptopUserEmail = "Visualove@gmail.com";
         string LaptopUserFirstName = "Eddie";
         string LaptopUserLastName = "Example";
-        string LaptopUserPassword = "visual123";
+        string LaptopUserPassword = "visual1234";
         string LaptopUserTelephoneNumber = "078353387368";
 
         [TestMethod]
@@ -72,15 +72,37 @@ namespace LaptopLoanTest
             ALaptopUser.LaptopUserLastName = testLastName;
             Assert.AreEqual(ALaptopUser.LaptopUserLastName, testLastName);
         }
-        //[TestMethod]
+       // [TestMethod]
         public void FindMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 LaptopUserID = 2435;
+            //invoke the method
+            Found = ALaptopUser.Find(LaptopUserID);
+            Assert.IsTrue(Found);
+        }//
+        //[TestMethod]
+        public void FindMethodExistss()
         {
             //Put Id that exists to test this
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            int staffID = 1;
-            bool found = ALaptopUser.FindLaptopUser(staffID);
-            Assert.IsTrue(found);//
-        }
+            int CustomerId = 1;
+            bool found = ALaptopUser.FindLaptopUser(CustomerId);
+            Assert.IsTrue(found);
+        }//
+       // [TestMethod]
+        public void TestCustomerNotFound()
+        {
+            //Put Id that does not exist to test this
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            int LaptopUserId = 2436;
+            bool found = ALaptopUser.FindLaptopUser(LaptopUserId);
+            Assert.IsFalse(found);
+        }//
         [TestMethod]
         public void ValidMethodOK()
         {
@@ -543,7 +565,7 @@ namespace LaptopLoanTest
             //create an instance of the class we want to create
             clsLaptopUser ALaptopUser = new clsLaptopUser();
             //create some test data to pass to the method
-            LaptopUserEmail = "eddieeddieeddi@hotmail.com"; //this should fail
+            LaptopUserEmail = "eddieeddieedd@hotmail.com"; //this should fail
             //invoke the method
             string error = ALaptopUser.ValidateLaptopUser(
                 LaptopUserAddress,
@@ -886,5 +908,141 @@ namespace LaptopLoanTest
             //test to see that the result is correct
             Assert.AreNotEqual(error, "");
         }
+        [TestMethod]
+        public void LaptopUserPasswordMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //create some test data to pass to the method
+            LaptopUserPassword = "visual123";  //this should fail
+            //invoke the method
+            string error = ALaptopUser.ValidateLaptopUser(
+                LaptopUserAddress,
+                LaptopUserPassword,
+                LaptopUserEmail,
+                LaptopUserFirstName,
+                LaptopUserLastName,
+                LaptopUserTelephoneNumber
+            );
+            //test to see that the result is correct
+            Assert.AreNotEqual(error, "");
+        }
+        [TestMethod]
+        public void LaptopUserPasswordMin()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //create some test data to pass to the method
+            LaptopUserPassword = "visual1234";  //this should fail
+            //invoke the method
+            string error = ALaptopUser.ValidateLaptopUser(
+                LaptopUserAddress,
+                LaptopUserPassword,
+                LaptopUserEmail,
+                LaptopUserFirstName,
+                LaptopUserLastName,
+                LaptopUserTelephoneNumber
+            );
+            //test to see that the result is correct
+            Assert.AreEqual(error, "");
+        }
+        [TestMethod]
+        public void LaptopUserPasswordMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //create some test data to pass to the method
+            LaptopUserPassword = "visual12345";  //this should fail
+            //invoke the method
+            string error = ALaptopUser.ValidateLaptopUser(
+                LaptopUserAddress,
+                LaptopUserPassword,
+                LaptopUserEmail,
+                LaptopUserFirstName,
+                LaptopUserLastName,
+                LaptopUserTelephoneNumber
+            );
+            //test to see that the result is correct
+            Assert.AreEqual(error, "");
+        }
+        [TestMethod]
+        public void LaptopUserPasswordMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //create some test data to pass to the method
+            LaptopUserPassword = "visualweb1234";  //this should fail
+            //invoke the method
+            string error = ALaptopUser.ValidateLaptopUser(
+                LaptopUserAddress,
+                LaptopUserPassword,
+                LaptopUserEmail,
+                LaptopUserFirstName,
+                LaptopUserLastName,
+                LaptopUserTelephoneNumber
+            );
+            //test to see that the result is correct
+            Assert.AreEqual(error, "");
+        }
+        [TestMethod]
+        public void LaptopUserPasswordMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //create some test data to pass to the method
+            LaptopUserPassword = "visualweb123456";  //this should fail
+            //invoke the method
+            string error = ALaptopUser.ValidateLaptopUser(
+                LaptopUserAddress,
+                LaptopUserPassword,
+                LaptopUserEmail,
+                LaptopUserFirstName,
+                LaptopUserLastName,
+                LaptopUserTelephoneNumber
+            );
+            //test to see that the result is correct
+            Assert.AreNotEqual(error, "");
+        }
+        [TestMethod]
+        public void LaptopUserPasswordMid()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //create some test data to pass to the method
+            LaptopUserPassword = "visual1";  //this should fail
+            //invoke the method
+            string error = ALaptopUser.ValidateLaptopUser(
+                LaptopUserAddress,
+                LaptopUserPassword,
+                LaptopUserEmail,
+                LaptopUserFirstName,
+                LaptopUserLastName,
+                LaptopUserTelephoneNumber
+            );
+            //test to see that the result is correct
+            Assert.AreNotEqual(error, "");
+        }
+        [TestMethod]
+        public void LaptopUserPasswordExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //string variable to store any error message
+
+            //create some test data to pass to the method
+            LaptopUserPassword = LaptopUserPassword.PadRight(500, 'H'); //this should fail
+            //invoke the method
+            string error = ALaptopUser.ValidateLaptopUser(
+                LaptopUserAddress,
+                LaptopUserPassword,
+                LaptopUserEmail,
+                LaptopUserFirstName,
+                LaptopUserLastName,
+                LaptopUserTelephoneNumber
+            );
+            //test to see that the result is correct
+            Assert.AreNotEqual(error, "");
+        }
+        
     }
 }
