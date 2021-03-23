@@ -11,7 +11,7 @@ namespace TTrainCustomer
         //example test data
         private string customerAddress = "19 NewStreet, Birmingham, BA1 111, United Kingdom";
         private DateTime customerDateOfBirth = new DateTime(2000, 7, 15);
-        private string customerEmail = "HelloWorld@gmail.com";
+        private string customerEMail = "HelloWorld@gmail.com";
         private string customerFirstName = "Adam";
         private string customerLastName = "Example";
 
@@ -74,13 +74,13 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void CustomerEmailExists()
+        public void CustomerEMailExists()
         {
-            //Tests whether the "email" property can be set
+            //Tests whether the "EMail" property can be set
             clsCustomer ACustomer = new clsCustomer();
-            string testEmail = "HelloWorld@gmail.com";
-            ACustomer.Email = testEmail;
-            Assert.AreEqual(ACustomer.Email, testEmail);
+            string testEMail = "HelloWorld@gmail.com";
+            ACustomer.EMail = testEMail;
+            Assert.AreEqual(ACustomer.EMail, testEMail);
         }
 
         [TestMethod]
@@ -132,7 +132,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -151,7 +151,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -170,7 +170,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -189,7 +189,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -209,7 +209,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -229,7 +229,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -249,7 +249,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -269,7 +269,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -288,7 +288,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -307,7 +307,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -328,7 +328,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -349,7 +349,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -370,7 +370,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -391,7 +391,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -412,7 +412,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -433,7 +433,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -454,7 +454,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -463,19 +463,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailMinLessOne()
+        public void EMailMinLessOne()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = "B@g.c"; //this should fail
+            customerEMail = "B@g.c"; //this should fail
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -484,19 +484,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailMin()
+        public void EMailMin()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = "B@g.cn"; //this should be ok
+            customerEMail = "B@g.cn"; //this should be ok
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -505,19 +505,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailMinPlusOne()
+        public void EMailMinPlusOne()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = "Jo@g.cn"; //this should be ok
+            customerEMail = "Jo@g.cn"; //this should be ok
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -526,19 +526,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailMaxLessOne()
+        public void EMailMaxLessOne()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = "SuperSuperSuperSuperSup@o2.pl"; //this should be ok
+            customerEMail = "SuperSuperSuperSuperSup@o2.pl"; //this should be ok
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -547,19 +547,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailMax()
+        public void EMailMax()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = "SuperSuperSuperSuperSupe@o2.pl"; //this should be ok
+            customerEMail = "SuperSuperSuperSuperSupe@o2.pl"; //this should be ok
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -568,19 +568,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailMaxPlusOne()
+        public void EMailMaxPlusOne()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = "SuperSuperSuperSuperSuper@o2.pl"; //this should fail
+            customerEMail = "SuperSuperSuperSuperSuper@o2.pl"; //this should fail
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -589,19 +589,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailMid()
+        public void EMailMid()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = "SuperSuperSu@o2.pl"; //this should be ok
+            customerEMail = "SuperSuperSu@o2.pl"; //this should be ok
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -610,19 +610,19 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
-        public void EmailExtremeMax()
+        public void EMailExtremeMax()
         {
             //create an instance of the class we want to create
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
             //create some test data to pass to the method
-            customerEmail = customerEmail.PadRight(500, 'H'); //this should fail
+            customerEMail = customerEMail.PadRight(500, 'H'); //this should fail
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -642,7 +642,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -662,7 +662,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -682,7 +682,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -702,7 +702,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -722,7 +722,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -743,7 +743,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -764,7 +764,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -785,7 +785,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -806,7 +806,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -827,7 +827,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -848,7 +848,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -869,7 +869,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
@@ -890,7 +890,7 @@ namespace TTrainCustomer
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
                 customerDateOfBirth,
-                customerEmail,
+                customerEMail,
                 customerFirstName,
                 customerLastName
             );
