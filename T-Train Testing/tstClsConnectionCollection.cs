@@ -182,5 +182,25 @@ namespace TTrainConnection
             //delete the record not to fill the database with duplicate records
             AConnectionCollection.DeleteConnection();
         }
+
+        [TestMethod]
+        public void FilterConnectionsMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsConnectionCollection filteredConnections = new clsConnectionCollection();
+            //a test object
+            clsConnection AConnection = new clsConnection
+            {
+                ConnectionActive = true,
+                ConnectionStartStation = "Leicester",
+                ConnectionEndStation = "Birmingham",
+                ConnectionDate = new DateTime(2021, 7, 17),
+                ConnectionTicketLimit = 150
+            };
+            //perform the filtering
+            filteredConnections.MyConnections = filteredConnections.filterConnections(AConnection);
+            //there should be exactly three results, check if they exist
+            Assert.AreEqual(3, filteredConnections.MyConnections.Count);
+        }
     }
 }

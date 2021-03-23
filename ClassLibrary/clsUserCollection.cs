@@ -56,7 +56,7 @@ namespace ClassLibrary
             {
                 clsUser User = new clsUser();
                 User.ID = Convert.ToInt32(DB.DataTable.Rows[Index]["Id"]);
-                User.EMail = Convert.ToString(DB.DataTable.Rows[Index]["EMail"]);
+                User.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
                 User.Password = Convert.ToString(DB.DataTable.Rows[Index]["Password"]);
                 User.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                 User.SecondName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
@@ -73,7 +73,7 @@ namespace ClassLibrary
         {
             //Function to add new record to tblUser
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@EMail", mThisUser.EMail);
+            DB.AddParameter("@Email", mThisUser.Email);
             DB.AddParameter("@Password", mThisUser.Password);
             DB.AddParameter("@FirstName", mThisUser.FirstName);
             DB.AddParameter("@LastName", mThisUser.SecondName);
@@ -99,13 +99,13 @@ namespace ClassLibrary
             DB.Execute("sproc_tblUser_DeleteUser");
         }
 
-        public void FindExistingUser(string EMail)
+        public void FindExistingUser(string Email)
         {
-            //Sets the ThisUser to whatever is found with the same user EMail, indicating that a user with this detail already exists
+            //Sets the ThisUser to whatever is found with the same user Email, indicating that a user with this detail already exists
             Int32 Index = 0;
             while (mUserList.Count > Index)
             {
-                if (mUserList[Index].EMail == EMail)
+                if (mUserList[Index].Email == Email)
                 {
                     ThisUser = Userlist[Index];
                 }
@@ -118,7 +118,7 @@ namespace ClassLibrary
             //Function to edit an existing record in tblUser with new details
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@Id", mThisUser.ID);
-            DB.AddParameter("@EMail", mThisUser.EMail);
+            DB.AddParameter("@Email", mThisUser.Email);
             DB.AddParameter("@Password", mThisUser.Password);
             DB.AddParameter("@FirstName", mThisUser.FirstName);
             DB.AddParameter("@LastName", mThisUser.SecondName);
@@ -127,12 +127,12 @@ namespace ClassLibrary
             return DB.Execute("sproc_tblUser_EditUser");
         }
 
-        public void FilterByEMail(string EMail)
+        public void FilterByEmail(string Email)
         {
-            //Filters user list by provided EMail
+            //Filters user list by provided Email
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@EMail", EMail);
-            DB.Execute("sproc_tblUser_FilterByEMail");
+            DB.AddParameter("@Email", Email);
+            DB.Execute("sproc_tblUser_FilterByEmail");
             PopulateList(DB);
         }
    
@@ -159,14 +159,14 @@ namespace ClassLibrary
             }
         }
 
-        public Int32 Login(string EMail, string Password)
+        public Int32 Login(string Email, string Password)
         {
-            //Loops through mUserList until it finds a value with matching EMail and a correct password
+            //Loops through mUserList until it finds a value with matching Email and a correct password
             Int32 Index = 0;
             Int32 ID = -1;
             while (mUserList.Count > Index)
             {
-                if (mUserList[Index].EMail == EMail)
+                if (mUserList[Index].Email == Email)
                 {
                     if (mUserList[Index].Password == Password)
                     {
@@ -178,27 +178,6 @@ namespace ClassLibrary
                 Index++;
             }
             return ID;
-        }
-
-        public string GetHashPassword(string ToHash)
-        {
-            //Generates a SHA512 hash of a given password
-            //SHA512 is used here because it is the best hashing algorithm the System.Security.Cryptography provides
-            //In real world use, a better hashing algorithm would be used, like SHA3
-
-            if (ToHash != "")
-            {
-                SHA512Managed HashGen = new SHA512Managed();
-                string HashString;
-                byte[] TextBytes;
-                byte[] HashBytes;
-
-                TextBytes = System.Text.Encoding.UTF8.GetBytes(ToHash);
-                HashBytes = HashGen.ComputeHash(TextBytes);
-                HashString = BitConverter.ToString(HashBytes).Replace("-", "");
-                return HashString;
-            }
-            else { return ""; }
         }
     }
 }

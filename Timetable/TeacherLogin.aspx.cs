@@ -20,11 +20,11 @@ namespace Timetable
         {
             //Run when btnLogin is clicked
             clsUserCollection Users = new clsUserCollection();
-            string EMail = txtUsername.Text;
-            string Password = Users.GetHashPassword(txtPassword.Text);
+            string Email = txtUsername.Text;
+            string Password = Users.ThisUser.GetHashPassword(txtPassword.Text);
 
-            //Run login function, check if EMail and password match records
-            Int32 ID = Users.Login(EMail, Password);
+            //Run login function, check if Email and password match records
+            Int32 ID = Users.Login(Email, Password);
             if (ID > 0)
             {
                 //If user's account is marked as an Admin account, set Mode to admin
@@ -54,7 +54,7 @@ namespace Timetable
         {
             if (txtUsername.Text == "")
             {
-                lblError.Text = "Enter the EMail address for the account";
+                lblError.Text = "Enter the Email address for the account";
             }
             else
             {
@@ -66,10 +66,12 @@ namespace Timetable
                 }
                 else
                 {
+                    string TempPW = Users.ThisUser.SendResetEmail("Timetable");
                     Session["UserID"] = Users.ThisUser.ID;
                     Session["LoggedInID"] = Users.ThisUser.ID;
                     Session["Mode"] = "Guest";
-                    Response.Redirect("Teacher.aspx");
+                    Session["TempPW"] = TempPW;
+                    Response.Redirect("ForgotPassword.aspx");
                 }
             }
         }

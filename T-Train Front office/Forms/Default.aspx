@@ -16,22 +16,33 @@
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 19px; top: 158px; position: absolute" Text="Find your connection:"></asp:Label>
         <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 39px; top: 28px; position: absolute" Text="Staff Dashboard" OnClick="Button9_Click" />
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 914px; top: 33px; position: absolute" Text="Logout" OnClick="Button2_Click" />
+        <asp:Label ID="lblError" runat="server" Font-Bold="False" Font-Size="Large" ForeColor="Red" style="z-index: 1; left: 315px; top: 187px; position: absolute"></asp:Label>
         <p>
             <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 618px; top: 31px; position: absolute; right: 447px;" Text="My tickets" OnClick="Button7_Click" Font-Size="Large" />
         </p>
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 744px; top: 30px; position: absolute; " Text="Login" OnClick="Button3_Click" Font-Size="X-Large" />
-        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 126px; top: 231px; position: absolute; right: 798px;" Text="From:"></asp:Label>
-        <asp:DropDownList ID="DropDownList1" runat="server" style="z-index: 1; left: 185px; top: 233px; position: absolute; right: 698px;">
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 126px; top: 231px; position: absolute; " Text="From:"></asp:Label>
+        <asp:DropDownList ID="ddlFrom" runat="server" style="z-index: 1; left: 185px; top: 233px; position: absolute; right: 698px;">
+            <asp:ListItem>Leicester</asp:ListItem>
+            <asp:ListItem>Birmingham</asp:ListItem>
+            <asp:ListItem>London</asp:ListItem>
+            <asp:ListItem>Glasgow</asp:ListItem>
+            <asp:ListItem>Cambridge</asp:ListItem>
         </asp:DropDownList>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 441px; top: 233px; position: absolute; right: 499px;" Text="To:"></asp:Label>
-        <asp:DropDownList ID="DropDownList2" runat="server" style="z-index: 1; left: 481px; top: 234px; position: absolute">
+        <asp:DropDownList ID="ddlTo" runat="server" style="z-index: 1; left: 481px; top: 234px; position: absolute">
+            <asp:ListItem>Leicester</asp:ListItem>
+            <asp:ListItem>Birmingham</asp:ListItem>
+            <asp:ListItem>London</asp:ListItem>
+            <asp:ListItem>Cambridge</asp:ListItem>
+            <asp:ListItem>Glasgow</asp:ListItem>
         </asp:DropDownList>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 115px; top: 318px; position: absolute" Text="Date:"></asp:Label>
-        <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 178px; top: 315px; position: absolute; margin-bottom: 5px; right: 654px;"></asp:TextBox>
+        <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 183px; top: 317px; position: absolute; margin-bottom: 5px; right: 645px;"></asp:TextBox>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 435px; top: 317px; position: absolute" Text="Time:"></asp:Label>
         <asp:Label ID="Label6" runat="server" Font-Size="X-Large" style="z-index: 1; left: 334px; top: 228px; position: absolute" Text="&lt;=&gt;"></asp:Label>
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 74px; top: 278px; position: absolute" Text="Departure Date &amp; Time:"></asp:Label>
-        <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 82px; top: 196px; position: absolute" Text="Departure station:"></asp:Label>
+        <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 82px; top: 196px; position: absolute; bottom: 377px;" Text="Departure station:"></asp:Label>
         <asp:Button ID="btnFilterConnections" runat="server" style="z-index: 1; left: 732px; top: 288px; position: absolute" Text="Search Connections" OnClick="btnFilterConnections_Click" />
         <asp:Label ID="Label9" runat="server" Font-Size="X-Large" style="z-index: 1; left: 359px; top: 377px; position: absolute" Text="Explore more of T-Train:"></asp:Label>
         <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 92px; top: 435px; position: absolute" Text="Articles:"></asp:Label>
@@ -56,6 +67,10 @@
         <asp:Button ID="btnPick" runat="server" OnClick="btnPick_Click" style="z-index: 1; left: 348px; top: 315px; position: absolute; height: 26px" Text="Pick" />
         <asp:DropDownList ID="ddlTime" runat="server" style="z-index: 1; left: 493px; top: 316px; position: absolute">
         </asp:DropDownList>
+    <p>
+        &nbsp;</p>
+        <p>
+            &nbsp;</p>
     </form>
-</body>
+    </body>
 </html>

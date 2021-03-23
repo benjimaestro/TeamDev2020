@@ -123,13 +123,13 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// ddlFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFrom;
 
         /// <summary>
         /// Label6 control.
@@ -150,13 +150,13 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// ddlTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTo;
 
         /// <summary>
         /// Label7 control.
@@ -177,22 +177,13 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
-        /// <summary>
-        /// TextBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
         /// Label5 control.
@@ -204,15 +195,6 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// TextBox3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
-
-        /// <summary>
         /// btnFilterConnections control.
         /// </summary>
         /// <remarks>
@@ -220,6 +202,15 @@ namespace T_Train_Front_office.Forms.Connection
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFilterConnections;
+
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
         /// btnConnections control.
@@ -231,13 +222,13 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Button btnConnections;
 
         /// <summary>
-        /// Label9 control.
+        /// lblConsHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
+        protected global::System.Web.UI.WebControls.Label lblConsHeader;
 
         /// <summary>
         /// btnLogout control.
@@ -249,22 +240,22 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Button btnLogout;
 
         /// <summary>
-        /// Label10 control.
+        /// lblConsRoute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label lblConsRoute;
 
         /// <summary>
-        /// Label12 control.
+        /// lblConsTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.Label lblConsTime;
 
         /// <summary>
         /// btnBookTicket control.
@@ -276,30 +267,57 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Button btnBookTicket;
 
         /// <summary>
-        /// Button1 control.
+        /// btnManageConnection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnManageConnection;
 
         /// <summary>
-        /// Label11 control.
+        /// lblConsDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label lblConsDate;
 
         /// <summary>
-        /// Label18 control.
+        /// lblConsPublic control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
+        protected global::System.Web.UI.WebControls.Label lblConsPublic;
+
+        /// <summary>
+        /// ddlTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTime;
+
+        /// <summary>
+        /// btnPick control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPick;
+
+        /// <summary>
+        /// dtpDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar dtpDate;
     }
 }

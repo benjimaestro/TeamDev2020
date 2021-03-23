@@ -33,7 +33,7 @@ namespace Timetable
                 {
                     lblTitle.Text = "Change User Details";
                     Users.Find(UserID);
-                    txtEmail.Text = Convert.ToString(Users.ThisUser.EMail);
+                    txtEmail.Text = Convert.ToString(Users.ThisUser.Email);
                     txtFirstName.Text = Convert.ToString(Users.ThisUser.FirstName);
                     txtLastName.Text = Convert.ToString(Users.ThisUser.SecondName);
                     ddlSubject.SelectedValue = Users.ThisUser.Subject;
@@ -62,13 +62,13 @@ namespace Timetable
         string add()
         {
             //Function to validate a User's info, and if it is valid then add it to DB
-            //User is checked so see if the EMail being used already exists in the DB
+            //User is checked so see if the Email being used already exists in the DB
             String Error = "";
             clsUserCollection PreUsers = new clsUserCollection();
             PreUsers.FindExistingUser(txtEmail.Text);
-            if (PreUsers.ThisUser.EMail != null)
+            if (PreUsers.ThisUser.Email != null)
             {
-                Error = Error + "User already exists with that EMail</br>";
+                Error = Error + "User already exists with that Email</br>";
             }
 
             //Password is checked for confirmatiom
@@ -84,8 +84,8 @@ namespace Timetable
             Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
-                Users.ThisUser.EMail = txtEmail.Text;
-                Users.ThisUser.Password = Users.GetHashPassword(txtPassword.Text);
+                Users.ThisUser.Email = txtEmail.Text;
+                Users.ThisUser.Password = Users.ThisUser.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
                 Users.ThisUser.SecondName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
@@ -110,10 +110,10 @@ namespace Timetable
             PreUsers.FindExistingUser(txtEmail.Text);
             Users.FindExistingUser(txtEmail.Text);
 
-            //User is checked so see if the EMail being used already exists in the DB
-            if (PreUsers.ThisUser != null && PreUsers.ThisUser.EMail == txtEmail.Text && PreUsers.ThisUser.ID != UserID)
+            //User is checked so see if the Email being used already exists in the DB
+            if (PreUsers.ThisUser != null && PreUsers.ThisUser.Email == txtEmail.Text && PreUsers.ThisUser.ID != UserID)
             {
-                Error = Error + "User already exists with that EMail</br>";
+                Error = Error + "User already exists with that Email</br>";
             }
 
             //Check if password confirmation matches
@@ -132,8 +132,8 @@ namespace Timetable
             if (Error == "")
             {
                 Users.ThisUser.ID = UserID;
-                Users.ThisUser.EMail = txtEmail.Text;
-                Users.ThisUser.Password = Users.GetHashPassword(txtPassword.Text);
+                Users.ThisUser.Email = txtEmail.Text;
+                Users.ThisUser.Password = Users.ThisUser.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
                 Users.ThisUser.SecondName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);

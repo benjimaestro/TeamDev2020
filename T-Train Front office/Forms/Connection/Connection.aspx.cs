@@ -76,5 +76,17 @@ namespace T_Train_Front_office.Forms.Connection
             //redirect to logout
             Response.Redirect("../Default.aspx");
         }
+
+        protected void btnPick_Click(object sender, EventArgs e)
+        {
+            dtpDate.Visible = true;
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            DateTime date = dtpDate.SelectedDate;
+            txtDate.Text = Convert.ToString(date).Substring(0, 10);
+            dtpDate.Visible = false;
+        }
     }
 }
