@@ -86,7 +86,20 @@ class clsLaptopUser
         {
             errorMessage += "Address must be 12 characters or longer!" + "<br />";
         }
-       
+        
+        //Validation for Password
+        if (LaptopUserPassword.Length == 0)
+        {
+            errorMessage += "TelephoneNumber is a required field!" + "<br />";
+        }
+        else if (LaptopUserPassword.Length > 14)
+        {
+            errorMessage += "TelephoneNumber must be 16 characters or shorter!" + "<br />";
+        }
+        else if (LaptopUserPassword.Length < 10)
+        {
+            errorMessage += "TelephoneNumber must be 10 characters or longer!" + "<br />";
+        }
         //Validation for TelephoneNumber
         if (LaptopUserTelephoneNumber.Length == 0)
         {
@@ -101,5 +114,11 @@ class clsLaptopUser
             errorMessage += "TelephoneNumber must be 12 characters or longer!" + "<br />";
         }
         return errorMessage;
+    }
+
+    public bool Find(int LaptopUserID)
+    {
+        //always return true
+        return true;
     }
 }
