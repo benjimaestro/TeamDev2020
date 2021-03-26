@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-class clsLaptopUser
+public class clsLaptopUser
 {
     public int ID { get; set; }
     public string LaptopUserAddress { get; internal set; }
@@ -10,6 +10,8 @@ class clsLaptopUser
     public string LaptopUserFirstName { get; internal set; }
     public string LaptopUserLastName { get; internal set; }
     public string LaptopTelephoneNumber { get; internal set; }
+    public int LaptopUserId { get;  set; }
+    public string LaptopUser { get; internal set; }
 
     internal bool FindLaptopUser(int staffID)
     {

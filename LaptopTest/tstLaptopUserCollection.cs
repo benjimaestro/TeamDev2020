@@ -1,6 +1,7 @@
 ﻿using System;
 using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace LaptopTest
 {
@@ -27,6 +28,27 @@ namespace LaptopTest
             AllLaptopUsers.Count = SomeCount;
             //test to see that the two values are the same
             Assert.AreEqual(AllLaptopUsers.Count, SomeCount);
+        }
+        [TestMethod]
+        public void AllLaptopUsersOK()
+        {
+            // create an instance of the class we want to create
+            clsLaptopUserCollection LaptopUsers = new clsLaptopUserCollection();
+            //create some test data to assign to the property
+            //in this case the data needs to be a list of objects
+            List<clsLaptopUser> TestList = new List<clsLaptopUser>();
+            //add an itemm to the list
+            //create the item of test data
+            clsLaptopUser TestItem = new clsLaptopUser();
+            //set its properties
+            TestItem.LaptopUserId = 4365;
+            TestItem.LaptopUser = "Eddie Rose";
+            //add the item tot the test list
+            TestList.Add(TestItem);
+            //assign the data to the property
+            LaptopUsers.AllLaptopUsers = TestList;
+            //test to see that the two values are the same
+            Assert.AreEqual(LaptopUsers.AllLaptopUsers, TestList);
         }
     }
    
