@@ -72,35 +72,23 @@ namespace LaptopLoanTest
             ALaptopUser.LaptopUserLastName = testLastName;
             Assert.AreEqual(ALaptopUser.LaptopUserLastName, testLastName);
         }
-       // [TestMethod]
-        public void FindMethodExists()
-        {
-            //create an instance of the class we want to create
-            clsLaptopUser ALaptopUser = new clsLaptopUser();
-            //boolean variable to store the result of the validation
-            Boolean Found = false;
-            //create some test data to use with the method
-            Int32 LaptopUserID = 2435;
-            //invoke the method
-            Found = ALaptopUser.Find(LaptopUserID);
-            Assert.IsTrue(Found);
-        }//
+       
         //[TestMethod]
         public void FindMethodExistss()
         {
             //Put Id that exists to test this
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            int CustomerId = 1;
-            bool found = ALaptopUser.FindLaptopUser(CustomerId);
+            int LaptopUserId = 1;
+            bool found = ALaptopUser.FindLaptopUserId(LaptopUserId);
             Assert.IsTrue(found);
         }//
        // [TestMethod]
-        public void TestCustomerNotFound()
+        public void TestLaptopUserNotFound()
         {
             //Put Id that does not exist to test this
             clsLaptopUser ALaptopUser = new clsLaptopUser();
             int LaptopUserId = 2436;
-            bool found = ALaptopUser.FindLaptopUser(LaptopUserId);
+            bool found = ALaptopUser.FindLaptopUserId(LaptopUserId);
             Assert.IsFalse(found);
         }//
         [TestMethod]
