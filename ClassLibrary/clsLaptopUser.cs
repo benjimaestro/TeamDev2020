@@ -11,7 +11,8 @@ public class clsLaptopUser
     public string LaptopUserLastName { get; set; }
     public string LaptopTelephoneNumber { get; set; }
     public int LaptopUserId { get; set; }
-    public string LaptopUser { get; internal set; }
+    public string LaptopUser { get; set; }
+    public int LaptopUserNo { get; set; }
 
     bool FindLaptopUser(int staffID)
     {

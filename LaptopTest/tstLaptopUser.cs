@@ -7,7 +7,7 @@ namespace LaptopLoanTest
     public class tstLaptopUser
 
     {
-        public object ALaptopUser { get; private set; }
+        public object ALaptopUser { get; set; }
 
         //good test data
         //create some test data to pass to the method
