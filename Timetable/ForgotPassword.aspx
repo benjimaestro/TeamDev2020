@@ -50,7 +50,7 @@
             left: 9px;
             top: 173px;
             position: absolute;
-            width: 272px;
+            width: 325px;
         }
         .auto-style9 {
             z-index: 1;
@@ -66,21 +66,31 @@
             height: 195px;
             width: 672px;
         }
+        .auto-style11 {
+            position: absolute;
+            top: 287px;
+            left: 10px;
+            z-index: 1;
+            width: 276px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="lblTitle" runat="server" Font-Size="X-Large" style="z-index: 1; left: 17px; top: 15px; position: absolute" Text="Forgot Password"></asp:Label>
 
-        <asp:Label ID="Label2" runat="server" Text="User's Password" CssClass="auto-style4"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="New Password" CssClass="auto-style4"></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server" MaxLength="50" TextMode="Password" EnableTheming="True" CssClass="auto-style5"></asp:TextBox>
-        <asp:Label ID="Label3" runat="server" Text="Confirm User's Password" CssClass="auto-style6"></asp:Label>
+        <asp:Label ID="Label3" runat="server" Text="Confirm New Password" CssClass="auto-style6"></asp:Label>
         <asp:TextBox ID="txtPasswordConfirm" runat="server" MaxLength="50" TextMode="Password" CssClass="auto-style7"></asp:TextBox>
-        <asp:Label ID="Label6" runat="server" Text="EMail Code (Check your EMails)" CssClass="auto-style8"></asp:Label>
+        <asp:Label ID="Label6" runat="server" Text="EMail Code" CssClass="auto-style8"></asp:Label>
         <asp:TextBox ID="txtEMailCode" runat="server" MaxLength="50" CssClass="auto-style9"></asp:TextBox>
         <asp:Button ID="btnRegister" runat="server" Text="Apply" OnClick="btnRegister_Click" CssClass="auto-style1" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="auto-style2" />
         <asp:Label ID="lblError" runat="server" Font-Bold="True" ForeColor="Red" CssClass="auto-style10"></asp:Label>
+        <p>
+            <asp:Label ID="Label7" runat="server" CssClass="auto-style11" Text="You have requested a password reset. Your EMail code will have been sent to the EMail address used to register this account. Check your spam folders if it doesn't show in your inbox."></asp:Label>
+        </p>
     </form>
 </body>
 </html>
