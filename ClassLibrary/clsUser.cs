@@ -18,11 +18,6 @@ namespace ClassLibrary
             get { return mPassword; }
             set { mPassword = value; }
         }
-        public string SecondName
-        {
-            get { return mLastName; }
-            set { mLastName = value; }
-        }
         public bool Admin
         {
             get { return mAdmin; }
@@ -57,7 +52,7 @@ namespace ClassLibrary
             }
             else { return false; }
         }
-        public string Validate(string Email, string FirstName, string SecondName, string Password, string Subject)
+        public string Validate(string Email, string FirstName, string LastName, string Password, string Subject)
         {
             //Function to validate inputs before they are used - returns error as string
             string Error = "";
@@ -73,7 +68,7 @@ namespace ClassLibrary
             
             if (Email.Length > 50 || Email.Length < 6) { Error = Error + "Email must be 6-50 characters</br>"; }
             if (FirstName.Length > 50 || FirstName.Length < 1) { Error = Error + "First name must be 1-50 characters</br>"; }
-            if (SecondName.Length > 50 || SecondName.Length < 1) { Error = Error + "Last name must be 1-50 characters</br>"; }
+            if (LastName.Length > 50 || LastName.Length < 1) { Error = Error + "Last name must be 1-50 characters</br>"; }
             if (Password.Length == 0) { Error = Error + "Password cannot be blank</br>"; }
             if (PasswordRegex.IsMatch(Password) == false) { Error = Error + "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>"; }
             if (Password.Length > 50) { Error = Error + "Password must be 50 characters or under</br>"; }

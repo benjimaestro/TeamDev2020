@@ -35,7 +35,7 @@ namespace Timetable
                     Users.Find(UserID);
                     txtEmail.Text = Convert.ToString(Users.ThisUser.Email);
                     txtFirstName.Text = Convert.ToString(Users.ThisUser.FirstName);
-                    txtLastName.Text = Convert.ToString(Users.ThisUser.SecondName);
+                    txtLastName.Text = Convert.ToString(Users.ThisUser.LastName);
                     ddlSubject.SelectedValue = Users.ThisUser.Subject;
                     chkAdmin.Checked = Users.ThisUser.Admin;
                 }
@@ -87,7 +87,7 @@ namespace Timetable
                 Users.ThisUser.Email = txtEmail.Text;
                 Users.ThisUser.Password = Users.ThisUser.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
-                Users.ThisUser.SecondName = txtLastName.Text;
+                Users.ThisUser.LastName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
                 Users.ThisUser.Admin = chkAdmin.Checked;
                 Int32 UserID = Users.Add();
@@ -135,7 +135,7 @@ namespace Timetable
                 Users.ThisUser.Email = txtEmail.Text;
                 Users.ThisUser.Password = Users.ThisUser.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
-                Users.ThisUser.SecondName = txtLastName.Text;
+                Users.ThisUser.LastName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
                 Users.ThisUser.Admin = chkAdmin.Checked;
                 Users.Edit();

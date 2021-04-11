@@ -59,7 +59,7 @@ namespace ClassLibrary
                 User.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
                 User.Password = Convert.ToString(DB.DataTable.Rows[Index]["Password"]);
                 User.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
-                User.SecondName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                User.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
                 User.Admin = Convert.ToBoolean(DB.DataTable.Rows[Index]["Admin"]);
                 User.Subject = Convert.ToString(DB.DataTable.Rows[Index]["Subject"]);
 
@@ -76,7 +76,7 @@ namespace ClassLibrary
             DB.AddParameter("@Email", mThisUser.Email);
             DB.AddParameter("@Password", mThisUser.Password);
             DB.AddParameter("@FirstName", mThisUser.FirstName);
-            DB.AddParameter("@LastName", mThisUser.SecondName);
+            DB.AddParameter("@LastName", mThisUser.LastName);
             DB.AddParameter("@Admin", mThisUser.Admin);
             DB.AddParameter("@Subject", mThisUser.Subject);
             return DB.Execute("sproc_tblUser_AddUser");
@@ -121,7 +121,7 @@ namespace ClassLibrary
             DB.AddParameter("@Email", mThisUser.Email);
             DB.AddParameter("@Password", mThisUser.Password);
             DB.AddParameter("@FirstName", mThisUser.FirstName);
-            DB.AddParameter("@LastName", mThisUser.SecondName);
+            DB.AddParameter("@LastName", mThisUser.LastName);
             DB.AddParameter("@Admin", mThisUser.Admin);
             DB.AddParameter("@Subject", mThisUser.Subject);
             return DB.Execute("sproc_tblUser_EditUser");

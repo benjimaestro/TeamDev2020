@@ -53,8 +53,8 @@ namespace Timetable_Testing
         {
             clsUser User = new clsUser();
             string TestData = "Adam";
-            User.SecondName = TestData;
-            Assert.AreEqual(User.SecondName, TestData);
+            User.LastName = TestData;
+            Assert.AreEqual(User.LastName, TestData);
         }
         [TestMethod]
         public void PasswordPropertyOK()
@@ -123,7 +123,7 @@ namespace Timetable_Testing
             Boolean OK = true;
             Int32 UserID = 3;
             Found = User.Find(UserID);
-            if (User.SecondName != "Doe")
+            if (User.LastName != "Doe")
             {
                 OK = false;
             }
@@ -164,11 +164,11 @@ namespace Timetable_Testing
             string Email = "badEmail";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Invalid Email format</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -178,11 +178,11 @@ namespace Timetable_Testing
             string Email = "123456789@1234567890123456789012345678901234566.com";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Email must be 6-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -192,11 +192,11 @@ namespace Timetable_Testing
             string Email = "123456789@123456789012345678901234567890123456.com";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -206,11 +206,11 @@ namespace Timetable_Testing
             string Email = "123456789@12345678901234567890123456789012345.com";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         public void TestValidate0Email()
@@ -219,11 +219,11 @@ namespace Timetable_Testing
             string Email = "";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Email must be 6-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         public void TestValidate6Email()
@@ -232,11 +232,11 @@ namespace Timetable_Testing
             string Email = "a@a.com";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         public void TestValidateGoodEmail()
@@ -245,11 +245,11 @@ namespace Timetable_Testing
             string Email = "aaaa@aaaa.com";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         public void TestValidateExtremeEmail()
@@ -258,11 +258,11 @@ namespace Timetable_Testing
             string Email = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@aaaaaaaaaa.com";
             string Password = "Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Email must be 6-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -272,11 +272,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Password cannot be blank</br>Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -286,11 +286,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "1";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -300,11 +300,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Ab";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -314,11 +314,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!Password123!";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -328,11 +328,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "ASDasd123!ASDasd123!ASDasd123!ASDasd123!ASDasd123";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -342,11 +342,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!11111111Password123!111111111111111111";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -356,11 +356,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!11111111Password123!11111111111111111111";
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>Password must be 50 characters or under</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -370,11 +370,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!".PadRight(100);
             string FirstName = "test";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Password must contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character</br>Password must be 50 characters or under</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -384,11 +384,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "First name must be 1-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -398,11 +398,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "a";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -412,11 +412,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "aa";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -426,11 +426,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "1234512345123451234512345";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -440,11 +440,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "1234512345123451234512345123451234512345123451234";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -454,11 +454,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "12345123451234512345123451234512345123451234512345";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -468,11 +468,11 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "123451234512345123451234512345123451234512345123451";
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "First name must be 1-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -482,123 +482,123 @@ namespace Timetable_Testing
             string Email = "test@test.com";
             string Password = "Password123!";
             string FirstName = "1".PadRight(100);
-            string SecondName = "test";
+            string LastName = "test";
             string Subject = "Any";
 
             string ExpectedError = "First name must be 1-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidateBlankSecondName()
+        public void TestValidateBlankLastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "";
+            string LastName =  "";
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Last name must be 1-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidateMinSecondName()
+        public void TestValidateMinLastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "a";
+            string LastName =  "a";
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidate2SecondName()
+        public void TestValidate2LastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "aa";
+            string LastName =  "aa";
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidateMidSecondName()
+        public void TestValidateMidLastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "1234512345123451234512345";
+            string LastName =  "1234512345123451234512345";
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidate49SecondName()
+        public void TestValidate49LastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "1234512345123451234512345123451234512345123451234";
+            string LastName =  "1234512345123451234512345123451234512345123451234";
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidateMaxSecondName()
+        public void TestValidateMaxLastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "12345123451234512345123451234512345123451234512345";
+            string LastName =  "12345123451234512345123451234512345123451234512345";
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidateMax51SecondName()
+        public void TestValidateMax51LastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "123451234512345123451234512345123451234512345123451";
+            string LastName =  "123451234512345123451234512345123451234512345123451";
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Last name must be 1-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
-        public void TestValidateExtremeSecondName()
+        public void TestValidateExtremeLastName()
         {
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName =  "1".PadRight(100);
+            string LastName =  "1".PadRight(100);
             string FirstName = "test";
             string Subject = "Any";
 
             string ExpectedError = "Last name must be 1-50 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -607,12 +607,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "";
 
             string ExpectedError = "Subject must be 1-10 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -621,12 +621,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "A";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -635,12 +635,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "An";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -649,12 +649,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "Maths";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -663,12 +663,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "AAAAAAAAA";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -677,12 +677,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "AAAAAAAAAA";
 
             string ExpectedError = "";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -691,12 +691,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "AAAAAAAAAAA";
 
             string ExpectedError = "Subject must be 1-10 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
@@ -705,12 +705,12 @@ namespace Timetable_Testing
             clsUser TestItem = new clsUser();
             string Email = "test@test.com";
             string Password = "Password123!";
-            string SecondName = "test";
+            string LastName = "test";
             string FirstName = "test";
             string Subject = "Any".PadRight(100);
 
             string ExpectedError = "Subject must be 1-10 characters</br>";
-            string Error = TestItem.Validate(Email, FirstName, SecondName, Password, Subject);
+            string Error = TestItem.Validate(Email, FirstName, LastName, Password, Subject);
             Assert.AreEqual(Error, ExpectedError);
         }
         [TestMethod]
