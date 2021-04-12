@@ -25,7 +25,7 @@ namespace Timetable_Testing
             TestItem.Email = "test@test.com";
             TestItem.Password = "password";
             TestItem.FirstName = "test";
-            TestItem.SecondName = "test";
+            TestItem.LastName = "test";
             TestItem.Admin = false;
             TestItem.Subject = "Any";
             TestList.Add(TestItem);
@@ -42,7 +42,7 @@ namespace Timetable_Testing
             TestItem.Email = "test@test.com";
             TestItem.Password = "password";
             TestItem.FirstName = "test";
-            TestItem.SecondName = "test";
+            TestItem.LastName = "test";
             TestItem.Admin = false;
             TestItem.Subject = "Any";
 
@@ -64,7 +64,7 @@ namespace Timetable_Testing
             TestItem.Email = "test@test.com";
             TestItem.Password = "password";
             TestItem.FirstName = "test";
-            TestItem.SecondName = "test";
+            TestItem.LastName = "test";
             TestItem.Admin = false;
             TestItem.Subject = "Any";
 
@@ -75,7 +75,7 @@ namespace Timetable_Testing
             TestItem.Email = "hhhtest@test.com";
             TestItem.Password = "hhhpassword";
             TestItem.FirstName = "hhhtest";
-            TestItem.SecondName = "hhhtest";
+            TestItem.LastName = "hhhtest";
             TestItem.Admin = false;
             TestItem.Subject = "hhhAny";
 

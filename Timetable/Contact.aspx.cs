@@ -23,8 +23,8 @@ namespace Timetable
             Users.Find(UserID);
             if (Mode == "Admin") 
             {
-                lblTitle.Text = $"Message {Users.ThisUser.FirstName} {Users.ThisUser.SecondName}"; 
-                btnSend.Text = $"Send to {Users.ThisUser.FirstName} {Users.ThisUser.SecondName}";
+                lblTitle.Text = $"Message {Users.ThisUser.FirstName} {Users.ThisUser.LastName}"; 
+                btnSend.Text = $"Send to {Users.ThisUser.FirstName} {Users.ThisUser.LastName}";
             }
             else 
             { 
@@ -46,7 +46,7 @@ namespace Timetable
                 }
                 else
                 {
-                    Thread = Thread + $"{Users.ThisUser.FirstName} {Users.ThisUser.SecondName} ({Messages.Messagelist[Index].Timestamp}): {Messages.Messagelist[Index].Content}"+Environment.NewLine + Environment.NewLine;
+                    Thread = Thread + $"{Users.ThisUser.FirstName} {Users.ThisUser.LastName} ({Messages.Messagelist[Index].Timestamp}): {Messages.Messagelist[Index].Content}"+Environment.NewLine + Environment.NewLine;
                 }
                 Index++;
             }

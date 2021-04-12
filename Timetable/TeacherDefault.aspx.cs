@@ -18,7 +18,7 @@ namespace Timetable
             clsUserCollection Users = new clsUserCollection();
             Users.Find(UserID);
             //Greet user with name retrieved with the ID
-            lblTitle.Text = $"Hello, {Users.ThisUser.FirstName} {Users.ThisUser.SecondName}";
+            lblTitle.Text = $"Hello, {Users.ThisUser.FirstName} {Users.ThisUser.LastName}";
         }
 
         protected void btnViewTimetable_Click(object sender, EventArgs e)
