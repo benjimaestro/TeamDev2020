@@ -26,7 +26,7 @@ namespace LaptopLoanTest
             Assert.IsNotNull(ALaptopUser);
         }
         [TestMethod]
-        public void IDPropertyOK()
+        public void LaptopUserIDPropertyOK()
         {
             clsLaptopUser LaptopUser = new clsLaptopUser();
             Int32 TestData = 1;
@@ -109,8 +109,8 @@ namespace LaptopLoanTest
             //Tests whether the "Password" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
             string testPassword = "visual123";
-            ALaptopUser.LaptopTelephoneNumber = testPassword;
-            Assert.AreEqual(ALaptopUser.LaptopTelephoneNumber, testPassword);
+            ALaptopUser.LaptopUserPassword = testPassword;
+            Assert.AreEqual(ALaptopUser.LaptopUserPassword, testPassword);
         }
 
         [TestMethod]
@@ -177,8 +177,8 @@ namespace LaptopLoanTest
             //Tests whether the "Password" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
             string testTelephoneNumber = "07835338736";
-            ALaptopUser.LaptopTelephoneNumber = testTelephoneNumber;
-            Assert.AreEqual(ALaptopUser.LaptopTelephoneNumber, testTelephoneNumber);
+            ALaptopUser.LaptopUserTelephoneNumber = testTelephoneNumber;
+            Assert.AreEqual(ALaptopUser.LaptopUserTelephoneNumber, testTelephoneNumber);
         }
         [TestMethod]
         public void LaptopUserFirstNameMaxLessOne()
@@ -1031,6 +1031,28 @@ namespace LaptopLoanTest
             //test to see that the result is correct
             Assert.AreNotEqual(error, "");
         }
+        [TestMethod]
+        public void LaptopUserAddressPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //create some test data to assign to the property
+            string TestData = "8 GinStreet, Nottingham, NT1 111, United Kingdom";
+            //assign the data to the property
+            ALaptopUser.LaptopUserAddress = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(ALaptopUser.LaptopUserAddress, TestData);
+        }
+        [TestMethod]
+        public void LaptopUserCreatedAtPropertyExists()
+        {
+            //Tests whether the "LaptopUserCreatedAt" property can be set
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            DateTime testLaptopUserCreatedAt = new DateTime(2001, 01, 17, 0, 0, 0);
+            ALaptopUser.LaptopUserCreatedAt = testLaptopUserCreatedAt;
+            Assert.AreEqual(ALaptopUser.LaptopUserCreatedAt, testLaptopUserCreatedAt);
+        }
         
+
     }
 }

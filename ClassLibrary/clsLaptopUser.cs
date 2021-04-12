@@ -9,10 +9,12 @@ public class clsLaptopUser
     public string LaptopUserEmail { get; set; }
     public string LaptopUserFirstName { get; set; }
     public string LaptopUserLastName { get; set; }
-    public string LaptopTelephoneNumber { get; set; }
+    public string LaptopUserTelephoneNumber { get; set; }
     public int LaptopUserId { get; set; }
     public string LaptopUser { get; set; }
     public int LaptopUserNo { get; set; }
+    public DateTime LaptopUserCreatedAt { get; set; }
+    public string LaptopUserPassword { get; set; }
 
     bool FindLaptopUser(int staffID)
     {
