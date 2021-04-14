@@ -109,7 +109,7 @@ namespace ClassLibrary
             string errorMessage = "";
 
             //Validation for connectionStartStation
-            if (connectionStartStation.Length == 0)
+            if (String.IsNullOrEmpty(connectionStartStation) || connectionStartStation.Length == 0)
             {
                 errorMessage += "Start Station is a required field!" + "<br />";
             }
@@ -123,7 +123,7 @@ namespace ClassLibrary
             }
 
             //Validation for connectionEndStation
-            if (connectionEndStation.Length == 0)
+            if (String.IsNullOrEmpty(connectionEndStation) || connectionEndStation.Length == 0)
             {
                 errorMessage += "End station is a required field!" + "<br />";
             }
