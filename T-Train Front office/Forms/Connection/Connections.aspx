@@ -41,7 +41,7 @@
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 74px; top: 278px; position: absolute" Text="Departure Date &amp; Time:"></asp:Label>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 109px; top: 318px; position: absolute; right: 814px;" Text="Date:"></asp:Label>
         <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 183px; top: 317px; position: absolute; margin-bottom: 5px; right: 645px;"></asp:TextBox>
-        <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 435px; top: 317px; position: absolute" Text="Time:"></asp:Label>
+        <asp:Label ID="lblConnSelected" runat="server" style="z-index: 1; left: 592px; top: 605px; position: absolute" Text="You must select a connection first!" Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
         <asp:Button ID="btnFilterConnections" runat="server" style="z-index: 1; left: 732px; top: 288px; position: absolute" Text="Search Connections" OnClick="btnFilterConnections_Click" />
             <asp:Label ID="lblError" runat="server" Font-Size="Large" ForeColor="Red" style="z-index: 1; left: 397px; top: 179px; position: absolute"></asp:Label>
         <asp:Button ID="btnConnections" runat="server" style="z-index: 1; left: 755px; top: 247px; position: absolute" Text="All connections" OnClick="btnConnections_Click" />
@@ -72,6 +72,7 @@
         <asp:ListBox ID="lstConnections" runat="server" style="z-index: 1; left: 154px; top: 460px; position: absolute; height: 182px; width: 345px" Visible="False"></asp:ListBox>
         <p>
         <asp:Label ID="lblNoConsFound" runat="server" style="z-index: 1; left: 248px; top: 471px; position: absolute; height: 64px; width: 455px;" Text="There were no connections found on this day from and to the selected place. Please try again with different criteria or check back soon, new connections are added everyday!" Font-Bold="True" Font-Size="Large" Visible="False"></asp:Label>
+        <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 435px; top: 317px; position: absolute" Text="Time:"></asp:Label>
         </p>
     </form>
 </body>

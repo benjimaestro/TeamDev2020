@@ -186,13 +186,13 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
-        /// Label5 control.
+        /// lblConnSelected control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label lblConnSelected;
 
         /// <summary>
         /// btnFilterConnections control.
@@ -301,5 +301,14 @@ namespace T_Train_Front_office.Forms.Connection
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNoConsFound;
+
+        /// <summary>
+        /// Label18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label18;
     }
 }

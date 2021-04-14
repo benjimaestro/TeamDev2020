@@ -222,14 +222,28 @@ namespace T_Train_Front_office.Forms.Connection
 
         protected void btnBookTicket_Click1(object sender, EventArgs e)
         {
-            //redirect to logout
-            Response.Redirect("../Ticket/BookTicket.aspx");
+            //get the selected connection's id
+            string selectedValue = lstConnections.SelectedValue;
+            //check if the selection was made
+            if(selectedValue == "")
+            {
+                //if it was not, show an error
+                lblConnSelected.Visible = true;
+            } //if it was, redirect
+            else Response.Redirect("../Ticket/BookTicket.aspx?connId="+lstConnections.SelectedValue);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //redirect to a particular connection
-            Response.Redirect("Connection.aspx");
+            //get the selected connection's id
+            string selectedValue = lstConnections.SelectedValue;
+            //check if the selection was made
+            if (selectedValue == "")
+            {
+                //if it was not, show an error
+                lblConnSelected.Visible = true;
+            } //if it was, redirect
+            else Response.Redirect("Connection.aspx?connId="+ lstConnections.SelectedValue);
         }
 
         protected void btnPick_Click(object sender, EventArgs e)
