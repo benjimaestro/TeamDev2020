@@ -62,13 +62,6 @@ namespace ClassLibrary
             else { return ""; }
         }
 
-        public void FindEmail(string Email)
-        {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@Email", Email);
-            DB.Execute("sproc_tblUser_EmailExists");
-        }
-
         public string SendResetEmail(string System)
         {
             //This function checks which system it is being called for, and changes the specified user's password
