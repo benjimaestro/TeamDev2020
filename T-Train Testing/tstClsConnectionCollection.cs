@@ -184,6 +184,17 @@ namespace TTrainConnection
         }
 
         [TestMethod]
+        public void ListConnectionsMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsConnectionCollection allConnections = new clsConnectionCollection();
+            //perform the listing
+            allConnections.MyConnections = allConnections.listConnections();
+            //the collection list should not be empty
+            Assert.AreNotEqual(0, allConnections.MyConnections.Count);
+        }
+
+        [TestMethod]
         public void FilterConnectionsMethodOK()
         {
             //create an instance of the class we want to create
