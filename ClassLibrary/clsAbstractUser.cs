@@ -36,10 +36,6 @@ namespace ClassLibrary
             get { return mLastName; }
             set { mLastName = value; }
         }
-        public string FullName
-        {
-            get { return $"{mFirstName} {mLastName}"; }
-        }
 
         public string GetHashPassword(string ToHash)
         {
