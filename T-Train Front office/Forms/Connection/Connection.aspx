@@ -19,37 +19,45 @@
         </div>
         <asp:Label ID="lblModifyHeader" runat="server" Font-Size="X-Large" style="z-index: 1; left: 45px; top: 139px; position: absolute" Text="You are modifying this connection:" Visible="False"></asp:Label>
         <p>
-        <asp:Label ID="lblModDate" runat="server" style="z-index: 1; left: 350px; top: 197px; position: absolute" Text="12/06/2021" Visible="False"></asp:Label>
-        <asp:Label ID="lblModTime" runat="server" style="z-index: 1; left: 530px; top: 199px; position: absolute; right: 620px;" Text="14:25" Visible="False"></asp:Label>
+        <asp:Label ID="lblModDate" runat="server" style="z-index: 1; left: 350px; top: 197px; position: absolute" Visible="False"></asp:Label>
+        <asp:Label ID="lblModPublic" runat="server" style="z-index: 1; left: 548px; top: 199px; position: absolute; " Visible="False"></asp:Label>
         </p>
         <p>
-        <asp:Label ID="lblModLocation" runat="server" style="z-index: 1; left: 150px; top: 199px; position: absolute" Text="Leicester - Birmingham" Visible="False"></asp:Label>
+        <asp:Label ID="lblModLocation" runat="server" style="z-index: 1; left: 171px; top: 196px; position: absolute" Visible="False"></asp:Label>
         </p>
-        <asp:Label ID="lblModTickets" runat="server" style="z-index: 1; left: 665px; top: 200px; position: absolute" Text="37 tickets remaining" Visible="False"></asp:Label>
-        <asp:Label ID="lblModAdded" runat="server" style="z-index: 1; left: 718px; top: 241px; position: absolute" Text="Connection added at: 14/05/2021" Visible="False"></asp:Label>
+        <asp:Label ID="lblModTickets" runat="server" style="z-index: 1; left: 779px; top: 200px; position: absolute" Visible="False"></asp:Label>
+        <asp:Label ID="lblModAdded" runat="server" style="z-index: 1; left: 718px; top: 241px; position: absolute" Visible="False"></asp:Label>
         <asp:Label ID="lblActionName" runat="server" Font-Size="X-Large" style="z-index: 1; left: 45px; top: 281px; position: absolute" Text="Connection:"></asp:Label>
         <p>
-            &nbsp;</p>
-        <asp:Label ID="lblModId" runat="server" style="z-index: 1; left: 63px; top: 202px; position: absolute" Text="ID: 16" Visible="False"></asp:Label>
+        <asp:Label ID="lblModTime" runat="server" style="z-index: 1; left: 448px; top: 199px; position: absolute; right: 445px; width: 86px;" Visible="False"></asp:Label>
+        </p>
+        <asp:Label ID="lblModId" runat="server" style="z-index: 1; left: 77px; top: 197px; position: absolute" Visible="False"></asp:Label>
+            <asp:Label ID="lblTicketLimit0" runat="server" style="z-index: 1; left: 748px; top: 387px; position: absolute; height: 76px;" Text="Ticket limit:/Tickets remaining:"></asp:Label>
         <p>
             &nbsp;</p>
         <p>
-            &nbsp;</p>
-        <p>
-            <asp:Label ID="lblTicketLimit" runat="server" style="z-index: 1; left: 748px; top: 387px; position: absolute; height: 76px;" Text="Ticket limit:/Tickets remaining:"></asp:Label>
+        <asp:Label ID="lblStaticId" runat="server" style="z-index: 1; left: 49px; top: 198px; position: absolute; width: 44px;" Visible="False">ID:</asp:Label>
         </p>
         <p>
-            <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 777px; top: 421px; position: absolute"></asp:TextBox>
+            <asp:Label ID="lblStaticModLimit" runat="server" style="z-index: 1; left: 657px; top: 198px; position: absolute; height: 25px;" Text="Tickets remaining:" Visible="False"></asp:Label>
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:TextBox ID="txtTicketLimit" runat="server" style="z-index: 1; left: 777px; top: 421px; position: absolute"></asp:TextBox>
             <asp:Label ID="lblDelete" runat="server" Font-Size="Large" style="z-index: 1; left: 65px; top: 644px; position: absolute" Text="You can also:" Visible="False"></asp:Label>
             <asp:Button ID="btnDelConnection" runat="server" style="z-index: 1; left: 190px; top: 643px; position: absolute" Text="Delete Connection" OnClick="btnDelConnection_Click" Visible="False" />
         </p>
         <p>
             <asp:Button ID="btnSaveConnection" runat="server" style="z-index: 1; left: 411px; top: 544px; position: absolute" Text="Add connection/Save changes" OnClick="Button5_Click" />
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 129px; top: 385px; position: absolute; " Text="From:"></asp:Label>
-        <asp:DropDownList ID="DropDownList1" runat="server" style="z-index: 1; left: 212px; top: 384px; position: absolute; right: 667px;">
-        </asp:DropDownList>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 473px; top: 385px; position: absolute; right: 467px;" Text="To:"></asp:Label>
-        <asp:DropDownList ID="DropDownList2" runat="server" style="z-index: 1; left: 522px; top: 383px; position: absolute">
+        <asp:DropDownList ID="ddlFrom" runat="server" style="z-index: 1; left: 212px; top: 385px; position: absolute; ">
+            <asp:ListItem>Leicester</asp:ListItem>
+            <asp:ListItem>Birmingham</asp:ListItem>
+            <asp:ListItem>Glasgow</asp:ListItem>
+            <asp:ListItem>London</asp:ListItem>
+            <asp:ListItem>Cambridge</asp:ListItem>
         </asp:DropDownList>
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 133px; top: 497px; position: absolute" Text="Date:"></asp:Label>
         <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 200px; top: 495px; position: absolute; margin-bottom: 5px; right: 628px;"></asp:TextBox>
@@ -69,7 +77,15 @@
         <asp:DropDownList ID="ddlTime" runat="server" style="z-index: 1; left: 571px; top: 494px; position: absolute">
         </asp:DropDownList>
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 88px; top: 343px; position: absolute" Text="Departure station:"></asp:Label>
+        <asp:DropDownList ID="ddlTo" runat="server" style="z-index: 1; left: 544px; top: 384px; position: absolute">
+            <asp:ListItem>Leicester</asp:ListItem>
+            <asp:ListItem>Birmingham</asp:ListItem>
+            <asp:ListItem>Glasgow</asp:ListItem>
+            <asp:ListItem>London</asp:ListItem>
+            <asp:ListItem>Cambridge</asp:ListItem>
+        </asp:DropDownList>
         </p>
+        <asp:CheckBox ID="chkConnActive" runat="server" style="z-index: 1; left: 755px; top: 487px; position: absolute" Text="Active Immediately?" />
     </form>
 </body>
 </html>

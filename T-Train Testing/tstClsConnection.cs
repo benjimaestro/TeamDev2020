@@ -86,7 +86,7 @@ namespace TTrainConnection
         {
             //Put Id that exists to test this
             clsConnection AConnection = new clsConnection();
-            int connectionId = 1;
+            int connectionId = 2;
             bool found = AConnection.FindConnection(connectionId);
             Assert.IsTrue(found);
         }

@@ -210,8 +210,8 @@ namespace TTrainConnection
             };
             //perform the filtering
             filteredConnections.MyConnections = filteredConnections.filterConnections(AConnection);
-            //there should be exactly three results, check if they exist
-            Assert.AreEqual(3, filteredConnections.MyConnections.Count);
+            //there should be exactly 1 result, check if it exist
+            Assert.AreEqual(1, filteredConnections.MyConnections.Count);
         }
     }
 }
