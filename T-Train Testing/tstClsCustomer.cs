@@ -10,7 +10,7 @@ namespace TTrainCustomer
 
         //example test data
         private string customerAddress = "19 NewStreet, Birmingham, BA1 111, United Kingdom";
-        private DateTime customerDateOfBirth = new DateTime(2000, 7, 15);
+        private string customerDateOfBirth = "15/07/2000";
         private string customerEMail = "HelloWorld@gmail.com";
         private string customerFirstName = "Adam";
         private string customerLastName = "Example";
@@ -68,7 +68,7 @@ namespace TTrainCustomer
         {
             //Tests whether the "dateOfBirth" property can be set
             clsCustomer ACustomer = new clsCustomer();
-            DateTime testDateOfBirth = new DateTime(2000, 7, 15);
+            string testDateOfBirth = "15/07/2000";
             ACustomer.DateOfBirth = testDateOfBirth;
             Assert.AreEqual(ACustomer.DateOfBirth, testDateOfBirth);
         }
@@ -637,7 +637,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = DateTime.Now.Date.AddYears(-200); //this should fail
+            customerDateOfBirth = Convert.ToString(DateTime.Now.Date.AddYears(-200)); //this should fail
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -657,7 +657,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = Convert.ToDateTime("31/12/1919");
+            customerDateOfBirth = "31/12/1919";
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -677,7 +677,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = Convert.ToDateTime("01/01/1920");
+            customerDateOfBirth = "01/01/1920";
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -697,7 +697,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = Convert.ToDateTime("02/01/1920");
+            customerDateOfBirth = "02/01/1920";
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -717,7 +717,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = DateTime.Now.Date.AddYears(200); //this should fail
+            customerDateOfBirth = Convert.ToString(DateTime.Now.Date.AddYears(200)); //this should fail
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,

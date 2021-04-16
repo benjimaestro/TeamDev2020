@@ -36,15 +36,9 @@
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 22px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </p>
         <asp:Label ID="Label22" runat="server" Font-Size="Large" style="z-index: 1; left: 85px; top: 455px; position: absolute" Text="Customers"></asp:Label>
-        <asp:Label ID="Label23" runat="server" style="z-index: 1; left: 99px; top: 529px; position: absolute" Text="Customer's Last Name:"></asp:Label>
-        <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 272px; top: 496px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnFilterCustomers" runat="server" style="z-index: 1; left: 462px; top: 525px; position: absolute" Text="Search Customers" OnClick="btnFilterCustomers_Click" />
+        <asp:Button ID="btnFilterCustomers" runat="server" style="z-index: 1; left: 122px; top: 499px; position: absolute" Text="Filter customers" OnClick="btnFilterCustomers_Click" />
         <p>
-            <asp:Label ID="Label24" runat="server" style="z-index: 1; left: 99px; top: 494px; position: absolute" Text="Customer's First Name:"></asp:Label>
-            <asp:Label ID="Label25" runat="server" style="z-index: 1; left: 99px; top: 561px; position: absolute" Text="Customer's Date of Birth:"></asp:Label>
-        </p>
-        <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 273px; top: 528px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left: 278px; top: 561px; position: absolute"></asp:TextBox>
+            &nbsp;</p>
         <p>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 368px; top: 633px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         </p>

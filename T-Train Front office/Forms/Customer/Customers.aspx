@@ -12,32 +12,34 @@
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="Button1_Click" />
             <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 724px; top: 27px; position: absolute; " Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
-        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 351px; top: 584px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 389px; top: 661px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 70px; top: 153px; position: absolute" Text="Find customers:"></asp:Label>
         </div>
         <p>
             <asp:Label ID="Label24" runat="server" style="z-index: 1; left: 101px; top: 216px; position: absolute" Text="Customer's First Name:"></asp:Label>
-        <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 260px; top: 218px; position: absolute"></asp:TextBox>
-        <asp:Label ID="Label23" runat="server" style="z-index: 1; left: 102px; top: 252px; position: absolute" Text="Customer's Last Name:"></asp:Label>
-        <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 260px; top: 254px; position: absolute">Cha</asp:TextBox>
-            <asp:Label ID="Label25" runat="server" style="z-index: 1; left: 96px; top: 289px; position: absolute" Text="Customer's Date of Birth:"></asp:Label>
-        <asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left: 273px; top: 291px; position: absolute">/06/</asp:TextBox>
+        <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 260px; top: 218px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label23" runat="server" style="z-index: 1; left: 100px; top: 252px; position: absolute" Text="Customer's Last Name:"></asp:Label>
+        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 260px; top: 254px; position: absolute">Cha</asp:TextBox>
+            <asp:Label ID="Label25" runat="server" style="z-index: 1; left: 100px; top: 289px; position: absolute" Text="Customer's Date of Birth:"></asp:Label>
+        <asp:TextBox ID="txtDOB" runat="server" style="z-index: 1; left: 273px; top: 291px; position: absolute">/06/</asp:TextBox>
         </p>
-        <asp:Button ID="btnFilterCustomers" runat="server" style="z-index: 1; left: 476px; top: 268px; position: absolute" Text="Search" OnClick="btnFilterCustomers_Click" />
+        <asp:Button ID="btnFilterCustomers" runat="server" style="z-index: 1; left: 474px; top: 252px; position: absolute" Text="Search" OnClick="btnFilterCustomers_Click" />
         <p>
-        <asp:Label ID="Label9" runat="server" Font-Size="X-Large" style="z-index: 1; left: 36px; top: 375px; position: absolute" Text="Customers Found:"></asp:Label>
-            <asp:Button ID="btnCustomer" runat="server" style="z-index: 1; left: 535px; top: 427px; position: absolute" Text="Manage Customer" OnClick="btnCustomer_Click" />
+        <asp:Label ID="lblStaticResultsHeader" runat="server" Font-Size="X-Large" style="z-index: 1; left: 36px; top: 375px; position: absolute" Text="Customers Found:" Visible="False"></asp:Label>
+            <asp:Button ID="btnCustomer" runat="server" style="z-index: 1; left: 617px; top: 460px; position: absolute" Text="Manage Customer" OnClick="btnCustomer_Click" Visible="False" />
         </p>
-        <asp:Label ID="Label26" runat="server" style="z-index: 1; left: 139px; top: 432px; position: absolute" Text="James Charriot - 19/06/1996 - JamesC@gmail.com"></asp:Label>
-        <asp:Label ID="Label27" runat="server" style="z-index: 1; left: 140px; top: 522px; position: absolute" Text="Morris Chandle - 14/06/1992 - MChandle@promail.org"></asp:Label>
-        <asp:Label ID="Label28" runat="server" style="z-index: 1; left: 140px; top: 477px; position: absolute" Text="James Chapton - 17/06/1995 - kewikoqj@yahoo.net"></asp:Label>
         <p>
-            <asp:Button ID="btnCustomer3" runat="server" style="z-index: 1; left: 532px; top: 523px; position: absolute" Text="Manage Customer" OnClick="btnCustomer3_Click" />
-            <asp:Button ID="btnCustomer2" runat="server" style="z-index: 1; left: 535px; top: 475px; position: absolute" Text="Manage Customer" OnClick="btnCustomer2_Click" />
-        </p>
-        <asp:Label ID="Label29" runat="server" style="z-index: 1; left: 100px; top: 325px; position: absolute" Text="Customer's Email Address:"></asp:Label>
+            &nbsp;</p>
         <p>
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 190px; top: 23px; position: absolute" Text="T-Train"></asp:Label>
+        <asp:ListBox ID="lstCustomers" runat="server" style="z-index: 1; left: 68px; top: 446px; position: absolute; height: 173px; width: 419px" Visible="False"></asp:ListBox>
+        </p>
+        <p>
+        <asp:Label ID="lblNoCustFound" runat="server" style="z-index: 1; left: 264px; top: 461px; position: absolute; height: 64px; width: 455px;" Text="There were no customers found that match the entered details. Please try again and make sure all details are correct." Font-Bold="True" Font-Size="Large" Visible="False"></asp:Label>
+        </p>
+        <p>
+        <asp:Label ID="lblErrorDetails" runat="server" style="z-index: 1; left: 462px; top: 291px; position: absolute" Text="You must enter some details first!" Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
+        <asp:Label ID="lblCustSelected" runat="server" style="z-index: 1; left: 566px; top: 535px; position: absolute" Text="You must select a customer first!" Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
         </p>
     </form>
 </body>

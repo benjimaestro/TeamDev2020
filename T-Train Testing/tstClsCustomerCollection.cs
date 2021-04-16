@@ -30,7 +30,7 @@ namespace TTrainCustomer
                 CustomerActive = true,
                 CustomerCreatedAt = new DateTime(2001, 01, 17, 0, 0, 0),
                 CustomerId = 15,
-                DateOfBirth = new DateTime(2000, 7, 15),
+                DateOfBirth = "15/07/2000",
                 EMail = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
@@ -56,7 +56,7 @@ namespace TTrainCustomer
                 CustomerActive = true,
                 CustomerCreatedAt = new DateTime(2001, 01, 17, 0, 0, 0),
                 CustomerId = 15,
-                DateOfBirth = new DateTime(2000, 7, 15),
+                DateOfBirth = "15/07/2000",
                 EMail = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
@@ -82,7 +82,7 @@ namespace TTrainCustomer
                 CustomerActive = true,
                 CustomerCreatedAt = new DateTime(2001, 01, 17, 0, 0, 0),
                 CustomerId = 15,
-                DateOfBirth = new DateTime(2000, 7, 15),
+                DateOfBirth = "15/07/2000",
                 EMail = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
@@ -105,7 +105,7 @@ namespace TTrainCustomer
             {
                 //assign all the properties
                 Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom",
-                DateOfBirth = new DateTime(2000, 7, 15),
+                DateOfBirth = "15/07/2000",
                 EMail = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
@@ -136,7 +136,7 @@ namespace TTrainCustomer
             {
                 //assign all the properties
                 Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom",
-                DateOfBirth = new DateTime(2000, 7, 15),
+                DateOfBirth = "15/07/2000",
                 EMail = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
@@ -169,7 +169,7 @@ namespace TTrainCustomer
             {
                 //assign all the properties
                 Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom",
-                DateOfBirth = new DateTime(2000, 7, 15),
+                DateOfBirth = "15/07/2000",
                 EMail = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
@@ -183,7 +183,7 @@ namespace TTrainCustomer
             ACustomer.CustomerId = primaryKey;
             //assign all the properties
             ACustomer.Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom";
-            ACustomer.DateOfBirth = new DateTime(2000, 7, 15);
+            ACustomer.DateOfBirth = "15/07/2000";
             ACustomer.EMail = "HelloWorld@gmail.com";
             ACustomer.FirstName = "Adam";
             ACustomer.LastName = "Example";
@@ -197,6 +197,25 @@ namespace TTrainCustomer
             Assert.AreEqual(ACustomerCollection.ThisCustomer, ACustomer);
             //delete the record not to fill the database with duplicate records
             ACustomerCollection.CloseAccount();
+        }
+
+        [TestMethod]
+        public void FilterCustomersMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection ACustomerCollection = new clsCustomerCollection();
+            //a test object
+            clsCustomer ACustomer = new clsCustomer
+            {
+                //assign all the properties
+                DateOfBirth = "/07/",
+                FirstName = "Adam",
+                LastName = "DBTestExample"
+            };
+            //perform the filtering
+            ACustomerCollection.MyCustomers = ACustomerCollection.filterCustomers(ACustomer);
+            //there should be exactly 1 result, check if it exist
+            Assert.AreEqual(1, ACustomerCollection.MyCustomers.Count);
         }
     }
 }

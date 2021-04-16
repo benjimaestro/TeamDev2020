@@ -10,7 +10,7 @@ namespace T_Train_Classes
         bool mCustomerActive;
         DateTime mCustomerCreatedAt;
         int mCustomerId;
-        DateTime mDateOfBirth;
+        string mDateOfBirth;
         string mEMail;
         string mFirstName;
         string mLastName;
@@ -60,7 +60,7 @@ namespace T_Train_Classes
                 mCustomerId = value; 
             } 
         }
-        public DateTime DateOfBirth 
+        public string DateOfBirth 
         { 
             get 
             { 
@@ -105,7 +105,7 @@ namespace T_Train_Classes
             } 
         }
 
-        public string ValidateCustomer(string customerAddress, DateTime customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
+        public string ValidateCustomer(string customerAddress, string customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
         {
             string errorMessage = "";
 
@@ -207,7 +207,7 @@ namespace T_Train_Classes
                 //common attributes
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
-                mDateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfBirth"]);
+                mDateOfBirth = Convert.ToString(DB.DataTable.Rows[0]["DateOfBirth"]);
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
                 mEMail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
