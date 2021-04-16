@@ -19,12 +19,13 @@
         <asp:Label ID="Label18" runat="server" Font-Size="Large" style="z-index: 1; left: 81px; top: 143px; position: absolute" Text="Connections"></asp:Label>
         <p>
             <asp:Label ID="Label26" runat="server" Font-Size="X-Large" style="z-index: 1; left: 334px; top: 87px; position: absolute" Text="Welcome to the staff dashboard"></asp:Label>
+        <asp:Label ID="lblErrorConn" runat="server" style="z-index: 1; left: 451px; top: 226px; position: absolute" Text="Please enter a valid connection ID!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
         </p>
         <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 98px; top: 182px; position: absolute" Text="Find Connection by ID:"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 265px; top: 182px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtConnId" runat="server" style="z-index: 1; left: 265px; top: 182px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnFindConnection" runat="server" style="z-index: 1; left: 446px; top: 181px; position: absolute" Text="Find Connection" OnClick="btnFindConnection_Click" />
-        <asp:Button ID="btnConnections" runat="server" style="z-index: 1; left: 115px; top: 222px; position: absolute" Text="All Connections" OnClick="btnConnections_Click" />
-        <asp:Button ID="btnAddConnection" runat="server" style="z-index: 1; left: 278px; top: 223px; position: absolute" Text="Add Connection" OnClick="btnAddConnection_Click" />
+        <asp:Button ID="btnConnections" runat="server" style="z-index: 1; left: 99px; top: 223px; position: absolute" Text="All Connections" OnClick="btnConnections_Click" />
+        <asp:Button ID="btnAddConnection" runat="server" style="z-index: 1; left: 249px; top: 223px; position: absolute" Text="Add New Connection" OnClick="btnAddConnection_Click" />
         <asp:Label ID="Label20" runat="server" Font-Size="Large" style="z-index: 1; left: 78px; top: 299px; position: absolute" Text="Ticket Types"></asp:Label>
         <asp:Label ID="Label21" runat="server" style="z-index: 1; left: 97px; top: 347px; position: absolute" Text="Find Ticket Type by ID:"></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 266px; top: 347px; position: absolute"></asp:TextBox>

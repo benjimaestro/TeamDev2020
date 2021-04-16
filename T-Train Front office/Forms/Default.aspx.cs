@@ -12,8 +12,8 @@ namespace T_Train_Front_office.Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool loggedIn = false;
-            bool isStaff = false;
+            bool loggedIn = true;
+            bool isStaff = true;
 
             btnStaffDashboard.Visible = isStaff;
             btnTickets.Visible = loggedIn;

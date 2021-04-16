@@ -15,7 +15,6 @@ namespace T_Train_Front_office.Forms.Connection
         string action = "new";
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if(!IsPostBack)
             {
                 //Fill the time dropdown list

@@ -78,6 +78,15 @@ namespace T_Train_Front_office.Forms
         protected global::System.Web.UI.WebControls.Label Label26;
 
         /// <summary>
+        /// lblErrorConn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorConn;
+
+        /// <summary>
         /// Label19 control.
         /// </summary>
         /// <remarks>
@@ -87,13 +96,13 @@ namespace T_Train_Front_office.Forms
         protected global::System.Web.UI.WebControls.Label Label19;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtConnId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtConnId;
 
         /// <summary>
         /// btnFindConnection control.
