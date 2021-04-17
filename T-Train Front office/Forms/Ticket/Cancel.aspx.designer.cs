@@ -42,15 +42,6 @@ namespace T_Train_Front_office.Forms.Ticket
         protected global::System.Web.UI.WebControls.Button btnStaffDashboard;
 
         /// <summary>
-        /// btnCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer;
-
-        /// <summary>
         /// lblHeaderWelcome control.
         /// </summary>
         /// <remarks>
@@ -78,40 +69,40 @@ namespace T_Train_Front_office.Forms.Ticket
         protected global::System.Web.UI.WebControls.Label Label20;
 
         /// <summary>
-        /// Label14 control.
+        /// lblConnLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
+        protected global::System.Web.UI.WebControls.Label lblConnLocation;
 
         /// <summary>
-        /// Label11 control.
+        /// lblConnDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label lblConnDate;
 
         /// <summary>
-        /// Label16 control.
+        /// lblConnTime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
+        protected global::System.Web.UI.WebControls.Label lblConnTime;
 
         /// <summary>
-        /// btnCustomer2 control.
+        /// btnCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer2;
+        protected global::System.Web.UI.WebControls.Button btnCustomer;
 
         /// <summary>
         /// Label21 control.
@@ -123,22 +114,22 @@ namespace T_Train_Front_office.Forms.Ticket
         protected global::System.Web.UI.WebControls.Label Label21;
 
         /// <summary>
-        /// Label22 control.
+        /// lblCustomerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
+        protected global::System.Web.UI.WebControls.Label lblCustomerName;
 
         /// <summary>
-        /// Label23 control.
+        /// lblPurchasedAt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
+        protected global::System.Web.UI.WebControls.Label lblPurchasedAt;
 
         /// <summary>
         /// btnCancelTicket control.
@@ -157,5 +148,32 @@ namespace T_Train_Front_office.Forms.Ticket
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogout;
+
+        /// <summary>
+        /// lblCustNotFound control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCustNotFound;
+
+        /// <summary>
+        /// lblConnNotFound control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConnNotFound;
+
+        /// <summary>
+        /// lblTicketNotFound control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTicketNotFound;
     }
 }

@@ -25,7 +25,7 @@
         </p>
         <asp:Label ID="lblStaticModSuccess" runat="server" style="z-index: 1; left: 335px; top: 305px; position: absolute" Text="Success! The connection/ticket type has been modified." Visible="False"></asp:Label>
         <asp:Label ID="lblStaticDelSuccess" runat="server" style="z-index: 1; left: 341px; top: 339px; position: absolute" Text="Success! The connection/ticket type has been deleted." Visible="False"></asp:Label>
-        <asp:Label ID="Label25" runat="server" style="z-index: 1; left: 386px; top: 378px; position: absolute" Text="Success! The ticket has been cancelled." Visible="False"></asp:Label>
+        <asp:Label ID="lblStaticTicketCancelled" runat="server" style="z-index: 1; left: 386px; top: 378px; position: absolute" Text="Success! The ticket has been cancelled." Visible="False"></asp:Label>
     </form>
 </body>
 </html>

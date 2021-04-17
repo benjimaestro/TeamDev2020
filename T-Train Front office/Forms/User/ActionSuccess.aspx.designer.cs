@@ -141,12 +141,12 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Label lblStaticDelSuccess;
 
         /// <summary>
-        /// Label25 control.
+        /// lblStaticTicketCancelled control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label25;
+        protected global::System.Web.UI.WebControls.Label lblStaticTicketCancelled;
     }
 }

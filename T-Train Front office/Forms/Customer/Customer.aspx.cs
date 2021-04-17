@@ -58,6 +58,10 @@ namespace T_Train_Front_office.Forms.Customer
                                     clsConnection ConnectionDetails = new clsConnection();
                                     bool found = ConnectionDetails.FindConnection(UserTickets.MyTickets[i].ConnectionId);
 
+                                    //create a list item to show the ticket
+                                    ListItem ATicketItem = new ListItem();
+                                    ATicketItem.Value = Convert.ToString(UserTickets.MyTickets[i].TicketId);
+                                    //assign the text to the list item
                                     if (found)
                                     {
                                         //assign details of a connection to the variables
@@ -67,21 +71,16 @@ namespace T_Train_Front_office.Forms.Customer
                                         //string time = ConnectionDetails.ConnectionTime;
                                         string active = ConnectionDetails.ConnectionActive ? "Active" : "Cancelled/Expired";
 
-                                        //create, fill and add a list item into the list
-                                        ListItem ATicketItem = new ListItem();
                                         ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + active;
                                         //ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + time + " " + active;
-                                        ATicketItem.Value = Convert.ToString(UserTickets.MyTickets[i].TicketId);
-                                        lstTickets.Items.Add(ATicketItem);
                                     }
                                     else
                                     {
                                         //connection invalid, add a list item with its id to let staff find out more details
-                                        ListItem ATicketItem = new ListItem();
-                                        ATicketItem.Text = "Invalid connection ID: " + ConnectionDetails.ConnectionId;
-                                        ATicketItem.Value = "0";
-                                        lstTickets.Items.Add(ATicketItem);
+                                        ATicketItem.Text = "Invalid connection ID: " + UserTickets.MyTickets[i].ConnectionId;
                                     }
+                                    //add the list item to the list
+                                    lstTickets.Items.Add(ATicketItem);
                                 }
                             }
                         }

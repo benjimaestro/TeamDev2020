@@ -42,6 +42,22 @@ namespace T_Train_Front_office.Forms.User
                         }
                         break;
                     }
+                case "ticket":
+                    {
+                        switch(action)
+                        {
+                            case "cancelled":
+                                {
+                                    lblStaticTicketCancelled.Visible = true;
+                                    break;
+                                }
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
                 default:
                     {
                         break;
