@@ -33,15 +33,6 @@ namespace T_Train_Front_office.Forms.Payment
         protected global::System.Web.UI.WebControls.Button btnHomepage;
 
         /// <summary>
-        /// btnCustomer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer;
-
-        /// <summary>
         /// btnStaffDashboard control.
         /// </summary>
         /// <remarks>
@@ -87,66 +78,75 @@ namespace T_Train_Front_office.Forms.Payment
         protected global::System.Web.UI.WebControls.Label Label18;
 
         /// <summary>
-        /// Label19 control.
+        /// lblErrorNotFound control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label19;
+        protected global::System.Web.UI.WebControls.Label lblErrorNotFound;
 
         /// <summary>
-        /// Label20 control.
+        /// lblPSD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
+        protected global::System.Web.UI.WebControls.Label lblPSD;
 
         /// <summary>
-        /// Label21 control.
+        /// lblED control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
+        protected global::System.Web.UI.WebControls.Label lblED;
 
         /// <summary>
-        /// Label22 control.
+        /// lblPaymentValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
+        protected global::System.Web.UI.WebControls.Label lblPaymentValue;
 
         /// <summary>
-        /// Label23 control.
+        /// lblPaymentStartDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
+        protected global::System.Web.UI.WebControls.Label lblPaymentStartDate;
 
         /// <summary>
-        /// Label24 control.
+        /// lblPaymentEndDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.Label lblPaymentEndDate;
 
         /// <summary>
-        /// btnCustomer2 control.
+        /// btnCustomer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer2;
+        protected global::System.Web.UI.WebControls.Button btnCustomer;
+
+        /// <summary>
+        /// lblPV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPV;
     }
 }

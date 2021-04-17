@@ -141,7 +141,7 @@ namespace T_Train_Front_office.Forms.Customer
                 //if it was not, show an error
                 lblTicketSelected.Visible = true;
             } //if it was, redirect
-            else Response.Redirect("../Payment/Payment.aspx?ticketId" + lstTickets.SelectedValue);
+            else Response.Redirect("../Payment/Payment.aspx?ticketId=" + lstTickets.SelectedValue);
         }
 
         protected void btnPayment2_Click(object sender, EventArgs e)
