@@ -35,7 +35,7 @@ namespace T_Train_Front_office.Forms.Customer
                 string firstname = txtFirstName.Text;
                 string lastname = txtLastName.Text;
                 string dob = txtDOB.Text;
-                lblCustSelected.Visible = true;
+                lblCustSelected.Visible = false;
 
                 if (firstname == "" && lastname == "" && dob == "")
                 {
