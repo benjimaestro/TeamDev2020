@@ -10,6 +10,7 @@ namespace ClassLibrary
         private int mConnectionId;
         private string mConnectionStartStation;
         private int mConnectionTicketLimit;
+        private int mTicketTypeId;
 
         public bool ConnectionActive
         {
@@ -78,6 +79,18 @@ namespace ClassLibrary
             }
         }
 
+        public int TicketTypeId
+        {
+            get
+            {
+                return mTicketTypeId;
+            }
+            set
+            {
+                mTicketTypeId = value;
+            }
+        }
+
         public bool FindConnection(int connectionId)
         {
             //connect to the database
@@ -98,6 +111,7 @@ namespace ClassLibrary
                 mConnectionEndStation = Convert.ToString(DB.DataTable.Rows[0]["ConnectionEndStation"]);
                 mConnectionStartStation = Convert.ToString(DB.DataTable.Rows[0]["ConnectionStartStation"]);
                 mConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[0]["ConnectionTicketLimit"]);
+                mTicketTypeId = Convert.ToInt32(DB.DataTable.Rows[0]["TicketTypeId"]);
                 //row was found so return true as "found" is positive, a connection was found
                 return true;
             }
@@ -175,6 +189,18 @@ namespace ClassLibrary
             }
 
             return errorMessage;
+        }
+
+        public void MarkTicketPurchase()
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@ConnectionId", mConnectionId);
+            //execute the procedure
+            DB.Execute("sproc_tblConnection_ReduceTicketLimitByOne");
+            //update the local count
+            ConnectionTicketLimit--;
         }
     }
 }

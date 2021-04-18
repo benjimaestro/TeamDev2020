@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.Ticket
 {
@@ -11,7 +13,47 @@ namespace T_Train_Front_office.Forms.Ticket
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                try
+                {
+                    int connectionId = Convert.ToInt32(Request.Params["connId"]);
+                    if (connectionId > 0)
+                    {
+                        clsConnection AConnection = new clsConnection();
+                        //fetch the details of the connection with id given
+                        bool connectionFound = AConnection.FindConnection(connectionId);
 
+                        //fetch the price
+                        clsTicketType ATicketType = new clsTicketType();
+                        bool ticketTypeFound = ATicketType.FindTicketType(AConnection.TicketTypeId);
+
+                        if(connectionFound && ticketTypeFound)
+                        {
+                            lblConnLoc.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
+                            lblConnDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy HH:mm:ss");
+                            //lblConnTime.Text = AConnection.ConnectionTime;
+                            lblConnPrice.Text = Convert.ToString(ATicketType.TicketTypePrice);
+                        }
+                        else
+                        {
+                            //correct id passed but connection or ticket type not found
+                            throw new System.Exception();
+                        }
+                    }
+                    else
+                    {
+                        //negative or incorrect numeral id passed
+                        throw new System.Exception();
+                    }
+                }
+                catch
+                {
+                    //no connection id or it is incorrect - redirect back to connections
+                    //and show an error message
+                    //log the error and notify staff
+                }
+            }
         }
 
         protected void btnHomepage_Click(object sender, EventArgs e)
@@ -52,8 +94,54 @@ namespace T_Train_Front_office.Forms.Ticket
 
         protected void btnPayment_Click1(object sender, EventArgs e)
         {
-            //redirect to payment
-            Response.Redirect("../User/ActionSuccess.aspx");
+            //get connection id and user id
+            int connectionId = Convert.ToInt32(Request.Params["connId"]);
+            int customerId = 1;
+
+            //fetch the details of the connection with id given
+            clsConnection AConnection = new clsConnection();
+            bool connectionFound = AConnection.FindConnection(connectionId);
+
+            //fetch the price
+            clsTicketType ATicketType = new clsTicketType();
+            bool ticketTypeFound = ATicketType.FindTicketType(AConnection.TicketTypeId);
+
+            if(connectionFound && ticketTypeFound)
+            {
+                //create a ticket
+                clsTicket NewTicket = new clsTicket();
+                NewTicket.ConnectionId = connectionId;
+                NewTicket.CustomerId = customerId;
+                NewTicket.TicketActive = true;
+
+                //create a payment
+                clsPayment NewPayment = new clsPayment();
+                NewPayment.CustomerId = customerId;
+                NewPayment.PaymentValue = ATicketType.TicketTypePrice;
+                NewPayment.PaymentStartDate = DateTime.Now;
+                NewPayment.PaymentEndDate = DateTime.Now.AddMinutes(1);
+
+                //reduce remaining tickets by 1
+                AConnection.MarkTicketPurchase();
+
+                //assign the ticket to the user
+                clsTicketCollection TicketManager = new clsTicketCollection();
+                TicketManager.ThisTicket = NewTicket;
+                TicketManager.AddTicket();
+
+                //upload the payment
+                clsPaymentCollection PaymentManager = new clsPaymentCollection();
+                PaymentManager.ThisPayment = NewPayment;
+                PaymentManager.AddPayment();
+
+                //redirect to action success
+                Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=success");
+            }
+            else
+            {
+                //something was wrong with the ticket
+                Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=failure");
+            }
         }
     }
 }

@@ -82,6 +82,16 @@ namespace TTrainConnection
         }
 
         [TestMethod]
+        public void TicketTypeIdPropertyExists()
+        {
+            //Tests whether the "TicketTypeId" property can be set
+            clsConnection AConnection = new clsConnection();
+            int testData = 5;
+            AConnection.TicketTypeId = testData;
+            Assert.AreEqual(AConnection.TicketTypeId, testData);
+        }
+
+        [TestMethod]
         public void FindMethodExists()
         {
             //Put Id that exists to test this
@@ -115,6 +125,22 @@ namespace TTrainConnection
             );
             //test to see that the result is correct
             Assert.AreEqual(error, "");
+        }
+
+        [TestMethod]
+        public void MarkTicketPurchaseMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsConnection AConnection = new clsConnection();
+            //id of an existing connection
+            int connId = 2;
+            //get the amount of tickets remaining
+            AConnection.FindConnection(connId);
+            int ticketsRemaining = AConnection.ConnectionTicketLimit;
+            //invoke the method
+            AConnection.MarkTicketPurchase();
+            //test to see that a ticket was purchased
+            Assert.AreNotEqual(AConnection.ConnectionTicketLimit, ticketsRemaining);
         }
 
         [TestMethod]

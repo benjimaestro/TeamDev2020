@@ -30,6 +30,7 @@ namespace ClassLibrary
             DB.AddParameter("@ConnectionEndStation", ThisConnection.ConnectionEndStation);
             DB.AddParameter("@ConnectionStartStation", ThisConnection.ConnectionStartStation);
             DB.AddParameter("@ConnectionTicketLimit", ThisConnection.ConnectionTicketLimit);
+            DB.AddParameter("@TicketTypeId", ThisConnection.TicketTypeId);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblConnection_Insert");
         }
@@ -55,6 +56,7 @@ namespace ClassLibrary
             DB.AddParameter("@ConnectionEndStation", ThisConnection.ConnectionEndStation);
             DB.AddParameter("@ConnectionStartStation", ThisConnection.ConnectionStartStation);
             DB.AddParameter("@ConnectionTicketLimit", ThisConnection.ConnectionTicketLimit);
+            DB.AddParameter("@TicketTypeId", ThisConnection.TicketTypeId);
             //update the record
             DB.Execute("sproc_tblConnection_Update");
         }
@@ -83,7 +85,8 @@ namespace ClassLibrary
                     ConnectionEndStation = Convert.ToString(DB.DataTable.Rows[i]["ConnectionEndStation"]),
                     ConnectionId = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionId"]),
                     ConnectionStartStation = Convert.ToString(DB.DataTable.Rows[i]["ConnectionStartStation"]),
-                    ConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionTicketLimit"])
+                    ConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionTicketLimit"]),
+                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"])
                 };
                 //save a found connection to an array
                 connectionsFound.Add(FoundConnection);

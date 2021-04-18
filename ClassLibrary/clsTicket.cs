@@ -96,7 +96,6 @@ namespace ClassLibrary
                 //common attributes
                 ConnectionId = Convert.ToInt32(DB.DataTable.Rows[0]["ConnectionId"]);
                 CustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
-                TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[0]["TicketTypeId"]);
                 TicketActive = Convert.ToBoolean(DB.DataTable.Rows[0]["TicketActive"]);
                 PurchasedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["PurchasedAt"]);
                 //row was found so return true as "found" is positive, a ticket was found

@@ -24,13 +24,13 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
 
         /// <summary>
-        /// Label20 control.
+        /// lblPaymentSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
+        protected global::System.Web.UI.WebControls.Label lblPaymentSuccess;
 
         /// <summary>
         /// btnStaffDashboard control.
@@ -105,13 +105,13 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Button btnLogout;
 
         /// <summary>
-        /// Label21 control.
+        /// lblPaymentFailure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
+        protected global::System.Web.UI.WebControls.Label lblPaymentFailure;
 
         /// <summary>
         /// lblStaticAddSuccess control.

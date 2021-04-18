@@ -58,6 +58,27 @@ namespace T_Train_Front_office.Forms.User
                         }
                         break;
                     }
+                case "payment":
+                    {
+                        switch(action)
+                        {
+                            case "success":
+                                {
+                                    lblPaymentSuccess.Visible = true;
+                                    break;
+                                }
+                            case "failure":
+                                {
+                                    lblPaymentFailure.Visible = true;
+                                    break;
+                                }
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
                 default:
                     {
                         break;

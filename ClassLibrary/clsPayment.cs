@@ -97,7 +97,6 @@ namespace ClassLibrary
                 mPaymentEndDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentEndDate"]);
                 mPaymentStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentStartDate"]);
                 mPaymentValue = float.Parse(Convert.ToString(DB.DataTable.Rows[0]["PaymentValue"]));
-                mTicketId = Convert.ToInt32(DB.DataTable.Rows[0]["TicketId"]);
                 //row was found so return true as "found" is positive, a payment was found
                 return true;
             }

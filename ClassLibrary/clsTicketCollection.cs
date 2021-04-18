@@ -50,7 +50,6 @@ namespace ClassLibrary
             DB.AddParameter("@ConnectionId", ThisTicket.ConnectionId);
             DB.AddParameter("@CustomerId", ThisTicket.CustomerId);
             DB.AddParameter("@TicketActive", ThisTicket.TicketActive);
-            DB.AddParameter("@TicketTypeId", ThisTicket.TicketTypeId);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblTicket_Insert");
         }

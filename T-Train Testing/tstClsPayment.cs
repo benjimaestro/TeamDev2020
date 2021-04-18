@@ -85,7 +85,7 @@ namespace TTrainPayment
         {
             //Put Id that exists to test this
             clsPayment APayment = new clsPayment();
-            int paymentId = 1;
+            int paymentId = 2;
             bool found = APayment.FindPayment(paymentId);
             Assert.IsTrue(found);
         }
