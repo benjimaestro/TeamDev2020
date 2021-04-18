@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Linq;
 
 namespace T_Train_Classes
 {
-    public class clsCustomer
+    public class clsCustomer : clsAbstractUser
     {
 
         string mAddress;
@@ -12,8 +13,7 @@ namespace T_Train_Classes
         int mCustomerId;
         string mDateOfBirth;
         string mEMail;
-        string mFirstName;
-        string mLastName;
+        string mAccountPassword;
 
         public string Address 
         { 
@@ -82,27 +82,17 @@ namespace T_Train_Classes
                 mEMail = value; 
             } 
         }
-        public string FirstName 
-        { 
-            get 
-            { 
-                return mFirstName; 
-            } 
-            set 
-            { 
-                mFirstName = value; 
-            } 
-        }
-        public string LastName 
-        { 
-            get 
-            { 
-                return mLastName; 
-            } 
-            set 
-            { 
-                mLastName = value; 
-            } 
+
+        public string AccountPassword
+        {
+            get
+            {
+                return mAccountPassword;
+            }
+            set
+            {
+                mAccountPassword = value;
+            }
         }
 
         public string ValidateCustomer(string customerAddress, string customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
@@ -212,11 +202,11 @@ namespace T_Train_Classes
                 mEMail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
+                mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
             else return false; //no row found means no customer with this id exists
         }
-
     }
 }

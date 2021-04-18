@@ -69,13 +69,13 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Label lblHeaderWelcome;
 
         /// <summary>
-        /// Label1 control.
+        /// lblAccCreated control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblAccCreated;
 
         /// <summary>
         /// Label2 control.
@@ -139,5 +139,14 @@ namespace T_Train_Front_office.Forms.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
+        /// Label18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label18;
     }
 }

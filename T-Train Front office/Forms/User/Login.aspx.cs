@@ -11,7 +11,14 @@ namespace T_Train_Front_office.Forms.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                string created = Request.Params["accCreated"];
+                if(created == "1")
+                {
+                    lblAccCreated.Visible = true;
+                }
+            }
         }
 
         protected void btnHomepage_Click(object sender, EventArgs e)

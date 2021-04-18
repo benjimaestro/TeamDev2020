@@ -104,6 +104,16 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
+        public void CustomerAccountPasswordExists()
+        {
+            //Tests whether the "accountPassword" property can be set
+            clsCustomer ACustomer = new clsCustomer();
+            string testPassword = ACustomer.GetHashPassword("testpassword1");
+            ACustomer.AccountPassword = ACustomer.GetHashPassword("testpassword1");
+            Assert.AreEqual(ACustomer.AccountPassword, testPassword);
+        }
+
+        [TestMethod]
         public void FindMethodExists()
         {
             //Put Id that exists to test this

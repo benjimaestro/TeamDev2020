@@ -54,6 +54,7 @@ namespace T_Train_Classes
             DB.AddParameter("@customerEmail", ThisCustomer.EMail);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
+            DB.AddParameter("@customerPassword", ThisCustomer.AccountPassword);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblCustomer_Insert");
         }
@@ -79,6 +80,7 @@ namespace T_Train_Classes
             DB.AddParameter("@customerEmail", ThisCustomer.EMail);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
+            DB.AddParameter("@customerPassword", ThisCustomer.AccountPassword);
             //update the record
             DB.Execute("sproc_tblCustomer_Update");
         }

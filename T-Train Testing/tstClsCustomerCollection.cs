@@ -110,6 +110,7 @@ namespace TTrainCustomer
                 FirstName = "Adam",
                 LastName = "Example"
             };
+            ACustomer.AccountPassword = ACustomer.GetHashPassword("testpassword1");
             //set ThisStaff to the test data
             ACustomerCollection.ThisCustomer = ACustomer;
             //store the primary key
@@ -141,6 +142,7 @@ namespace TTrainCustomer
                 FirstName = "Adam",
                 LastName = "Example"
             };
+            ACustomer.AccountPassword = ACustomer.GetHashPassword("testpassword1");
             //set ThisStaff to the test data
             ACustomerCollection.ThisCustomer = ACustomer;
             //store the primary key
@@ -174,6 +176,7 @@ namespace TTrainCustomer
                 FirstName = "Adam",
                 LastName = "Example"
             };
+            ACustomer.AccountPassword = ACustomer.GetHashPassword("testpassword1");
             //set ThisCustomer to the test data
             ACustomerCollection.ThisCustomer = ACustomer;
             //store the primary key
@@ -187,6 +190,7 @@ namespace TTrainCustomer
             ACustomer.EMail = "HelloWorld@gmail.com";
             ACustomer.FirstName = "Adam";
             ACustomer.LastName = "Example";
+            ACustomer.AccountPassword = ACustomer.GetHashPassword("testpassword1");
             //assign the test object to the real object
             ACustomerCollection.ThisCustomer = ACustomer;
             //update data of the real object
