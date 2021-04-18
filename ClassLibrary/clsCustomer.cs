@@ -14,6 +14,7 @@ namespace T_Train_Classes
         string mDateOfBirth;
         string mEMail;
         string mAccountPassword;
+        bool mIsStaff;
 
         public string Address 
         { 
@@ -92,6 +93,18 @@ namespace T_Train_Classes
             set
             {
                 mAccountPassword = value;
+            }
+        }
+
+        public bool IsStaff
+        {
+            get
+            {
+                return mIsStaff;
+            }
+            set
+            {
+                mIsStaff = value;
             }
         }
 
@@ -207,6 +220,35 @@ namespace T_Train_Classes
                 return true;
             }
             else return false; //no row found means no customer with this id exists
+        }
+
+        public bool FindCustomerByEmail(string testEmail)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            //the parameter is the function argument
+            DB.AddParameter("@customerEmail", testEmail);
+            //execute the procedure to get data
+            DB.Execute("sproc_tblCustomer_FilterByCustomerEmail");
+            //if there was a row returned, get data from it
+            if (DB.Count == 1)
+            {
+                //primary key
+                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
+                //common attributes
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mDateOfBirth = Convert.ToString(DB.DataTable.Rows[0]["DateOfBirth"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mEMail = testEmail;
+                mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
+                mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
+                mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
+                //row was found so return true as "found" is positive, a member was found
+                return true;
+            }
+            else return false; //no row found means no customer with this email exists
         }
     }
 }

@@ -14,6 +14,21 @@ namespace T_Train_Front_office.Forms
         {
             bool loggedIn = false;
             bool isStaff = false;
+            if (Session["customerLoggedIn"] != null)
+            {
+                if(Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                {
+                    loggedIn = true;
+                    lblLoggedIn.Visible = true;
+                    if (Session["customerIsStaff"] != null)
+                    {
+                        if(Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                        {
+                            isStaff = true;
+                        }
+                    }
+                }
+            }
 
             btnStaffDashboard.Visible = isStaff;
             btnTickets.Visible = loggedIn;

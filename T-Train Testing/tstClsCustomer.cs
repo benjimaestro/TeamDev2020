@@ -14,6 +14,7 @@ namespace TTrainCustomer
         private string customerEMail = "HelloWorld@gmail.com";
         private string customerFirstName = "Adam";
         private string customerLastName = "Example";
+        private bool isStaff = false;
 
         [TestMethod]
         public void InstanceExists()
@@ -114,6 +115,16 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
+        public void IsStaffPropertyExists()
+        {
+            //Tests whether the "IsStaff" property can be set
+            clsCustomer ACustomer = new clsCustomer();
+            bool testIsStaff = false;
+            ACustomer.IsStaff = false;
+            Assert.AreEqual(ACustomer.IsStaff, testIsStaff);
+        }
+
+        [TestMethod]
         public void FindMethodExists()
         {
             //Put Id that exists to test this
@@ -148,6 +159,19 @@ namespace TTrainCustomer
             );
             //test to see that the result is correct
             Assert.AreEqual(error, "");
+        }
+
+        [TestMethod]
+        public void FindCustomerByEmailMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //declare a test variable
+            string testEmail = "admin@ttrain.com";
+            //call the method
+            bool found = ACustomer.FindCustomerByEmail(testEmail);
+            //check the customer was actually found
+            Assert.AreEqual(ACustomer.EMail, testEmail);
         }
 
         [TestMethod]

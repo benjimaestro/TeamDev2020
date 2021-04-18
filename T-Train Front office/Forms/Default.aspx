@@ -70,7 +70,8 @@
     <p>
         &nbsp;</p>
         <p>
-            &nbsp;</p>
+        <asp:Label ID="lblLoggedIn" runat="server" Font-Size="Large" style="z-index: 1; left: 325px; top: 31px; position: absolute" Text="You are now logged in!" ForeColor="#009933" Visible="False"></asp:Label>
+        </p>
     </form>
     </body>
 </html>
