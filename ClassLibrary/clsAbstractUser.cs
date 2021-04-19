@@ -36,10 +36,6 @@ namespace ClassLibrary
             get { return mLastName; }
             set { mLastName = value; }
         }
-        public string FullName
-        {
-            get { return $"{mFirstName} {mLastName}"; }
-        }
 
         public string GetHashPassword(string ToHash)
         {
@@ -60,13 +56,6 @@ namespace ClassLibrary
                 return HashString;
             }
             else { return ""; }
-        }
-
-        public void FindEmail(string Email)
-        {
-            clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@Email", Email);
-            DB.Execute("sproc_tblUser_EmailExists");
         }
 
         public string SendResetEmail(string System)

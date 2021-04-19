@@ -78,13 +78,13 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Label Label24;
 
         /// <summary>
-        /// TextBox3 control.
+        /// txtFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
 
         /// <summary>
         /// Label23 control.
@@ -96,13 +96,13 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Label Label23;
 
         /// <summary>
-        /// TextBox4 control.
+        /// txtLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtLastName;
 
         /// <summary>
         /// Label25 control.
@@ -114,13 +114,13 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Label Label25;
 
         /// <summary>
-        /// TextBox5 control.
+        /// txtDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txtDOB;
 
         /// <summary>
         /// btnFilterCustomers control.
@@ -132,13 +132,13 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Button btnFilterCustomers;
 
         /// <summary>
-        /// Label9 control.
+        /// lblStaticResultsHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
+        protected global::System.Web.UI.WebControls.Label lblStaticResultsHeader;
 
         /// <summary>
         /// btnCustomer control.
@@ -150,60 +150,6 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Button btnCustomer;
 
         /// <summary>
-        /// Label26 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label26;
-
-        /// <summary>
-        /// Label27 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label27;
-
-        /// <summary>
-        /// Label28 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label28;
-
-        /// <summary>
-        /// btnCustomer3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer3;
-
-        /// <summary>
-        /// btnCustomer2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCustomer2;
-
-        /// <summary>
-        /// Label29 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label29;
-
-        /// <summary>
         /// lblHeaderWelcome control.
         /// </summary>
         /// <remarks>
@@ -211,5 +157,41 @@ namespace T_Train_Front_office.Forms.Customer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblHeaderWelcome;
+
+        /// <summary>
+        /// lstCustomers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstCustomers;
+
+        /// <summary>
+        /// lblNoCustFound control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNoCustFound;
+
+        /// <summary>
+        /// lblErrorDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorDetails;
+
+        /// <summary>
+        /// lblCustSelected control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCustSelected;
     }
 }

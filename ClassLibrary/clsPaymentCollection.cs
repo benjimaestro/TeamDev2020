@@ -28,7 +28,6 @@ namespace ClassLibrary
             DB.AddParameter("@PaymentEndDate", ThisPayment.PaymentEndDate);
             DB.AddParameter("@PaymentStartDate", ThisPayment.PaymentStartDate);
             DB.AddParameter("@PaymentValue", ThisPayment.PaymentValue);
-            DB.AddParameter("@TicketId", ThisPayment.TicketId);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblPayment_Insert");
         }
@@ -53,7 +52,6 @@ namespace ClassLibrary
             DB.AddParameter("@PaymentEndDate", ThisPayment.PaymentEndDate);
             DB.AddParameter("@PaymentStartDate", ThisPayment.PaymentStartDate);
             DB.AddParameter("@PaymentValue", ThisPayment.PaymentValue);
-            DB.AddParameter("@TicketId", ThisPayment.TicketId);
             //update the record
             DB.Execute("sproc_tblPayment_Update");
         }

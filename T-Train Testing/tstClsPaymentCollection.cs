@@ -30,7 +30,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //add the test object to the list
@@ -54,7 +53,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class
@@ -78,7 +76,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //add the test object to the list
@@ -102,7 +99,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class
@@ -134,7 +130,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class
@@ -167,7 +162,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class

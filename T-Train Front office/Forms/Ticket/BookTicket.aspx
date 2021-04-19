@@ -17,14 +17,18 @@
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 771px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </div>
         <p>
-        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 355px; top: 396px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
-        <asp:Label ID="Label10" runat="server" style="z-index: 1; left: 110px; top: 247px; position: absolute" Text="Leicester - Birmingham"></asp:Label>
-        <asp:Label ID="Label11" runat="server" style="z-index: 1; left: 303px; top: 247px; position: absolute; right: 770px;" Text="12/06/2021"></asp:Label>
-        <asp:Label ID="Label12" runat="server" style="z-index: 1; left: 420px; top: 247px; position: absolute" Text="14:25"></asp:Label>
+        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 357px; top: 444px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Label ID="lblConnLoc" runat="server" style="z-index: 1; left: 110px; top: 247px; position: absolute"></asp:Label>
+        <asp:Label ID="lblConnDate" runat="server" style="z-index: 1; left: 276px; top: 248px; position: absolute; "></asp:Label>
+        <asp:Label ID="lblConnTime" runat="server" style="z-index: 1; left: 420px; top: 247px; position: absolute"></asp:Label>
         </p>
         <asp:Label ID="Label18" runat="server" Font-Size="Large" style="z-index: 1; left: 34px; top: 187px; position: absolute" Text="You are booking a ticket for this connection:"></asp:Label>
-        <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 266px; top: 317px; position: absolute" Text="Make Payment" OnClick="btnPayment_Click1" />
-        <asp:Button ID="btnCancel" runat="server" OnClick="Button2_Click" style="z-index: 1; left: 452px; top: 317px; position: absolute" Text="Back to Connections" />
+        <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 261px; top: 386px; position: absolute" Text="Make Payment" OnClick="btnPayment_Click1" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="Button2_Click" style="z-index: 1; left: 453px; top: 386px; position: absolute" Text="Back to Connections" />
+        <p>
+        <asp:Label ID="lblConnPrice" runat="server" style="z-index: 1; left: 565px; top: 249px; position: absolute"></asp:Label>
+        <asp:Label ID="lblStaticInstructions" runat="server" style="z-index: 1; left: 179px; top: 316px; position: absolute; height: 67px; width: 539px;" Font-Bold="True">Once you press Make Payment, a new window will open where you complete the payment. Once you finish, the ticket will be added to your account. If you abandon the payment, the ticket will not be added.</asp:Label>
+        </p>
     </form>
 </body>
 </html>

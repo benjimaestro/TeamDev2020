@@ -15,7 +15,7 @@
         <asp:Label ID="lblHeaderSubtitle" runat="server" Font-Size="Large" style="z-index: 1; left: 437px; top: 122px; position: absolute" Text="Book tickets now!"></asp:Label>
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 19px; top: 158px; position: absolute" Text="Find your connection:"></asp:Label>
         <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 39px; top: 28px; position: absolute" Text="Staff Dashboard" OnClick="Button9_Click" />
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 914px; top: 33px; position: absolute" Text="Logout" OnClick="Button2_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 911px; top: 33px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         <asp:Label ID="lblError" runat="server" Font-Bold="False" Font-Size="Large" ForeColor="Red" style="z-index: 1; left: 315px; top: 187px; position: absolute"></asp:Label>
         <p>
             <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 618px; top: 31px; position: absolute; right: 447px;" Text="My tickets" OnClick="Button7_Click" Font-Size="Large" />
@@ -70,7 +70,8 @@
     <p>
         &nbsp;</p>
         <p>
-            &nbsp;</p>
+        <asp:Label ID="lblLoggedIn" runat="server" Font-Size="Large" style="z-index: 1; left: 325px; top: 31px; position: absolute" Text="You are now logged in!" ForeColor="#009933" Visible="False"></asp:Label>
+        </p>
     </form>
     </body>
 </html>

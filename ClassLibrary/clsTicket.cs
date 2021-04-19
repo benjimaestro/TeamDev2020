@@ -9,6 +9,7 @@ namespace ClassLibrary
         private int mCustomerId;
         private int mTicketTypeId;
         private bool mTicketActive;
+        private DateTime mPurchasedAt;
 
         public int TicketId
         {
@@ -66,6 +67,18 @@ namespace ClassLibrary
             }
         }
 
+        public DateTime PurchasedAt
+        {
+            get
+            {
+                return mPurchasedAt;
+            }
+            set
+            {
+                mPurchasedAt = value;
+            }
+        }
+
         public bool FindTicket(int ticketId)
         {
             //connect to the database
@@ -83,8 +96,8 @@ namespace ClassLibrary
                 //common attributes
                 ConnectionId = Convert.ToInt32(DB.DataTable.Rows[0]["ConnectionId"]);
                 CustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
-                TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[0]["TicketTypeId"]);
                 TicketActive = Convert.ToBoolean(DB.DataTable.Rows[0]["TicketActive"]);
+                PurchasedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["PurchasedAt"]);
                 //row was found so return true as "found" is positive, a ticket was found
                 return true;
             }

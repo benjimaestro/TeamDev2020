@@ -14,6 +14,21 @@ namespace T_Train_Front_office.Forms
         {
             bool loggedIn = false;
             bool isStaff = false;
+            if (Session["customerLoggedIn"] != null)
+            {
+                if(Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                {
+                    loggedIn = true;
+                    lblLoggedIn.Visible = true;
+                    if (Session["customerIsStaff"] != null)
+                    {
+                        if(Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                        {
+                            isStaff = true;
+                        }
+                    }
+                }
+            }
 
             btnStaffDashboard.Visible = isStaff;
             btnTickets.Visible = loggedIn;
@@ -126,7 +141,7 @@ namespace T_Train_Front_office.Forms
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("User/Logout.aspx");
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)

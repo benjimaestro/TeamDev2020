@@ -1,19 +1,20 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Linq;
 
 namespace T_Train_Classes
 {
-    public class clsCustomer
+    public class clsCustomer : clsAbstractUser
     {
 
         string mAddress;
         bool mCustomerActive;
         DateTime mCustomerCreatedAt;
         int mCustomerId;
-        DateTime mDateOfBirth;
+        string mDateOfBirth;
         string mEMail;
-        string mFirstName;
-        string mLastName;
+        string mAccountPassword;
+        bool mIsStaff;
 
         public string Address 
         { 
@@ -60,7 +61,7 @@ namespace T_Train_Classes
                 mCustomerId = value; 
             } 
         }
-        public DateTime DateOfBirth 
+        public string DateOfBirth 
         { 
             get 
             { 
@@ -82,30 +83,32 @@ namespace T_Train_Classes
                 mEMail = value; 
             } 
         }
-        public string FirstName 
-        { 
-            get 
-            { 
-                return mFirstName; 
-            } 
-            set 
-            { 
-                mFirstName = value; 
-            } 
-        }
-        public string LastName 
-        { 
-            get 
-            { 
-                return mLastName; 
-            } 
-            set 
-            { 
-                mLastName = value; 
-            } 
+
+        public string AccountPassword
+        {
+            get
+            {
+                return mAccountPassword;
+            }
+            set
+            {
+                mAccountPassword = value;
+            }
         }
 
-        public string ValidateCustomer(string customerAddress, DateTime customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
+        public bool IsStaff
+        {
+            get
+            {
+                return mIsStaff;
+            }
+            set
+            {
+                mIsStaff = value;
+            }
+        }
+
+        public string ValidateCustomer(string customerAddress, string customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
         {
             string errorMessage = "";
 
@@ -190,6 +193,18 @@ namespace T_Train_Classes
             return errorMessage;
         }
 
+        public void UpdatePassword(string newPassword)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            //the parameter is the function argument
+            DB.AddParameter("@customerId", CustomerId);
+            DB.AddParameter("@newPassword", newPassword);
+            //execute the procedure to update the user password
+            DB.Execute("sproc_tblCustomer_UpdatePassword");
+        }
+
         public bool FindCustomer(int primaryKey)
         {
             //connect to the database
@@ -207,16 +222,47 @@ namespace T_Train_Classes
                 //common attributes
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
-                mDateOfBirth = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfBirth"]);
+                mDateOfBirth = Convert.ToString(DB.DataTable.Rows[0]["DateOfBirth"]);
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
                 mEMail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
+                mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
+                mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
             else return false; //no row found means no customer with this id exists
         }
 
+        public bool FindCustomerByEmail(string testEmail)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            //the parameter is the function argument
+            DB.AddParameter("@customerEmail", testEmail);
+            //execute the procedure to get data
+            DB.Execute("sproc_tblCustomer_FilterByCustomerEmail");
+            //if there was a row returned, get data from it
+            if (DB.Count == 1)
+            {
+                //primary key
+                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
+                //common attributes
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mDateOfBirth = Convert.ToString(DB.DataTable.Rows[0]["DateOfBirth"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mEMail = testEmail;
+                mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
+                mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
+                mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
+                mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
+                //row was found so return true as "found" is positive, a member was found
+                return true;
+            }
+            else return false; //no row found means no customer with this email exists
+        }
     }
 }

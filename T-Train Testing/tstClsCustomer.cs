@@ -10,10 +10,11 @@ namespace TTrainCustomer
 
         //example test data
         private string customerAddress = "19 NewStreet, Birmingham, BA1 111, United Kingdom";
-        private DateTime customerDateOfBirth = new DateTime(2000, 7, 15);
+        private string customerDateOfBirth = "15/07/2000";
         private string customerEMail = "HelloWorld@gmail.com";
         private string customerFirstName = "Adam";
         private string customerLastName = "Example";
+        private bool isStaff = false;
 
         [TestMethod]
         public void InstanceExists()
@@ -68,7 +69,7 @@ namespace TTrainCustomer
         {
             //Tests whether the "dateOfBirth" property can be set
             clsCustomer ACustomer = new clsCustomer();
-            DateTime testDateOfBirth = new DateTime(2000, 7, 15);
+            string testDateOfBirth = "15/07/2000";
             ACustomer.DateOfBirth = testDateOfBirth;
             Assert.AreEqual(ACustomer.DateOfBirth, testDateOfBirth);
         }
@@ -101,6 +102,26 @@ namespace TTrainCustomer
             string testLastName = "Example";
             ACustomer.LastName = testLastName;
             Assert.AreEqual(ACustomer.LastName, testLastName);
+        }
+
+        [TestMethod]
+        public void CustomerAccountPasswordExists()
+        {
+            //Tests whether the "accountPassword" property can be set
+            clsCustomer ACustomer = new clsCustomer();
+            string testPassword = ACustomer.GetHashPassword("testpassword1");
+            ACustomer.AccountPassword = ACustomer.GetHashPassword("testpassword1");
+            Assert.AreEqual(ACustomer.AccountPassword, testPassword);
+        }
+
+        [TestMethod]
+        public void IsStaffPropertyExists()
+        {
+            //Tests whether the "IsStaff" property can be set
+            clsCustomer ACustomer = new clsCustomer();
+            bool testIsStaff = false;
+            ACustomer.IsStaff = false;
+            Assert.AreEqual(ACustomer.IsStaff, testIsStaff);
         }
 
         [TestMethod]
@@ -138,6 +159,37 @@ namespace TTrainCustomer
             );
             //test to see that the result is correct
             Assert.AreEqual(error, "");
+        }
+
+        [TestMethod]
+        public void FindCustomerByEmailMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //declare a test variable
+            string testEmail = "admin@ttrain.com";
+            //call the method
+            bool found = ACustomer.FindCustomerByEmail(testEmail);
+            //check the customer was actually found
+            Assert.AreEqual(ACustomer.EMail, testEmail);
+        }
+
+        [TestMethod]
+        public void UpdatePasswordMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //declare a test password and hash it
+            string testPassword = "testpassword1";
+            testPassword = ACustomer.GetHashPassword(testPassword);
+            //use the admin test user it to try and update
+            ACustomer.CustomerId = 257;
+            //call the method
+            ACustomer.UpdatePassword(testPassword);
+            //now fetch the customer details
+            bool customerFound = ACustomer.FindCustomer(ACustomer.CustomerId);
+            //compare the two passwords
+            Assert.AreEqual(ACustomer.AccountPassword, testPassword);
         }
 
         [TestMethod]
@@ -637,7 +689,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = DateTime.Now.Date.AddYears(-200); //this should fail
+            customerDateOfBirth = Convert.ToString(DateTime.Now.Date.AddYears(-200)); //this should fail
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -657,7 +709,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = Convert.ToDateTime("31/12/1919");
+            customerDateOfBirth = "31/12/1919";
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -677,7 +729,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = Convert.ToDateTime("01/01/1920");
+            customerDateOfBirth = "01/01/1920";
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -697,7 +749,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = Convert.ToDateTime("02/01/1920");
+            customerDateOfBirth = "02/01/1920";
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,
@@ -717,7 +769,7 @@ namespace TTrainCustomer
             clsCustomer ACustomer = new clsCustomer();
             //string variable to store any error message
             
-            customerDateOfBirth = DateTime.Now.Date.AddYears(200); //this should fail
+            customerDateOfBirth = Convert.ToString(DateTime.Now.Date.AddYears(200)); //this should fail
             //invoke the method
             string error = ACustomer.ValidateCustomer(
                 customerAddress,

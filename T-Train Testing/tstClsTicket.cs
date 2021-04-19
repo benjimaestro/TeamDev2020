@@ -66,11 +66,21 @@ namespace TTrainTicket
         }
 
         [TestMethod]
+        public void PurchasedAtExists()
+        {
+            //Tests whether the "PurchasedAt" property can be set
+            clsTicket ATicket = new clsTicket();
+            DateTime PurchasedAt = Convert.ToDateTime("17/04/2021 12:27:27 PM");
+            ATicket.PurchasedAt = PurchasedAt;
+            Assert.AreEqual(ATicket.PurchasedAt, PurchasedAt);
+        }
+
+        [TestMethod]
         public void FindTicketExists()
         {
             //Put Id that exists to test this
             clsTicket ATicket = new clsTicket();
-            int ticketId = 1;
+            int ticketId = 2;
             bool found = ATicket.FindTicket(ticketId);
             Assert.IsTrue(found);
         }

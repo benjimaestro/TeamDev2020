@@ -11,7 +11,79 @@ namespace T_Train_Front_office.Forms.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string origin = Request.Params["origin"];
+            string action = Request.Params["action"];
 
+            switch(origin)
+            {
+                case "conn":
+                    {
+                        switch(action)
+                        {
+                            case "delete":
+                                {
+                                    lblStaticDelSuccess.Visible = true;
+                                    break;
+                                }
+                            case "edit":
+                                {
+                                    lblStaticModSuccess.Visible = true;
+                                    break;
+                                }
+                            case "new":
+                                {
+                                    lblStaticAddSuccess.Visible = true;
+                                    break;
+                                }
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "ticket":
+                    {
+                        switch(action)
+                        {
+                            case "cancelled":
+                                {
+                                    lblStaticTicketCancelled.Visible = true;
+                                    break;
+                                }
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "payment":
+                    {
+                        switch(action)
+                        {
+                            case "success":
+                                {
+                                    lblPaymentSuccess.Visible = true;
+                                    break;
+                                }
+                            case "failure":
+                                {
+                                    lblPaymentFailure.Visible = true;
+                                    break;
+                                }
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
         }
 
         protected void btnHomepage_Click(object sender, EventArgs e)

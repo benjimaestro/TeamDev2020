@@ -25,23 +25,27 @@
         </p>
         <p>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 156px; top: 181px; position: absolute; height: 19px" Text="Email:"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 217px; top: 180px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 217px; top: 180px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 126px; top: 219px; position: absolute" Text="Password:"></asp:Label>
-        <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 218px; top: 221px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 218px; top: 221px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnSignup" runat="server" style="z-index: 1; left: 422px; top: 355px; position: absolute" Text="Register" OnClick="btnSignup_Click" />
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 351px; top: 402px; position: absolute" Text="Already registered?"></asp:Label>
             <asp:Button ID="btnLogin2" runat="server" style="z-index: 1; left: 489px; top: 396px; position: absolute" Text="Login" OnClick="btnLogin2_Click" />
             <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 729px; top: 189px; position: absolute" Text="Date of Birth:"></asp:Label>
         </p>
-        <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 82px; top: 267px; position: absolute" Text="Repeat Password:"></asp:Label>
-        <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 214px; top: 265px; position: absolute"></asp:TextBox>
+        <asp:Label ID="lblMissingData" runat="server" style="z-index: 1; left: 712px; top: 272px; position: absolute" Text="All fields are required!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
+        <asp:TextBox ID="txtRepeatPassword" runat="server" style="z-index: 1; left: 214px; top: 265px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 437px; top: 184px; position: absolute" Text="First Name:"></asp:Label>
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 440px; top: 222px; position: absolute" Text="Last Name:"></asp:Label>
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 442px; top: 267px; position: absolute" Text="Address:"></asp:Label>
-        <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 528px; top: 184px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left: 530px; top: 223px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="TextBox6" runat="server" style="z-index: 1; left: 525px; top: 270px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="TextBox7" runat="server" style="z-index: 1; left: 736px; top: 220px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 528px; top: 184px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 530px; top: 223px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 525px; top: 270px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtDateOfBirth" runat="server" style="z-index: 1; left: 736px; top: 220px; position: absolute"></asp:TextBox>
+        <p>
+        <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 82px; top: 267px; position: absolute" Text="Repeat Password:"></asp:Label>
+        <asp:Label ID="lblPasswordMitmatch" runat="server" style="z-index: 1; left: 108px; top: 308px; position: absolute" Text="Given passwords are not identical!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
