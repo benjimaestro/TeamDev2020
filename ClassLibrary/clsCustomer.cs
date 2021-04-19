@@ -193,6 +193,18 @@ namespace T_Train_Classes
             return errorMessage;
         }
 
+        public void UpdatePassword(string newPassword)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            //the parameter is the function argument
+            DB.AddParameter("@customerId", CustomerId);
+            DB.AddParameter("@newPassword", newPassword);
+            //execute the procedure to update the user password
+            DB.Execute("sproc_tblCustomer_UpdatePassword");
+        }
+
         public bool FindCustomer(int primaryKey)
         {
             //connect to the database

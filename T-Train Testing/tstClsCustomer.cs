@@ -175,6 +175,24 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
+        public void UpdatePasswordMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //declare a test password and hash it
+            string testPassword = "testpassword1";
+            testPassword = ACustomer.GetHashPassword(testPassword);
+            //use the admin test user it to try and update
+            ACustomer.CustomerId = 257;
+            //call the method
+            ACustomer.UpdatePassword(testPassword);
+            //now fetch the customer details
+            bool customerFound = ACustomer.FindCustomer(ACustomer.CustomerId);
+            //compare the two passwords
+            Assert.AreEqual(ACustomer.AccountPassword, testPassword);
+        }
+
+        [TestMethod]
         public void FirstNameMinLessOne()
         {
             //create an instance of the class we want to create

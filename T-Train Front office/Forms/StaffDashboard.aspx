@@ -18,7 +18,7 @@
         </p>
         <asp:Label ID="Label18" runat="server" Font-Size="Large" style="z-index: 1; left: 81px; top: 143px; position: absolute" Text="Connections"></asp:Label>
         <p>
-            <asp:Label ID="Label26" runat="server" Font-Size="X-Large" style="z-index: 1; left: 334px; top: 87px; position: absolute" Text="Welcome to the staff dashboard"></asp:Label>
+            <asp:Label ID="Label26" runat="server" Font-Size="X-Large" style="z-index: 1; left: 334px; top: 87px; position: absolute" Text="Welcome to the staff dashboard!"></asp:Label>
         <asp:Label ID="lblErrorConn" runat="server" style="z-index: 1; left: 451px; top: 226px; position: absolute" Text="Please enter a valid connection ID!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
         </p>
         <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 98px; top: 182px; position: absolute" Text="Find Connection by ID:"></asp:Label>
