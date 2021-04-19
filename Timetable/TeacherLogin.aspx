@@ -38,7 +38,7 @@
         <br/>
         <br/>
         <br/>
-        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 156px; top: 90px; position: absolute; width: 256px"></asp:TextBox>
+        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 156px; top: 90px; position: absolute; width: 256px; bottom: 634px;"></asp:TextBox>
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 156px; top: 120px; position: absolute; width: 256px" TextMode="Password"></asp:TextBox>
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 90px; position: absolute; width: 120px" Text="Email:"></asp:Label>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 120px; position: absolute; width: 120px" Text="Password:"></asp:Label>
