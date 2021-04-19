@@ -109,6 +109,7 @@
     <Content Include="Forms\Ticket\MyTickets.aspx" />
     <Content Include="Forms\User\ActionSuccess.aspx" />
     <Content Include="Forms\User\Login.aspx" />
+    <Content Include="Forms\User\Logout.aspx" />
     <Content Include="Forms\User\ResetPassword.aspx" />
     <Content Include="Forms\User\Settings.aspx" />
     <Content Include="Forms\User\Signup.aspx" />
@@ -212,6 +213,13 @@
     </Compile>
     <Compile Include="Forms\User\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>

@@ -101,42 +101,70 @@ namespace T_Train_Front_office.Forms.User
             int customerId = Convert.ToInt32(Session["customerId"]);
             clsCustomer ACustomer = new clsCustomer();
             bool customerFound = ACustomer.FindCustomer(customerId);
-
-            if(customerFound)
+            
+            if(currentPassword.Length < 8 || newPassword.Length < 8 || newPasswordRepeat.Length < 8)
             {
-                //hash the new password
-                newPassword = ACustomer.GetHashPassword(newPassword);
+                lblPasswordError.Text = "Password must be at least 8 characters long.";
+            }
+            else if(customerFound)
+            {
                 //compare the entered current password with the actual password
                 if (ACustomer.GetHashPassword(currentPassword) == ACustomer.AccountPassword)
                 {
                     //compare the new password with the repeated new password
                     if(newPassword == newPasswordRepeat)
                     {
+                        //hash the new password
+                        newPassword = ACustomer.GetHashPassword(newPassword);
                         //update user password
                         ACustomer.UpdatePassword(newPassword);
                         //log the user off
-                        Response.Redirect("Logout.aspx");
+                        Response.Redirect("Logout.aspx?passwordChanged=1");
                     }
                     else
                     {
-                        //bad repeat
+                        lblPasswordError.Text = "Entered passwords aren't matching!";
                     }
                 }
                 else
                 {
-                    //incorrect password
+                    lblPasswordError.Text = "Entered password for your account is incorrect!";
                 }
             }
             else
             {
-                //session expired - logout
+                Response.Redirect("Logout.aspx");
             }
         }
 
         protected void btnDetails_Click(object sender, EventArgs e)
         {
-            //update details
-            Response.Redirect("Settings.aspx");
+            //get current customer data
+            clsCustomer NewCustomerDetails = new clsCustomer();
+            NewCustomerDetails.CustomerId = Convert.ToInt32(Session["customerId"]);
+            bool customerFound = NewCustomerDetails.FindCustomer(NewCustomerDetails.CustomerId);
+            
+            if(customerFound)
+            {
+                //replace the current details with the new details
+                NewCustomerDetails.Address = txtAddress.Text;
+                NewCustomerDetails.DateOfBirth = txtDOB.Text;
+                NewCustomerDetails.FirstName = txtFirstName.Text;
+                NewCustomerDetails.LastName = txtLastName.Text;
+
+                //save changes
+                clsCustomerCollection CustomerManager = new clsCustomerCollection();
+                CustomerManager.ThisCustomer = NewCustomerDetails;
+                CustomerManager.ChangeDetails();
+
+                //show success label
+                lblDetailsChanged.Visible = true;
+            }
+            else
+            {
+                //session expired, redirect logout
+                Response.Redirect("Logout.aspx");
+            }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)

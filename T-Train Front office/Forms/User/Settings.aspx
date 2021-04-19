@@ -26,7 +26,7 @@
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 387px; top: 647px; position: absolute" Text="First Name:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 484px; top: 648px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 384px; top: 687px; position: absolute" Text="Last Name:"></asp:Label>
-            <asp:Label ID="Label25" runat="server" Font-Size="Large" style="z-index: 1; left: 422px; top: 601px; position: absolute" Text="Personal Details"></asp:Label>
+            <asp:Label ID="lblDetailsChanged" runat="server" Font-Size="Large" style="z-index: 1; left: 57px; top: 709px; position: absolute" Text="Your details were updated!" ForeColor="#009933" Visible="False"></asp:Label>
         <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 489px; top: 688px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 389px; top: 789px; position: absolute" Text="Address:"></asp:Label>
         <asp:TextBox ID="txtDOB" runat="server" style="z-index: 1; left: 489px; top: 739px; position: absolute"></asp:TextBox>
@@ -54,6 +54,12 @@
         <asp:Label ID="Label29" runat="server" style="z-index: 1; left: 349px; top: 1234px; position: absolute" Text="Current password:"></asp:Label>
         <asp:TextBox ID="TextBox9" runat="server" style="z-index: 1; left: 485px; top: 1232px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 892px; top: 21px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
+        <p>
+            <asp:Label ID="Label30" runat="server" Font-Size="Large" style="z-index: 1; left: 422px; top: 601px; position: absolute" Text="Personal Details"></asp:Label>
+        </p>
+        <p>
+            <asp:Label ID="lblPasswordError" runat="server" Font-Size="Large" style="z-index: 1; left: 56px; top: 430px; position: absolute" ForeColor="Red"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

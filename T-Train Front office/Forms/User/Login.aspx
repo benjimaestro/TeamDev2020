@@ -15,7 +15,7 @@
         </div>
         <p>
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
-            <asp:Button ID="btnSignup" runat="server" style="z-index: 1; left: 856px; top: 36px; position: absolute" Text="Signup" OnClick="Button5_Click" />
+            <asp:Button ID="btnSignup" runat="server" style="z-index: 1; left: 856px; top: 36px; position: absolute" Text="Register" OnClick="Button5_Click" />
         </p>
         <p>
             <asp:Button ID="btnSignup2" runat="server" style="z-index: 1; left: 489px; top: 396px; position: absolute" Text="Signup" OnClick="btnSignup2_Click" />
