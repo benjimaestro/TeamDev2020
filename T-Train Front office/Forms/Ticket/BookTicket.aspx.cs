@@ -17,10 +17,12 @@ namespace T_Train_Front_office.Forms.Ticket
             {
                 //check if the user is logged in
                 bool isStaff = false;
+                bool loggedIn = false;
                 if (Session["customerLoggedIn"] != null)
                 {
                     if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
                     {
+                        loggedIn = true;
                         if (Session["customerIsStaff"] != null)
                         {
                             if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
@@ -32,7 +34,7 @@ namespace T_Train_Front_office.Forms.Ticket
                 }
 
                 //if they are not, redirect them to login
-                if (!isStaff)
+                if (!loggedIn)
                 {
                     Response.Redirect("../User/Login.aspx");
                 }

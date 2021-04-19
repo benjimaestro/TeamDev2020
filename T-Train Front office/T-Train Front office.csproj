@@ -107,7 +107,6 @@
     <Content Include="Forms\Ticket\BookTicket.aspx" />
     <Content Include="Forms\Ticket\Cancel.aspx" />
     <Content Include="Forms\Ticket\MyTickets.aspx" />
-    <Content Include="Forms\Ticket\Refund.aspx" />
     <Content Include="Forms\User\ActionSuccess.aspx" />
     <Content Include="Forms\User\Login.aspx" />
     <Content Include="Forms\User\ResetPassword.aspx" />
@@ -199,13 +198,6 @@
     </Compile>
     <Compile Include="Forms\Ticket\MyTickets.aspx.designer.cs">
       <DependentUpon>MyTickets.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Ticket\Refund.aspx.cs">
-      <DependentUpon>Refund.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forms\Ticket\Refund.aspx.designer.cs">
-      <DependentUpon>Refund.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\ActionSuccess.aspx.cs">
       <DependentUpon>ActionSuccess.aspx</DependentUpon>

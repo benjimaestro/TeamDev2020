@@ -38,7 +38,7 @@
         <p>
             <asp:Label ID="lblNoTicketsFound" runat="server" style="z-index: 1; left: 330px; top: 365px; position: absolute" Text="This customer has not purchased any tickets." Visible="False" Font-Bold="True"></asp:Label>
         <asp:ListBox ID="lstTickets" runat="server" style="z-index: 1; left: 58px; top: 353px; position: absolute; height: 182px; width: 345px" Visible="False"></asp:ListBox>
-        <asp:Label ID="lblTicketSelected" runat="server" style="z-index: 1; left: 576px; top: 431px; position: absolute" Text="You must select a ticket first!" Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
+        <asp:Label ID="lblTicketSelected" runat="server" style="z-index: 1; left: 576px; top: 431px; position: absolute" Text="You have to select a ticket first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
         </p>
     </form>
 </body>
