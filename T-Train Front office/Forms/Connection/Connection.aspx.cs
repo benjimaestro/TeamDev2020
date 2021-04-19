@@ -14,9 +14,31 @@ namespace T_Train_Front_office.Forms.Connection
         int connectionId = 0;
         string action = "new";
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if(!IsPostBack)
+        {            if (!IsPostBack)
             {
+                //check if the user is a staff member
+                bool isStaff = false;
+                if (Session["customerLoggedIn"] != null)
+                {
+                    if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                    {
+                        if (Session["customerIsStaff"] != null)
+                        {
+                            if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                            {
+                                isStaff = true;
+                            }
+                        }
+                    }
+                }
+
+                //if they are not staff, redirect them to logout
+                //only staff is allowed to manage connections
+                if(!isStaff)
+                {
+                    Response.Redirect("../User/Logout.aspx");
+                }
+
                 //Fill the time dropdown list
                 for (int hour = 0; hour < 24; ++hour)
                 {

@@ -82,8 +82,7 @@ namespace ClassLibrary
                 {
                     TicketId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketId"]),
                     TicketActive = Convert.ToBoolean(DB.DataTable.Rows[i]["TicketActive"]),
-                    ConnectionId = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionId"]),
-                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"])
+                    ConnectionId = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionId"])
                 };
                 //save a found ticket to an array
                 userTickets.Add(ATicket);

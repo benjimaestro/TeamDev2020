@@ -17,6 +17,29 @@ namespace T_Train_Front_office.Forms.Ticket
             {
                 try
                 {
+                    //check if the user is a staff member
+                    bool isStaff = false;
+                    if (Session["customerLoggedIn"] != null)
+                    {
+                        if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                        {
+                            if (Session["customerIsStaff"] != null)
+                            {
+                                if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                                {
+                                    isStaff = true;
+                                }
+                            }
+                        }
+                    }
+
+                    //if they are not staff, redirect them to logout
+                    //only staff is allowed to cancel tickets
+                    if (!isStaff)
+                    {
+                        Response.Redirect("../User/Logout.aspx");
+                    }
+
                     //get the ticket id from the url string
                     int ticketId = Convert.ToInt32(Request.Params["ticketId"]);
                     if (ticketId > 0)

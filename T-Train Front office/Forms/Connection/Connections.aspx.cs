@@ -15,8 +15,23 @@ namespace T_Train_Front_office.Forms.Connection
         {
             if (!IsPostBack)
             {
-                bool loggedIn = true;
+                //check if the user is logged in and if they are staff
                 bool isStaff = false;
+                bool loggedIn = false;
+                if (Session["customerLoggedIn"] != null)
+                {
+                    if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                    {
+                        loggedIn = true;
+                        if (Session["customerIsStaff"] != null)
+                        {
+                            if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                            {
+                                isStaff = true;
+                            }
+                        }
+                    }
+                }
 
                 btnStaffDashboard.Visible = isStaff;
                 btnTickets.Visible = loggedIn;
@@ -98,10 +113,16 @@ namespace T_Train_Front_office.Forms.Connection
                 }
                 else
                 {
-                    //show the controls
+                    //show the default controls
                     lstConnections.Visible = true;
                     btnBookTicket.Visible = true;
-                    btnManageConnection.Visible = true;
+
+                    //only staff can manage connections
+                    if(isStaff)
+                    {
+                        btnManageConnection.Visible = true;
+                    }
+                    
 
                     //for each connection, add it into the list
                     for (int i = 0; i < Connections.Count; ++i)

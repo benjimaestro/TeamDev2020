@@ -15,6 +15,28 @@ namespace T_Train_Front_office.Forms.Ticket
         {
             if(!IsPostBack)
             {
+                //check if the user is logged in
+                bool isStaff = false;
+                if (Session["customerLoggedIn"] != null)
+                {
+                    if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                    {
+                        if (Session["customerIsStaff"] != null)
+                        {
+                            if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                            {
+                                isStaff = true;
+                            }
+                        }
+                    }
+                }
+
+                //if they are not, redirect them to login
+                if (!isStaff)
+                {
+                    Response.Redirect("../User/Login.aspx");
+                }
+
                 try
                 {
                     int connectionId = Convert.ToInt32(Request.Params["connId"]);
@@ -89,14 +111,14 @@ namespace T_Train_Front_office.Forms.Ticket
         protected void Button2_Click(object sender, EventArgs e)
         {
             //redirect to all connections screen
-            Response.Redirect("Connections.aspx");
+            Response.Redirect("../Connection/Connections.aspx");
         }
 
         protected void btnPayment_Click1(object sender, EventArgs e)
         {
             //get connection id and user id
             int connectionId = Convert.ToInt32(Request.Params["connId"]);
-            int customerId = 1;
+            int customerId = Convert.ToInt32(Session["customerId"]);
 
             //fetch the details of the connection with id given
             clsConnection AConnection = new clsConnection();

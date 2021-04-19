@@ -15,6 +15,29 @@ namespace T_Train_Front_office.Forms.Customer
         {
             if (!IsPostBack)
             {
+                //check if the user is a staff member
+                bool isStaff = false;
+                if (Session["customerLoggedIn"] != null)
+                {
+                    if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                    {
+                        if (Session["customerIsStaff"] != null)
+                        {
+                            if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                            {
+                                isStaff = true;
+                            }
+                        }
+                    }
+                }
+
+                //if they are not staff, redirect them to logout
+                //only staff is allowed to see customers
+                if (!isStaff)
+                {
+                    Response.Redirect("../User/Logout.aspx");
+                }
+
                 try
                 {
                     //get the customer id from the url string

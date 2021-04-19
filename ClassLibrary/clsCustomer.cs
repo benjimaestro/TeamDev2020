@@ -216,6 +216,7 @@ namespace T_Train_Classes
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
+                mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
@@ -245,6 +246,7 @@ namespace T_Train_Classes
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
+                mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
