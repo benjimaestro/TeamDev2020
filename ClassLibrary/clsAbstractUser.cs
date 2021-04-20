@@ -81,6 +81,7 @@ namespace ClassLibrary
                     break;
             }
 
+            //Generate hash based on a random number
             Random random = new Random();
             TempPW = GetHashPassword(random.Next(1, 9999999).ToString()).Substring(0, 50); ;
 
@@ -89,7 +90,7 @@ namespace ClassLibrary
             DB.AddParameter("@Password", TempPW);
             DB.Execute(Sproc);
 
-            //Finish so it actually sends reset codes
+            //Set up to send EMails from a GMail account
             string Email = "teamdroptable2020@gmail.com";
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
@@ -98,7 +99,8 @@ namespace ClassLibrary
                 EnableSsl = true,
             };
 
-            //Can't do redirects to pages with query strings because it's all localhost, use hash as a code
+            //Can't do redirects to pages with query strings because it's all localhost and runs on different ports
+            //Uses hash as a code for validation
             smtpClient.Send(Email, mEmail, $"Change password for {System} System", $"Your code is: {TempPW}");
 
             return TempPW;
