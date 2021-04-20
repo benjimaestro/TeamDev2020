@@ -47,6 +47,7 @@ namespace T_Train_Front_office.Forms.Customer
                         //fetch the details of the customer with id given
                         clsCustomer ACustomer = new clsCustomer();
                         bool customerFound = ACustomer.FindCustomer(customerId);
+                        int activeTickets = 0;
 
                         //id valid
                         if (customerFound)
@@ -71,8 +72,7 @@ namespace T_Train_Front_office.Forms.Customer
                             {
                                 //show the controls
                                 btnCancelTicket.Visible = true;
-                                btnPayment.Visible = true;
-                                lstPayments.Visible = true;
+                                lstTickets.Visible = true;
 
                                 //for each ticket, add it into the list
                                 for (int i = 0; i < UserTickets.Count; ++i)
@@ -96,6 +96,7 @@ namespace T_Train_Front_office.Forms.Customer
 
                                         ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + active;
                                         //ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + time + " " + active;
+                                        activeTickets++;
                                     }
                                     else
                                     {
@@ -103,13 +104,61 @@ namespace T_Train_Front_office.Forms.Customer
                                         ATicketItem.Text = "Invalid connection ID: " + UserTickets.MyTickets[i].ConnectionId;
                                     }
                                     //add the list item to the list
-                                    lstPayments.Items.Add(ATicketItem);
+                                    lstTickets.Items.Add(ATicketItem);
                                 }
+                            }
+
+                            if (activeTickets == 0)
+                            {
+                                //no tickets owned
+                                lblNoTicketsFound.Visible = true;
+                                btnCancelTicket.Visible = false;
+                                lstTickets.Visible = false;
+                                lblTicketSelected.Visible = false;
+                            }
+                            else
+                            {
+                                lblNoTicketsFound.Visible = false;
+                                btnCancelTicket.Visible = true;
+                                lstTickets.Visible = true;
                             }
 
                             //get payments of the user
                             clsPaymentCollection UserPayments = new clsPaymentCollection();
-                            //UserPayments.MyPayments = UserPayments.(customerId);
+                            UserPayments.MyPayments = UserPayments.GetUserPayments(customerId);
+
+                            //there are no payments
+                            if (UserPayments.Count == 0)
+                            {
+                                lblNoPaymentsFound.Visible = true;
+                            }
+                            else
+                            {
+                                //show the controls
+                                btnPayment.Visible = true;
+                                lstPayments.Visible = true;
+
+                                //for each payment, add it into the list
+                                for (int i = 0; i < UserPayments.Count; ++i)
+                                {
+                                    //create a list item to show the payment
+                                    ListItem APaymentItem = new ListItem();
+                                    APaymentItem.Value = Convert.ToString(UserPayments.MyPayments[i].PaymentId);
+
+                                    //assign details of a payment to the variables
+                                    string paymentId = Convert.ToString(UserPayments.MyPayments[i].PaymentId);
+                                    string paymentValue = Convert.ToString(UserPayments.MyPayments[i].PaymentValue);
+                                    string paymentStartDate = UserPayments.MyPayments[i].PaymentStartDate.ToString("dd/MM/yyyy HH:mm:ss");
+                                    string paymentEndDate = UserPayments.MyPayments[i].PaymentEndDate.ToString("dd/MM/yyyy HH:mm:ss");
+                                    string ticketId = Convert.ToString(UserPayments.MyPayments[i].TicketId);
+
+                                    //assign the text to the list item
+                                    APaymentItem.Text = $"PayID: {paymentId} || Start: {paymentStartDate} || End: {paymentEndDate} || Value: {paymentValue} || TicketID: {ticketId}";
+                                    
+                                    //add the list item to the list
+                                    lstPayments.Items.Add(APaymentItem);
+                                }
+                            }
                         }
                     }
                 }
@@ -166,9 +215,9 @@ namespace T_Train_Front_office.Forms.Customer
             if (selectedValue == "" || selectedValue == "0")
             {
                 //if it was not, show an error
-                lblTicketSelected.Visible = true;
+                lblPaymentSelected.Visible = true;
             } //if it was, redirect
-            else Response.Redirect("../Payment/Payment.aspx?ticketId=" + lstPayments.SelectedValue);
+            else Response.Redirect("../Payment/Payment.aspx?paymentId=" + lstPayments.SelectedValue);
         }
 
         protected void btnPayment2_Click(object sender, EventArgs e)

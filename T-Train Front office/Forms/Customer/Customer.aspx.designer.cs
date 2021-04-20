@@ -231,13 +231,13 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Label Label20;
 
         /// <summary>
-        /// lstTickets0 control.
+        /// lstTickets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstTickets0;
+        protected global::System.Web.UI.WebControls.ListBox lstTickets;
 
         /// <summary>
         /// lblPaymentSelected control.
@@ -249,12 +249,12 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Label lblPaymentSelected;
 
         /// <summary>
-        /// lblNoTicketsFound0 control.
+        /// lblNoPaymentsFound control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoTicketsFound0;
+        protected global::System.Web.UI.WebControls.Label lblNoPaymentsFound;
     }
 }
