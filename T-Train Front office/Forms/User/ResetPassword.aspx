@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="T_Train_Front_office.Forms.User.ResetPassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="T_Train_Front_office.Forms.User.ResetPassword1" %>
 
 <!DOCTYPE html>
 
@@ -7,26 +7,24 @@
     <title></title>
 </head>
 <body>
-    <form id="form2" runat="server">
-        <p>
-        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 373px; top: 313px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
-        </p>
-        <p>
-        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
-            <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 801px; top: 34px; position: absolute" Text="Login" OnClick="btnLogin_Click" />
-            <asp:Button ID="btnSignup" runat="server" style="z-index: 1; left: 881px; top: 36px; position: absolute" Text="Signup" OnClick="btnSignup_Click" />
-        </p>
+    <form id="form1" runat="server">
         <div>
+        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 353px; top: 68px; position: absolute" Text="Welcome to T-Train"></asp:Label>
+        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 355px; top: 111px; position: absolute" Text="Fill the form below to reset your password."></asp:Label>
         </div>
         <p>
-        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 353px; top: 68px; position: absolute" Text="Welcome to T-Train"></asp:Label>
-        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 379px; top: 113px; position: absolute" Text="Reset the password to your account"></asp:Label>
-        </p>
-        <p>
-        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 395px; top: 226px; position: absolute; height: 19px; right: 529px;" Text="Email:"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 469px; top: 222px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnResetPassword" runat="server" style="z-index: 1; left: 408px; top: 265px; position: absolute" Text="Reset Password" OnClick="btnResetPassword_Click" />
-        </p>
+        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 336px; top: 181px; position: absolute; right: 514px;" Text="Reset code:"></asp:Label>
+        <asp:TextBox ID="txtResetCode" runat="server" style="z-index: 1; left: 451px; top: 182px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label24" runat="server" style="z-index: 1; left: 321px; top: 293px; position: absolute" Text="New Password:"></asp:Label>
+        <asp:TextBox ID="txtNewPass" runat="server" style="z-index: 1; left: 456px; top: 295px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 275px; top: 345px; position: absolute" Text="Repeat New Password:"></asp:Label>
+        <asp:TextBox ID="txtNewPassRep" runat="server" style="z-index: 1; left: 456px; top: 345px; position: absolute"></asp:TextBox>
+            <asp:Label ID="lblPasswordError" runat="server" Font-Size="Large" style="z-index: 1; left: 49px; top: 134px; position: absolute" ForeColor="Red"></asp:Label>
+        <asp:Button ID="btnPassword" runat="server" style="z-index: 1; left: 388px; top: 414px; position: absolute" Text="Update Password" OnClick="btnPassword_Click" />
+        <asp:Label ID="Label25" runat="server" style="z-index: 1; left: 205px; top: 218px; position: absolute; right: 269px;" Text="You will have received a special code to your email address. Type that code into the box above to confirm the account belongs to you." Font-Bold="True"></asp:Label>
+        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 347px; top: 457px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
+            </p>
     </form>
 </body>
 </html>

@@ -52,7 +52,7 @@ namespace T_Train_Front_office.Forms.User
                         //set value of the read-only fields to the details of the customer
                         txtAddress.Text = ACustomer.Address;
                         txtDOB.Text = ACustomer.DateOfBirth;
-                        txtEmail.Text = ACustomer.EMail;
+                        txtEmail.Text = ACustomer.Email;
                         txtFirstName.Text = ACustomer.FirstName;
                         txtLastName.Text = ACustomer.LastName;
                     }

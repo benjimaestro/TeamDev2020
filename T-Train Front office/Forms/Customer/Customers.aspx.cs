@@ -102,7 +102,7 @@ namespace T_Train_Front_office.Forms.Customer
                             ACustomerItem.Text = Customers.MyCustomers[i].FirstName
                                 + " " + Customers.MyCustomers[i].LastName
                                 + " - " + Convert.ToString(Customers.MyCustomers[i].DateOfBirth)
-                                + " - " + Customers.MyCustomers[i].EMail;
+                                + " - " + Customers.MyCustomers[i].Email;
                             ACustomerItem.Value = Convert.ToString(Customers.MyCustomers[i].CustomerId);
                             lstCustomers.Items.Add(ACustomerItem);
                         }

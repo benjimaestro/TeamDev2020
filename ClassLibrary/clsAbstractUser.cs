@@ -72,7 +72,7 @@ namespace ClassLibrary
                     Sproc = "sproc_tblUser_ChangePassword";
                     break;
                 case "TTrain":
-                    Sproc = "";
+                    Sproc = "sproc_tblCustomer_ForgotPassword";
                     break;
                 case "Laptop":
                     Sproc = "";

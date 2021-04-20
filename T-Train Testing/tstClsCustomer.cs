@@ -80,8 +80,8 @@ namespace TTrainCustomer
             //Tests whether the "EMail" property can be set
             clsCustomer ACustomer = new clsCustomer();
             string testEMail = "HelloWorld@gmail.com";
-            ACustomer.EMail = testEMail;
-            Assert.AreEqual(ACustomer.EMail, testEMail);
+            ACustomer.Email = testEMail;
+            Assert.AreEqual(ACustomer.Email, testEMail);
         }
 
         [TestMethod]
@@ -171,7 +171,7 @@ namespace TTrainCustomer
             //call the method
             bool found = ACustomer.FindCustomerByEmail(testEmail);
             //check the customer was actually found
-            Assert.AreEqual(ACustomer.EMail, testEmail);
+            Assert.AreEqual(ACustomer.Email, testEmail);
         }
 
         [TestMethod]

@@ -51,7 +51,7 @@ namespace T_Train_Classes
             //set the parameters for the stored procedure
             DB.AddParameter("@customerAddress", ThisCustomer.Address);
             DB.AddParameter("@customerDateOfBirth", ThisCustomer.DateOfBirth);
-            DB.AddParameter("@customerEmail", ThisCustomer.EMail);
+            DB.AddParameter("@customerEmail", ThisCustomer.Email);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
             DB.AddParameter("@customerPassword", ThisCustomer.AccountPassword);
@@ -77,7 +77,7 @@ namespace T_Train_Classes
             DB.AddParameter("@customerId", ThisCustomer.CustomerId);
             DB.AddParameter("@customerAddress", ThisCustomer.Address);
             DB.AddParameter("@customerDateOfBirth", ThisCustomer.DateOfBirth);
-            DB.AddParameter("@customerEmail", ThisCustomer.EMail);
+            DB.AddParameter("@customerEmail", ThisCustomer.Email);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
             DB.AddParameter("@customerPassword", ThisCustomer.AccountPassword);
@@ -108,7 +108,7 @@ namespace T_Train_Classes
                     DateOfBirth = Convert.ToString(DB.DataTable.Rows[i]["DateOfBirth"]),
                     CustomerId = Convert.ToInt32(DB.DataTable.Rows[i]["CustomerId"]),
                     Address = Convert.ToString(DB.DataTable.Rows[i]["Address"]),
-                    EMail = Convert.ToString(DB.DataTable.Rows[i]["Email"]),
+                    Email = Convert.ToString(DB.DataTable.Rows[i]["Email"]),
                     CustomerActive = Convert.ToBoolean(DB.DataTable.Rows[i]["AccountActive"]),
                     CustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[i]["AccountCreatedAt"]),
                     AccountPassword = Convert.ToString(DB.DataTable.Rows[i]["AccountPassword"]),

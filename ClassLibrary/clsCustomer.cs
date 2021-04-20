@@ -12,7 +12,6 @@ namespace T_Train_Classes
         DateTime mCustomerCreatedAt;
         int mCustomerId;
         string mDateOfBirth;
-        string mEMail;
         string mAccountPassword;
         bool mIsStaff;
 
@@ -70,17 +69,6 @@ namespace T_Train_Classes
             set 
             { 
                 mDateOfBirth = value; 
-            } 
-        }
-        public string EMail 
-        { 
-            get 
-            { 
-                return mEMail; 
-            } 
-            set 
-            { 
-                mEMail = value; 
             } 
         }
 
@@ -224,7 +212,7 @@ namespace T_Train_Classes
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
                 mDateOfBirth = Convert.ToString(DB.DataTable.Rows[0]["DateOfBirth"]);
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
-                mEMail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["EMail"]);
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
@@ -254,7 +242,7 @@ namespace T_Train_Classes
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
                 mDateOfBirth = Convert.ToString(DB.DataTable.Rows[0]["DateOfBirth"]);
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
-                mEMail = testEmail;
+                mEmail = testEmail;
                 mCustomerActive = Convert.ToBoolean(DB.DataTable.Rows[0]["AccountActive"]);
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);

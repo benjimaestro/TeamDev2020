@@ -31,7 +31,7 @@ namespace TTrainCustomer
                 CustomerCreatedAt = new DateTime(2001, 01, 17, 0, 0, 0),
                 CustomerId = 15,
                 DateOfBirth = "15/07/2000",
-                EMail = "HelloWorld@gmail.com",
+                Email = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
             };
@@ -57,7 +57,7 @@ namespace TTrainCustomer
                 CustomerCreatedAt = new DateTime(2001, 01, 17, 0, 0, 0),
                 CustomerId = 15,
                 DateOfBirth = "15/07/2000",
-                EMail = "HelloWorld@gmail.com",
+                Email = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
             };
@@ -83,7 +83,7 @@ namespace TTrainCustomer
                 CustomerCreatedAt = new DateTime(2001, 01, 17, 0, 0, 0),
                 CustomerId = 15,
                 DateOfBirth = "15/07/2000",
-                EMail = "HelloWorld@gmail.com",
+                Email = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
             };
@@ -106,7 +106,7 @@ namespace TTrainCustomer
                 //assign all the properties
                 Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom",
                 DateOfBirth = "15/07/2000",
-                EMail = "HelloWorld@gmail.com",
+                Email = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
             };
@@ -138,7 +138,7 @@ namespace TTrainCustomer
                 //assign all the properties
                 Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom",
                 DateOfBirth = "15/07/2000",
-                EMail = "HelloWorld@gmail.com",
+                Email = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
             };
@@ -172,7 +172,7 @@ namespace TTrainCustomer
                 //assign all the properties
                 Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom",
                 DateOfBirth = "15/07/2000",
-                EMail = "HelloWorld@gmail.com",
+                Email = "HelloWorld@gmail.com",
                 FirstName = "Adam",
                 LastName = "Example"
             };
@@ -187,7 +187,7 @@ namespace TTrainCustomer
             //assign all the properties
             ACustomer.Address = "19 NewStreet, Birmingham, BA1 111, United Kingdom";
             ACustomer.DateOfBirth = "15/07/2000";
-            ACustomer.EMail = "HelloWorld@gmail.com";
+            ACustomer.Email = "HelloWorld@gmail.com";
             ACustomer.FirstName = "Adam";
             ACustomer.LastName = "Example";
             ACustomer.AccountPassword = ACustomer.GetHashPassword("testpassword1");
