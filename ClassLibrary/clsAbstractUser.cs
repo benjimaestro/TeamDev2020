@@ -81,20 +81,8 @@ namespace ClassLibrary
                     break;
             }
 
-            //educative.io/edpresso/how-to-generate-a-random-string-in-c-sharp
-            int length = 7;
-            StringBuilder str_build = new StringBuilder();
             Random random = new Random();
-            char letter;
-            for (int i = 0; i < length; i++)
-            {
-                double flt = random.NextDouble();
-                int shift = Convert.ToInt32(Math.Floor(25 * flt));
-                letter = Convert.ToChar(shift + 65);
-                str_build.Append(letter);
-            }
-            //
-            TempPW = GetHashPassword(str_build.ToString()).Substring(0, 50); ;
+            TempPW = GetHashPassword(random.Next(1, 9999999).ToString()).Substring(0, 50); ;
 
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@Email", mEmail);

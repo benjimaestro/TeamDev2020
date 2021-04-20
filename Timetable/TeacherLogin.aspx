@@ -30,6 +30,22 @@
             z-index: 1;
             width: 266px;
         }
+        .auto-style4 {
+            z-index: 1;
+            left: 156px;
+            top: 90px;
+            position: absolute;
+            width: 256px;
+            bottom: 574px;
+        }
+        .auto-style5 {
+            z-index: 1;
+            left: 156px;
+            top: 120px;
+            position: absolute;
+            width: 256px;
+            height: 21px;
+        }
     </style>
 </head>
 <body>
@@ -38,8 +54,8 @@
         <br/>
         <br/>
         <br/>
-        <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 156px; top: 90px; position: absolute; width: 256px; bottom: 634px;"></asp:TextBox>
-        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 156px; top: 120px; position: absolute; width: 256px" TextMode="Password"></asp:TextBox>
+        <asp:TextBox ID="txtUsername" runat="server" CssClass="auto-style4" Height="21px"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="auto-style5"></asp:TextBox>
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 90px; position: absolute; width: 120px" Text="Email:"></asp:Label>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 120px; position: absolute; width: 120px" Text="Password:"></asp:Label>
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 156px; top: 150px; position: absolute; width: 266px;" Text="Log in" OnClick="btnLogin_Click" />
