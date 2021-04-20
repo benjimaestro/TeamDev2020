@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms
 {
@@ -99,7 +100,27 @@ namespace T_Train_Front_office.Forms
         protected void btnFindTicketType_Click(object sender, EventArgs e)
         {
             //redirect to a particular ticket type
-            Response.Redirect("TicketType/TicketType.aspx");
+            string ticketTypeIdText = txtTypeId.Text;
+            int ticketTypeId = 0;
+            try
+            {
+                ticketTypeId = Convert.ToInt32(ticketTypeIdText);
+                clsTicketType ATicketType = new clsTicketType();
+                bool found = ATicketType.FindTicketType(ticketTypeId);
+                if (found)
+                {
+                    Response.Redirect("TicketType/TicketType.aspx?typeId=" + ticketTypeId);
+                }
+                else
+                {
+                    throw new System.Exception("");
+                }
+            }
+            catch
+            {
+                //id not found or invalid - display error message
+                lblErrorTType.Visible = true;
+            }
         }
 
         protected void btnTicketTypes_Click(object sender, EventArgs e)

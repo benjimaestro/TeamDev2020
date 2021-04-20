@@ -28,7 +28,7 @@
         <asp:Button ID="btnAddConnection" runat="server" style="z-index: 1; left: 249px; top: 223px; position: absolute" Text="Add New Connection" OnClick="btnAddConnection_Click" />
         <asp:Label ID="Label20" runat="server" Font-Size="Large" style="z-index: 1; left: 78px; top: 299px; position: absolute" Text="Ticket Types"></asp:Label>
         <asp:Label ID="Label21" runat="server" style="z-index: 1; left: 97px; top: 347px; position: absolute" Text="Find Ticket Type by ID:"></asp:Label>
-        <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 266px; top: 347px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtTypeId" runat="server" style="z-index: 1; left: 266px; top: 347px; position: absolute"></asp:TextBox>
         <p>
             <asp:Button ID="btnFindTicketType" runat="server" style="z-index: 1; left: 451px; top: 345px; position: absolute" Text="Find Ticket Type" OnClick="btnFindTicketType_Click" />
             <asp:Button ID="btnTicketTypes" runat="server" style="z-index: 1; left: 111px; top: 384px; position: absolute" Text="All Ticket Types" OnClick="btnTicketTypes_Click" />
@@ -41,6 +41,7 @@
             &nbsp;</p>
         <p>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 368px; top: 633px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Label ID="lblErrorTType" runat="server" style="z-index: 1; left: 445px; top: 392px; position: absolute" Text="Please enter a valid ticket type ID!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
         </p>
     </form>
 </body>

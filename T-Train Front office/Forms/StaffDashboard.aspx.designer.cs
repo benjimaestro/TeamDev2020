@@ -150,13 +150,13 @@ namespace T_Train_Front_office.Forms
         protected global::System.Web.UI.WebControls.Label Label21;
 
         /// <summary>
-        /// TextBox2 control.
+        /// txtTypeId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtTypeId;
 
         /// <summary>
         /// btnFindTicketType control.
@@ -220,5 +220,14 @@ namespace T_Train_Front_office.Forms
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label17;
+
+        /// <summary>
+        /// lblErrorTType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorTType;
     }
 }

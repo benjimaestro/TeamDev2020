@@ -22,16 +22,19 @@ namespace T_Train_Front_office.Forms.User
                         {
                             case "delete":
                                 {
+                                    lblStaticDelSuccess.Text = "Success! The connection has been deleted.";
                                     lblStaticDelSuccess.Visible = true;
                                     break;
                                 }
                             case "edit":
                                 {
+                                    lblStaticModSuccess.Text = "Success! The connection has been modified.";
                                     lblStaticModSuccess.Visible = true;
                                     break;
                                 }
                             case "new":
                                 {
+                                    lblStaticAddSuccess.Text = "Success! New connection has been added.";
                                     lblStaticAddSuccess.Visible = true;
                                     break;
                                 }
@@ -70,6 +73,35 @@ namespace T_Train_Front_office.Forms.User
                             case "failure":
                                 {
                                     lblPaymentFailure.Visible = true;
+                                    break;
+                                }
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "ttype":
+                    {
+                        switch(action)
+                        {
+                            case "delete":
+                                {
+                                    lblStaticDelSuccess.Text = "Success! The ticket type has been deleted.";
+                                    lblStaticDelSuccess.Visible = true;
+                                    break;
+                                }
+                            case "edit":
+                                {
+                                    lblStaticModSuccess.Text = "Success! The ticket type has been modified.";
+                                    lblStaticModSuccess.Visible = true;
+                                    break;
+                                }
+                            case "new":
+                                {
+                                    lblStaticAddSuccess.Text = "Success! New ticket type has been added.";
+                                    lblStaticAddSuccess.Visible = true;
                                     break;
                                 }
                             default:
