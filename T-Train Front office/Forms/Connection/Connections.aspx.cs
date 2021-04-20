@@ -135,7 +135,6 @@ namespace T_Train_Front_office.Forms.Connection
                         lstConnections.Items.Add(AConnectionItem);
                     }
                 }
-
             }
         }
 

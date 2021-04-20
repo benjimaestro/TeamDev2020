@@ -72,7 +72,7 @@ namespace T_Train_Front_office.Forms.Customer
                                 //show the controls
                                 btnCancelTicket.Visible = true;
                                 btnPayment.Visible = true;
-                                lstTickets.Visible = true;
+                                lstPayments.Visible = true;
 
                                 //for each ticket, add it into the list
                                 for (int i = 0; i < UserTickets.Count; ++i)
@@ -103,9 +103,13 @@ namespace T_Train_Front_office.Forms.Customer
                                         ATicketItem.Text = "Invalid connection ID: " + UserTickets.MyTickets[i].ConnectionId;
                                     }
                                     //add the list item to the list
-                                    lstTickets.Items.Add(ATicketItem);
+                                    lstPayments.Items.Add(ATicketItem);
                                 }
                             }
+
+                            //get payments of the user
+                            clsPaymentCollection UserPayments = new clsPaymentCollection();
+                            //UserPayments.MyPayments = UserPayments.(customerId);
                         }
                     }
                 }
@@ -144,27 +148,27 @@ namespace T_Train_Front_office.Forms.Customer
         protected void btnCancelTicket_Click(object sender, EventArgs e)
         {
             //get the selected ticket's id
-            string selectedValue = lstTickets.SelectedValue;
+            string selectedValue = lstPayments.SelectedValue;
             //check if the selection was made
             if (selectedValue == "" || selectedValue == "0")
             {
                 //if it was not, show an error
                 lblTicketSelected.Visible = true;
             } //if it was, redirect
-            else Response.Redirect("../Ticket/Cancel.aspx?ticketId=" + lstTickets.SelectedValue);
+            else Response.Redirect("../Ticket/Cancel.aspx?ticketId=" + lstPayments.SelectedValue);
         }
 
         protected void btnPayment_Click(object sender, EventArgs e)
         {
             //get the selected ticket's id
-            string selectedValue = lstTickets.SelectedValue;
+            string selectedValue = lstPayments.SelectedValue;
             //check if the selection was made
             if (selectedValue == "" || selectedValue == "0")
             {
                 //if it was not, show an error
                 lblTicketSelected.Visible = true;
             } //if it was, redirect
-            else Response.Redirect("../Payment/Payment.aspx?ticketId=" + lstTickets.SelectedValue);
+            else Response.Redirect("../Payment/Payment.aspx?ticketId=" + lstPayments.SelectedValue);
         }
 
         protected void btnPayment2_Click(object sender, EventArgs e)

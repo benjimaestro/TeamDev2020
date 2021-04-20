@@ -55,5 +55,65 @@ namespace T_Train_Classes
             //update the record
             DB.Execute("sproc_tblTicketType_Update");
         }
+
+        public List<clsTicketType> FilterTicketTypes(clsTicketType ATicketType)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@TicketTypeName", ATicketType.TicketTypeName);
+            DB.AddParameter("@TicketTypePrice", ATicketType.TicketTypePrice);
+            DB.AddParameter("@TicketTypeRefundable", ATicketType.TicketTypeRefundable);
+            //execute the procedure to get data
+            DB.Execute("sproc_tblTicketType_FilterTicketTypes");
+            //create an empty list to store ticket types
+            List<clsTicketType> ticketTypesFound = new List<clsTicketType>();
+            //if there were rows returned, get data from them
+            for (int i = 0; i < DB.Count; ++i)
+            {
+                //get details of the ticket type
+                clsTicketType FoundTicketType = new clsTicketType
+                {
+                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"]),
+                    //common attributes
+                    TicketTypeActive = Convert.ToBoolean(DB.DataTable.Rows[i]["TicketTypeActive"]),
+                    TicketTypeName = Convert.ToString(DB.DataTable.Rows[i]["TicketTypeName"]),
+                    TicketTypePrice = float.Parse(Convert.ToString(DB.DataTable.Rows[i]["TicketTypePrice"])),
+                    TicketTypeRefundable = Convert.ToBoolean(DB.DataTable.Rows[i]["TicketTypeRefundable"])
+                };
+                //save a found ticket type to an array
+                ticketTypesFound.Add(FoundTicketType);
+            }
+            //return the array with all ticket types that were found
+            return ticketTypesFound;
+        }
+
+        public List<clsTicketType> ListTicketTypes()
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //execute the procedure to get data
+            DB.Execute("sproc_tblTicketType_GetAllTicketTypes");
+            //create an empty list to store ticket types
+            List<clsTicketType> ticketTypesFound = new List<clsTicketType>();
+            //if there were rows returned, get data from them
+            for (int i = 0; i < DB.Count; ++i)
+            {
+                //get details of the ticket type
+                clsTicketType FoundTicketType = new clsTicketType
+                {
+                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"]),
+                    //common attributes
+                    TicketTypeActive = Convert.ToBoolean(DB.DataTable.Rows[i]["TicketTypeActive"]),
+                    TicketTypeName = Convert.ToString(DB.DataTable.Rows[i]["TicketTypeName"]),
+                    TicketTypePrice = float.Parse(Convert.ToString(DB.DataTable.Rows[i]["TicketTypePrice"])),
+                    TicketTypeRefundable = Convert.ToBoolean(DB.DataTable.Rows[i]["TicketTypeRefundable"])
+                };
+                //save a found ticket type to an array
+                ticketTypesFound.Add(FoundTicketType);
+            }
+            //return the array with all ticket types that were found
+            return ticketTypesFound;
+        }
     }
 }
