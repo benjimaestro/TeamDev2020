@@ -65,7 +65,8 @@ namespace Timetable
             if (ID == 0) 
             {
                 button.Text = "Free";
-                if (Mode != "Admin") { button.Enabled = false; }
+                if (Mode == "Admin") { button.Enabled = true; }
+                else { button.Enabled = false; }
             }
             else 
             {
@@ -160,7 +161,14 @@ namespace Timetable
             }
 
             ddlRooms.Enabled = true;
-            if (Mode == "Admin") { btnUnbook.Enabled = true; }
+            if (Mode == "Admin") {
+                btnUnbook.Enabled = true;
+                btnUnbook.Visible = true;
+            }
+            else { 
+                btnUnbook.Enabled = false;
+                btnUnbook.Visible = false;
+            }
             lblRooms.Text = $"Rooms available on {Days[SelectedDayNo-1]} period {SelectedPNo}";
             Session["DayNo"] = SelectedDayNo;
             Session["Period"] = SelectedPNo;
