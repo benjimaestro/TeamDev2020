@@ -122,8 +122,16 @@ namespace T_Train_Front_office.Forms
                 //if they are valid, filter connections
                 if (valid)
                 {
-                    //redirect to a filtered list of connections
-                    Response.Redirect($"Connection/Connections.aspx?from={from}&to={to}&date={date}&time={time}");
+                    if(from == to)
+                    {
+                        //if invalid, display an error message on screen
+                        lblError.Text = "Start and end location cannot be the same.";
+                    }
+                    else
+                    {
+                        //redirect to a filtered list of connections
+                        Response.Redirect($"Connection/Connections.aspx?from={from}&to={to}&date={date}&time={time}");
+                    }
                 }
                 else
                 {
