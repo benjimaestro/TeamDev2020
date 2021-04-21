@@ -148,7 +148,7 @@
     <form id="form1" runat="server">
         <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" Text="Manage Users" CssClass="auto-style17"></asp:Label>
         <hr class="auto-style19" />
-        <asp:ListBox ID="lstTeachers" runat="server" CssClass="auto-style16"></asp:ListBox>
+        <asp:ListBox ID="lstTeachers" runat="server" CssClass="auto-style16" OnSelectedIndexChanged="lstTeachers_SelectedIndexChanged"></asp:ListBox>
         <asp:TextBox ID="txtFilter" runat="server" MaxLength="100" CssClass="auto-style1"></asp:TextBox>
         <asp:Label ID="Label1" runat="server" Text="Search Names or Emails" CssClass="auto-style15"></asp:Label>
         <asp:Button ID="btnSearchNames" runat="server" Text="Search Names" CssClass="auto-style4" OnClick="btnSearchNames_Click"/>

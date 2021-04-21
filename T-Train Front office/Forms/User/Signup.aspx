@@ -40,7 +40,7 @@
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 442px; top: 267px; position: absolute" Text="Address:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 528px; top: 184px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 530px; top: 223px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 525px; top: 270px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 525px; top: 270px; position: absolute" OnTextChanged="txtAddress_TextChanged"></asp:TextBox>
         <asp:TextBox ID="txtDateOfBirth" runat="server" style="z-index: 1; left: 736px; top: 220px; position: absolute"></asp:TextBox>
         <p>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 82px; top: 267px; position: absolute" Text="Repeat Password:"></asp:Label>

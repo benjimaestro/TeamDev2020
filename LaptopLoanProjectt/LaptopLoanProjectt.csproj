@@ -67,12 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LaptopUserLogIn.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="UserLogIn.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LaptopUserLogIn.aspx.cs">
+      <DependentUpon>LaptopUserLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LaptopUserLogIn.aspx.designer.cs">
+      <DependentUpon>LaptopUserLogIn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

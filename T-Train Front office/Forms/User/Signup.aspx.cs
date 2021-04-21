@@ -71,5 +71,10 @@ namespace T_Train_Front_office.Forms.User
             //redirect to the login page
             Response.Redirect("Login.aspx");
         }
+
+        protected void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -149,5 +149,10 @@ namespace Timetable
             //Returns user to AdminDefault page
             Response.Redirect("AdminDefault.aspx");
         }
+
+        protected void lstTeachers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
