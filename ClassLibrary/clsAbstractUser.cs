@@ -72,7 +72,7 @@ namespace ClassLibrary
                     Sproc = "sproc_tblUser_ChangePassword";
                     break;
                 case "TTrain":
-                    Sproc = "";
+                    Sproc = "sproc_tblCustomer_ForgotPassword";
                     break;
                 case "Laptop":
                     Sproc = "";
@@ -81,27 +81,16 @@ namespace ClassLibrary
                     break;
             }
 
-            //educative.io/edpresso/how-to-generate-a-random-string-in-c-sharp
-            int length = 7;
-            StringBuilder str_build = new StringBuilder();
+            //Generate hash based on a random number
             Random random = new Random();
-            char letter;
-            for (int i = 0; i < length; i++)
-            {
-                double flt = random.NextDouble();
-                int shift = Convert.ToInt32(Math.Floor(25 * flt));
-                letter = Convert.ToChar(shift + 65);
-                str_build.Append(letter);
-            }
-            //
-            TempPW = GetHashPassword(str_build.ToString()).Substring(0, 50); ;
+            TempPW = GetHashPassword(random.Next(1, 9999999).ToString()).Substring(0, 50); ;
 
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@Email", mEmail);
             DB.AddParameter("@Password", TempPW);
             DB.Execute(Sproc);
 
-            //Finish so it actually sends reset codes
+            //Set up to send EMails from a GMail account
             string Email = "teamdroptable2020@gmail.com";
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
@@ -110,7 +99,8 @@ namespace ClassLibrary
                 EnableSsl = true,
             };
 
-            //Can't do redirects to pages with query strings because it's all localhost, use hash as a code
+            //Can't do redirects to pages with query strings because it's all localhost and runs on different ports
+            //Uses hash as a code for validation
             smtpClient.Send(Email, mEmail, $"Change password for {System} System", $"Your code is: {TempPW}");
 
             return TempPW;

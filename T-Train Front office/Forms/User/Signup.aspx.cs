@@ -47,7 +47,7 @@ namespace T_Train_Front_office.Forms.User
                 NewCustomer.LastName = txtLastName.Text;
                 NewCustomer.Address = txtAddress.Text;
                 NewCustomer.DateOfBirth = txtDateOfBirth.Text;
-                NewCustomer.EMail = txtEmail.Text;
+                NewCustomer.Email = txtEmail.Text;
                 string hashedPassword = NewCustomer.GetHashPassword(txtPassword.Text);
                 NewCustomer.AccountPassword = hashedPassword;
                 //create a new account

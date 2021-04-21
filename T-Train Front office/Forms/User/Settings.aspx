@@ -21,7 +21,7 @@
         <p>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 413px; top: 216px; position: absolute; height: 19px" Text="Email:"></asp:Label>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 467px; top: 217px; position: absolute"></asp:TextBox>
-        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 365px; top: 380px; position: absolute; right: 490px;" Text="Current Password:"></asp:Label>
+        <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 365px; top: 380px; position: absolute; right: 453px;" Text="Current Password:"></asp:Label>
         <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 522px; top: 381px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 387px; top: 647px; position: absolute" Text="First Name:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 484px; top: 648px; position: absolute"></asp:TextBox>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using T_Train_Classes;
 
 namespace TTrainTicketType
@@ -74,7 +75,7 @@ namespace TTrainTicketType
         {
             //Put Id that exists to test this
             clsTicketType ATicketType = new clsTicketType();
-            int ticketTypeId = 1;
+            int ticketTypeId = 2;
             bool found = ATicketType.FindTicketType(ticketTypeId);
             Assert.IsTrue(found);
         }

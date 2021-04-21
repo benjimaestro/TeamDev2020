@@ -188,5 +188,20 @@ namespace TTrainPayment
             //delete the record not to fill the database with duplicate records
             APaymentCollection.DeletePayment();
         }
+
+        [TestMethod]
+        public void GetUserPaymentsMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsPaymentCollection APaymentCollection = new clsPaymentCollection();
+            //set user id that we will fetch the payments for
+            int customerId = 257;
+            //invoke the method
+            APaymentCollection.MyPayments = APaymentCollection.GetUserPayments(customerId);
+            //check if any payments were found
+            bool found = APaymentCollection.Count > 0;
+            //if they were found, that's a pass
+            Assert.AreEqual(true, found);
+        }
     }
 }

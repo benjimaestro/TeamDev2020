@@ -204,13 +204,13 @@ namespace T_Train_Front_office.Forms.Customer
         protected global::System.Web.UI.WebControls.Label lblNoTicketsFound;
 
         /// <summary>
-        /// lstTickets control.
+        /// lstPayments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstTickets;
+        protected global::System.Web.UI.WebControls.ListBox lstPayments;
 
         /// <summary>
         /// lblTicketSelected control.
@@ -220,5 +220,41 @@ namespace T_Train_Front_office.Forms.Customer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTicketSelected;
+
+        /// <summary>
+        /// Label20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label20;
+
+        /// <summary>
+        /// lstTickets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lstTickets;
+
+        /// <summary>
+        /// lblPaymentSelected control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPaymentSelected;
+
+        /// <summary>
+        /// lblNoPaymentsFound control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNoPaymentsFound;
     }
 }

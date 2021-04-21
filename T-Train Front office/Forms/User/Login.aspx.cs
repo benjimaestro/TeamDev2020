@@ -28,12 +28,6 @@ namespace T_Train_Front_office.Forms.User
             Response.Redirect("../Default.aspx");
         }
 
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            //redirect to the new account screen
-            Response.Redirect("Signup.aspx");
-        }
-
         protected void btnSignup2_Click(object sender, EventArgs e)
         {
             //redirect to the new account screen
@@ -43,7 +37,7 @@ namespace T_Train_Front_office.Forms.User
         protected void btnResetPassword_Click(object sender, EventArgs e)
         {
             //redirect to the new account screen
-            Response.Redirect("ResetPassword.aspx");
+            Response.Redirect("ForgotPassword.aspx");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

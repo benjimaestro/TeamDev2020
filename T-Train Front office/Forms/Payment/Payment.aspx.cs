@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.Payment
 {
@@ -39,13 +40,13 @@ namespace T_Train_Front_office.Forms.Payment
 
                 try
                 {
-                    //get the ticket id from the url string
-                    int ticketId = Convert.ToInt32(Request.Params["ticketId"]);
-                    if (ticketId > 0)
+                    //get the payment id from the url string
+                    int paymentId = Convert.ToInt32(Request.Params["paymentId"]);
+                    if (paymentId > 0)
                     {
-                        //fetch the details of the payment with ticket id given
+                        //fetch the details of the payment with id given
                         clsPayment APayment = new clsPayment();
-                        bool paymentFound = APayment.FindPaymentByTickedId(ticketId);
+                        bool paymentFound = APayment.FindPayment(paymentId);
                         if (APayment.CustomerId > 0) btnCustomer.Visible = true;
 
                         //id valid
@@ -68,14 +69,14 @@ namespace T_Train_Front_office.Forms.Payment
                     }
                     else
                     {
-                        //incorrect customer id was passed, redirect to an error form
-                        Response.Redirect("../StaffDashboard.aspx");
+                        //incorrect payment id was passed, show error
+                        lblErrorNotFound.Visible = true;
                     }
                 }
                 catch
                 {
-                    //incorrect customer id was passed, redirect to an error form
-                    Response.Redirect("../StaffDashboard.aspx");
+                    //incorrect payment id was passed, show error
+                    lblErrorNotFound.Visible = true;
                 }
             }
         }
@@ -94,13 +95,16 @@ namespace T_Train_Front_office.Forms.Payment
 
         protected void btnCustomer2_Click(object sender, EventArgs e)
         {
-            //get the ticket id from the url string
-            int ticketId = Convert.ToInt32(Request.Params["ticketId"]);
+            //get the payment id from the url string
+            int paymentId = Convert.ToInt32(Request.Params["paymentId"]);
+            //fetch the details of the payment to get customer id
+            clsPayment APayment = new clsPayment();
+            bool paymentFound = APayment.FindPayment(paymentId);
             //fetch the details of the customer who bought this ticket
-            clsTicket ATicket = new clsTicket();
-            bool ticketFound = ATicket.FindTicket(ticketId);
+            clsCustomer ACustomer = new clsCustomer();
+            bool customerFound = ACustomer.FindCustomer(APayment.CustomerId);
             //redirect to customer screen view
-            Response.Redirect("../Customer/Customer.aspx?custId="+ATicket.CustomerId);
+            Response.Redirect("../Customer/Customer.aspx?custId="+ ACustomer.CustomerId);
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

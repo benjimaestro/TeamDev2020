@@ -12,7 +12,7 @@
             <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 735px; top: 26px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
         <div style="height: 22px">
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="Button1_Click" />
-        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 348px; top: 563px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 351px; top: 881px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         </div>
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 205px; top: 22px; position: absolute" Text="T-Train"></asp:Label>
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 437px; top: 184px; position: absolute" Text="First Name:"></asp:Label>
@@ -25,20 +25,30 @@
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 217px; top: 180px; position: absolute"></asp:TextBox>
             <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 119px; top: 226px; position: absolute" Text="Date of Birth:"></asp:Label>
         <asp:TextBox ID="txtDOB" runat="server" style="z-index: 1; left: 212px; top: 226px; position: absolute"></asp:TextBox>
-        <asp:Label ID="Label19" runat="server" Font-Size="Large" style="z-index: 1; left: 434px; top: 304px; position: absolute" Text="Tickets"></asp:Label>
+        <asp:Label ID="Label19" runat="server" Font-Size="Large" style="z-index: 1; left: 429px; top: 567px; position: absolute; right: 437px;" Text="Payments"></asp:Label>
         <p>
             &nbsp;</p>
         <asp:Button ID="btnCancelTicket" runat="server" style="z-index: 1; left: 532px; top: 376px; position: absolute" Text="Cancel Ticket" OnClick="btnCancelTicket_Click" Visible="False" />
         <p>
-            <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 686px; top: 375px; position: absolute" Text="View Payment" OnClick="btnPayment_Click" Visible="False" />
+            <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 750px; top: 649px; position: absolute" Text="View Payment" OnClick="btnPayment_Click" Visible="False" />
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 892px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </p>
         <p>
             &nbsp;</p>
         <p>
             <asp:Label ID="lblNoTicketsFound" runat="server" style="z-index: 1; left: 330px; top: 365px; position: absolute" Text="This customer has not purchased any tickets." Visible="False" Font-Bold="True"></asp:Label>
+        <asp:ListBox ID="lstPayments" runat="server" style="z-index: 1; left: 58px; top: 622px; position: absolute; height: 182px; width: 594px" Visible="False"></asp:ListBox>
+        <asp:Label ID="lblTicketSelected" runat="server" style="z-index: 1; left: 469px; top: 426px; position: absolute" Text="You have to select a ticket first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
+        </p>
+        <p>
+        <asp:Label ID="Label20" runat="server" Font-Size="Large" style="z-index: 1; left: 434px; top: 304px; position: absolute" Text="Tickets"></asp:Label>
+        </p>
         <asp:ListBox ID="lstTickets" runat="server" style="z-index: 1; left: 58px; top: 353px; position: absolute; height: 182px; width: 345px" Visible="False"></asp:ListBox>
-        <asp:Label ID="lblTicketSelected" runat="server" style="z-index: 1; left: 576px; top: 431px; position: absolute" Text="You have to select a ticket first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
+        <p>
+        <asp:Label ID="lblPaymentSelected" runat="server" style="z-index: 1; left: 684px; top: 700px; position: absolute" Text="You have to select a payment first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
+        </p>
+        <p>
+            <asp:Label ID="lblNoPaymentsFound" runat="server" style="z-index: 1; left: 324px; top: 651px; position: absolute" Text="This customer has not made any payments." Visible="False" Font-Bold="True"></asp:Label>
         </p>
     </form>
 </body>
