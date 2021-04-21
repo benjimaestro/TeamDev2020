@@ -97,13 +97,13 @@ namespace T_Train_Front_office.Forms.Connection
                 if (valid)
                 {
                     //filter connections with the parameters specified
-                    Connections.MyConnections = Connections.filterConnections(AConnection);
+                    Connections.MyConnections = Connections.FilterConnections(AConnection);
                 }
                 else
                 {
                     //some parameters were invalid so instead we display all public connections
                     //by default we will also display all public connections
-                    Connections.MyConnections = Connections.listConnections();
+                    Connections.MyConnections = Connections.ListConnections();
                 }
 
                 //there are no connections

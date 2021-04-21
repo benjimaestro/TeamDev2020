@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace T_Train_Classes
+namespace ClassLibrary
 {
     public class clsCustomerCollection
     {
@@ -85,7 +85,7 @@ namespace T_Train_Classes
             DB.Execute("sproc_tblCustomer_Update");
         }
 
-        public List<clsCustomer> filterCustomers(clsCustomer ACustomer)
+        public List<clsCustomer> FilterCustomers(clsCustomer ACustomer)
         {
             //connect to the database
             clsDataConnection DB = new clsDataConnection();

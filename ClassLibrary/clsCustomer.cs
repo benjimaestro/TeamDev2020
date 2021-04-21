@@ -1,8 +1,7 @@
-﻿using ClassLibrary;
-using System;
+﻿using System;
 using System.Linq;
 
-namespace T_Train_Classes
+namespace ClassLibrary
 {
     public class clsCustomer : clsAbstractUser
     {
