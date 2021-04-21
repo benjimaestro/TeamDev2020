@@ -1,0 +1,16 @@
+﻿body { background-color:aqua
+}
+
+.login{
+    background-color:black;
+    font-size:medium;
+    width: 200px;
+    border:10px solid green;
+    padding:50px;
+    margin:20px;
+    position:absolute;
+    top: 30%;
+    right:45%;
+    color:white
+}
+

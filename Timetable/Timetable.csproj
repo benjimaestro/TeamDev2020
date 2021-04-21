@@ -73,6 +73,7 @@
     <Content Include="ManageRooms.aspx" />
     <Content Include="ManageTeachers.aspx" />
     <Content Include="Room.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="Teacher.aspx" />
     <Content Include="TeacherDefault.aspx" />
     <Content Include="TeacherLogin.aspx" />
@@ -129,6 +130,13 @@
     </Compile>
     <Compile Include="Room.aspx.designer.cs">
       <DependentUpon>Room.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Teacher.aspx.cs">
       <DependentUpon>Teacher.aspx</DependentUpon>
@@ -189,7 +197,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56439/</IISUrl>
+          <IISUrl>http://localhost:64253/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -198,6 +206,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

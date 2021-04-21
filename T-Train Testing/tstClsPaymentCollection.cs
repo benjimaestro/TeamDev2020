@@ -30,7 +30,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //add the test object to the list
@@ -54,7 +53,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class
@@ -78,7 +76,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //add the test object to the list
@@ -102,7 +99,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class
@@ -134,7 +130,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class
@@ -167,7 +162,6 @@ namespace TTrainPayment
                 PaymentEndDate = new DateTime(2021, 2, 10, 16, 35, 0),
                 PaymentValue = 12.25f,
                 PaymentId = 1,
-                TicketId = 1,
                 CustomerId = 1
             };
             //assign the test object to the collection class
@@ -193,6 +187,21 @@ namespace TTrainPayment
             Assert.AreEqual(APaymentCollection.ThisPayment, APayment);
             //delete the record not to fill the database with duplicate records
             APaymentCollection.DeletePayment();
+        }
+
+        [TestMethod]
+        public void GetUserPaymentsMethodExists()
+        {
+            //create an instance of the class we want to create
+            clsPaymentCollection APaymentCollection = new clsPaymentCollection();
+            //set user id that we will fetch the payments for
+            int customerId = 257;
+            //invoke the method
+            APaymentCollection.MyPayments = APaymentCollection.GetUserPayments(customerId);
+            //check if any payments were found
+            bool found = APaymentCollection.Count > 0;
+            //if they were found, that's a pass
+            Assert.AreEqual(true, found);
         }
     }
 }

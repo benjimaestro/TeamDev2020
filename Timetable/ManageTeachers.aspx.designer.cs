@@ -114,13 +114,13 @@ namespace Timetable
         protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// btnSearchEMails control.
+        /// btnSearchEmails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchEMails;
+        protected global::System.Web.UI.WebControls.Button btnSearchEmails;
 
         /// <summary>
         /// btnTimetable control.

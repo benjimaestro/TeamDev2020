@@ -20,7 +20,23 @@ namespace Timetable
             clsUserCollection Users = new clsUserCollection();
             Users.Find(LoggedInID);
             //Greet user with name retrieved with the ID
-            lblTitle.Text = $"Hello, {Users.ThisUser.FirstName} {Users.ThisUser.SecondName} (Admin Mode)";
+            lblTitle.Text = $"Hello, {Users.ThisUser.FirstName} {Users.ThisUser.LastName} (Admin Mode)";
+        }
+
+        protected void btnTeachers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageTeachers.aspx");
+        }
+
+        protected void btnRooms_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageRooms.aspx");
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["Mode"] = "Guest";
+            Response.Redirect("TeacherLogin.aspx");
         }
     }
 }

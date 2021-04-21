@@ -27,7 +27,6 @@ namespace TTrainTicket
             {
                 //assign all the properties
                 TicketActive = true,
-                TicketTypeId = 1,
                 TicketId = 1,
                 ConnectionId = 1,
                 CustomerId = 1
@@ -51,7 +50,6 @@ namespace TTrainTicket
             {
                 //assign all the properties
                 TicketActive = true,
-                TicketTypeId = 1,
                 TicketId = 1,
                 ConnectionId = 1,
                 CustomerId = 1
@@ -74,7 +72,6 @@ namespace TTrainTicket
             {
                 //assign all the properties
                 TicketActive = true,
-                TicketTypeId = 1,
                 TicketId = 1,
                 ConnectionId = 1,
                 CustomerId = 1
@@ -97,7 +94,6 @@ namespace TTrainTicket
             {
                 //assign all the properties
                 TicketActive = true,
-                TicketTypeId = 1,
                 TicketId = 1,
                 ConnectionId = 1,
                 CustomerId = 1
@@ -128,7 +124,6 @@ namespace TTrainTicket
             {
                 //assign all the properties
                 TicketActive = true,
-                TicketTypeId = 1,
                 TicketId = 1,
                 ConnectionId = 1,
                 CustomerId = 1

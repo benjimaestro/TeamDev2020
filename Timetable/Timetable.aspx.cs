@@ -40,8 +40,8 @@ namespace Timetable
             //Set title of page to indicate who's timetable it is
             clsUserCollection Users = new clsUserCollection();
             Users.Find(UserID);
-            if (Users.ThisUser.Subject != "Any") { lblTitle.Text = $"{Users.ThisUser.FirstName} {Users.ThisUser.SecondName}'s Timetable ({Users.ThisUser.Subject} teacher)"; }
-            else { lblTitle.Text = $"{Users.ThisUser.FirstName} {Users.ThisUser.SecondName}'s Timetable (Any subject teacher)"; }
+            if (Users.ThisUser.Subject != "Any") { lblTitle.Text = $"{Users.ThisUser.FirstName} {Users.ThisUser.LastName}'s Timetable ({Users.ThisUser.Subject} teacher)"; }
+            else { lblTitle.Text = $"{Users.ThisUser.FirstName} {Users.ThisUser.LastName}'s Timetable (Any subject teacher)"; }
             DisplayTimetable(UserID, WeekNo);
 
             //Disables buttons if user has reached the end or beginning of timetable
@@ -57,7 +57,7 @@ namespace Timetable
             }
             lblWeekNo.Text = $"Week {WeekNo.ToString()}/5";
             ddlRooms.Enabled = false;
-            btnUnbook.Enabled = false;
+            btnUnbook.Visible = false;
         }
         void IDToRoom(int ID, Button button)
         {
@@ -65,7 +65,8 @@ namespace Timetable
             if (ID == 0) 
             {
                 button.Text = "Free";
-                if (Mode != "Admin") { button.Enabled = false; }
+                if (Mode == "Admin") { button.Enabled = true; }
+                else { button.Enabled = false; }
             }
             else 
             {
@@ -160,7 +161,14 @@ namespace Timetable
             }
 
             ddlRooms.Enabled = true;
-            if (Mode == "Admin") { btnUnbook.Enabled = true; }
+            if (Mode == "Admin") {
+                btnUnbook.Enabled = true;
+                btnUnbook.Visible = true;
+            }
+            else { 
+                btnUnbook.Enabled = false;
+                btnUnbook.Visible = false;
+            }
             lblRooms.Text = $"Rooms available on {Days[SelectedDayNo-1]} period {SelectedPNo}";
             Session["DayNo"] = SelectedDayNo;
             Session["Period"] = SelectedPNo;

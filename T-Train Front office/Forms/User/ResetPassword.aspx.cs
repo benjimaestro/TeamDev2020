@@ -4,38 +4,64 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.User
 {
-    public partial class ResetPassword : System.Web.UI.Page
+    public partial class ResetPassword1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
+        protected void btnPassword_Click(object sender, EventArgs e)
+        {
+            //get the form inputs
+            string resetCode = txtResetCode.Text;
+            string newPassword = txtNewPass.Text;
+            string newPasswordRepeat = txtNewPassRep.Text;
+
+            //get the current user details
+            int customerId = Convert.ToInt32(Session["customerId"]);
+            clsCustomer ACustomer = new clsCustomer();
+            bool customerFound = ACustomer.FindCustomer(customerId);
+
+            //check the new password matches length requirements
+            if (newPassword.Length < 8 || newPasswordRepeat.Length < 8)
+            {
+                lblPasswordError.Text = "Password must be at least 8 characters long.";
+            }
+            else if (resetCode != Convert.ToString(Session["passChangeCode"]))
+            {
+                lblPasswordError.Text = "The entered code is invalid.";
+            }
+            else if (customerFound)
+            {
+                //compare the new password with the repeated new password
+                if (newPassword == newPasswordRepeat)
+                {
+                    //hash the new password
+                    newPassword = ACustomer.GetHashPassword(newPassword);
+                    //update user password
+                    ACustomer.UpdatePassword(newPassword);
+                    //log the user off
+                    Response.Redirect("Logout.aspx?passwordChanged=1");
+                }
+                else
+                {
+                    lblPasswordError.Text = "Entered passwords aren't matching!";
+                }
+            }
+            else
+            {
+                Response.Redirect("Logout.aspx");
+            }
+        }
+
         protected void btnHomepage_Click(object sender, EventArgs e)
         {
-            //redirect to homepage
-            Response.Redirect("../Default.aspx");
-        }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            //redirect to the login screen
-            Response.Redirect("Login.aspx");
-        }
-
-        protected void btnSignup_Click(object sender, EventArgs e)
-        {
-            //redirect to the new account screen
-            Response.Redirect("Signup.aspx");
-        }
-
-        protected void btnResetPassword_Click(object sender, EventArgs e)
-        {
-            //validate email
-            Response.Redirect("ResetPassword.aspx");
+            Response.Redirect("Logout.aspx");
         }
     }
 }

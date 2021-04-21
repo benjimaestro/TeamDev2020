@@ -148,16 +148,16 @@
     <form id="form1" runat="server">
         <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" Text="Manage Users" CssClass="auto-style17"></asp:Label>
         <hr class="auto-style19" />
-        <asp:ListBox ID="lstTeachers" runat="server" CssClass="auto-style16"></asp:ListBox>
+        <asp:ListBox ID="lstTeachers" runat="server" CssClass="auto-style16" OnSelectedIndexChanged="lstTeachers_SelectedIndexChanged"></asp:ListBox>
         <asp:TextBox ID="txtFilter" runat="server" MaxLength="100" CssClass="auto-style1"></asp:TextBox>
-        <asp:Label ID="Label1" runat="server" Text="Search Names or EMails" CssClass="auto-style15"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Search Names or Emails" CssClass="auto-style15"></asp:Label>
         <asp:Button ID="btnSearchNames" runat="server" Text="Search Names" CssClass="auto-style4" OnClick="btnSearchNames_Click"/>
         <asp:Button ID="btnClearFilter" runat="server" Text="Show All" CssClass="auto-style2" OnClick="btnClearFilter_Click" />
         <asp:Button ID="btnAdd" runat="server" Text="Add New User" OnClick="btnAdd_Click" CssClass="auto-style8" />
         <asp:Button ID="btnEdit" runat="server" Text="Edit Details" OnClick="btnEdit_Click" CssClass="auto-style10" />
         <asp:Button ID="btnDelete" runat="server" Text="Delete User" OnClick="btnDelete_Click" CssClass="auto-style6" ForeColor="Red" />
         <asp:Label ID="lblError" runat="server" ForeColor="Red" CssClass="auto-style9"></asp:Label>
-        <asp:Button ID="btnSearchEMails" runat="server" CssClass="auto-style3" Text="Search EMails" OnClick="btnSearchEMails_Click" />
+        <asp:Button ID="btnSearchEmails" runat="server" CssClass="auto-style3" Text="Search Emails" OnClick="btnSearchEmails_Click" />
         <asp:Button ID="btnTimetable" runat="server" CssClass="auto-style5" OnClick="btnTimetable_Click" Text="Manage Timetable" />
         <asp:Button ID="btnMessages" runat="server" CssClass="auto-style7" Text="View Messages" OnClick="btnMessages_Click" />
         <asp:Label ID="Label2" runat="server" CssClass="auto-style11" Text="Manage Selected User"></asp:Label>

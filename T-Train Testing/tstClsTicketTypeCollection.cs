@@ -188,5 +188,39 @@ namespace TTrainTicketType
             //delete the record not to fill the database with duplicate records
             ATicketTypeCollection.DeleteTicketType();
         }
+
+        [TestMethod]
+        public void FilterTicketTypesMethodExists()
+        {
+            //create test parameters
+            string typeName = "testTicketType";
+            string maxPrice = "20";
+            bool onlyRefundable = false;
+            //next assign the parameters
+            clsTicketType ATicketType = new clsTicketType();
+            ATicketType.TicketTypeName = typeName;
+            ATicketType.TicketTypePrice = float.Parse(maxPrice);
+            ATicketType.TicketTypeRefundable = onlyRefundable;
+            //create a manager class
+            clsTicketTypeCollection TicketTypes = new clsTicketTypeCollection();
+            //invoke the method
+            TicketTypes.MyTicketTypes = TicketTypes.FilterTicketTypes(ATicketType);
+            //there should be a record found (unless test data was modified)
+            Assert.AreEqual(1, TicketTypes.Count);
+        }
+
+        [TestMethod]
+        public void ListTicketTypesMethodExists()
+        {
+            //create a manager class
+            clsTicketTypeCollection TicketTypes = new clsTicketTypeCollection();
+            //invoke the method
+            TicketTypes.MyTicketTypes = TicketTypes.ListTicketTypes();
+            //there should be a record found (unless test data was modified)
+            int count = TicketTypes.Count;
+            //check if there are any records
+            bool found = count > 0;
+            Assert.AreEqual(true, found);
+        }
     }
 }

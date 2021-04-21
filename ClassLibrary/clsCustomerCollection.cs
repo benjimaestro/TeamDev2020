@@ -54,6 +54,7 @@ namespace T_Train_Classes
             DB.AddParameter("@customerEmail", ThisCustomer.Email);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
+            DB.AddParameter("@customerPassword", ThisCustomer.AccountPassword);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblCustomer_Insert");
         }
@@ -79,8 +80,45 @@ namespace T_Train_Classes
             DB.AddParameter("@customerEmail", ThisCustomer.Email);
             DB.AddParameter("@customerFirstName", ThisCustomer.FirstName);
             DB.AddParameter("@customerLastName", ThisCustomer.LastName);
+            DB.AddParameter("@customerPassword", ThisCustomer.AccountPassword);
             //update the record
             DB.Execute("sproc_tblCustomer_Update");
+        }
+
+        public List<clsCustomer> filterCustomers(clsCustomer ACustomer)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@firstName", ACustomer.FirstName);
+            DB.AddParameter("@lastName", ACustomer.LastName);
+            DB.AddParameter("@dob", ACustomer.DateOfBirth);
+            //run the search
+            DB.Execute("sproc_tblCustomer_FilterCustomers");
+            //create an empty list to store customers
+            List<clsCustomer> customersFound = new List<clsCustomer>();
+            //if there were rows returned, get data from them
+            for (int i = 0; i < DB.Count; ++i)
+            {
+                //get details of the connection
+                clsCustomer FoundCustomer = new clsCustomer
+                {
+                    FirstName = Convert.ToString(DB.DataTable.Rows[i]["FirstName"]),
+                    LastName = Convert.ToString(DB.DataTable.Rows[i]["LastName"]),
+                    DateOfBirth = Convert.ToString(DB.DataTable.Rows[i]["DateOfBirth"]),
+                    CustomerId = Convert.ToInt32(DB.DataTable.Rows[i]["CustomerId"]),
+                    Address = Convert.ToString(DB.DataTable.Rows[i]["Address"]),
+                    Email = Convert.ToString(DB.DataTable.Rows[i]["Email"]),
+                    CustomerActive = Convert.ToBoolean(DB.DataTable.Rows[i]["AccountActive"]),
+                    CustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[i]["AccountCreatedAt"]),
+                    AccountPassword = Convert.ToString(DB.DataTable.Rows[i]["AccountPassword"]),
+                    IsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"])
+            };
+                //save a found connection to an array
+                customersFound.Add(FoundCustomer);
+            }
+            //return the array with all connections that were found
+            return customersFound;
         }
     }
 }

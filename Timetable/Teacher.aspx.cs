@@ -33,15 +33,16 @@ namespace Timetable
                 {
                     lblTitle.Text = "Change User Details";
                     Users.Find(UserID);
-                    txtEmail.Text = Convert.ToString(Users.ThisUser.EMail);
+                    txtEmail.Text = Convert.ToString(Users.ThisUser.Email);
                     txtFirstName.Text = Convert.ToString(Users.ThisUser.FirstName);
-                    txtLastName.Text = Convert.ToString(Users.ThisUser.SecondName);
+                    txtLastName.Text = Convert.ToString(Users.ThisUser.LastName);
                     ddlSubject.SelectedValue = Users.ThisUser.Subject;
                     chkAdmin.Checked = Users.ThisUser.Admin;
                 }
                 if (Mode != "Admin")
                 {
-                    lblTitle.Text = "Change Password";
+                    if (Mode == "Guest") { lblTitle.Text = "Forgot Password"; }
+                    else { lblTitle.Text = "Change Password"; }
                     txtEmail.Visible = false;
                     txtFirstName.Visible = false;
                     txtLastName.Visible = false;
@@ -61,19 +62,19 @@ namespace Timetable
         string add()
         {
             //Function to validate a User's info, and if it is valid then add it to DB
-            //User is checked so see if the EMail being used already exists in the DB
+            //User is checked so see if the Email being used already exists in the DB
             String Error = "";
             clsUserCollection PreUsers = new clsUserCollection();
             PreUsers.FindExistingUser(txtEmail.Text);
-            if (PreUsers.ThisUser.EMail != null)
+            if (PreUsers.ThisUser.Email != null)
             {
-                Error = Error + "User already exists with that EMail!</br>";
+                Error = Error + "User already exists with that Email</br>";
             }
 
             //Password is checked for confirmatiom
             if (txtPassword.Text != txtPasswordConfirm.Text)
             {
-                Error = Error + "Passwords do not match!</br>";
+                Error = Error + "Passwords do not match</br>";
             }
 
             clsUserCollection Users = new clsUserCollection();
@@ -83,10 +84,10 @@ namespace Timetable
             Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
-                Users.ThisUser.EMail = txtEmail.Text;
-                Users.ThisUser.Password = Users.GetHashPassword(txtPassword.Text);
+                Users.ThisUser.Email = txtEmail.Text;
+                Users.ThisUser.Password = Users.ThisUser.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
-                Users.ThisUser.SecondName = txtLastName.Text;
+                Users.ThisUser.LastName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
                 Users.ThisUser.Admin = chkAdmin.Checked;
                 Int32 UserID = Users.Add();
@@ -109,32 +110,32 @@ namespace Timetable
             PreUsers.FindExistingUser(txtEmail.Text);
             Users.FindExistingUser(txtEmail.Text);
 
-            //User is checked so see if the EMail being used already exists in the DB
-            if (PreUsers.ThisUser != null && PreUsers.ThisUser.EMail == txtEmail.Text && PreUsers.ThisUser.ID != UserID)
+            //User is checked so see if the Email being used already exists in the DB
+            if (PreUsers.ThisUser != null && PreUsers.ThisUser.Email == txtEmail.Text && PreUsers.ThisUser.ID != UserID)
             {
-                Error = Error + "User already exists with that EMail!</br>";
+                Error = Error + "User already exists with that Email</br>";
             }
 
             //Check if password confirmation matches
             if (txtPassword.Text != txtPasswordConfirm.Text)
             {
-                Error = Error + "Passwords do not match!</br>";
+                Error = Error + "Passwords do not match</br>";
             }
 
             //Prevent currently logged in admin from demoting themself
             if (LoggedInUser == UserID && chkAdmin.Checked == false && Mode == "Admin")
             {
-                Error = Error + "You cannot demote yourself from admin!</br>";
+                Error = Error + "You cannot demote yourself from admin</br>";
             }
 
             Error = Error + Users.ThisUser.Validate(txtEmail.Text, txtFirstName.Text, txtLastName.Text, txtPassword.Text, ddlSubject.SelectedValue);
             if (Error == "")
             {
                 Users.ThisUser.ID = UserID;
-                Users.ThisUser.EMail = txtEmail.Text;
-                Users.ThisUser.Password = Users.GetHashPassword(txtPassword.Text);
+                Users.ThisUser.Email = txtEmail.Text;
+                Users.ThisUser.Password = Users.ThisUser.GetHashPassword(txtPassword.Text);
                 Users.ThisUser.FirstName = txtFirstName.Text;
-                Users.ThisUser.SecondName = txtLastName.Text;
+                Users.ThisUser.LastName = txtLastName.Text;
                 Users.ThisUser.Subject = Convert.ToString(ddlSubject.SelectedValue);
                 Users.ThisUser.Admin = chkAdmin.Checked;
                 Users.Edit();
@@ -168,8 +169,9 @@ namespace Timetable
                 string Error = edit();
                 if (Error == "")
                 {
-                    if (Mode != "Admin") { Response.Redirect("TeacherDefault.aspx"); }
-                    else { Response.Redirect("ManageTeachers.aspx"); }
+                    if (Mode == "Admin") { Response.Redirect("ManageTeachers.aspx"); }
+                    else if (Mode == "Guest") { Response.Redirect("TeacherLogin.aspx"); }
+                    else { Response.Redirect("TeacherDefault.aspx"); }
                 }
                 else { lblError.Text = Error; }
             }

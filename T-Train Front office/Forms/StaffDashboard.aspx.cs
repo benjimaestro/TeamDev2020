@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms
 {
@@ -11,7 +13,31 @@ namespace T_Train_Front_office.Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                //check if the user is a staff member
+                bool isStaff = false;
+                if (Session["customerLoggedIn"] != null)
+                {
+                    if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                    {
+                        if (Session["customerIsStaff"] != null)
+                        {
+                            if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                            {
+                                isStaff = true;
+                            }
+                        }
+                    }
+                }
 
+                //if they are not staff, redirect them to logout
+                //only staff is allowed to enter staff dashboard
+                if (!isStaff)
+                {
+                    Response.Redirect("../User/Logout.aspx");
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -35,7 +61,28 @@ namespace T_Train_Front_office.Forms
         protected void btnFindConnection_Click(object sender, EventArgs e)
         {
             //redirect to a particular connection
-            Response.Redirect("Connection/Connection.aspx");
+            string connectionIdText = txtConnId.Text;
+            int connectionId = 0;
+            try
+            {
+                connectionId = Convert.ToInt32(connectionIdText);
+                clsConnection AConnection = new clsConnection();
+                bool found = AConnection.FindConnection(connectionId);
+                if(found)
+                {
+                    Response.Redirect("Connection/Connection.aspx?connId="+connectionId);
+                }
+                else
+                {
+                    throw new System.Exception("");
+                }
+            }
+            catch
+            {
+                //id not found or invalid - display error message
+                lblErrorConn.Visible = true;
+            }
+            
         }
 
         protected void btnConnections_Click(object sender, EventArgs e)
@@ -53,7 +100,27 @@ namespace T_Train_Front_office.Forms
         protected void btnFindTicketType_Click(object sender, EventArgs e)
         {
             //redirect to a particular ticket type
-            Response.Redirect("TicketType/TicketType.aspx");
+            string ticketTypeIdText = txtTypeId.Text;
+            int ticketTypeId = 0;
+            try
+            {
+                ticketTypeId = Convert.ToInt32(ticketTypeIdText);
+                clsTicketType ATicketType = new clsTicketType();
+                bool found = ATicketType.FindTicketType(ticketTypeId);
+                if (found)
+                {
+                    Response.Redirect("TicketType/TicketType.aspx?typeId=" + ticketTypeId);
+                }
+                else
+                {
+                    throw new System.Exception("");
+                }
+            }
+            catch
+            {
+                //id not found or invalid - display error message
+                lblErrorTType.Visible = true;
+            }
         }
 
         protected void btnTicketTypes_Click(object sender, EventArgs e)

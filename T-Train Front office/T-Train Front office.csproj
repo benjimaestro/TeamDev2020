@@ -107,9 +107,10 @@
     <Content Include="Forms\Ticket\BookTicket.aspx" />
     <Content Include="Forms\Ticket\Cancel.aspx" />
     <Content Include="Forms\Ticket\MyTickets.aspx" />
-    <Content Include="Forms\Ticket\Refund.aspx" />
     <Content Include="Forms\User\ActionSuccess.aspx" />
     <Content Include="Forms\User\Login.aspx" />
+    <Content Include="Forms\User\Logout.aspx" />
+    <Content Include="Forms\User\ForgotPassword.aspx" />
     <Content Include="Forms\User\ResetPassword.aspx" />
     <Content Include="Forms\User\Settings.aspx" />
     <Content Include="Forms\User\Signup.aspx" />
@@ -200,13 +201,6 @@
     <Compile Include="Forms\Ticket\MyTickets.aspx.designer.cs">
       <DependentUpon>MyTickets.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ticket\Refund.aspx.cs">
-      <DependentUpon>Refund.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forms\Ticket\Refund.aspx.designer.cs">
-      <DependentUpon>Refund.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\User\ActionSuccess.aspx.cs">
       <DependentUpon>ActionSuccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,6 +214,20 @@
     </Compile>
     <Compile Include="Forms\User\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\User\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
@@ -291,6 +299,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\SharedClassLibrary.csproj">
+      <Project>{b6cc2867-08ae-43b2-9095-ac82a1c2d864}</Project>
+      <Name>SharedClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -327,6 +341,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

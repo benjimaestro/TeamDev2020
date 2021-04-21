@@ -22,13 +22,13 @@ namespace Timetable_Testing
             clsRoom Room = new clsRoom();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 RoomID = 1;
+            Int32 RoomID = 99999;
             Found = Room.Find(RoomID);
-            if (Room.ID != 1)
+            if (Room.ID == 99999)
             {
-                OK = false;
+                OK = true;
             }
-            Assert.IsTrue(Found);
+            Assert.IsFalse(Found);
         }
         [TestMethod]
         public void InstanceOK()

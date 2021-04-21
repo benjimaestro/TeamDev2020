@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace T_Train_Front_office.Forms.User {
-    
-    
-    public partial class ActionSuccess {
-        
+namespace T_Train_Front_office.Forms.User
+{
+
+
+    public partial class ActionSuccess
+    {
+
         /// <summary>
         /// form2 control.
         /// </summary>
@@ -20,16 +22,16 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
-        
+
         /// <summary>
-        /// Label20 control.
+        /// lblPaymentSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
-        
+        protected global::System.Web.UI.WebControls.Label lblPaymentSuccess;
+
         /// <summary>
         /// btnStaffDashboard control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnStaffDashboard;
-        
+
         /// <summary>
         /// btnHomepage control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnHomepage;
-        
+
         /// <summary>
         /// btnMyTickets control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnMyTickets;
-        
+
         /// <summary>
         /// btnSettings control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSettings;
-        
+
         /// <summary>
         /// lblHeaderWelcome control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblHeaderWelcome;
-        
+
         /// <summary>
         /// Label18 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label18;
-        
+
         /// <summary>
         /// Label19 control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label19;
-        
+
         /// <summary>
         /// btnLogout control.
         /// </summary>
@@ -101,50 +103,50 @@ namespace T_Train_Front_office.Forms.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogout;
-        
+
         /// <summary>
-        /// Label21 control.
+        /// lblPaymentFailure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
-        
+        protected global::System.Web.UI.WebControls.Label lblPaymentFailure;
+
         /// <summary>
-        /// Label22 control.
+        /// lblStaticAddSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
-        
+        protected global::System.Web.UI.WebControls.Label lblStaticAddSuccess;
+
         /// <summary>
-        /// Label23 control.
+        /// lblStaticModSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
-        
+        protected global::System.Web.UI.WebControls.Label lblStaticModSuccess;
+
         /// <summary>
-        /// Label24 control.
+        /// lblStaticDelSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
-        
+        protected global::System.Web.UI.WebControls.Label lblStaticDelSuccess;
+
         /// <summary>
-        /// Label25 control.
+        /// lblStaticTicketCancelled control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label25;
+        protected global::System.Web.UI.WebControls.Label lblStaticTicketCancelled;
     }
 }

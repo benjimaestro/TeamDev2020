@@ -5,7 +5,7 @@ using ClassLibrary;
 namespace Timetable_Testing
 {
     [TestClass]
-    public class txtMessage
+    public class tstMessage
     {
         [TestMethod]
         public void FindMethod()
@@ -21,16 +21,14 @@ namespace Timetable_Testing
         {
             clsMessage Message = new clsMessage();
             Boolean Found = false;
-            Int32 MessageID = 1;
+            Int32 MessageID = 99999;
             Found = Message.Find(MessageID);
-            Assert.IsTrue(Found);
+            Assert.IsFalse(Found);
         }
         [TestMethod]
         public void InstanceOK()
         {
-
             clsMessage Message = new clsMessage();
-
             Assert.IsNotNull(Message);
         }
         [TestMethod]
@@ -69,7 +67,7 @@ namespace Timetable_Testing
         public void TimestampPropertyOK()
         {
             clsMessage Message = new clsMessage();
-            string TestData = "h";
+            string TestData = "02 / 02 / 2021 15:32:05";
             Message.Timestamp = TestData;
             Assert.AreEqual(Message.Timestamp, TestData);
         }

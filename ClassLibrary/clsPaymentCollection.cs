@@ -28,7 +28,6 @@ namespace ClassLibrary
             DB.AddParameter("@PaymentEndDate", ThisPayment.PaymentEndDate);
             DB.AddParameter("@PaymentStartDate", ThisPayment.PaymentStartDate);
             DB.AddParameter("@PaymentValue", ThisPayment.PaymentValue);
-            DB.AddParameter("@TicketId", ThisPayment.TicketId);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblPayment_Insert");
         }
@@ -53,9 +52,41 @@ namespace ClassLibrary
             DB.AddParameter("@PaymentEndDate", ThisPayment.PaymentEndDate);
             DB.AddParameter("@PaymentStartDate", ThisPayment.PaymentStartDate);
             DB.AddParameter("@PaymentValue", ThisPayment.PaymentValue);
-            DB.AddParameter("@TicketId", ThisPayment.TicketId);
             //update the record
             DB.Execute("sproc_tblPayment_Update");
+        }
+
+        public List<clsPayment> GetUserPayments(int customerId)
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //add the only parameter
+            DB.AddParameter("@CustomerId", customerId);
+            //run the procedure
+            DB.Execute("sproc_tblPayment_SelectAllCustomerPayments");
+            //create an empty list to store payments
+            List<clsPayment> paymentsFound = new List<clsPayment>();
+            //if there were rows returned, get data from them
+            for (int i = 0; i < DB.Count; ++i)
+            {
+                //get details of the payment
+                clsPayment FoundPayment = new clsPayment
+                {
+                    //primary key
+                    PaymentId = Convert.ToInt32(DB.DataTable.Rows[i]["PaymentId"]),
+                    //common attributes
+                    CustomerId = customerId,
+                    PaymentEndDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentEndDate"]),
+                    PaymentStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentStartDate"]),
+                    PaymentValue = float.Parse(Convert.ToString(DB.DataTable.Rows[0]["PaymentValue"]))
+                };
+
+                // save a found connection to an array
+                paymentsFound.Add(FoundPayment);
+            }
+                
+            //return the array with all payments that were found
+            return paymentsFound;
         }
     }
 }
