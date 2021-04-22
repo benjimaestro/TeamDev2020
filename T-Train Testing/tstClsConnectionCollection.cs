@@ -196,7 +196,7 @@ namespace TTrainConnection
             //create an instance of the class we want to create
             clsConnectionCollection allConnections = new clsConnectionCollection();
             //perform the listing
-            allConnections.MyConnections = allConnections.listConnections();
+            allConnections.MyConnections = allConnections.ListConnections();
             //the collection list should not be empty
             Assert.AreNotEqual(0, allConnections.MyConnections.Count);
         }
@@ -217,7 +217,7 @@ namespace TTrainConnection
                 TicketTypeId = 1
             };
             //perform the filtering
-            filteredConnections.MyConnections = filteredConnections.filterConnections(AConnection);
+            filteredConnections.MyConnections = filteredConnections.FilterConnections(AConnection);
             //there should be exactly 3 results, check if they exist
             Assert.AreEqual(3, filteredConnections.MyConnections.Count);
         }

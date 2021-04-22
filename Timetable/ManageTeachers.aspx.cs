@@ -68,18 +68,21 @@ namespace Timetable
             //the ID of the selected user to indicate which user needs to be deleted
             //If no user is selected, show an error
             //User cannot delete their own account either
-            if (Convert.ToInt32(lstTeachers.SelectedValue) == LoggedInID) { lblError.Text = "You cannot delete your own account"; }
-            else
-            {
-                if (lstTeachers.SelectedIndex != -1)
+            if (lstTeachers.SelectedValue != ""){
+                if (Convert.ToInt32(lstTeachers.SelectedValue) == LoggedInID) { lblError.Text = "You cannot delete your own account"; }
+                else
                 {
-                    UserID = Convert.ToInt32(lstTeachers.SelectedValue);
-                    Session["UserID"] = UserID;
-                    Session["Mode"] = "Admin";
-                    Response.Redirect("DeleteTeacher.aspx");
+                    if (lstTeachers.SelectedIndex != -1)
+                    {
+                        UserID = Convert.ToInt32(lstTeachers.SelectedValue);
+                        Session["UserID"] = UserID;
+                        Session["Mode"] = "Admin";
+                        Response.Redirect("DeleteTeacher.aspx");
+                    }
+                    else { lblError.Text = "You must select a user to modify"; }
                 }
-                else { lblError.Text = "You must select a user to modify"; }
             }
+            else { lblError.Text = "You must select an account to delete"; }
         }
 
         protected void btnSearchNames_Click(object sender, EventArgs e)

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using T_Train_Classes;
+﻿using ClassLibrary;
+using System;
 
 namespace T_Train_Front_office.Forms.User
 {
@@ -50,20 +45,28 @@ namespace T_Train_Front_office.Forms.User
                 NewCustomer.Email = txtEmail.Text;
                 string hashedPassword = NewCustomer.GetHashPassword(txtPassword.Text);
                 NewCustomer.AccountPassword = hashedPassword;
-                //create a new account
-                clsCustomerCollection AccountManager = new clsCustomerCollection();
-                AccountManager.ThisCustomer = NewCustomer;
-                AccountManager.CreateAccount();
-                //redirect to login screen with success message
-                Response.Redirect("Login.aspx?accCreated=1");
-            }
-            
-        }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            //redirect to the login page
-            Response.Redirect("Login.aspx");
+                //check whether the account already exists
+                bool accountExists = NewCustomer.FindCustomerByEmail(NewCustomer.Email);
+
+                if(accountExists)
+                {
+                    //display error: account already exists
+                    lblEmailExists.Visible = true;
+                    lblMissingData.Visible = false;
+                    lblPasswordMitmatch.Visible = false;
+                }
+                else
+                {
+                    //create a new account
+                    clsCustomerCollection AccountManager = new clsCustomerCollection();
+                    AccountManager.ThisCustomer = NewCustomer;
+                    AccountManager.CreateAccount();
+
+                    //redirect to login screen with success message
+                    Response.Redirect("Login.aspx?accCreated=1");
+                }
+            }
         }
 
         protected void btnLogin2_Click(object sender, EventArgs e)
@@ -72,9 +75,10 @@ namespace T_Train_Front_office.Forms.User
             Response.Redirect("Login.aspx");
         }
 
-        protected void txtAddress_TextChanged(object sender, EventArgs e)
+        protected void btnResetPassword_Click(object sender, EventArgs e)
         {
-
+            //redirect to forgot password form
+            Response.Redirect("ForgotPassword.aspx");
         }
     }
 }

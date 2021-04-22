@@ -61,7 +61,7 @@ namespace ClassLibrary
             DB.Execute("sproc_tblConnection_Update");
         }
 
-        public List<clsConnection> filterConnections(clsConnection AConnection)
+        public List<clsConnection> FilterConnections(clsConnection AConnection)
         {
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
@@ -95,7 +95,7 @@ namespace ClassLibrary
             return connectionsFound;
         }
 
-        public List<clsConnection> listConnections(bool ignorePrivate = true)
+        public List<clsConnection> ListConnections(bool ignorePrivate = true)
         {
             //connect to the database
             clsDataConnection DB = new clsDataConnection();

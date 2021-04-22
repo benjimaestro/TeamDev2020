@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using T_Train_Classes;
+﻿using ClassLibrary;
+using System;
 
 namespace T_Train_Front_office.Forms.Ticket_Type
 {

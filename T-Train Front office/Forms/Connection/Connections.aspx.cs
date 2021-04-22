@@ -97,13 +97,13 @@ namespace T_Train_Front_office.Forms.Connection
                 if (valid)
                 {
                     //filter connections with the parameters specified
-                    Connections.MyConnections = Connections.filterConnections(AConnection);
+                    Connections.MyConnections = Connections.FilterConnections(AConnection);
                 }
                 else
                 {
                     //some parameters were invalid so instead we display all public connections
                     //by default we will also display all public connections
-                    Connections.MyConnections = Connections.listConnections();
+                    Connections.MyConnections = Connections.ListConnections();
                 }
 
                 //there are no connections
@@ -206,8 +206,15 @@ namespace T_Train_Front_office.Forms.Connection
                 //if they are valid, filter connections
                 if (valid)
                 {
-                    //redirect to a filtered list of connections
-                    Response.Redirect($"Connections.aspx?from={from}&to={to}&date={date}&time={time}");
+                    if(from == to)
+                    {
+                        lblError.Text = "Start and end location cannot be the same.";
+                    }
+                    else
+                    {
+                        //redirect to a filtered list of connections
+                        Response.Redirect($"Connections.aspx?from={from}&to={to}&date={date}&time={time}");
+                    }
                 }
                 else
                 {

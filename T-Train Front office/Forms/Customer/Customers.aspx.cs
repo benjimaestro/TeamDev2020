@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ClassLibrary;
+using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.Customer
 {
@@ -77,7 +74,7 @@ namespace T_Train_Front_office.Forms.Customer
                     Customer.DateOfBirth = dob;
 
                     clsCustomerCollection Customers = new clsCustomerCollection();
-                    Customers.MyCustomers = Customers.filterCustomers(Customer);
+                    Customers.MyCustomers = Customers.FilterCustomers(Customer);
 
                     lblStaticResultsHeader.Visible = true;
                     lstCustomers.Items.Clear();

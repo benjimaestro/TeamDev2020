@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ClassLibrary;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using T_Train_Classes;
 
 namespace TTrainCustomer
 {
@@ -217,7 +217,7 @@ namespace TTrainCustomer
                 LastName = "DBTestExample"
             };
             //perform the filtering
-            ACustomerCollection.MyCustomers = ACustomerCollection.filterCustomers(ACustomer);
+            ACustomerCollection.MyCustomers = ACustomerCollection.FilterCustomers(ACustomer);
             //there should be exactly 1 result, check if it exist
             Assert.AreEqual(1, ACustomerCollection.MyCustomers.Count);
         }
