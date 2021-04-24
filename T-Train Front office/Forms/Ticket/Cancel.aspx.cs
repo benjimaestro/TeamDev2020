@@ -70,7 +70,7 @@ namespace T_Train_Front_office.Forms.Ticket
                             {
                                 lblConnLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
                                 lblConnDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                //lblConnTime.Text = AConnection.ConnectionTime;
+                                lblConnTime.Text = AConnection.ConnectionTime.ToString(@"hh\:mm");
                             }
                             else
                             {
@@ -78,7 +78,7 @@ namespace T_Train_Front_office.Forms.Ticket
                             }
 
                             //ticket purchase date
-                            lblPurchasedAt.Text = ATicket.PurchasedAt.ToString("dd/MM/yyyy HH:mm:ss");
+                            lblPurchasedAt.Text = ATicket.PurchasedAt.ToString("dd/MM/yyyy");
                             //the ticket exists so it can be cancelled
                             btnCancelTicket.Visible = true;
                         }

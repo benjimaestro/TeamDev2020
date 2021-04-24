@@ -90,7 +90,7 @@ namespace T_Train_Front_office.Forms.Connection
                                 lblModId.Text = Convert.ToString(AConnection.ConnectionId);
                                 lblModLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
                                 lblModDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                //lblModTime.Text = Convert.ToString(AConnection.ConnectionTime);
+                                lblModTime.Text = Convert.ToString(AConnection.ConnectionTime);
                                 lblModPublic.Text = AConnection.ConnectionActive ? "Active" : "Private";
                                 lblModTickets.Text = Convert.ToString(AConnection.ConnectionTicketLimit);
                                 //lblModAdded.Text = Convert.ToString(AConnection.ConnectionAddedAt);
@@ -99,6 +99,7 @@ namespace T_Train_Front_office.Forms.Connection
                                 lblModifyHeader.Visible = true;
                                 lblModAdded.Visible = true;
                                 lblModDate.Visible = true;
+                                lblModTime.Visible = true;
                                 lblStaticId.Visible = true;
                                 lblModId.Visible = true;
                                 lblModLocation.Visible = true;
@@ -110,7 +111,7 @@ namespace T_Train_Front_office.Forms.Connection
                                 ddlFrom.SelectedValue = AConnection.ConnectionStartStation;
                                 ddlTo.SelectedValue = AConnection.ConnectionEndStation;
                                 txtDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                //ddlTime.SelectedValue = AConnection.ConnectionTime;
+                                ddlTime.SelectedValue = Convert.ToString(AConnection.ConnectionTime);
                                 txtTicketLimit.Text = Convert.ToString(AConnection.ConnectionTicketLimit);
                                 chkConnActive.Checked = AConnection.ConnectionActive;
 
@@ -170,7 +171,7 @@ namespace T_Train_Front_office.Forms.Connection
             AConnection.ConnectionDate = Convert.ToDateTime(txtDate.Text);
             AConnection.ConnectionEndStation = ddlTo.SelectedValue;
             AConnection.ConnectionStartStation = ddlFrom.SelectedValue;
-            //AConnection.ConnectionTime = ddlTime.SelectedValue;
+            AConnection.ConnectionTime = TimeSpan.Parse(ddlTime.SelectedValue);
             AConnection.ConnectionTicketLimit = Convert.ToInt32(txtTicketLimit.Text);
             ConnectionCollection.ThisConnection = AConnection;
 

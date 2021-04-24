@@ -66,10 +66,9 @@ namespace T_Train_Front_office.Forms.Ticket
                         string startLocation = ConnectionDetails.ConnectionStartStation;
                         string endLocation = ConnectionDetails.ConnectionEndStation;
                         DateTime date = ConnectionDetails.ConnectionDate;
-                        //string time = ConnectionDetails.ConnectionTime;
+                        string time = ConnectionDetails.ConnectionTime.ToString(@"hh\:mm");
 
-                        ATicketItem.Text = "TICKET ACTIVE: " + startLocation + " - " + endLocation + " " + date;
-                        //ATicketItem.Text = "TICKET ACTIVE: " + startLocation + " - " + endLocation + " " + date + " " + time;
+                        ATicketItem.Text = "TICKET ACTIVE: " + startLocation + " - " + endLocation + " " + date + " " + time;
 
                         lstTickets.Items.Add(ATicketItem);
                         activeTickets++;

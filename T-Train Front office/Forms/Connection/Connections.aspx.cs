@@ -78,6 +78,7 @@ namespace T_Train_Front_office.Forms.Connection
                     AConnection.ConnectionStartStation = from;
                     AConnection.ConnectionEndStation = to;
                     AConnection.ConnectionDate = date;
+                    AConnection.ConnectionTime = TimeSpan.Parse(time);
 
                     //next validate the parameters
                     string error = AConnection.ValidateConnection(date, from, to, 0);
@@ -90,10 +91,10 @@ namespace T_Train_Front_office.Forms.Connection
                     valid = false;
                 }
 
-                //declare a connection collection class
+                //declare a class to store connections found
                 clsConnectionCollection Connections = new clsConnectionCollection();
 
-                //if they are valid, filter connections
+                //if search parameters are valid, filter connections
                 if (valid)
                 {
                     //filter connections with the parameters specified
@@ -122,16 +123,18 @@ namespace T_Train_Front_office.Forms.Connection
                     {
                         btnManageConnection.Visible = true;
                     }
-                    
 
                     //for each connection, add it into the list
                     for (int i = 0; i < Connections.Count; ++i)
                     {
-                        ListItem AConnectionItem = new ListItem();
-                        AConnectionItem.Text = Connections.MyConnections[i].ConnectionStartStation
+                        ListItem AConnectionItem = new ListItem
+                        {
+                            Text = Connections.MyConnections[i].ConnectionStartStation
                             + " - " + Connections.MyConnections[i].ConnectionEndStation
-                            + "        " + Convert.ToString(Connections.MyConnections[i].ConnectionDate);
-                        AConnectionItem.Value = Convert.ToString(Connections.MyConnections[i].ConnectionId);
+                            + "        " + Convert.ToString(Connections.MyConnections[i].ConnectionDate)
+                            + "        " + Connections.MyConnections[i].ConnectionTime.ToString(@"hh\:mm"),
+                            Value = Convert.ToString(Connections.MyConnections[i].ConnectionId)
+                        };
                         lstConnections.Items.Add(AConnectionItem);
                     }
                 }
@@ -191,23 +194,16 @@ namespace T_Train_Front_office.Forms.Connection
                 DateTime date = Convert.ToDateTime(txtDate.Text);
                 string time = ddlTime.Text;
 
-                //next assign the parameters
-                clsConnection aConnection = new clsConnection();
-                aConnection.ConnectionStartStation = from;
-                aConnection.ConnectionEndStation = to;
-                aConnection.ConnectionDate = date;
-
                 //next validate the parameters
+                clsConnection aConnection = new clsConnection();
                 string error = aConnection.ValidateConnection(date, from, to, 0);
 
-                //check if the parameters are valid
-                bool valid = (error == "");
-
                 //if they are valid, filter connections
-                if (valid)
+                if (error == "")
                 {
                     if(from == to)
                     {
+                        //display an error message on screen
                         lblError.Text = "Start and end location cannot be the same.";
                     }
                     else
@@ -218,8 +214,7 @@ namespace T_Train_Front_office.Forms.Connection
                 }
                 else
                 {
-                    //if invalid, display an error message on screen
-                    lblError.Text = "Entered data is invalid, please try again.";
+                    throw new Exception();
                 }
             }
             catch

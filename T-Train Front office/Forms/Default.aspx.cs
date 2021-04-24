@@ -107,24 +107,16 @@ namespace T_Train_Front_office.Forms
                 DateTime date = Convert.ToDateTime(txtDate.Text);
                 string time = ddlTime.Text;
 
-                //next assign the parameters
-                clsConnection aConnection = new clsConnection();
-                aConnection.ConnectionStartStation = from;
-                aConnection.ConnectionEndStation = to;
-                aConnection.ConnectionDate = date;
-
                 //next validate the parameters
+                clsConnection aConnection = new clsConnection();
                 string error = aConnection.ValidateConnection(date, from, to, 0);
 
-                //check if the parameters are valid
-                bool valid = (error == "");
-
                 //if they are valid, filter connections
-                if (valid)
+                if (error == "")
                 {
                     if(from == to)
                     {
-                        //if invalid, display an error message on screen
+                        //display an error message on screen
                         lblError.Text = "Start and end location cannot be the same.";
                     }
                     else
@@ -135,8 +127,7 @@ namespace T_Train_Front_office.Forms
                 }
                 else
                 {
-                    //if invalid, display an error message on screen
-                    lblError.Text = "Entered data is invalid, please try again.";
+                    throw new Exception();
                 }
             }
             catch

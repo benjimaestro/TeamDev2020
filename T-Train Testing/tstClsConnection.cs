@@ -10,7 +10,7 @@ namespace TTrainConnection
 
         string connectionStartStation = "Leicester";
         string connectionEndStation = "Birmingham";
-        DateTime connectionDate = new DateTime(2021, 7, 17, 16, 30, 0);
+        DateTime connectionDate = new DateTime(2021, 7, 17);
         int connectionTicketLimit = 150;
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace TTrainConnection
         {
             //Tests whether the "ConnectionDate" property can be set
             clsConnection AConnection = new clsConnection();
-            DateTime testData = new DateTime(2021, 7, 17, 16, 30, 0);
+            DateTime testData = new DateTime(2021, 7, 17);
             AConnection.ConnectionDate = testData;
             Assert.AreEqual(AConnection.ConnectionDate, testData);
         }
@@ -89,6 +89,16 @@ namespace TTrainConnection
             int testData = 5;
             AConnection.TicketTypeId = testData;
             Assert.AreEqual(AConnection.TicketTypeId, testData);
+        }
+
+        [TestMethod]
+        public void ConnectionTimePropertyExists()
+        {
+            //Tests whether the "ConnectionTime" property can be set
+            clsConnection AConnection = new clsConnection();
+            TimeSpan testData = TimeSpan.Parse("17:45");
+            AConnection.ConnectionTime = testData;
+            Assert.AreEqual(AConnection.ConnectionTime, testData);
         }
 
         [TestMethod]
@@ -223,8 +233,6 @@ namespace TTrainConnection
             clsConnection AConnection = new clsConnection();
             //create some test data to pass to the method
             connectionStartStation = connectionStartStation.PadRight(70, 'A'); ; //this should be ok
-                                                                  //string variable to store any error message
-                                                                  //invoke the method
             string error = AConnection.ValidateConnection(
                 connectionDate,
                 connectionStartStation,
@@ -242,8 +250,6 @@ namespace TTrainConnection
             clsConnection AConnection = new clsConnection();
             //create some test data to pass to the method
             connectionStartStation = connectionStartStation.PadRight(71, 'A'); //this should fail
-                                                                   //string variable to store any error message
-                                                                   //invoke the method
             string error = AConnection.ValidateConnection(
                 connectionDate,
                 connectionStartStation,
@@ -261,8 +267,6 @@ namespace TTrainConnection
             clsConnection AConnection = new clsConnection();
             //create some test data to pass to the method
             connectionStartStation = connectionStartStation.PadRight(31, 'A'); ; //this should be ok
-                                                   //string variable to store any error message
-                                                   //invoke the method
             string error = AConnection.ValidateConnection(
                 connectionDate,
                 connectionStartStation,

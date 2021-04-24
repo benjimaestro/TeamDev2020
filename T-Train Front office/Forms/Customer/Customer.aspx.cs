@@ -86,11 +86,10 @@ namespace T_Train_Front_office.Forms.Customer
                                         string startLocation = ConnectionDetails.ConnectionStartStation;
                                         string endLocation = ConnectionDetails.ConnectionEndStation;
                                         DateTime date = ConnectionDetails.ConnectionDate;
-                                        //string time = ConnectionDetails.ConnectionTime;
-                                        string active = ConnectionDetails.ConnectionActive ? "Active" : "Cancelled/Expired";
+                                        string time = ConnectionDetails.ConnectionTime.ToString(@"hh\:mm");
+                                        string active = ConnectionDetails.ConnectionActive ? "Active" : "Expired";
 
-                                        ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + active;
-                                        //ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + time + " " + active;
+                                        ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + time + " " + active;
                                         activeTickets++;
                                     }
                                     else

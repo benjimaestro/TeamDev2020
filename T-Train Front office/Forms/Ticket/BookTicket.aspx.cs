@@ -38,8 +38,8 @@ namespace T_Train_Front_office.Forms.Ticket
                     int connectionId = Convert.ToInt32(Request.Params["connId"]);
                     if (connectionId > 0)
                     {
-                        clsConnection AConnection = new clsConnection();
                         //fetch the details of the connection with id given
+                        clsConnection AConnection = new clsConnection();
                         bool connectionFound = AConnection.FindConnection(connectionId);
 
                         //fetch the price
@@ -49,8 +49,8 @@ namespace T_Train_Front_office.Forms.Ticket
                         if(connectionFound && ticketTypeFound)
                         {
                             lblConnLoc.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
-                            lblConnDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy HH:mm:ss");
-                            //lblConnTime.Text = AConnection.ConnectionTime;
+                            lblConnDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                            lblConnTime.Text = AConnection.ConnectionTime.ToString(@"hh\:mm");
                             lblConnPrice.Text = Convert.ToString(ATicketType.TicketTypePrice);
                         }
                         else
