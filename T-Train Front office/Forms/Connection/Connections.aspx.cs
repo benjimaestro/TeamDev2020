@@ -107,6 +107,7 @@ namespace T_Train_Front_office.Forms.Connection
                     Connections.MyConnections = Connections.ListConnections();
                 }
 
+                int activeConnections = 0;
                 //there are no connections
                 if (Connections.Count == 0)
                 {
@@ -127,16 +128,31 @@ namespace T_Train_Front_office.Forms.Connection
                     //for each connection, add it into the list
                     for (int i = 0; i < Connections.Count; ++i)
                     {
-                        ListItem AConnectionItem = new ListItem
+                        //only add connections with purchasable tickets
+                        if(Connections.MyConnections[i].ConnectionTicketLimit > 0)
                         {
-                            Text = Connections.MyConnections[i].ConnectionStartStation
+                            ListItem AConnectionItem = new ListItem
+                            {
+                                Text = Connections.MyConnections[i].ConnectionStartStation
                             + " - " + Connections.MyConnections[i].ConnectionEndStation
-                            + "        " + Convert.ToString(Connections.MyConnections[i].ConnectionDate)
+                            + "        " + Connections.MyConnections[i].ConnectionDate.ToString("dd/MM/yyyy")
                             + "        " + Connections.MyConnections[i].ConnectionTime.ToString(@"hh\:mm"),
-                            Value = Convert.ToString(Connections.MyConnections[i].ConnectionId)
-                        };
-                        lstConnections.Items.Add(AConnectionItem);
+                                Value = Convert.ToString(Connections.MyConnections[i].ConnectionId)
+                            };
+                            lstConnections.Items.Add(AConnectionItem);
+
+                            activeConnections++;
+                        }
                     }
+                }
+
+                if(activeConnections == 0)
+                {
+                    //there are connections but they are either sold out or you already have a ticket for them
+                    lblNoConsFound.Visible = true;
+                    lstConnections.Visible = false;
+                    btnBookTicket.Visible = false;
+                    btnManageConnection.Visible = false;
                 }
             }
         }

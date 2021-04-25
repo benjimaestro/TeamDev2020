@@ -120,8 +120,8 @@ namespace ClassLibrary
                     ConnectionId = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionId"]),
                     ConnectionStartStation = Convert.ToString(DB.DataTable.Rows[i]["ConnectionStartStation"]),
                     ConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionTicketLimit"]),
-                    ConnectionTime = TimeSpan.Parse(Convert.ToString(DB.DataTable.Rows[0]["ConnectionTime"])),
-                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[0]["TicketTypeId"])
+                    ConnectionTime = TimeSpan.Parse(Convert.ToString(DB.DataTable.Rows[i]["ConnectionTime"])),
+                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"])
             };
                 //save a found connection to an array
                 connectionsFound.Add(FoundConnection);
