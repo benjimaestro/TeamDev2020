@@ -126,34 +126,43 @@ namespace T_Train_Front_office.Forms.Ticket
 
             if(connectionFound && ticketTypeFound)
             {
-                //create a ticket
-                clsTicket NewTicket = new clsTicket();
-                NewTicket.ConnectionId = connectionId;
-                NewTicket.CustomerId = customerId;
-                NewTicket.TicketActive = true;
+                //check in real-time whether the last ticket wasn't sold out
+                if(AConnection.ConnectionTicketLimit > 0)
+                {
+                    //create a ticket
+                    clsTicket NewTicket = new clsTicket();
+                    NewTicket.ConnectionId = connectionId;
+                    NewTicket.CustomerId = customerId;
+                    NewTicket.TicketActive = true;
 
-                //create a payment
-                clsPayment NewPayment = new clsPayment();
-                NewPayment.CustomerId = customerId;
-                NewPayment.PaymentValue = ATicketType.TicketTypePrice;
-                NewPayment.PaymentStartDate = DateTime.Now;
-                NewPayment.PaymentEndDate = DateTime.Now.AddMinutes(1);
+                    //create a payment
+                    clsPayment NewPayment = new clsPayment();
+                    NewPayment.CustomerId = customerId;
+                    NewPayment.PaymentValue = ATicketType.TicketTypePrice;
+                    NewPayment.PaymentStartDate = DateTime.Now;
+                    NewPayment.PaymentEndDate = DateTime.Now.AddMinutes(1);
 
-                //reduce remaining tickets by 1
-                AConnection.MarkTicketPurchase();
+                    //reduce remaining tickets by 1
+                    AConnection.MarkTicketPurchase();
 
-                //assign the ticket to the user
-                clsTicketCollection TicketManager = new clsTicketCollection();
-                TicketManager.ThisTicket = NewTicket;
-                TicketManager.AddTicket();
+                    //assign the ticket to the user
+                    clsTicketCollection TicketManager = new clsTicketCollection();
+                    TicketManager.ThisTicket = NewTicket;
+                    TicketManager.AddTicket();
 
-                //upload the payment
-                clsPaymentCollection PaymentManager = new clsPaymentCollection();
-                PaymentManager.ThisPayment = NewPayment;
-                PaymentManager.AddPayment();
+                    //upload the payment
+                    clsPaymentCollection PaymentManager = new clsPaymentCollection();
+                    PaymentManager.ThisPayment = NewPayment;
+                    PaymentManager.AddPayment();
 
-                //redirect to action success
-                Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=success");
+                    //redirect to action success
+                    Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=success");
+                }
+                else
+                {
+                    //sadly no more tickets remain for this connection
+                    Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=failure");
+                }
             }
             else
             {
