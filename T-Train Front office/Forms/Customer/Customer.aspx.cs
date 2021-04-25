@@ -176,12 +176,6 @@ namespace T_Train_Front_office.Forms.Customer
             Response.Redirect("../Customer/Customers.aspx");
         }
 
-        protected void Button14_Click(object sender, EventArgs e)
-        {
-            //redirect to cancel ticket form
-            Response.Redirect("../Ticket/Cancel.aspx");
-        }
-
         protected void btnStaffDashboard_Click(object sender, EventArgs e)
         {
             //redirect to the staff dashboard
@@ -214,22 +208,10 @@ namespace T_Train_Front_office.Forms.Customer
             else Response.Redirect("../Payment/Payment.aspx?paymentId=" + lstPayments.SelectedValue);
         }
 
-        protected void btnPayment2_Click(object sender, EventArgs e)
-        {
-            //redirect to a payment screen view
-            Response.Redirect("../Payment/Payment.aspx");
-        }
-
-        protected void btnPayment3_Click(object sender, EventArgs e)
-        {
-            //redirect to a payment screen view
-            Response.Redirect("../Payment/Payment.aspx");
-        }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
     }
 }

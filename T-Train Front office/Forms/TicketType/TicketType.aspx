@@ -9,15 +9,15 @@
 <body>
     <form id="form2" runat="server">
         <div>
-        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 317px; top: 29px; position: absolute; " Text="Homepage" OnClick="btnHomepage_Click" />
+        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 181px; top: 28px; position: absolute; " Text="Homepage" OnClick="btnHomepage_Click" />
             <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 28px; top: 27px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 856px; top: 30px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </div>
         <p>
-        <asp:Button ID="btnTicketTypes" runat="server" style="z-index: 1; left: 528px; top: 31px; position: absolute; right: 262px;" Text="Back to Ticket Types" OnClick="Button9_Click" />
+        <asp:Button ID="btnTicketTypes" runat="server" style="z-index: 1; left: 58px; top: 66px; position: absolute; right: 692px;" Text="Back to Ticket Types" OnClick="Button9_Click" />
         </p>
         <p>
-        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 196px; top: 22px; position: absolute" Text="T-Train"></asp:Label>
+        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 324px; top: 25px; position: absolute" Text="T-Train"></asp:Label>
         </p>
         <p>
         <asp:Label ID="lblActionName" runat="server" Font-Size="X-Large" style="z-index: 1; left: 45px; top: 139px; position: absolute" Text="Add ticket type:"></asp:Label>

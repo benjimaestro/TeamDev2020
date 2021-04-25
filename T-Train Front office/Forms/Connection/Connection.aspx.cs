@@ -213,7 +213,7 @@ namespace T_Train_Front_office.Forms.Connection
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
 
         protected void btnPick_Click(object sender, EventArgs e)

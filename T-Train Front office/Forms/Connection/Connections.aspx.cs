@@ -240,22 +240,10 @@ namespace T_Train_Front_office.Forms.Connection
             }
         }
 
-        protected void btnBookTicket_Click(object sender, EventArgs e)
-        {
-            //redirect to a booking screen
-            Response.Redirect("../Ticket/Ticket.aspx");
-        }
-
-        protected void btnFindConnection_Click(object sender, EventArgs e)
-        {
-            //redirect to a particular connection
-            Response.Redirect("Connection.aspx");
-        }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
 
         protected void btnBookTicket_Click1(object sender, EventArgs e)
@@ -271,7 +259,7 @@ namespace T_Train_Front_office.Forms.Connection
             else Response.Redirect("../Ticket/BookTicket.aspx?connId=" + lstConnections.SelectedValue);
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnManageConnection_Click(object sender, EventArgs e)
         {
             //get the selected connection's id
             string selectedValue = lstConnections.SelectedValue;

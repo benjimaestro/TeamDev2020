@@ -9,9 +9,9 @@
 <body>
     <form id="form2" runat="server">
         <div>
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
-        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="Button1_Click" />
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 724px; top: 27px; position: absolute; " Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 860px; top: 33px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
+        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 186px; top: 32px; position: absolute; right: 657px;" Text="Homepage" OnClick="Button1_Click" />
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 28px; top: 33px; position: absolute; " Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 389px; top: 661px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 70px; top: 153px; position: absolute" Text="Find customers:"></asp:Label>
         </div>
@@ -31,7 +31,7 @@
         <p>
             &nbsp;</p>
         <p>
-        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 190px; top: 23px; position: absolute" Text="T-Train"></asp:Label>
+        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 327px; top: 28px; position: absolute" Text="T-Train"></asp:Label>
         <asp:ListBox ID="lstCustomers" runat="server" style="z-index: 1; left: 68px; top: 446px; position: absolute; height: 173px; width: 419px" Visible="False"></asp:ListBox>
         </p>
         <p>

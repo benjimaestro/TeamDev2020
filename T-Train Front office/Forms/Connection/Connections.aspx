@@ -10,13 +10,13 @@
     <form id="form2" runat="server">
         <p>
             <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 581px; top: 32px; position: absolute" Text="My tickets" OnClick="btnTickets_Click" Font-Size="Large" />
-        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 355px; top: 758px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 363px; top: 683px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
             <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 742px; top: 32px; position: absolute; right: 64px" Text="Account Settings" OnClick="btnSettings_Click" />
             <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 429px; top: 36px; position: absolute; right: 389px;" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
         </p>
         <div>
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
-            <asp:Button ID="btnSignup" runat="server" style="z-index: 1; left: 822px; top: 27px; position: absolute" Text="Signup" OnClick="btnSignup_Click" Font-Size="X-Large" />
+            <asp:Button ID="btnSignup" runat="server" style="z-index: 1; left: 822px; top: 27px; position: absolute" Text="Register" OnClick="btnSignup_Click" Font-Size="X-Large" />
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 719px; top: 26px; position: absolute" Text="Login" OnClick="btnLogin_Click" Font-Size="X-Large" />
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 184px; top: 24px; position: absolute" Text="T-Train"></asp:Label>
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 19px; top: 158px; position: absolute" Text="Find your connection:"></asp:Label>
@@ -52,7 +52,7 @@
             <%  %>
         </p>
         <asp:Button ID="btnBookTicket" runat="server" OnClick="btnBookTicket_Click1" style="z-index: 1; left: 655px; top: 490px; position: absolute; right: 196px" Text="Book Ticket" Visible="False" />
-        <asp:Button ID="btnManageConnection" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 623px; top: 556px; position: absolute" Text="Manage Connection" Visible="False" />
+        <asp:Button ID="btnManageConnection" runat="server" OnClick="btnManageConnection_Click" style="z-index: 1; left: 623px; top: 556px; position: absolute" Text="Manage Connection" Visible="False" />
         <p>
             &nbsp;</p>
         <asp:DropDownList ID="ddlTime" runat="server" style="z-index: 1; left: 498px; top: 314px; position: absolute">

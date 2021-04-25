@@ -9,13 +9,13 @@
 <body>
     <form id="form2" runat="server">
         <p>
-        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 31px; top: 21px; position: absolute; right: 835px;" Text="Homepage" OnClick="btnHomepage_Click" />
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 723px; top: 22px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
+        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 195px; top: 26px; position: absolute; " Text="Homepage" OnClick="btnHomepage_Click" />
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 37px; top: 26px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
         </p>
         <div>
         </div>
         <p>
-        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 206px; top: 14px; position: absolute" Text="T-Train"></asp:Label>
+        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 322px; top: 22px; position: absolute" Text="T-Train"></asp:Label>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 362px; top: 447px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         <asp:Label ID="Label20" runat="server" style="z-index: 1; left: 160px; top: 174px; position: absolute" Text="Ticket to be cancelled:"></asp:Label>
         <asp:Label ID="lblConnLocation" runat="server" style="z-index: 1; left: 217px; top: 264px; position: absolute"></asp:Label>
@@ -28,7 +28,7 @@
         <asp:Label ID="lblPurchasedAt" runat="server" style="z-index: 1; left: 458px; top: 235px; position: absolute"></asp:Label>
         <p>
         <asp:Button ID="btnCancelTicket" runat="server" style="z-index: 1; left: 284px; top: 335px; position: absolute" Text="Cancel ticket (!)" OnClick="btnCancelTicket_Click" Visible="False" />
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 23px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 848px; top: 25px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         <asp:Label ID="lblCustNotFound" runat="server" style="z-index: 1; left: 61px; top: 236px; position: absolute" Font-Bold="True" ForeColor="Red" Visible="False">Customer not found.</asp:Label>
         <asp:Label ID="lblConnNotFound" runat="server" style="z-index: 1; left: 59px; top: 274px; position: absolute" Font-Bold="True" ForeColor="Red" Visible="False">Connection not found.</asp:Label>
         <asp:Label ID="lblTicketNotFound" runat="server" style="z-index: 1; left: 317px; top: 173px; position: absolute" Font-Bold="True" ForeColor="Red" Visible="False">Ticket not found.</asp:Label>

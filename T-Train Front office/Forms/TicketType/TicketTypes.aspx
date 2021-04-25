@@ -11,11 +11,11 @@
         <div>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 85px; top: 261px; position: absolute; right: 770px;" Text="Max Price:"></asp:Label>
         <asp:TextBox ID="txtTypePrice" runat="server" style="z-index: 1; left: 178px; top: 262px; position: absolute; margin-bottom: 5px"></asp:TextBox>
-        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 859px;" Text="Homepage" OnClick="btnHomepage_Click" />
-        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 185px; top: 25px; position: absolute" Text="T-Train"></asp:Label>
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 723px; top: 25px; position: absolute" Text="Staff Dashboard" OnClick="Button10_Click" />
+        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 38px; top: 68px; position: absolute; right: 805px;" Text="Homepage" OnClick="btnHomepage_Click" />
+        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 202px; top: 24px; position: absolute" Text="T-Train"></asp:Label>
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 38px; top: 30px; position: absolute" Text="Staff Dashboard" OnClick="Button10_Click" />
         </div>
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 902px; top: 26px; position: absolute" Text="Logout" OnClick="Button11_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 840px; top: 34px; position: absolute" Text="Logout" OnClick="Button11_Click" />
         <p>
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 19px; top: 158px; position: absolute" Text="Find ticket types:"></asp:Label>
         </p>

@@ -140,12 +140,6 @@ namespace T_Train_Front_office.Forms.Ticket_Type
             else Response.Redirect("TicketType.aspx?typeId=" + lstTicketTypes.SelectedValue);
         }
 
-        protected void Button7_Click(object sender, EventArgs e)
-        {
-            //redirect to a ticket type
-            Response.Redirect("TicketType.aspx");
-        }
-
         protected void btnAllTypes_Click(object sender, EventArgs e)
         {
             //clear the list in case any items remained

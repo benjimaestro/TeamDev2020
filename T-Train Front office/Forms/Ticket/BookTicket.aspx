@@ -10,11 +10,11 @@
     <form id="form1" runat="server">
         <div>
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
-        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 184px; top: 24px; position: absolute" Text="T-Train"></asp:Label>
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 333px; top: 28px; position: absolute; right: 514px;" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
-            <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 493px; top: 29px; position: absolute; right: 342px" Text="Account Settings" OnClick="btnSettings_Click" />
-            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 661px; top: 28px; position: absolute" Text="My tickets" OnClick="btnTickets_Click" />
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 771px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
+        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 217px; top: 27px; position: absolute" Text="T-Train"></asp:Label>
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 35px; top: 67px; position: absolute; right: 764px;" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
+            <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 690px; top: 29px; position: absolute; right: 97px" Text="Account Settings" OnClick="btnSettings_Click" />
+            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 584px; top: 28px; position: absolute" Text="My tickets" OnClick="btnTickets_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 849px; top: 29px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </div>
         <p>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 357px; top: 444px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>

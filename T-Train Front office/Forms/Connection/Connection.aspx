@@ -11,9 +11,9 @@
         <p>
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 359px; top: 698px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
-        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="Button1_Click" />
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 723px; top: 27px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
-        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 222px; top: 26px; position: absolute" Text="T-Train"></asp:Label>
+        <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 199px; top: 32px; position: absolute; right: 644px;" Text="Homepage" OnClick="Button1_Click" />
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 40px; top: 32px; position: absolute; right: 759px;" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
+        <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 324px; top: 26px; position: absolute" Text="T-Train"></asp:Label>
         </p>
         <div>
         </div>

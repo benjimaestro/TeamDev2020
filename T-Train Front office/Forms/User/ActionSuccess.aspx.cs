@@ -142,22 +142,10 @@ namespace T_Train_Front_office.Forms.User
             Response.Redirect("Settings.aspx");
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-            //redirect to homepage
-            Response.Redirect("../Default.aspx");
-        }
-
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            //redirect to my tickets list
-            Response.Redirect("../Ticket/MyTickets.aspx");
-        }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("Logout.aspx");
         }
     }
 }
