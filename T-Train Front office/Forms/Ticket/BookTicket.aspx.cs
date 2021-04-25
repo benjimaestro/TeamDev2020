@@ -124,35 +124,54 @@ namespace T_Train_Front_office.Forms.Ticket
             clsTicketType ATicketType = new clsTicketType();
             bool ticketTypeFound = ATicketType.FindTicketType(AConnection.TicketTypeId);
 
-            if(connectionFound && ticketTypeFound)
+            //fetch customer tickets
+            clsTicketCollection TicketManager = new clsTicketCollection();
+            TicketManager.MyTickets = TicketManager.GetUserTickets(customerId);
+
+            //make sure the customer has not purchased this ticket before
+            bool ticketFound = false;
+            foreach(clsTicket Ticket in TicketManager.MyTickets)
+            {
+                if(Ticket.ConnectionId == connectionId)
+                {
+                    ticketFound = true;
+                }
+            }
+
+            if(connectionFound && ticketTypeFound && !ticketFound)
             {
                 //check in real-time whether the last ticket wasn't sold out
                 if(AConnection.ConnectionTicketLimit > 0)
                 {
                     //create a ticket
-                    clsTicket NewTicket = new clsTicket();
-                    NewTicket.ConnectionId = connectionId;
-                    NewTicket.CustomerId = customerId;
-                    NewTicket.TicketActive = true;
+                    clsTicket NewTicket = new clsTicket
+                    {
+                        ConnectionId = connectionId,
+                        CustomerId = customerId,
+                        TicketActive = true
+                    };
 
                     //create a payment
-                    clsPayment NewPayment = new clsPayment();
-                    NewPayment.CustomerId = customerId;
-                    NewPayment.PaymentValue = ATicketType.TicketTypePrice;
-                    NewPayment.PaymentStartDate = DateTime.Now;
-                    NewPayment.PaymentEndDate = DateTime.Now.AddMinutes(1);
+                    clsPayment NewPayment = new clsPayment
+                    {
+                        CustomerId = customerId,
+                        PaymentValue = ATicketType.TicketTypePrice,
+                        PaymentStartDate = DateTime.Now,
+                        PaymentEndDate = DateTime.Now.AddMinutes(1)
+                    };
 
                     //reduce remaining tickets by 1
                     AConnection.MarkTicketPurchase();
 
                     //assign the ticket to the user
-                    clsTicketCollection TicketManager = new clsTicketCollection();
                     TicketManager.ThisTicket = NewTicket;
                     TicketManager.AddTicket();
 
                     //upload the payment
-                    clsPaymentCollection PaymentManager = new clsPaymentCollection();
-                    PaymentManager.ThisPayment = NewPayment;
+                    clsPaymentCollection PaymentManager = new clsPaymentCollection
+                    {
+                        ThisPayment = NewPayment
+                    };
                     PaymentManager.AddPayment();
 
                     //redirect to action success
