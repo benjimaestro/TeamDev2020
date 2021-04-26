@@ -94,8 +94,8 @@ namespace T_Train_Front_office.Forms.Connection
                                 //set value of the red-only fields to the details of the connection
                                 lblModId.Text = Convert.ToString(AConnection.ConnectionId);
                                 lblModLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
-                                lblModDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                lblModTime.Text = Convert.ToString(AConnection.ConnectionTime);
+                                lblModDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                                lblModTime.Text = AConnection.ConnectionTime.ToString(@"hh\:mm");
                                 lblModPublic.Text = AConnection.ConnectionActive ? "Active" : "Private";
                                 lblModTickets.Text = Convert.ToString(AConnection.ConnectionTicketLimit);
                                 //lblModAdded.Text = Convert.ToString(AConnection.ConnectionAddedAt);

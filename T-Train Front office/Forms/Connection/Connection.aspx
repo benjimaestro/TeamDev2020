@@ -31,7 +31,7 @@
         <p>
         <asp:Label ID="lblModTime" runat="server" style="z-index: 1; left: 448px; top: 199px; position: absolute; right: 445px; width: 86px;" Visible="False"></asp:Label>
         </p>
-        <asp:Label ID="lblModId" runat="server" style="z-index: 1; left: 77px; top: 197px; position: absolute" Visible="False"></asp:Label>
+        <asp:Label ID="lblModId" runat="server" style="z-index: 1; left: 77px; top: 199px; position: absolute" Visible="False"></asp:Label>
             <asp:Label ID="lblTicketLimit0" runat="server" style="z-index: 1; left: 748px; top: 387px; position: absolute; height: 76px;" Text="Ticket limit:/Tickets remaining:"></asp:Label>
         <p>
             &nbsp;</p>
