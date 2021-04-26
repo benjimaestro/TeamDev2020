@@ -75,6 +75,7 @@ namespace T_Train_Front_office.Forms.Connection
                     time = Request.Params["time"];
 
                     //next assign the parameters
+                    AConnection.ConnectionActive = true;
                     AConnection.ConnectionStartStation = from;
                     AConnection.ConnectionEndStation = to;
                     AConnection.ConnectionDate = date;
