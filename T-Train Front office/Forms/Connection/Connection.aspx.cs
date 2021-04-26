@@ -184,6 +184,7 @@ namespace T_Train_Front_office.Forms.Connection
             if (AConnection.ConnectionId > 0)
             {
                 ConnectionCollection.ModifyConnection();
+                action = "edit";
             }
             else
             {
