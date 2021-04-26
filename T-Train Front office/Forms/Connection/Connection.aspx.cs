@@ -53,8 +53,13 @@ namespace T_Train_Front_office.Forms.Connection
                         string minutesToAdd = Convert.ToString(minutes);
                         minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
 
+                        //create a list item
+                        ListItem timeItem = new ListItem();
+                        timeItem.Text = hourToAdd + ":" + minutesToAdd;
+                        timeItem.Value = hourToAdd + ":" + minutesToAdd;
+
                         //add the time to the dropdown list
-                        ddlTime.Items.Add(hourToAdd + ":" + minutesToAdd);
+                        ddlTime.Items.Add(timeItem);
                     }
                 }
 
@@ -110,8 +115,8 @@ namespace T_Train_Front_office.Forms.Connection
                                 //set value of the editable fields to the details of the connection
                                 ddlFrom.SelectedValue = AConnection.ConnectionStartStation;
                                 ddlTo.SelectedValue = AConnection.ConnectionEndStation;
-                                txtDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                ddlTime.SelectedValue = Convert.ToString(AConnection.ConnectionTime);
+                                txtDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                                ddlTime.SelectedValue = AConnection.ConnectionTime.ToString(@"hh\:mm");
                                 txtTicketLimit.Text = Convert.ToString(AConnection.ConnectionTicketLimit);
                                 chkConnActive.Checked = AConnection.ConnectionActive;
 
