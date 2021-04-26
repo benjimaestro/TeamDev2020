@@ -53,8 +53,13 @@ namespace T_Train_Front_office.Forms.Connection
                         string minutesToAdd = Convert.ToString(minutes);
                         minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
 
+                        //create a list item
+                        ListItem timeItem = new ListItem();
+                        timeItem.Text = hourToAdd + ":" + minutesToAdd;
+                        timeItem.Value = hourToAdd + ":" + minutesToAdd;
+
                         //add the time to the dropdown list
-                        ddlTime.Items.Add(hourToAdd + ":" + minutesToAdd);
+                        ddlTime.Items.Add(timeItem);
                     }
                 }
 
@@ -100,6 +105,11 @@ namespace T_Train_Front_office.Forms.Connection
                 {
                     //filter connections with the parameters specified
                     Connections.MyConnections = Connections.FilterConnections(AConnection);
+                    //fill the filtering boxes with parameters entered
+                    ddlFrom.SelectedValue = AConnection.ConnectionStartStation;
+                    ddlTo.SelectedValue = AConnection.ConnectionEndStation;
+                    txtDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                    ddlTime.SelectedValue = AConnection.ConnectionTime.ToString(@"hh\:mm");
                 }
                 else
                 {
