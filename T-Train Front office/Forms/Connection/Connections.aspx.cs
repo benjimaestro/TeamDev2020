@@ -54,9 +54,11 @@ namespace T_Train_Front_office.Forms.Connection
                         minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
 
                         //create a list item
-                        ListItem timeItem = new ListItem();
-                        timeItem.Text = hourToAdd + ":" + minutesToAdd;
-                        timeItem.Value = hourToAdd + ":" + minutesToAdd;
+                        ListItem timeItem = new ListItem
+                        {
+                            Text = hourToAdd + ":" + minutesToAdd,
+                            Value = hourToAdd + ":" + minutesToAdd
+                        };
 
                         //add the time to the dropdown list
                         ddlTime.Items.Add(timeItem);
@@ -151,8 +153,8 @@ namespace T_Train_Front_office.Forms.Connection
                                 {
                                     Text = Connections.MyConnections[i].ConnectionStartStation
                                     + " - " + Connections.MyConnections[i].ConnectionEndStation
-                                    + "        " + Connections.MyConnections[i].ConnectionDate.ToString("dd/MM/yyyy")
-                                    + "        " + Connections.MyConnections[i].ConnectionTime.ToString(@"hh\:mm"),
+                                    + " || " + Connections.MyConnections[i].ConnectionDate.ToString("dd/MM/yyyy")
+                                    + " || " + Connections.MyConnections[i].ConnectionTime.ToString(@"hh\:mm"),
                                     Value = Convert.ToString(Connections.MyConnections[i].ConnectionId)
                                 };
                                 lstConnections.Items.Add(AConnectionItem);

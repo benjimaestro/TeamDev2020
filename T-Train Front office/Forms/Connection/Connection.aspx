@@ -91,7 +91,7 @@
             <TodayDayStyle BackColor="#999999" ForeColor="White" />
         </asp:Calendar>
         </p>
-        <asp:CheckBox ID="chkConnActive" runat="server" style="z-index: 1; left: 416px; top: 596px; position: absolute" Text="Active Immediately?" />
+        <asp:CheckBox ID="chkConnActive" runat="server" style="z-index: 1; left: 434px; top: 598px; position: absolute" Text="Active Immediately?" />
         <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 93px; top: 543px; position: absolute" Text="Other details:" Font-Size="Large"></asp:Label>
             <asp:Label ID="lblTicketLimit" runat="server" style="z-index: 1; left: 137px; top: 593px; position: absolute; height: 19px;" Text="Ticket limit:"></asp:Label>
         <asp:DropDownList ID="ddlTicketType" runat="server" style="z-index: 1; left: 704px; top: 598px; position: absolute">

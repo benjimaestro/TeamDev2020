@@ -25,6 +25,7 @@ namespace T_Train_Front_office.Forms.Ticket
                         if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
                         {
                             isStaff = true;
+                            btnStaffDashboard.Visible = true;
                         }
                     }
                 }

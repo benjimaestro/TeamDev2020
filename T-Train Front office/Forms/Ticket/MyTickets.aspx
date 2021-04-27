@@ -9,7 +9,7 @@
 <body>
     <form id="form2" runat="server">
         <p>
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 30px; top: 56px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 30px; top: 56px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" Visible="False" />
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 350px; top: 501px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         </p>
         <div>

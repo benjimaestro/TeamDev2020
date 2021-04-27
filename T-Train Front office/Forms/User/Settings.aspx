@@ -9,10 +9,9 @@
 <body>
     <form id="form2" runat="server">
         <div>
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 31px; top: 59px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 31px; top: 59px; position: absolute" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" Visible="False" />
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 31px; top: 21px; position: absolute; right: 835px;" Text="Homepage" OnClick="btnHomepage_Click" />
-            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 561px; top: 20px; position: absolute; " Text="My tickets" OnClick="btnTickets_Click" />
-        <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 686px; top: 21px; position: absolute" Text="Account settings" OnClick="btnSettings_Click" />
+            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 741px; top: 22px; position: absolute; " Text="My tickets" OnClick="btnTickets_Click" />
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 187px; top: 15px; position: absolute" Text="T-Train"></asp:Label>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 370px; top: 1368px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
             <asp:Label ID="Label26" runat="server" style="z-index: 1; left: 262px; top: 958px; position: absolute" Text="Two-Factor Authentication is currently:"></asp:Label>

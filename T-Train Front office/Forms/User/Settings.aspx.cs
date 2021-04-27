@@ -22,6 +22,7 @@ namespace T_Train_Front_office.Forms.User
                             if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
                             {
                                 isStaff = true;
+                                btnStaffDashboard.Visible = true;
                             }
                         }
                     }
@@ -71,12 +72,6 @@ namespace T_Train_Front_office.Forms.User
         {
             //redirect to my tickets list
             Response.Redirect("../Ticket/MyTickets.aspx");
-        }
-
-        protected void btnSettings_Click(object sender, EventArgs e)
-        {
-            //redirect to my account settings
-            Response.Redirect("Settings.aspx");
         }
 
         protected void Button6_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@
             <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 581px; top: 32px; position: absolute" Text="My tickets" OnClick="btnTickets_Click" Font-Size="Large" />
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 363px; top: 683px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
             <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 742px; top: 32px; position: absolute; right: 64px" Text="Account Settings" OnClick="btnSettings_Click" />
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 429px; top: 36px; position: absolute; right: 389px;" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 32px; top: 68px; position: absolute; right: 819px;" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
         </p>
         <div>
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
