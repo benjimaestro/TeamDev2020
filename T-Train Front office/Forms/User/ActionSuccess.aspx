@@ -10,7 +10,7 @@
     <form id="form2" runat="server">
         <div>
             <asp:Label ID="lblPaymentSuccess" runat="server" style="z-index: 1; left: 206px; top: 173px; position: absolute" Text="Your purchase was succesful. You can view your tickets by pressing My tickets button anytime." Visible="False"></asp:Label>
-            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 31px; top: 71px; position: absolute" Text="Staff Dashboard" OnClick="Button10_Click" />
+            <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 31px; top: 71px; position: absolute" Text="Staff Dashboard" OnClick="Button10_Click" Visible="False" />
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
             <asp:Button ID="btnMyTickets" runat="server" style="z-index: 1; left: 569px; top: 27px; position: absolute; height: 26px;" Text="My tickets" OnClick="Button2_Click" />
         <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 682px; top: 26px; position: absolute" Text="Account settings" OnClick="Button3_Click" />

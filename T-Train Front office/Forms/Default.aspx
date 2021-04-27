@@ -14,11 +14,11 @@
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 381px; top: 70px; position: absolute" Text="Welcome to T-Train"></asp:Label>
         <asp:Label ID="lblHeaderSubtitle" runat="server" Font-Size="Large" style="z-index: 1; left: 437px; top: 122px; position: absolute" Text="Book tickets now!"></asp:Label>
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 19px; top: 158px; position: absolute" Text="Find your connection:"></asp:Label>
-        <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 39px; top: 28px; position: absolute" Text="Staff Dashboard" OnClick="Button9_Click" />
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 911px; top: 33px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
+        <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 39px; top: 31px; position: absolute" Text="Staff Dashboard" OnClick="Button9_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 911px; top: 31px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         <asp:Label ID="lblError" runat="server" Font-Bold="False" Font-Size="Large" ForeColor="Red" style="z-index: 1; left: 315px; top: 187px; position: absolute"></asp:Label>
         <p>
-            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 618px; top: 31px; position: absolute; right: 447px;" Text="My tickets" OnClick="Button7_Click" Font-Size="Large" />
+            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 618px; top: 31px; position: absolute; " Text="My tickets" OnClick="Button7_Click"/>
         </p>
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 744px; top: 30px; position: absolute; " Text="Login" OnClick="Button3_Click" Font-Size="X-Large" />
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 126px; top: 231px; position: absolute; " Text="From:"></asp:Label>
@@ -54,7 +54,7 @@
         <asp:Label ID="Label16" runat="server" style="z-index: 1; left: 583px; top: 568px; position: absolute; height: 105px; width: 196px" Text="T-Train London Rd. 15, Leicester, LE6 8OB, Leicestershire, Great Britain, Email: customer@ttrain.com, Mobile: +44 07491749173"></asp:Label>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 354px; top: 706px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         <asp:Button ID="btnConnections" runat="server" style="z-index: 1; left: 755px; top: 247px; position: absolute" Text="All connections" OnClick="btnConnections_Click" />
-        <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 751px; top: 34px; position: absolute" Text="Account Settings" OnClick="Button8_Click" />
+        <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 751px; top: 31px; position: absolute" Text="Account Settings" OnClick="Button8_Click" />
         <asp:Calendar ID="dtpDate" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" NextPrevFormat="ShortMonth" OnSelectionChanged="Calendar1_SelectionChanged" style="z-index: 1; left: 114px; top: 355px; position: absolute; height: 188px; width: 259px" Width="330px" Visible="False">
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
             <DayStyle BackColor="#CCCCCC" />

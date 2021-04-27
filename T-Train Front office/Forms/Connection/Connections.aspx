@@ -71,7 +71,7 @@
         </asp:Calendar>
         <asp:ListBox ID="lstConnections" runat="server" style="z-index: 1; left: 154px; top: 460px; position: absolute; height: 182px; width: 381px" Visible="False"></asp:ListBox>
         <p>
-        <asp:Label ID="lblNoConsFound" runat="server" style="z-index: 1; left: 248px; top: 471px; position: absolute; height: 64px; width: 455px;" Text="There were no connections found on this day from and to the selected place. Please try again with different criteria or check back soon, new connections are added everyday!" Font-Bold="True" Font-Size="Large" Visible="False"></asp:Label>
+        <asp:Label ID="lblNoConsFound" runat="server" style="z-index: 1; left: 248px; top: 471px; position: absolute; height: 64px; width: 455px;" Text="There were no connections found on this day from and to the selected place. Please try again with different criteria or check back soon, we add new connections everyday!" Font-Bold="True" Font-Size="Large" Visible="False"></asp:Label>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 435px; top: 317px; position: absolute" Text="Time:"></asp:Label>
         </p>
     </form>

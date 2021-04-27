@@ -11,110 +11,130 @@ namespace T_Train_Front_office.Forms.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string origin = Request.Params["origin"];
-            string action = Request.Params["action"];
-
-            switch(origin)
+            if(!IsPostBack)
             {
-                case "conn":
+                //check if the user is a staff member
+                bool isStaff = false;
+                if (Session["customerLoggedIn"] != null)
+                {
+                    if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
                     {
-                        switch(action)
+                        if (Session["customerIsStaff"] != null)
                         {
-                            case "delete":
-                                {
-                                    lblStaticDelSuccess.Text = "Success! The connection has been deleted.";
-                                    lblStaticDelSuccess.Visible = true;
-                                    break;
-                                }
-                            case "edit":
-                                {
-                                    lblStaticModSuccess.Text = "Success! The connection has been modified.";
-                                    lblStaticModSuccess.Visible = true;
-                                    break;
-                                }
-                            case "new":
-                                {
-                                    lblStaticAddSuccess.Text = "Success! New connection has been added.";
-                                    lblStaticAddSuccess.Visible = true;
-                                    break;
-                                }
-                            default:
-                                {
-                                    break;
-                                }
+                            if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                            {
+                                isStaff = true;
+                                btnStaffDashboard.Visible = true;
+                            }
                         }
-                        break;
                     }
-                case "ticket":
-                    {
-                        switch(action)
+                }
+
+                string origin = Request.Params["origin"];
+                string action = Request.Params["action"];
+
+                switch (origin)
+                {
+                    case "conn":
                         {
-                            case "cancelled":
-                                {
-                                    lblStaticTicketCancelled.Visible = true;
-                                    break;
-                                }
-                            default:
-                                {
-                                    break;
-                                }
+                            switch (action)
+                            {
+                                case "delete":
+                                    {
+                                        lblStaticDelSuccess.Text = "Success! The connection has been deleted.";
+                                        lblStaticDelSuccess.Visible = true;
+                                        break;
+                                    }
+                                case "edit":
+                                    {
+                                        lblStaticModSuccess.Text = "Success! The connection has been modified.";
+                                        lblStaticModSuccess.Visible = true;
+                                        break;
+                                    }
+                                case "new":
+                                    {
+                                        lblStaticAddSuccess.Text = "Success! New connection has been added.";
+                                        lblStaticAddSuccess.Visible = true;
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        break;
+                                    }
+                            }
+                            break;
                         }
-                        break;
-                    }
-                case "payment":
-                    {
-                        switch(action)
+                    case "ticket":
                         {
-                            case "success":
-                                {
-                                    lblPaymentSuccess.Visible = true;
-                                    break;
-                                }
-                            case "failure":
-                                {
-                                    lblPaymentFailure.Visible = true;
-                                    break;
-                                }
-                            default:
-                                {
-                                    break;
-                                }
+                            switch (action)
+                            {
+                                case "cancelled":
+                                    {
+                                        lblStaticTicketCancelled.Visible = true;
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        break;
+                                    }
+                            }
+                            break;
                         }
-                        break;
-                    }
-                case "ttype":
-                    {
-                        switch(action)
+                    case "payment":
                         {
-                            case "delete":
-                                {
-                                    lblStaticDelSuccess.Text = "Success! The ticket type has been deleted.";
-                                    lblStaticDelSuccess.Visible = true;
-                                    break;
-                                }
-                            case "edit":
-                                {
-                                    lblStaticModSuccess.Text = "Success! The ticket type has been modified.";
-                                    lblStaticModSuccess.Visible = true;
-                                    break;
-                                }
-                            case "new":
-                                {
-                                    lblStaticAddSuccess.Text = "Success! New ticket type has been added.";
-                                    lblStaticAddSuccess.Visible = true;
-                                    break;
-                                }
-                            default:
-                                {
-                                    break;
-                                }
+                            switch (action)
+                            {
+                                case "success":
+                                    {
+                                        lblPaymentSuccess.Visible = true;
+                                        break;
+                                    }
+                                case "failure":
+                                    {
+                                        lblPaymentFailure.Visible = true;
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        break;
+                                    }
+                            }
+                            break;
                         }
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
+                    case "ttype":
+                        {
+                            switch (action)
+                            {
+                                case "delete":
+                                    {
+                                        lblStaticDelSuccess.Text = "Success! The ticket type has been deleted.";
+                                        lblStaticDelSuccess.Visible = true;
+                                        break;
+                                    }
+                                case "edit":
+                                    {
+                                        lblStaticModSuccess.Text = "Success! The ticket type has been modified.";
+                                        lblStaticModSuccess.Visible = true;
+                                        break;
+                                    }
+                                case "new":
+                                    {
+                                        lblStaticAddSuccess.Text = "Success! New ticket type has been added.";
+                                        lblStaticAddSuccess.Visible = true;
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+                }
             }
         }
 
