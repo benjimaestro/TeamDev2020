@@ -47,7 +47,7 @@ namespace T_Train_Front_office.Forms.Payment
                         if (paymentFound)
                         {
                             //set value of the read-only fields to the details of the customer
-                            lblPaymentValue.Text = Convert.ToString(APayment.PaymentValue);
+                            lblPaymentValue.Text = "£" + Convert.ToString(APayment.PaymentValue);
                             lblPaymentStartDate.Text = APayment.PaymentStartDate.ToString("dd/MM/yyyy HH:mm:ss");
                             string paymentED = APayment.PaymentEndDate == DateTime.MinValue ? "This payment has not been finalized." : APayment.PaymentEndDate.ToString("dd/MM/yyyy HH:mm:ss");
                             lblPaymentEndDate.Text = paymentED;

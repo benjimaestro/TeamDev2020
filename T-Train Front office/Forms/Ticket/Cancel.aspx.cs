@@ -68,9 +68,9 @@ namespace T_Train_Front_office.Forms.Ticket
                             //fill the data regarding the connection
                             if(connectionFound)
                             {
-                                lblConnLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
-                                lblConnDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                lblConnTime.Text = AConnection.ConnectionTime.ToString(@"hh\:mm");
+                                lblConnLocation.Text = "🚇 " + AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
+                                lblConnDate.Text = "📆 " + AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                                lblConnTime.Text = "⌚ " + AConnection.ConnectionTime.ToString(@"hh\:mm");
                             }
                             else
                             {
@@ -78,7 +78,7 @@ namespace T_Train_Front_office.Forms.Ticket
                             }
 
                             //ticket purchase date
-                            lblPurchasedAt.Text = ATicket.PurchasedAt.ToString("dd/MM/yyyy");
+                            lblPurchasedAt.Text = "Ticket purchase date: " + ATicket.PurchasedAt.ToString("dd/MM/yyyy");
                             //the ticket exists so it can be cancelled
                             btnCancelTicket.Visible = true;
                         }

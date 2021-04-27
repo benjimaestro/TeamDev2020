@@ -25,7 +25,7 @@
         <asp:Label ID="Label21" runat="server" Font-Size="X-Large" style="z-index: 1; left: 365px; top: 113px; position: absolute" Text="Cancel ticket procedure"></asp:Label>
         </p>
         <asp:Label ID="lblCustomerName" runat="server" style="z-index: 1; left: 216px; top: 235px; position: absolute"></asp:Label>
-        <asp:Label ID="lblPurchasedAt" runat="server" style="z-index: 1; left: 458px; top: 235px; position: absolute"></asp:Label>
+        <asp:Label ID="lblPurchasedAt" runat="server" style="z-index: 1; left: 540px; top: 236px; position: absolute"></asp:Label>
         <p>
         <asp:Button ID="btnCancelTicket" runat="server" style="z-index: 1; left: 284px; top: 335px; position: absolute" Text="Cancel ticket (!)" OnClick="btnCancelTicket_Click" Visible="False" />
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 848px; top: 25px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
