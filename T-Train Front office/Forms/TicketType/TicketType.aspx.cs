@@ -60,7 +60,7 @@ namespace T_Train_Front_office.Forms.Ticket_Type
                             {
                                 //Change the headers and buttons to show that we are editing
                                 lblActionName.Text = "You are modifying this ticket type:";
-                                btnSaveChanges.Text = "Save changes";
+                                btnSaveChanges.Text = "Save Changes";
 
                                 //set value of the read-only fields to the details of the connection
                                 lblId.Text = Convert.ToString(ATicketType.TicketTypeId);
