@@ -85,11 +85,11 @@ namespace T_Train_Front_office.Forms.Customer
                                         //assign details of a connection to the variables
                                         string startLocation = ConnectionDetails.ConnectionStartStation;
                                         string endLocation = ConnectionDetails.ConnectionEndStation;
-                                        DateTime date = ConnectionDetails.ConnectionDate;
+                                        string date = ConnectionDetails.ConnectionDate.ToString("dd/MM/yyyy");
                                         string time = ConnectionDetails.ConnectionTime.ToString(@"hh\:mm");
                                         string active = ConnectionDetails.ConnectionActive ? "Active" : "Expired";
 
-                                        ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + time + " " + active;
+                                        ATicketItem.Text = $"TICKET {active}: {startLocation} - {endLocation} {date} {time}";
                                         activeTickets++;
                                     }
                                     else
@@ -144,10 +144,9 @@ namespace T_Train_Front_office.Forms.Customer
                                     string paymentValue = Convert.ToString(UserPayments.MyPayments[i].PaymentValue);
                                     string paymentStartDate = UserPayments.MyPayments[i].PaymentStartDate.ToString("dd/MM/yyyy HH:mm:ss");
                                     string paymentEndDate = UserPayments.MyPayments[i].PaymentEndDate.ToString("dd/MM/yyyy HH:mm:ss");
-                                    string ticketId = Convert.ToString(UserPayments.MyPayments[i].TicketId);
 
                                     //assign the text to the list item
-                                    APaymentItem.Text = $"PayID: {paymentId} || Start: {paymentStartDate} || End: {paymentEndDate} || Value: {paymentValue} || TicketID: {ticketId}";
+                                    APaymentItem.Text = $"PayID: {paymentId} || Start: {paymentStartDate} || End: {paymentEndDate} || Value: {paymentValue}";
                                     
                                     //add the list item to the list
                                     lstPayments.Items.Add(APaymentItem);

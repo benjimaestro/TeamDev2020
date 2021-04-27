@@ -18,16 +18,18 @@
         </div>
         <p>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 357px; top: 444px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
-        <asp:Label ID="lblConnLoc" runat="server" style="z-index: 1; left: 110px; top: 247px; position: absolute"></asp:Label>
-        <asp:Label ID="lblConnDate" runat="server" style="z-index: 1; left: 276px; top: 248px; position: absolute; "></asp:Label>
-        <asp:Label ID="lblConnTime" runat="server" style="z-index: 1; left: 420px; top: 247px; position: absolute"></asp:Label>
+        <asp:Label ID="lblConnLoc" runat="server" style="z-index: 1; left: 115px; top: 250px; position: absolute"></asp:Label>
+        <asp:Label ID="lblConnTime" runat="server" style="z-index: 1; left: 554px; top: 249px; position: absolute"></asp:Label>
         </p>
         <asp:Label ID="Label18" runat="server" Font-Size="Large" style="z-index: 1; left: 34px; top: 187px; position: absolute" Text="You are booking a ticket for this connection:"></asp:Label>
         <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 261px; top: 386px; position: absolute" Text="Make Payment" OnClick="btnPayment_Click1" />
         <asp:Button ID="btnCancel" runat="server" OnClick="Button2_Click" style="z-index: 1; left: 453px; top: 386px; position: absolute" Text="Back to Connections" />
         <p>
-        <asp:Label ID="lblConnPrice" runat="server" style="z-index: 1; left: 565px; top: 249px; position: absolute"></asp:Label>
+        <asp:Label ID="lblConnPrice" runat="server" style="z-index: 1; left: 696px; top: 248px; position: absolute"></asp:Label>
         <asp:Label ID="lblStaticInstructions" runat="server" style="z-index: 1; left: 179px; top: 316px; position: absolute; height: 67px; width: 539px;" Font-Bold="True">Once you press Make Payment, a new window will open where you complete the payment. Once you finish, the ticket will be added to your account. If you abandon the payment, the ticket will not be added.</asp:Label>
+        </p>
+        <p>
+        <asp:Label ID="lblConnDate" runat="server" style="z-index: 1; left: 399px; top: 251px; position: absolute; "></asp:Label>
         </p>
     </form>
 </body>

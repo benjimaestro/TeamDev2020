@@ -30,22 +30,22 @@
             &nbsp;</p>
         <asp:Button ID="btnCancelTicket" runat="server" style="z-index: 1; left: 532px; top: 376px; position: absolute" Text="Cancel Ticket" OnClick="btnCancelTicket_Click" Visible="False" />
         <p>
-            <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 750px; top: 649px; position: absolute" Text="View Payment" OnClick="btnPayment_Click" Visible="False" />
+            <asp:Button ID="btnPayment" runat="server" style="z-index: 1; left: 779px; top: 648px; position: absolute" Text="View Payment" OnClick="btnPayment_Click" Visible="False" />
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 857px; top: 32px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </p>
         <p>
             &nbsp;</p>
         <p>
             <asp:Label ID="lblNoTicketsFound" runat="server" style="z-index: 1; left: 330px; top: 365px; position: absolute" Text="This customer has not purchased any tickets." Visible="False" Font-Bold="True"></asp:Label>
-        <asp:ListBox ID="lstPayments" runat="server" style="z-index: 1; left: 58px; top: 622px; position: absolute; height: 182px; width: 594px" Visible="False"></asp:ListBox>
+        <asp:ListBox ID="lstPayments" runat="server" style="z-index: 1; left: 58px; top: 622px; position: absolute; height: 182px; width: 634px" Visible="False"></asp:ListBox>
         <asp:Label ID="lblTicketSelected" runat="server" style="z-index: 1; left: 469px; top: 426px; position: absolute" Text="You have to select a ticket first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
         </p>
         <p>
         <asp:Label ID="Label20" runat="server" Font-Size="Large" style="z-index: 1; left: 434px; top: 304px; position: absolute" Text="Tickets"></asp:Label>
         </p>
-        <asp:ListBox ID="lstTickets" runat="server" style="z-index: 1; left: 58px; top: 353px; position: absolute; height: 182px; width: 345px" Visible="False"></asp:ListBox>
+        <asp:ListBox ID="lstTickets" runat="server" style="z-index: 1; left: 58px; top: 353px; position: absolute; height: 182px; width: 378px" Visible="False"></asp:ListBox>
         <p>
-        <asp:Label ID="lblPaymentSelected" runat="server" style="z-index: 1; left: 684px; top: 700px; position: absolute" Text="You have to select a payment first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
+        <asp:Label ID="lblPaymentSelected" runat="server" style="z-index: 1; left: 711px; top: 699px; position: absolute" Text="You have to select a payment first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
         </p>
         <p>
             <asp:Label ID="lblNoPaymentsFound" runat="server" style="z-index: 1; left: 324px; top: 651px; position: absolute" Text="This customer has not made any payments." Visible="False" Font-Bold="True"></asp:Label>

@@ -36,7 +36,7 @@
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 22px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </p>
         <asp:Label ID="Label22" runat="server" Font-Size="Large" style="z-index: 1; left: 85px; top: 455px; position: absolute" Text="Customers"></asp:Label>
-        <asp:Button ID="btnFilterCustomers" runat="server" style="z-index: 1; left: 122px; top: 499px; position: absolute" Text="Filter customers" OnClick="btnFilterCustomers_Click" />
+        <asp:Button ID="btnFilterCustomers" runat="server" style="z-index: 1; left: 122px; top: 499px; position: absolute" Text="Filter Customers" OnClick="btnFilterCustomers_Click" />
         <p>
             &nbsp;</p>
         <p>

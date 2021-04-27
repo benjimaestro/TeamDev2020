@@ -19,7 +19,7 @@
             <asp:Label ID="Label24" runat="server" style="z-index: 1; left: 101px; top: 216px; position: absolute" Text="Customer's First Name:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 260px; top: 218px; position: absolute"></asp:TextBox>
         <asp:Label ID="Label23" runat="server" style="z-index: 1; left: 100px; top: 252px; position: absolute" Text="Customer's Last Name:"></asp:Label>
-        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 260px; top: 254px; position: absolute">DBT</asp:TextBox>
+        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 260px; top: 254px; position: absolute"></asp:TextBox>
             <asp:Label ID="Label25" runat="server" style="z-index: 1; left: 100px; top: 289px; position: absolute" Text="Customer's Date of Birth:"></asp:Label>
         <asp:TextBox ID="txtDOB" runat="server" style="z-index: 1; left: 273px; top: 291px; position: absolute"></asp:TextBox>
         </p>

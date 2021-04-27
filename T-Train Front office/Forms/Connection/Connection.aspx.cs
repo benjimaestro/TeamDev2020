@@ -105,8 +105,9 @@ namespace T_Train_Front_office.Forms.Connection
                                 lblActionName.Text = "Change connection details:";
                                 btnSaveConnection.Text = "Save changes";
                                 lblStaticModLimit.Text = "Tickets remaining:";
+                                lblTicketLimit.Text = "Tickets remaining:";
 
-                                //set value of the red-only fields to the details of the connection
+                                //set value of the read-only fields to the details of the connection
                                 lblModId.Text = Convert.ToString(AConnection.ConnectionId);
                                 lblModLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
                                 lblModDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
@@ -139,6 +140,7 @@ namespace T_Train_Front_office.Forms.Connection
                                 //Make the delete label and button visible
                                 lblDelete.Visible = true;
                                 btnDelConnection.Visible = true;
+                                btnGoTType.Visible = true;
                             }
                             else
                             {
@@ -241,14 +243,28 @@ namespace T_Train_Front_office.Forms.Connection
 
         protected void btnPick_Click(object sender, EventArgs e)
         {
+            //Show the datepicker
             dtpDate.Visible = true;
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
+            //Date in a datepicker is picked
             DateTime date = dtpDate.SelectedDate;
             txtDate.Text = Convert.ToString(date).Substring(0, 10);
             dtpDate.Visible = false;
+        }
+
+        protected void btnGoBack_Click(object sender, EventArgs e)
+        {
+            //Redirect back to connections page
+            Response.Redirect("Connections.aspx");
+        }
+
+        protected void btnGoTType_Click(object sender, EventArgs e)
+        {
+            //Redirect to a new ticket type add page
+            Response.Redirect("../TicketType/TicketType.aspx");
         }
     }
 }

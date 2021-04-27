@@ -48,9 +48,9 @@ namespace T_Train_Front_office.Forms.Ticket
 
                         if(connectionFound && ticketTypeFound)
                         {
-                            lblConnLoc.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
-                            lblConnDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
-                            lblConnTime.Text = AConnection.ConnectionTime.ToString(@"hh\:mm");
+                            lblConnLoc.Text = "🚇 " + AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
+                            lblConnDate.Text = "📆 " + AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                            lblConnTime.Text = "⌚ " + AConnection.ConnectionTime.ToString(@"hh\:mm");
                             lblConnPrice.Text = "£" + Convert.ToString(ATicketType.TicketTypePrice);
                         }
                         else

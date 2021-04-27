@@ -76,9 +76,9 @@ namespace ClassLibrary
                     PaymentId = Convert.ToInt32(DB.DataTable.Rows[i]["PaymentId"]),
                     //common attributes
                     CustomerId = customerId,
-                    PaymentEndDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentEndDate"]),
-                    PaymentStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentStartDate"]),
-                    PaymentValue = float.Parse(Convert.ToString(DB.DataTable.Rows[0]["PaymentValue"]))
+                    PaymentEndDate = Convert.ToDateTime(DB.DataTable.Rows[i]["PaymentEndDate"]),
+                    PaymentStartDate = Convert.ToDateTime(DB.DataTable.Rows[i]["PaymentStartDate"]),
+                    PaymentValue = float.Parse(Convert.ToString(DB.DataTable.Rows[i]["PaymentValue"]))
                 };
 
                 // save a found connection to an array
