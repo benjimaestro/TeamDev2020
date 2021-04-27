@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace LaptopLoanProjectt
 {
-    public partial class UserLogIn : System.Web.UI.Page
+    public partial class StaffLogInForm : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

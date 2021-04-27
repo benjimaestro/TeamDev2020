@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserLogIn.aspx.cs" Inherits="LaptopLoanProjectt.UserLogIn" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserRegistration.aspx.cs" Inherits="LaptopLoanProjectt.UserLogIn" %>
 
 <!DOCTYPE html>
 
@@ -28,7 +28,7 @@
         </div>
             <p>
                 &nbsp;</p>
-            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 9px; position: absolute" Text="Laptop Loan System"></asp:Label>
+            <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 9px; position: absolute; height: 24px; width: 139px;" Text="Laptop Loan System" BorderColor="#9933FF" BorderStyle="Double" ForeColor="#3333CC"></asp:Label>
             <asp:Label ID="lblUserRegistration" runat="server" style="z-index: 1; left: 452px; top: 55px; position: absolute" Text="User Registration Form"></asp:Label>
             <table class="auto-style1">
                 <tr>
@@ -85,7 +85,8 @@
         <asp:TextBox ID="txtConfirmPassword" runat="server" style="z-index: 1; left: 478px; top: 326px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtTelephoneNumber" runat="server" style="z-index: 1; left: 424px; top: 372px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 458px; top: 424px; position: absolute; margin-top: 0px" Text="Register" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 550px; top: 424px; position: absolute" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 550px; top: 424px; position: absolute" Text="Cancel"  />
+        <asp:Label ID="lblFill" runat="server" ForeColor="Lime" style="z-index: 1; left: 419px; top: 76px; position: absolute" Text="Hello! Please fill and register now"></asp:Label>
     </form>
 </body>
 </html>

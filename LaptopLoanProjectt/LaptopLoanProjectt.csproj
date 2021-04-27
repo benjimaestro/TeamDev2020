@@ -67,13 +67,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LaptopStaffDashBoard.aspx" />
+    <Content Include="LaptopStaffLogIn.aspx" />
+    <Content Include="LaptopUserBooking.aspx" />
+    <Content Include="LaptopUserDashBoard.aspx" />
     <Content Include="LaptopUserLogIn.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="StyleSheet.css" />
-    <Content Include="UserLogIn.aspx" />
+    <Content Include="UserRegistration.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LaptopStaffDashBoard.aspx.cs">
+      <DependentUpon>LaptopStaffDashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LaptopStaffDashBoard.aspx.designer.cs">
+      <DependentUpon>LaptopStaffDashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LaptopStaffLogIn.aspx.cs">
+      <DependentUpon>LaptopStaffLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LaptopStaffLogIn.aspx.designer.cs">
+      <DependentUpon>LaptopStaffLogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LaptopUserBooking.aspx.cs">
+      <DependentUpon>LaptopUserBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LaptopUserBooking.aspx.designer.cs">
+      <DependentUpon>LaptopUserBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LaptopUserDashBoard.aspx.cs">
+      <DependentUpon>LaptopUserDashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LaptopUserDashBoard.aspx.designer.cs">
+      <DependentUpon>LaptopUserDashBoard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LaptopUserLogIn.aspx.cs">
       <DependentUpon>LaptopUserLogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -89,12 +121,12 @@
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserLogIn.aspx.cs">
-      <DependentUpon>UserLogIn.aspx</DependentUpon>
+    <Compile Include="UserRegistration.aspx.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserLogIn.aspx.designer.cs">
-      <DependentUpon>UserLogIn.aspx</DependentUpon>
+    <Compile Include="UserRegistration.aspx.designer.cs">
+      <DependentUpon>UserRegistration.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

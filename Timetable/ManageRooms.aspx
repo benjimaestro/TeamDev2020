@@ -102,7 +102,7 @@
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" Text="Manage Rooms" CssClass="auto-style12"></asp:Label>
-        <asp:ListBox ID="lstRooms" runat="server" CssClass="auto-style11"></asp:ListBox>
+        <asp:ListBox ID="lstRooms" runat="server" CssClass="auto-style11" OnSelectedIndexChanged="lstRooms_SelectedIndexChanged"></asp:ListBox>
         <asp:Label ID="Label1" runat="server" Text="Filter Rooms by Subject" CssClass="auto-style10"></asp:Label>
         <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" CssClass="auto-style7" />
         <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" CssClass="auto-style8" />

@@ -24,8 +24,8 @@
         }
         .auto-style5 {
             position: absolute;
-            top: 87px;
-            left: 10px;
+            top: 92px;
+            left: 12px;
             z-index: 1;
             width: 175px;
         }

@@ -141,6 +141,7 @@
             position: absolute;
             height: 42px;
             width: 488px;
+            bottom: 809px;
         }
         </style>
 </head>

@@ -7,21 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace LaptopLoanProjectt
 {
-    public partial class LaptopUserLogIn : System.Web.UI.Page
+    public partial class UserLogIn : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnCancel_Click()
-        {
-            Response.Redirect("MainPage.aspx");
-        }
-
-        protected void btnMainPage_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MainPage.aspx");
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
