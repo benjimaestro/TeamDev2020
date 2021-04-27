@@ -99,7 +99,7 @@ namespace T_Train_Front_office.Forms.Customer
                             {
                                 Text = Customers.MyCustomers[i].FirstName
                                 + " " + Customers.MyCustomers[i].LastName
-                                + " - " + Convert.ToString(Customers.MyCustomers[i].DateOfBirth)
+                                + " - " + Customers.MyCustomers[i].DateOfBirth
                                 + " - " + Customers.MyCustomers[i].Email,
                                 Value = Convert.ToString(Customers.MyCustomers[i].CustomerId)
                             };

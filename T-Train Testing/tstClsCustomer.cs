@@ -129,8 +129,8 @@ namespace TTrainCustomer
         {
             //Put Id that exists to test this
             clsCustomer ACustomer = new clsCustomer();
-            int staffId = 1;
-            bool found = ACustomer.FindCustomer(staffId);
+            int customerId = 216;
+            bool found = ACustomer.FindCustomer(customerId);
             Assert.IsTrue(found);
         }
 

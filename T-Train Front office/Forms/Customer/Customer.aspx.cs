@@ -184,14 +184,14 @@ namespace T_Train_Front_office.Forms.Customer
         protected void btnCancelTicket_Click(object sender, EventArgs e)
         {
             //get the selected ticket's id
-            string selectedValue = lstPayments.SelectedValue;
+            string selectedValue = lstTickets.SelectedValue;
             //check if the selection was made
             if (selectedValue == "" || selectedValue == "0")
             {
                 //if it was not, show an error
                 lblTicketSelected.Visible = true;
             } //if it was, redirect
-            else Response.Redirect("../Ticket/Cancel.aspx?ticketId=" + lstPayments.SelectedValue);
+            else Response.Redirect("../Ticket/Cancel.aspx?ticketId=" + lstTickets.SelectedValue);
         }
 
         protected void btnPayment_Click(object sender, EventArgs e)

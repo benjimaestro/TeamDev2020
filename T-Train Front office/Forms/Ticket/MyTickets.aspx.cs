@@ -66,7 +66,7 @@ namespace T_Train_Front_office.Forms.Ticket
                         //assign details of a connection to the variables
                         string startLocation = ConnectionDetails.ConnectionStartStation;
                         string endLocation = ConnectionDetails.ConnectionEndStation;
-                        DateTime date = ConnectionDetails.ConnectionDate;
+                        string date = ConnectionDetails.ConnectionDate.ToString("dd/MM/yyyy");
                         string time = ConnectionDetails.ConnectionTime.ToString(@"hh\:mm");
 
                         ATicketItem.Text = "TICKET ACTIVE: " + startLocation + " - " + endLocation + " " + date + " " + time;
