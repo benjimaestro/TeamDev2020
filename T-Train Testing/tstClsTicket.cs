@@ -80,7 +80,7 @@ namespace TTrainTicket
         {
             //Put Id that exists to test this
             clsTicket ATicket = new clsTicket();
-            int ticketId = 2;
+            int ticketId = 184;
             bool found = ATicket.FindTicket(ticketId);
             Assert.IsTrue(found);
         }

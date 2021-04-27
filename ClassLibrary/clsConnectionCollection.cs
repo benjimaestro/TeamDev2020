@@ -98,12 +98,10 @@ namespace ClassLibrary
             return connectionsFound;
         }
 
-        public List<clsConnection> ListConnections(bool ignorePrivate = true)
+        public List<clsConnection> ListConnections()
         {
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
-            //add the only parameter which is whether we ignore private connections
-            DB.AddParameter("@ignorePrivate", ignorePrivate);
             //get all connections
             DB.Execute("sproc_tblConnection_SelectAll");
             //create an empty list to store connections

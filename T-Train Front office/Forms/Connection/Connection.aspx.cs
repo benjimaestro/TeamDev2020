@@ -63,6 +63,21 @@ namespace T_Train_Front_office.Forms.Connection
                     }
                 }
 
+                //Fill the ticket type dropdown list
+                clsTicketTypeCollection TTypeManager = new clsTicketTypeCollection();
+                TTypeManager.MyTicketTypes = TTypeManager.ListTicketTypes();
+                for(int i = 0; i < TTypeManager.Count; ++i)
+                {
+                    //only use public ticket types
+                    if(TTypeManager.MyTicketTypes[i].TicketTypeActive == true)
+                    {
+                        ListItem ticketTypeItem = new ListItem();
+                        ticketTypeItem.Text = TTypeManager.MyTicketTypes[i].TicketTypeName;
+                        ticketTypeItem.Value = Convert.ToString(TTypeManager.MyTicketTypes[i].TicketTypeId);
+                        ddlTicketType.Items.Add(ticketTypeItem);
+                    }
+                }
+
                 try
                 {
                     connectionId = Convert.ToInt32(Request.Params["connId"]);
@@ -119,6 +134,7 @@ namespace T_Train_Front_office.Forms.Connection
                                 ddlTime.SelectedValue = AConnection.ConnectionTime.ToString(@"hh\:mm");
                                 txtTicketLimit.Text = Convert.ToString(AConnection.ConnectionTicketLimit);
                                 chkConnActive.Checked = AConnection.ConnectionActive;
+                                ddlTicketType.SelectedValue = Convert.ToString(AConnection.TicketTypeId);
 
                                 //Make the delete label and button visible
                                 lblDelete.Visible = true;
@@ -178,6 +194,7 @@ namespace T_Train_Front_office.Forms.Connection
             AConnection.ConnectionStartStation = ddlFrom.SelectedValue;
             AConnection.ConnectionTime = TimeSpan.Parse(ddlTime.SelectedValue);
             AConnection.ConnectionTicketLimit = Convert.ToInt32(txtTicketLimit.Text);
+            AConnection.TicketTypeId = Convert.ToInt32(ddlTicketType.SelectedValue);
             ConnectionCollection.ThisConnection = AConnection;
 
             //add a new connection or modify the existing one

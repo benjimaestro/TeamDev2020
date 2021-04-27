@@ -140,19 +140,25 @@ namespace T_Train_Front_office.Forms.Connection
                     for (int i = 0; i < Connections.Count; ++i)
                     {
                         //only add connections with purchasable tickets
-                        if(Connections.MyConnections[i].ConnectionTicketLimit > 0)
+                        //staff can see all connections
+                        if(Connections.MyConnections[i].ConnectionTicketLimit > 0 || isStaff)
                         {
-                            ListItem AConnectionItem = new ListItem
+                            //only add public connections
+                            //staff can see private as well
+                            if(Connections.MyConnections[i].ConnectionActive == true || isStaff)
                             {
-                                Text = Connections.MyConnections[i].ConnectionStartStation
-                            + " - " + Connections.MyConnections[i].ConnectionEndStation
-                            + "        " + Connections.MyConnections[i].ConnectionDate.ToString("dd/MM/yyyy")
-                            + "        " + Connections.MyConnections[i].ConnectionTime.ToString(@"hh\:mm"),
-                                Value = Convert.ToString(Connections.MyConnections[i].ConnectionId)
-                            };
-                            lstConnections.Items.Add(AConnectionItem);
+                                ListItem AConnectionItem = new ListItem
+                                {
+                                    Text = Connections.MyConnections[i].ConnectionStartStation
+                                    + " - " + Connections.MyConnections[i].ConnectionEndStation
+                                    + "        " + Connections.MyConnections[i].ConnectionDate.ToString("dd/MM/yyyy")
+                                    + "        " + Connections.MyConnections[i].ConnectionTime.ToString(@"hh\:mm"),
+                                    Value = Convert.ToString(Connections.MyConnections[i].ConnectionId)
+                                };
+                                lstConnections.Items.Add(AConnectionItem);
 
-                            activeConnections++;
+                                activeConnections++;
+                            }
                         }
                     }
                 }

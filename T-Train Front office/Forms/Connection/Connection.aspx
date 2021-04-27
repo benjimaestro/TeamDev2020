@@ -5,12 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        #form2 {
+            height: 747px;
+        }
+    </style>
 </head>
 <body>
     <form id="form2" runat="server">
         <p>
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 876px; top: 27px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
-        <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 359px; top: 698px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 354px; top: 804px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 199px; top: 32px; position: absolute; right: 644px;" Text="Homepage" OnClick="Button1_Click" />
             <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 40px; top: 32px; position: absolute; right: 759px;" Text="Staff Dashboard" OnClick="btnStaffDashboard_Click" />
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 324px; top: 26px; position: absolute" Text="T-Train"></asp:Label>
@@ -32,7 +37,6 @@
         <asp:Label ID="lblModTime" runat="server" style="z-index: 1; left: 448px; top: 199px; position: absolute; right: 445px; width: 86px;" Visible="False"></asp:Label>
         </p>
         <asp:Label ID="lblModId" runat="server" style="z-index: 1; left: 77px; top: 199px; position: absolute" Visible="False"></asp:Label>
-            <asp:Label ID="lblTicketLimit0" runat="server" style="z-index: 1; left: 748px; top: 387px; position: absolute; height: 76px;" Text="Ticket limit:/Tickets remaining:"></asp:Label>
         <p>
             &nbsp;</p>
         <p>
@@ -40,16 +44,17 @@
         </p>
         <p>
             <asp:Label ID="lblStaticModLimit" runat="server" style="z-index: 1; left: 657px; top: 198px; position: absolute; height: 25px;" Text="Tickets remaining:" Visible="False"></asp:Label>
+            <asp:Label ID="lblTicketLimit0" runat="server" style="z-index: 1; left: 510px; top: 595px; position: absolute; height: 19px;" Text="Ticket Type:"></asp:Label>
         </p>
         <p>
             &nbsp;</p>
         <p>
-            <asp:TextBox ID="txtTicketLimit" runat="server" style="z-index: 1; left: 777px; top: 421px; position: absolute"></asp:TextBox>
-            <asp:Label ID="lblDelete" runat="server" Font-Size="Large" style="z-index: 1; left: 65px; top: 644px; position: absolute" Text="You can also:" Visible="False"></asp:Label>
-            <asp:Button ID="btnDelConnection" runat="server" style="z-index: 1; left: 190px; top: 643px; position: absolute" Text="Delete Connection" OnClick="btnDelConnection_Click" Visible="False" />
+            <asp:TextBox ID="txtTicketLimit" runat="server" style="z-index: 1; left: 334px; top: 595px; position: absolute"></asp:TextBox>
+            <asp:Label ID="lblDelete" runat="server" Font-Size="Large" style="z-index: 1; left: 73px; top: 733px; position: absolute" Text="You can also:" Visible="False"></asp:Label>
+            <asp:Button ID="btnDelConnection" runat="server" style="z-index: 1; left: 192px; top: 734px; position: absolute" Text="Delete Connection" OnClick="btnDelConnection_Click" Visible="False" />
         </p>
         <p>
-            <asp:Button ID="btnSaveConnection" runat="server" style="z-index: 1; left: 411px; top: 544px; position: absolute" Text="Add connection/Save changes" OnClick="Button5_Click" />
+            <asp:Button ID="btnSaveConnection" runat="server" style="z-index: 1; left: 404px; top: 669px; position: absolute" Text="Add connection/Save changes" OnClick="Button5_Click" />
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 129px; top: 385px; position: absolute; " Text="From:"></asp:Label>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 473px; top: 385px; position: absolute; right: 467px;" Text="To:"></asp:Label>
         <asp:DropDownList ID="ddlFrom" runat="server" style="z-index: 1; left: 212px; top: 385px; position: absolute; ">
@@ -63,8 +68,8 @@
         <asp:TextBox ID="txtDate" runat="server" style="z-index: 1; left: 200px; top: 495px; position: absolute; margin-bottom: 5px; right: 628px;"></asp:TextBox>
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 501px; top: 496px; position: absolute" Text="Time:"></asp:Label>
         <asp:Label ID="Label6" runat="server" Font-Size="X-Large" style="z-index: 1; left: 366px; top: 379px; position: absolute" Text="&lt;=&gt;"></asp:Label>
-        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 87px; top: 441px; position: absolute" Text="Departure Date &amp; Time:"></asp:Label>
-        <asp:Calendar ID="dtpDate" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" NextPrevFormat="ShortMonth" OnSelectionChanged="Calendar1_SelectionChanged" style="z-index: 1; left: 148px; top: 540px; position: absolute; height: 188px; width: 259px" Width="330px" Visible="False">
+        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 87px; top: 441px; position: absolute" Text="Departure Date &amp; Time:" Font-Size="Large"></asp:Label>
+        <asp:Calendar ID="dtpDate" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" NextPrevFormat="ShortMonth" OnSelectionChanged="Calendar1_SelectionChanged" style="z-index: 1; left: 143px; top: 536px; position: absolute; height: 188px; width: 259px" Width="330px" Visible="False">
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
             <DayStyle BackColor="#CCCCCC" />
             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
@@ -74,9 +79,9 @@
             <TodayDayStyle BackColor="#999999" ForeColor="White" />
         </asp:Calendar>
         <asp:Button ID="btnPick" runat="server" OnClick="btnPick_Click" style="z-index: 1; left: 368px; top: 493px; position: absolute; height: 26px" Text="Pick" />
-        <asp:DropDownList ID="ddlTime" runat="server" style="z-index: 1; left: 571px; top: 494px; position: absolute">
+        <asp:DropDownList ID="ddlTime" runat="server" style="z-index: 1; left: 578px; top: 496px; position: absolute">
         </asp:DropDownList>
-        <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 88px; top: 343px; position: absolute" Text="Departure station:"></asp:Label>
+        <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 88px; top: 343px; position: absolute" Text="Departure station:" Font-Size="Large"></asp:Label>
         <asp:DropDownList ID="ddlTo" runat="server" style="z-index: 1; left: 544px; top: 384px; position: absolute">
             <asp:ListItem>Leicester</asp:ListItem>
             <asp:ListItem>Birmingham</asp:ListItem>
@@ -85,7 +90,11 @@
             <asp:ListItem>Cambridge</asp:ListItem>
         </asp:DropDownList>
         </p>
-        <asp:CheckBox ID="chkConnActive" runat="server" style="z-index: 1; left: 755px; top: 487px; position: absolute" Text="Active Immediately?" />
+        <asp:CheckBox ID="chkConnActive" runat="server" style="z-index: 1; left: 753px; top: 593px; position: absolute" Text="Active Immediately?" />
+        <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 93px; top: 543px; position: absolute" Text="Other details:" Font-Size="Large"></asp:Label>
+            <asp:Label ID="lblTicketLimit1" runat="server" style="z-index: 1; left: 137px; top: 593px; position: absolute; height: 19px;" Text="Ticket limit:/Tickets remaining:"></asp:Label>
+        <asp:DropDownList ID="ddlTicketType" runat="server" style="z-index: 1; left: 602px; top: 592px; position: absolute">
+        </asp:DropDownList>
     </form>
 </body>
 </html>
