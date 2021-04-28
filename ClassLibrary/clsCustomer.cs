@@ -258,6 +258,7 @@ namespace ClassLibrary
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
                 mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
+                mTwoFactorCode = Convert.ToString(DB.DataTable.Rows[0]["TwoFactorCode"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
@@ -289,6 +290,7 @@ namespace ClassLibrary
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
                 mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
+                mTwoFactorCode = Convert.ToString(DB.DataTable.Rows[0]["TwoFactorCode"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }

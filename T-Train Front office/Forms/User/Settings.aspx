@@ -51,7 +51,7 @@
         </p>
         <asp:Button ID="btnDetails" runat="server" style="z-index: 1; left: 431px; top: 811px; position: absolute" Text="Save Details" OnClick="btnDetails_Click" />
         <asp:CheckBox ID="chkTwoFactor" runat="server" style="z-index: 1; left: 575px; top: 939px; position: absolute" Text="Disabled" Enabled="False" />
-        <asp:Button ID="btnTwoFactor" runat="server" style="z-index: 1; left: 395px; top: 1015px; position: absolute" Text="Enable/Disable 2FA" OnClick="Button6_Click" />
+        <asp:Button ID="btnTwoFactor" runat="server" style="z-index: 1; left: 415px; top: 1015px; position: absolute" Text="Enable/Disable 2FA" OnClick="Button6_Click" />
         <asp:Label ID="Label27" runat="server" Font-Size="Large" style="z-index: 1; left: 424px; top: 1063px; position: absolute" Text="Delete Account" Font-Bold="True"></asp:Label>
         <asp:Label ID="Label28" runat="server" style="z-index: 1; left: 144px; top: 1105px; position: absolute; width: 702px; margin-bottom: 4px" Text="This decision cannot be reverted. Make absolutely sure you wish to proceed. Every time T-Train introduces changes to the Terms of Service, you will be offered this option first. Deleted accounts are not recoverable. Your account will never expire and your details will never be sold. Please proceed only if you do not agree with the current Terms of Service. Once initiated, the procedure will take 14 days to finish and it will be stopped if you press the button here again. You may not book new tickets while your account is pending deletion."></asp:Label>
         <asp:Label ID="Label29" runat="server" style="z-index: 1; left: 345px; top: 1227px; position: absolute" Text="Current password:"></asp:Label>
