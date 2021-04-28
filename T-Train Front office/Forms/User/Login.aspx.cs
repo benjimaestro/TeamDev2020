@@ -41,6 +41,16 @@ namespace T_Train_Front_office.Forms.User
             string email = txtEmail.Text;
             string password = txtPassword.Text;
 
+            //store login success
+            bool loginDone = false;
+
+            //prepare 2FA
+            string codeTwoFactor = "";
+            if (txtTwoFactor.Visible == true)
+            {
+                codeTwoFactor = txtTwoFactor.Text;
+            }
+
             if(email != "" && password != "")
             {
                 clsCustomer ACustomer = new clsCustomer();
@@ -50,12 +60,39 @@ namespace T_Train_Front_office.Forms.User
                 {
                     if(ACustomer.AccountPassword == ACustomer.GetHashPassword(password))
                     {
-                        //user logged in
-                        Session["customerId"] = ACustomer.CustomerId;
-                        Session["customerIsStaff"] = ACustomer.IsStaff;
-                        Session["customerLoggedIn"] = true;
-                        //redirect user to homepage
-                        Response.Redirect("../Default.aspx");
+                        if(ACustomer.TwoFactorEnabled)
+                        {
+                            if(codeTwoFactor == ACustomer.TwoFactorCode && txtTwoFactor.Visible == true)
+                            {
+                                loginDone = true;
+                            }
+                            else if (txtTwoFactor.Visible == false)
+                            {
+                                lblTwoFactor.Visible = true;
+                                txtTwoFactor.Visible = true;
+                                txtEmail.Enabled = false;
+                                txtPassword.Enabled = false;
+                            }
+                            else
+                            {
+                                lblError.Text = "Entered 2FA code is invalid.";
+                            }
+                        }
+                        else
+                        {
+                            loginDone = true;
+                        }
+
+                        //check if login succesful
+                        if(loginDone)
+                        {
+                            //user logged in
+                            Session["customerId"] = ACustomer.CustomerId;
+                            Session["customerIsStaff"] = ACustomer.IsStaff;
+                            Session["customerLoggedIn"] = true;
+                            //redirect user to homepage
+                            Response.Redirect("../Default.aspx");
+                        }
                     }
                     else
                     {
