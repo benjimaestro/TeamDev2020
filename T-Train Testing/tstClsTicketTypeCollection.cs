@@ -1,7 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using ClassLibrary;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using T_Train_Classes;
 
 namespace TTrainTicketType
 {
@@ -197,10 +196,12 @@ namespace TTrainTicketType
             string maxPrice = "20";
             bool onlyRefundable = false;
             //next assign the parameters
-            clsTicketType ATicketType = new clsTicketType();
-            ATicketType.TicketTypeName = typeName;
-            ATicketType.TicketTypePrice = float.Parse(maxPrice);
-            ATicketType.TicketTypeRefundable = onlyRefundable;
+            clsTicketType ATicketType = new clsTicketType
+            {
+                TicketTypeName = typeName,
+                TicketTypePrice = float.Parse(maxPrice),
+                TicketTypeRefundable = onlyRefundable
+            };
             //create a manager class
             clsTicketTypeCollection TicketTypes = new clsTicketTypeCollection();
             //invoke the method

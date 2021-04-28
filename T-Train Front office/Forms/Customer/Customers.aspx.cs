@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ClassLibrary;
+using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.Customer
 {
@@ -77,7 +74,7 @@ namespace T_Train_Front_office.Forms.Customer
                     Customer.DateOfBirth = dob;
 
                     clsCustomerCollection Customers = new clsCustomerCollection();
-                    Customers.MyCustomers = Customers.filterCustomers(Customer);
+                    Customers.MyCustomers = Customers.FilterCustomers(Customer);
 
                     lblStaticResultsHeader.Visible = true;
                     lstCustomers.Items.Clear();
@@ -98,12 +95,14 @@ namespace T_Train_Front_office.Forms.Customer
                         //for each customer, add them into the list
                         for (int i = 0; i < Customers.Count; ++i)
                         {
-                            ListItem ACustomerItem = new ListItem();
-                            ACustomerItem.Text = Customers.MyCustomers[i].FirstName
+                            ListItem ACustomerItem = new ListItem
+                            {
+                                Text = Customers.MyCustomers[i].FirstName
                                 + " " + Customers.MyCustomers[i].LastName
-                                + " - " + Convert.ToString(Customers.MyCustomers[i].DateOfBirth)
-                                + " - " + Customers.MyCustomers[i].Email;
-                            ACustomerItem.Value = Convert.ToString(Customers.MyCustomers[i].CustomerId);
+                                + " - " + Customers.MyCustomers[i].DateOfBirth
+                                + " - " + Customers.MyCustomers[i].Email,
+                                Value = Convert.ToString(Customers.MyCustomers[i].CustomerId)
+                            };
                             lstCustomers.Items.Add(ACustomerItem);
                         }
                     }
@@ -128,22 +127,10 @@ namespace T_Train_Front_office.Forms.Customer
             else Response.Redirect("Customer.aspx?custId=" + lstCustomers.SelectedValue);
         }
 
-        protected void btnCustomer2_Click(object sender, EventArgs e)
-        {
-            //redirect to customer screen view
-            Response.Redirect("Customer.aspx");
-        }
-
-        protected void btnCustomer3_Click(object sender, EventArgs e)
-        {
-            //redirect to customer screen view
-            Response.Redirect("Customer.aspx");
-        }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
     }
 }

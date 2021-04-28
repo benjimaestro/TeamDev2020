@@ -1,6 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using ClassLibrary;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using T_Train_Classes;
 
 namespace TTrainCustomer
 {
@@ -129,8 +129,8 @@ namespace TTrainCustomer
         {
             //Put Id that exists to test this
             clsCustomer ACustomer = new clsCustomer();
-            int staffId = 1;
-            bool found = ACustomer.FindCustomer(staffId);
+            int customerId = 216;
+            bool found = ACustomer.FindCustomer(customerId);
             Assert.IsTrue(found);
         }
 
@@ -169,7 +169,7 @@ namespace TTrainCustomer
             //declare a test variable
             string testEmail = "admin@ttrain.com";
             //call the method
-            bool found = ACustomer.FindCustomerByEmail(testEmail);
+            _ = ACustomer.FindCustomerByEmail(testEmail);
             //check the customer was actually found
             Assert.AreEqual(ACustomer.Email, testEmail);
         }
@@ -187,7 +187,7 @@ namespace TTrainCustomer
             //call the method
             ACustomer.UpdatePassword(testPassword);
             //now fetch the customer details
-            bool customerFound = ACustomer.FindCustomer(ACustomer.CustomerId);
+            _ = ACustomer.FindCustomer(ACustomer.CustomerId);
             //compare the two passwords
             Assert.AreEqual(ACustomer.AccountPassword, testPassword);
         }

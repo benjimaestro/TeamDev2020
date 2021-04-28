@@ -71,15 +71,15 @@
             .auto-style8 {
                 position: absolute;
                 top: 128px;
-                left: 1017px;
+                left: 919px;
                 z-index: 1;
             }
             .auto-style9 {
                 position: absolute;
-                top: 123px;
-                left: 914px;
+                top: 156px;
+                left: 700px;
                 z-index: 1;
-                width: 95px;
+                width: 201px;
             }
             .auto-style10 {
                 position: absolute;

@@ -53,8 +53,28 @@ namespace T_Train_Front_office.Forms.Connection
                         string minutesToAdd = Convert.ToString(minutes);
                         minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
 
+                        //create a list item
+                        ListItem timeItem = new ListItem();
+                        timeItem.Text = hourToAdd + ":" + minutesToAdd;
+                        timeItem.Value = hourToAdd + ":" + minutesToAdd;
+
                         //add the time to the dropdown list
-                        ddlTime.Items.Add(hourToAdd + ":" + minutesToAdd);
+                        ddlTime.Items.Add(timeItem);
+                    }
+                }
+
+                //Fill the ticket type dropdown list
+                clsTicketTypeCollection TTypeManager = new clsTicketTypeCollection();
+                TTypeManager.MyTicketTypes = TTypeManager.ListTicketTypes();
+                for(int i = 0; i < TTypeManager.Count; ++i)
+                {
+                    //only use public ticket types
+                    if(TTypeManager.MyTicketTypes[i].TicketTypeActive == true)
+                    {
+                        ListItem ticketTypeItem = new ListItem();
+                        ticketTypeItem.Text = TTypeManager.MyTicketTypes[i].TicketTypeName;
+                        ticketTypeItem.Value = Convert.ToString(TTypeManager.MyTicketTypes[i].TicketTypeId);
+                        ddlTicketType.Items.Add(ticketTypeItem);
                     }
                 }
 
@@ -85,12 +105,13 @@ namespace T_Train_Front_office.Forms.Connection
                                 lblActionName.Text = "Change connection details:";
                                 btnSaveConnection.Text = "Save changes";
                                 lblStaticModLimit.Text = "Tickets remaining:";
+                                lblTicketLimit.Text = "Tickets remaining:";
 
-                                //set value of the red-only fields to the details of the connection
+                                //set value of the read-only fields to the details of the connection
                                 lblModId.Text = Convert.ToString(AConnection.ConnectionId);
                                 lblModLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
-                                lblModDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                //lblModTime.Text = Convert.ToString(AConnection.ConnectionTime);
+                                lblModDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                                lblModTime.Text = AConnection.ConnectionTime.ToString(@"hh\:mm");
                                 lblModPublic.Text = AConnection.ConnectionActive ? "Active" : "Private";
                                 lblModTickets.Text = Convert.ToString(AConnection.ConnectionTicketLimit);
                                 //lblModAdded.Text = Convert.ToString(AConnection.ConnectionAddedAt);
@@ -99,6 +120,7 @@ namespace T_Train_Front_office.Forms.Connection
                                 lblModifyHeader.Visible = true;
                                 lblModAdded.Visible = true;
                                 lblModDate.Visible = true;
+                                lblModTime.Visible = true;
                                 lblStaticId.Visible = true;
                                 lblModId.Visible = true;
                                 lblModLocation.Visible = true;
@@ -109,14 +131,16 @@ namespace T_Train_Front_office.Forms.Connection
                                 //set value of the editable fields to the details of the connection
                                 ddlFrom.SelectedValue = AConnection.ConnectionStartStation;
                                 ddlTo.SelectedValue = AConnection.ConnectionEndStation;
-                                txtDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                //ddlTime.SelectedValue = AConnection.ConnectionTime;
+                                txtDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                                ddlTime.SelectedValue = AConnection.ConnectionTime.ToString(@"hh\:mm");
                                 txtTicketLimit.Text = Convert.ToString(AConnection.ConnectionTicketLimit);
                                 chkConnActive.Checked = AConnection.ConnectionActive;
+                                ddlTicketType.SelectedValue = Convert.ToString(AConnection.TicketTypeId);
 
                                 //Make the delete label and button visible
                                 lblDelete.Visible = true;
                                 btnDelConnection.Visible = true;
+                                btnGoTType.Visible = true;
                             }
                             else
                             {
@@ -170,14 +194,16 @@ namespace T_Train_Front_office.Forms.Connection
             AConnection.ConnectionDate = Convert.ToDateTime(txtDate.Text);
             AConnection.ConnectionEndStation = ddlTo.SelectedValue;
             AConnection.ConnectionStartStation = ddlFrom.SelectedValue;
-            //AConnection.ConnectionTime = ddlTime.SelectedValue;
+            AConnection.ConnectionTime = TimeSpan.Parse(ddlTime.SelectedValue);
             AConnection.ConnectionTicketLimit = Convert.ToInt32(txtTicketLimit.Text);
+            AConnection.TicketTypeId = Convert.ToInt32(ddlTicketType.SelectedValue);
             ConnectionCollection.ThisConnection = AConnection;
 
             //add a new connection or modify the existing one
             if (AConnection.ConnectionId > 0)
             {
                 ConnectionCollection.ModifyConnection();
+                action = "edit";
             }
             else
             {
@@ -212,19 +238,33 @@ namespace T_Train_Front_office.Forms.Connection
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
 
         protected void btnPick_Click(object sender, EventArgs e)
         {
+            //Show the datepicker
             dtpDate.Visible = true;
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
+            //Date in a datepicker is picked
             DateTime date = dtpDate.SelectedDate;
             txtDate.Text = Convert.ToString(date).Substring(0, 10);
             dtpDate.Visible = false;
+        }
+
+        protected void btnGoBack_Click(object sender, EventArgs e)
+        {
+            //Redirect back to connections page
+            Response.Redirect("Connections.aspx");
+        }
+
+        protected void btnGoTType_Click(object sender, EventArgs e)
+        {
+            //Redirect to a new ticket type add page
+            Response.Redirect("../TicketType/TicketType.aspx");
         }
     }
 }

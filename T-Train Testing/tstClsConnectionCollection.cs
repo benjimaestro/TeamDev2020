@@ -28,9 +28,10 @@ namespace TTrainConnection
                 ConnectionActive = true,
                 ConnectionStartStation = "Leicester",
                 ConnectionEndStation = "Birmingham",
-                ConnectionDate = new DateTime(2021, 7, 17, 16, 30, 0),
+                ConnectionDate = new DateTime(2021, 7, 17),
                 ConnectionTicketLimit = 150,
-                TicketTypeId = 1
+                TicketTypeId = 1,
+                ConnectionTime = TimeSpan.Parse("17:45")
             };
             //add the test object to the list
             testList.Add(AConnection);
@@ -51,9 +52,10 @@ namespace TTrainConnection
                 ConnectionActive = true,
                 ConnectionStartStation = "Leicester",
                 ConnectionEndStation = "Birmingham",
-                ConnectionDate = new DateTime(2021, 7, 17, 16, 30, 0),
+                ConnectionDate = new DateTime(2021, 7, 17),
                 ConnectionTicketLimit = 150,
-                TicketTypeId = 1
+                TicketTypeId = 1,
+                ConnectionTime = TimeSpan.Parse("17:45")
             };
             //assign the test object to the collection class
             AConnectionCollection.ThisConnection = AConnection;
@@ -74,9 +76,10 @@ namespace TTrainConnection
                 ConnectionActive = true,
                 ConnectionStartStation = "Leicester",
                 ConnectionEndStation = "Birmingham",
-                ConnectionDate = new DateTime(2021, 7, 17, 16, 30, 0),
+                ConnectionDate = new DateTime(2021, 7, 17),
                 ConnectionTicketLimit = 150,
-                TicketTypeId = 1
+                TicketTypeId = 1,
+                ConnectionTime = TimeSpan.Parse("17:45")
             };
             //add the test object to the list
             testList.Add(AConnection);
@@ -97,9 +100,10 @@ namespace TTrainConnection
                 ConnectionActive = true,
                 ConnectionStartStation = "Leicester",
                 ConnectionEndStation = "Birmingham",
-                ConnectionDate = new DateTime(2021, 7, 17, 16, 30, 0),
+                ConnectionDate = new DateTime(2021, 7, 17),
                 ConnectionTicketLimit = 150,
-                TicketTypeId = 1
+                TicketTypeId = 1,
+                ConnectionTime = TimeSpan.Parse("17:45")
             };
             //assign the test object to the collection class
             AConnectionCollection.ThisConnection = AConnection;
@@ -128,9 +132,10 @@ namespace TTrainConnection
                 ConnectionActive = true,
                 ConnectionStartStation = "Leicester",
                 ConnectionEndStation = "Birmingham",
-                ConnectionDate = new DateTime(2021, 7, 17, 16, 30, 0),
+                ConnectionDate = new DateTime(2021, 7, 17),
                 ConnectionTicketLimit = 150,
-                TicketTypeId = 1
+                TicketTypeId = 1,
+                ConnectionTime = TimeSpan.Parse("17:45")
             };
             //assign the test object to the collection class
             AConnectionCollection.ThisConnection = AConnection;
@@ -160,9 +165,10 @@ namespace TTrainConnection
                 ConnectionActive = true,
                 ConnectionStartStation = "Leicester",
                 ConnectionEndStation = "Birmingham",
-                ConnectionDate = new DateTime(2021, 7, 17, 16, 30, 0),
+                ConnectionDate = new DateTime(2021, 7, 17),
                 ConnectionTicketLimit = 150,
-                TicketTypeId = 1
+                TicketTypeId = 1,
+                ConnectionTime = TimeSpan.Parse("17:45")
             };
             //assign the test object to the collection class
             AConnectionCollection.ThisConnection = AConnection;
@@ -175,9 +181,10 @@ namespace TTrainConnection
             AConnection.ConnectionActive = true;
             AConnection.ConnectionStartStation = "Leicester";
             AConnection.ConnectionEndStation = "Birmingham";
-            AConnection.ConnectionDate = new DateTime(2021, 7, 17, 16, 30, 0);
+            AConnection.ConnectionDate = new DateTime(2021, 7, 17);
             AConnection.ConnectionTicketLimit = 150;
             AConnection.TicketTypeId = 1;
+            AConnection.ConnectionTime = TimeSpan.Parse("18:45");
             //assign the test object to the real object
             AConnectionCollection.ThisConnection = AConnection;
             //update data of the real object
@@ -196,7 +203,7 @@ namespace TTrainConnection
             //create an instance of the class we want to create
             clsConnectionCollection allConnections = new clsConnectionCollection();
             //perform the listing
-            allConnections.MyConnections = allConnections.listConnections();
+            allConnections.MyConnections = allConnections.ListConnections();
             //the collection list should not be empty
             Assert.AreNotEqual(0, allConnections.MyConnections.Count);
         }
@@ -209,17 +216,18 @@ namespace TTrainConnection
             //a test object
             clsConnection AConnection = new clsConnection
             {
-                ConnectionActive = true,
-                ConnectionStartStation = "Leicester",
-                ConnectionEndStation = "Birmingham",
-                ConnectionDate = new DateTime(2021, 7, 17),
+                ConnectionActive = false,
+                ConnectionStartStation = "TestConnection",
+                ConnectionEndStation = "DoNotDelete",
+                ConnectionDate = new DateTime(2025, 12, 14),
                 ConnectionTicketLimit = 150,
-                TicketTypeId = 1
+                TicketTypeId = 1,
+                ConnectionTime = TimeSpan.Parse("15:20")
             };
             //perform the filtering
-            filteredConnections.MyConnections = filteredConnections.filterConnections(AConnection);
-            //there should be exactly 3 results, check if they exist
-            Assert.AreEqual(3, filteredConnections.MyConnections.Count);
+            filteredConnections.MyConnections = filteredConnections.FilterConnections(AConnection);
+            //there should be exactly 1 result
+            Assert.AreEqual(1, filteredConnections.MyConnections.Count);
         }
     }
 }

@@ -132,15 +132,6 @@ namespace T_Train_Front_office.Forms.Ticket
         protected global::System.Web.UI.WebControls.ListBox lstTickets;
 
         /// <summary>
-        /// lblTicketSelected control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTicketSelected;
-
-        /// <summary>
         /// lblStaticYourTickets control.
         /// </summary>
         /// <remarks>

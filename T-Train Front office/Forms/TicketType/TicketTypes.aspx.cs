@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ClassLibrary;
+using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.Ticket_Type
 {
@@ -141,12 +138,6 @@ namespace T_Train_Front_office.Forms.Ticket_Type
                 lblTypeSelected.Visible = true;
             } //if it was, redirect
             else Response.Redirect("TicketType.aspx?typeId=" + lstTicketTypes.SelectedValue);
-        }
-
-        protected void Button7_Click(object sender, EventArgs e)
-        {
-            //redirect to a ticket type
-            Response.Redirect("TicketType.aspx");
         }
 
         protected void btnAllTypes_Click(object sender, EventArgs e)

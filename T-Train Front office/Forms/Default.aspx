@@ -14,11 +14,11 @@
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 381px; top: 70px; position: absolute" Text="Welcome to T-Train"></asp:Label>
         <asp:Label ID="lblHeaderSubtitle" runat="server" Font-Size="Large" style="z-index: 1; left: 437px; top: 122px; position: absolute" Text="Book tickets now!"></asp:Label>
         <asp:Label ID="Label1" runat="server" Font-Size="X-Large" style="z-index: 1; left: 19px; top: 158px; position: absolute" Text="Find your connection:"></asp:Label>
-        <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 39px; top: 28px; position: absolute" Text="Staff Dashboard" OnClick="Button9_Click" />
-        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 911px; top: 33px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
+        <asp:Button ID="btnStaffDashboard" runat="server" style="z-index: 1; left: 39px; top: 31px; position: absolute" Text="Staff Dashboard" OnClick="Button9_Click" />
+        <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 911px; top: 31px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         <asp:Label ID="lblError" runat="server" Font-Bold="False" Font-Size="Large" ForeColor="Red" style="z-index: 1; left: 315px; top: 187px; position: absolute"></asp:Label>
         <p>
-            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 618px; top: 31px; position: absolute; right: 447px;" Text="My tickets" OnClick="Button7_Click" Font-Size="Large" />
+            <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 618px; top: 31px; position: absolute; " Text="My tickets" OnClick="Button7_Click"/>
         </p>
         <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 744px; top: 30px; position: absolute; " Text="Login" OnClick="Button3_Click" Font-Size="X-Large" />
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 126px; top: 231px; position: absolute; " Text="From:"></asp:Label>

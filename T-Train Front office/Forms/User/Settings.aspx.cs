@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using T_Train_Classes;
+﻿using ClassLibrary;
+using System;
 
 namespace T_Train_Front_office.Forms.User
 {
@@ -27,6 +22,7 @@ namespace T_Train_Front_office.Forms.User
                             if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
                             {
                                 isStaff = true;
+                                btnStaffDashboard.Visible = true;
                             }
                         }
                     }
@@ -76,12 +72,6 @@ namespace T_Train_Front_office.Forms.User
         {
             //redirect to my tickets list
             Response.Redirect("../Ticket/MyTickets.aspx");
-        }
-
-        protected void btnSettings_Click(object sender, EventArgs e)
-        {
-            //redirect to my account settings
-            Response.Redirect("Settings.aspx");
         }
 
         protected void Button6_Click(object sender, EventArgs e)
@@ -176,7 +166,7 @@ namespace T_Train_Front_office.Forms.User
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("Logout.aspx");
         }
     }
 }

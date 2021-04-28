@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
-using ClassLibrary;
 using System.Security.Cryptography;
 
 namespace ClassLibrary
@@ -55,7 +50,7 @@ namespace ClassLibrary
                 HashString = BitConverter.ToString(HashBytes).Replace("-", "");
                 return HashString;
             }
-            else { return ""; }
+            else return "";
         }
 
         public string SendResetEmail(string System)

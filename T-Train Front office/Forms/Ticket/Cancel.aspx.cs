@@ -1,11 +1,5 @@
 ﻿using ClassLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.Ticket
 {
@@ -74,9 +68,9 @@ namespace T_Train_Front_office.Forms.Ticket
                             //fill the data regarding the connection
                             if(connectionFound)
                             {
-                                lblConnLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
-                                lblConnDate.Text = Convert.ToString(AConnection.ConnectionDate);
-                                //lblConnTime.Text = AConnection.ConnectionTime;
+                                lblConnLocation.Text = "🚇 " + AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
+                                lblConnDate.Text = "📆 " + AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                                lblConnTime.Text = "⌚ " + AConnection.ConnectionTime.ToString(@"hh\:mm");
                             }
                             else
                             {
@@ -84,7 +78,7 @@ namespace T_Train_Front_office.Forms.Ticket
                             }
 
                             //ticket purchase date
-                            lblPurchasedAt.Text = ATicket.PurchasedAt.ToString("dd/MM/yyyy HH:mm:ss");
+                            lblPurchasedAt.Text = "Ticket purchase date: " + ATicket.PurchasedAt.ToString("dd/MM/yyyy");
                             //the ticket exists so it can be cancelled
                             btnCancelTicket.Visible = true;
                         }
@@ -149,7 +143,7 @@ namespace T_Train_Front_office.Forms.Ticket
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
     }
 }

@@ -53,8 +53,15 @@ namespace T_Train_Front_office.Forms.Connection
                         string minutesToAdd = Convert.ToString(minutes);
                         minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
 
+                        //create a list item
+                        ListItem timeItem = new ListItem
+                        {
+                            Text = hourToAdd + ":" + minutesToAdd,
+                            Value = hourToAdd + ":" + minutesToAdd
+                        };
+
                         //add the time to the dropdown list
-                        ddlTime.Items.Add(hourToAdd + ":" + minutesToAdd);
+                        ddlTime.Items.Add(timeItem);
                     }
                 }
 
@@ -75,9 +82,11 @@ namespace T_Train_Front_office.Forms.Connection
                     time = Request.Params["time"];
 
                     //next assign the parameters
+                    AConnection.ConnectionActive = true;
                     AConnection.ConnectionStartStation = from;
                     AConnection.ConnectionEndStation = to;
                     AConnection.ConnectionDate = date;
+                    AConnection.ConnectionTime = TimeSpan.Parse(time);
 
                     //next validate the parameters
                     string error = AConnection.ValidateConnection(date, from, to, 0);
@@ -90,22 +99,28 @@ namespace T_Train_Front_office.Forms.Connection
                     valid = false;
                 }
 
-                //declare a connection collection class
+                //declare a class to store connections found
                 clsConnectionCollection Connections = new clsConnectionCollection();
 
-                //if they are valid, filter connections
+                //if search parameters are valid, filter connections
                 if (valid)
                 {
                     //filter connections with the parameters specified
-                    Connections.MyConnections = Connections.filterConnections(AConnection);
+                    Connections.MyConnections = Connections.FilterConnections(AConnection);
+                    //fill the filtering boxes with parameters entered
+                    ddlFrom.SelectedValue = AConnection.ConnectionStartStation;
+                    ddlTo.SelectedValue = AConnection.ConnectionEndStation;
+                    txtDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                    ddlTime.SelectedValue = AConnection.ConnectionTime.ToString(@"hh\:mm");
                 }
                 else
                 {
                     //some parameters were invalid so instead we display all public connections
                     //by default we will also display all public connections
-                    Connections.MyConnections = Connections.listConnections();
+                    Connections.MyConnections = Connections.ListConnections();
                 }
 
+                int activeConnections = 0;
                 //there are no connections
                 if (Connections.Count == 0)
                 {
@@ -122,18 +137,41 @@ namespace T_Train_Front_office.Forms.Connection
                     {
                         btnManageConnection.Visible = true;
                     }
-                    
 
                     //for each connection, add it into the list
                     for (int i = 0; i < Connections.Count; ++i)
                     {
-                        ListItem AConnectionItem = new ListItem();
-                        AConnectionItem.Text = Connections.MyConnections[i].ConnectionStartStation
-                            + " - " + Connections.MyConnections[i].ConnectionEndStation
-                            + "        " + Convert.ToString(Connections.MyConnections[i].ConnectionDate);
-                        AConnectionItem.Value = Convert.ToString(Connections.MyConnections[i].ConnectionId);
-                        lstConnections.Items.Add(AConnectionItem);
+                        //only add connections with purchasable tickets
+                        //staff can see all connections
+                        if(Connections.MyConnections[i].ConnectionTicketLimit > 0 || isStaff)
+                        {
+                            //only add public connections
+                            //staff can see private as well
+                            if(Connections.MyConnections[i].ConnectionActive == true || isStaff)
+                            {
+                                ListItem AConnectionItem = new ListItem
+                                {
+                                    Text = Connections.MyConnections[i].ConnectionStartStation
+                                    + " - " + Connections.MyConnections[i].ConnectionEndStation
+                                    + " || " + Connections.MyConnections[i].ConnectionDate.ToString("dd/MM/yyyy")
+                                    + " || " + Connections.MyConnections[i].ConnectionTime.ToString(@"hh\:mm"),
+                                    Value = Convert.ToString(Connections.MyConnections[i].ConnectionId)
+                                };
+                                lstConnections.Items.Add(AConnectionItem);
+
+                                activeConnections++;
+                            }
+                        }
                     }
+                }
+
+                if(activeConnections == 0)
+                {
+                    //there are connections but they are either sold out or you already have a ticket for them
+                    lblNoConsFound.Visible = true;
+                    lstConnections.Visible = false;
+                    btnBookTicket.Visible = false;
+                    btnManageConnection.Visible = false;
                 }
             }
         }
@@ -191,28 +229,27 @@ namespace T_Train_Front_office.Forms.Connection
                 DateTime date = Convert.ToDateTime(txtDate.Text);
                 string time = ddlTime.Text;
 
-                //next assign the parameters
-                clsConnection aConnection = new clsConnection();
-                aConnection.ConnectionStartStation = from;
-                aConnection.ConnectionEndStation = to;
-                aConnection.ConnectionDate = date;
-
                 //next validate the parameters
+                clsConnection aConnection = new clsConnection();
                 string error = aConnection.ValidateConnection(date, from, to, 0);
 
-                //check if the parameters are valid
-                bool valid = (error == "");
-
                 //if they are valid, filter connections
-                if (valid)
+                if (error == "")
                 {
-                    //redirect to a filtered list of connections
-                    Response.Redirect($"Connections.aspx?from={from}&to={to}&date={date}&time={time}");
+                    if(from == to)
+                    {
+                        //display an error message on screen
+                        lblError.Text = "Start and end location cannot be the same.";
+                    }
+                    else
+                    {
+                        //redirect to a filtered list of connections
+                        Response.Redirect($"Connections.aspx?from={from}&to={to}&date={date}&time={time}");
+                    }
                 }
                 else
                 {
-                    //if invalid, display an error message on screen
-                    lblError.Text = "Entered data is invalid, please try again.";
+                    throw new Exception();
                 }
             }
             catch
@@ -222,22 +259,10 @@ namespace T_Train_Front_office.Forms.Connection
             }
         }
 
-        protected void btnBookTicket_Click(object sender, EventArgs e)
-        {
-            //redirect to a booking screen
-            Response.Redirect("../Ticket/Ticket.aspx");
-        }
-
-        protected void btnFindConnection_Click(object sender, EventArgs e)
-        {
-            //redirect to a particular connection
-            Response.Redirect("Connection.aspx");
-        }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
 
         protected void btnBookTicket_Click1(object sender, EventArgs e)
@@ -253,7 +278,7 @@ namespace T_Train_Front_office.Forms.Connection
             else Response.Redirect("../Ticket/BookTicket.aspx?connId=" + lstConnections.SelectedValue);
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnManageConnection_Click(object sender, EventArgs e)
         {
             //get the selected connection's id
             string selectedValue = lstConnections.SelectedValue;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace T_Train_Classes
+namespace ClassLibrary
 {
     public class clsTicketTypeCollection
     {

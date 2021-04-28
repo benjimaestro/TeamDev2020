@@ -31,6 +31,7 @@ namespace ClassLibrary
             DB.AddParameter("@ConnectionStartStation", ThisConnection.ConnectionStartStation);
             DB.AddParameter("@ConnectionTicketLimit", ThisConnection.ConnectionTicketLimit);
             DB.AddParameter("@TicketTypeId", ThisConnection.TicketTypeId);
+            DB.AddParameter("@ConnectionTime", ThisConnection.ConnectionTime);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblConnection_Insert");
         }
@@ -57,16 +58,17 @@ namespace ClassLibrary
             DB.AddParameter("@ConnectionStartStation", ThisConnection.ConnectionStartStation);
             DB.AddParameter("@ConnectionTicketLimit", ThisConnection.ConnectionTicketLimit);
             DB.AddParameter("@TicketTypeId", ThisConnection.TicketTypeId);
+            DB.AddParameter("@ConnectionTime", ThisConnection.ConnectionTime);
             //update the record
             DB.Execute("sproc_tblConnection_Update");
         }
 
-        public List<clsConnection> filterConnections(clsConnection AConnection)
+        public List<clsConnection> FilterConnections(clsConnection AConnection)
         {
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored procedure
-            DB.AddParameter("@ConnectionActive", true);
+            DB.AddParameter("@ConnectionActive", AConnection.ConnectionActive);
             DB.AddParameter("@ConnectionDate", AConnection.ConnectionDate);
             DB.AddParameter("@ConnectionEndStation", AConnection.ConnectionEndStation);
             DB.AddParameter("@ConnectionStartStation", AConnection.ConnectionStartStation);
@@ -86,8 +88,9 @@ namespace ClassLibrary
                     ConnectionId = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionId"]),
                     ConnectionStartStation = Convert.ToString(DB.DataTable.Rows[i]["ConnectionStartStation"]),
                     ConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionTicketLimit"]),
-                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"])
-                };
+                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"]),
+                    ConnectionTime = TimeSpan.Parse(Convert.ToString(DB.DataTable.Rows[i]["ConnectionTime"]))
+            };
                 //save a found connection to an array
                 connectionsFound.Add(FoundConnection);
             }
@@ -95,12 +98,10 @@ namespace ClassLibrary
             return connectionsFound;
         }
 
-        public List<clsConnection> listConnections(bool ignorePrivate = true)
+        public List<clsConnection> ListConnections()
         {
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
-            //add the only parameter which is whether we ignore private connections
-            DB.AddParameter("@ignorePrivate", ignorePrivate);
             //get all connections
             DB.Execute("sproc_tblConnection_SelectAll");
             //create an empty list to store connections
@@ -116,8 +117,10 @@ namespace ClassLibrary
                     ConnectionEndStation = Convert.ToString(DB.DataTable.Rows[i]["ConnectionEndStation"]),
                     ConnectionId = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionId"]),
                     ConnectionStartStation = Convert.ToString(DB.DataTable.Rows[i]["ConnectionStartStation"]),
-                    ConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionTicketLimit"])
-                };
+                    ConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[i]["ConnectionTicketLimit"]),
+                    ConnectionTime = TimeSpan.Parse(Convert.ToString(DB.DataTable.Rows[i]["ConnectionTime"])),
+                    TicketTypeId = Convert.ToInt32(DB.DataTable.Rows[i]["TicketTypeId"])
+            };
                 //save a found connection to an array
                 connectionsFound.Add(FoundConnection);
             }

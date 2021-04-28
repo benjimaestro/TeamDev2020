@@ -1,11 +1,5 @@
 ﻿using ClassLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using T_Train_Classes;
 
 namespace T_Train_Front_office.Forms.Payment
 {
@@ -53,7 +47,7 @@ namespace T_Train_Front_office.Forms.Payment
                         if (paymentFound)
                         {
                             //set value of the read-only fields to the details of the customer
-                            lblPaymentValue.Text = Convert.ToString(APayment.PaymentValue);
+                            lblPaymentValue.Text = "£" + Convert.ToString(APayment.PaymentValue);
                             lblPaymentStartDate.Text = APayment.PaymentStartDate.ToString("dd/MM/yyyy HH:mm:ss");
                             string paymentED = APayment.PaymentEndDate == DateTime.MinValue ? "This payment has not been finalized." : APayment.PaymentEndDate.ToString("dd/MM/yyyy HH:mm:ss");
                             lblPaymentEndDate.Text = paymentED;
@@ -99,10 +93,10 @@ namespace T_Train_Front_office.Forms.Payment
             int paymentId = Convert.ToInt32(Request.Params["paymentId"]);
             //fetch the details of the payment to get customer id
             clsPayment APayment = new clsPayment();
-            bool paymentFound = APayment.FindPayment(paymentId);
+            _ = APayment.FindPayment(paymentId);
             //fetch the details of the customer who bought this ticket
             clsCustomer ACustomer = new clsCustomer();
-            bool customerFound = ACustomer.FindCustomer(APayment.CustomerId);
+            _ = ACustomer.FindCustomer(APayment.CustomerId);
             //redirect to customer screen view
             Response.Redirect("../Customer/Customer.aspx?custId="+ ACustomer.CustomerId);
         }
@@ -110,7 +104,7 @@ namespace T_Train_Front_office.Forms.Payment
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
     }
 }

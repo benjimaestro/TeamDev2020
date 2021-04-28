@@ -194,7 +194,7 @@ namespace TTrainPayment
         {
             //create an instance of the class we want to create
             clsPaymentCollection APaymentCollection = new clsPaymentCollection();
-            //set user id that we will fetch the payments for
+            //set test user id which exists just for the testing
             int customerId = 257;
             //invoke the method
             APaymentCollection.MyPayments = APaymentCollection.GetUserPayments(customerId);
