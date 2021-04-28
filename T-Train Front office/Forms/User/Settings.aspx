@@ -19,7 +19,7 @@
             <asp:Button ID="btnTickets" runat="server" style="z-index: 1; left: 741px; top: 21px; position: absolute; " Text="My Tickets" OnClick="btnTickets_Click" />
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 187px; top: 21px; position: absolute" Text="T-Train"></asp:Label>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 370px; top: 1339px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
-            <asp:Label ID="Label26" runat="server" style="z-index: 1; left: 248px; top: 934px; position: absolute" Text="Two-Factor Authentication is currently:"></asp:Label>
+            <asp:Label ID="Label26" runat="server" style="z-index: 1; left: 321px; top: 939px; position: absolute" Text="Two-Factor Authentication is currently:"></asp:Label>
         </div>
         <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 362px; top: 115px; position: absolute" Text="Change your account settings here" Font-Bold="True" Font-Size="Large"></asp:Label>
         <p>
@@ -50,10 +50,9 @@
         <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 484px; top: 767px; position: absolute"></asp:TextBox>
         </p>
         <asp:Button ID="btnDetails" runat="server" style="z-index: 1; left: 431px; top: 811px; position: absolute" Text="Save Details" OnClick="btnDetails_Click" />
-        <asp:CheckBox ID="CheckBox1" runat="server" style="z-index: 1; left: 525px; top: 934px; position: absolute" Text="Disabled" Checked="True" />
-        <asp:CheckBox ID="CheckBox2" runat="server" style="z-index: 1; left: 652px; top: 934px; position: absolute" Text="Enabled" />
-        <asp:Button ID="btnTwoFactor" runat="server" style="z-index: 1; left: 404px; top: 984px; position: absolute" Text="Enable/Disable 2FA" OnClick="Button6_Click" />
-        <asp:Label ID="Label27" runat="server" Font-Size="Large" style="z-index: 1; left: 424px; top: 1053px; position: absolute" Text="Delete Account" Font-Bold="True"></asp:Label>
+        <asp:CheckBox ID="chkTwoFactor" runat="server" style="z-index: 1; left: 575px; top: 939px; position: absolute" Text="Disabled" Enabled="False" />
+        <asp:Button ID="btnTwoFactor" runat="server" style="z-index: 1; left: 395px; top: 1015px; position: absolute" Text="Enable/Disable 2FA" OnClick="Button6_Click" />
+        <asp:Label ID="Label27" runat="server" Font-Size="Large" style="z-index: 1; left: 424px; top: 1063px; position: absolute" Text="Delete Account" Font-Bold="True"></asp:Label>
         <asp:Label ID="Label28" runat="server" style="z-index: 1; left: 144px; top: 1105px; position: absolute; width: 702px; margin-bottom: 4px" Text="This decision cannot be reverted. Make absolutely sure you wish to proceed. Every time T-Train introduces changes to the Terms of Service, you will be offered this option first. Deleted accounts are not recoverable. Your account will never expire and your details will never be sold. Please proceed only if you do not agree with the current Terms of Service. Once initiated, the procedure will take 14 days to finish and it will be stopped if you press the button here again. You may not book new tickets while your account is pending deletion."></asp:Label>
         <asp:Label ID="Label29" runat="server" style="z-index: 1; left: 345px; top: 1227px; position: absolute" Text="Current password:"></asp:Label>
         <asp:TextBox ID="TextBox9" runat="server" style="z-index: 1; left: 485px; top: 1227px; position: absolute"></asp:TextBox>
@@ -61,8 +60,14 @@
         <p>
             <asp:Label ID="Label30" runat="server" Font-Size="Large" style="z-index: 1; left: 422px; top: 601px; position: absolute" Text="Personal Details" Font-Bold="True"></asp:Label>
         </p>
-        <p>
+        <p style="height: 1188px">
             <asp:Label ID="lblPasswordError" runat="server" Font-Size="Large" style="z-index: 1; left: 56px; top: 430px; position: absolute" ForeColor="Red"></asp:Label>
+            <asp:Label ID="lblTwoFactor" runat="server" style="z-index: 1; left: 380px; top: 978px; position: absolute" Text="2FA Code:"></asp:Label>
+            <asp:TextBox ID="txtTwoFactorCode" runat="server" style="z-index: 1; left: 469px; top: 978px; position: absolute"></asp:TextBox>
+            <asp:Label ID="Label31" runat="server" style="z-index: 1; left: 106px; top: 905px; position: absolute" Text="2FA adds an extra piece of security: an 8 digit long code. Once enabled, you will be required to enter the code as you log in."></asp:Label>
+            <asp:Label ID="lblCodeLength" runat="server" ForeColor="Red" style="z-index: 1; left: 41px; top: 990px; position: absolute" Text="The 2FA Code must be exactly 8 digits long." Visible="False"></asp:Label>
+            <asp:Label ID="lblCodeDigits" runat="server" ForeColor="Red" style="z-index: 1; left: 41px; top: 957px; position: absolute" Text="The 2FA Code must only use digits." Visible="False"></asp:Label>
+            <asp:Label ID="lblTwoFactorDone" runat="server" Font-Size="Large" style="z-index: 1; left: 86px; top: 1027px; position: absolute" Text="2FA was updated!" ForeColor="#009933" Visible="False"></asp:Label>
         </p>
     </form>
 </body>

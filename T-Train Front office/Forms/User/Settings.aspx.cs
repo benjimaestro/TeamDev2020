@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Linq;
 
 namespace T_Train_Front_office.Forms.User
 {
@@ -51,6 +52,9 @@ namespace T_Train_Front_office.Forms.User
                         txtEmail.Text = ACustomer.Email;
                         txtFirstName.Text = ACustomer.FirstName;
                         txtLastName.Text = ACustomer.LastName;
+                        chkTwoFactor.Checked = ACustomer.TwoFactorEnabled;
+                        chkTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Enabled" : "Disabled";
+                        btnTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Disable 2FA" : "Enable 2FA";
                     }
                 }
             }
@@ -76,8 +80,46 @@ namespace T_Train_Front_office.Forms.User
 
         protected void Button6_Click(object sender, EventArgs e)
         {
-            //update 2fa
-            Response.Redirect("Settings.aspx");
+            //get the code from the textbox
+            string codeTwoFactor = txtTwoFactorCode.Text;
+            //validate the code
+            if(codeTwoFactor.Length == 8)
+            {
+                lblCodeLength.Visible = false;
+                if(codeTwoFactor.All(char.IsDigit))
+                {
+                    lblCodeDigits.Visible = false;
+                    //fetch the details of the customer with id given
+                    clsCustomer ACustomer = new clsCustomer();
+                    bool customerFound = ACustomer.FindCustomer(Convert.ToInt32(Session["customerId"]));
+                    ACustomer.TwoFactorCode = codeTwoFactor;
+                    //check the user exists
+                    if (!customerFound) Response.Redirect("Logout.aspx");
+                    //update the 2FA settings for the user
+                    ACustomer.ToggleTwoFactorAuthentication();
+                    //also update it within the class
+                    ACustomer.TwoFactorEnabled = !ACustomer.TwoFactorEnabled;
+                    //show a success message
+                    lblTwoFactorDone.Visible = true;
+                    //switch the button text and checkboxes
+                    chkTwoFactor.Checked = ACustomer.TwoFactorEnabled;
+                    chkTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Enabled" : "Disabled";
+                    btnTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Disable 2FA" : "Enable 2FA";
+                    txtTwoFactorCode.Text = "";
+                }
+                else
+                {
+                    //code must be made of only digits
+                    lblCodeDigits.Visible = true;
+                    lblTwoFactorDone.Visible = false;
+                }
+            }
+            else
+            {
+                //code must be 8 characters long
+                lblCodeLength.Visible = true;
+                lblTwoFactorDone.Visible = false;
+            }
         }
 
         protected void btnPassword_Click(object sender, EventArgs e)

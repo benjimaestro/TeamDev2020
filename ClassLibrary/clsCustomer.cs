@@ -13,6 +13,8 @@ namespace ClassLibrary
         string mDateOfBirth;
         string mAccountPassword;
         bool mIsStaff;
+        bool mTwoFactorEnabled;
+        string mTwoFactorCode;
 
         public string Address 
         { 
@@ -92,6 +94,30 @@ namespace ClassLibrary
             set
             {
                 mIsStaff = value;
+            }
+        }
+
+        public bool TwoFactorEnabled
+        {
+            get
+            {
+                return mTwoFactorEnabled;
+            }
+            set
+            {
+                mTwoFactorEnabled = value;
+            }
+        }
+
+        public string TwoFactorCode
+        {
+            get
+            {
+                return mTwoFactorCode;
+            }
+            set
+            {
+                mTwoFactorCode = value;
             }
         }
 
@@ -180,6 +206,21 @@ namespace ClassLibrary
             return errorMessage;
         }
 
+        public void ToggleTwoFactorAuthentication()
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@CustomerId", CustomerId);
+            //toggle means switch enabled to disabled and vice versa
+            DB.AddParameter("@toggle", !TwoFactorEnabled);
+            //if we disable 2FA, reset the code to an empty string
+            if(TwoFactorEnabled) DB.AddParameter("@code", "");
+            else DB.AddParameter("@code", TwoFactorCode);
+            //execute the procedure to update the user password
+            DB.Execute("sproc_tblCustomer_ToggleTwoFactorAuth");
+        }
+
         public void UpdatePassword(string newPassword)
         {
             //connect to the database
@@ -216,6 +257,7 @@ namespace ClassLibrary
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
+                mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
@@ -246,6 +288,7 @@ namespace ClassLibrary
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
+                mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }

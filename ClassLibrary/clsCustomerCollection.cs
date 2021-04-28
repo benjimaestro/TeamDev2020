@@ -112,7 +112,8 @@ namespace ClassLibrary
                     CustomerActive = Convert.ToBoolean(DB.DataTable.Rows[i]["AccountActive"]),
                     CustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[i]["AccountCreatedAt"]),
                     AccountPassword = Convert.ToString(DB.DataTable.Rows[i]["AccountPassword"]),
-                    IsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"])
+                    IsStaff = Convert.ToBoolean(DB.DataTable.Rows[i]["IsStaff"]),
+                    TwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[i]["TwoFactorEnabled"])
             };
                 //save a found connection to an array
                 customersFound.Add(FoundCustomer);
