@@ -10,7 +10,7 @@
 namespace LaptopLoanProjectt {
     
     
-    public partial class LaptopStaffDashBoard {
+    public partial class UserFines {
         
         /// <summary>
         /// form1 control.
@@ -22,13 +22,13 @@ namespace LaptopLoanProjectt {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblWelcomeL control.
+        /// lblFines control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWelcomeL;
+        protected global::System.Web.UI.WebControls.Label lblFines;
         
         /// <summary>
         /// Label1 control.
@@ -40,48 +40,30 @@ namespace LaptopLoanProjectt {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// btnMainPage control.
+        /// ListBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMainPage;
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// btnSearchStudents control.
+        /// btnPay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchStudents;
+        protected global::System.Web.UI.WebControls.Button btnPay;
         
         /// <summary>
-        /// btnViewBookings control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnViewBookings;
-        
-        /// <summary>
-        /// btnFines control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFines;
-        
-        /// <summary>
-        /// btnClose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.Button btnBack;
     }
 }

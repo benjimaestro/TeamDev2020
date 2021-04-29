@@ -1,4 +1,6 @@
-﻿body { background-color:aqua
+﻿body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
 .login{

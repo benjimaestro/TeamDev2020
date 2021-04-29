@@ -30,50 +30,9 @@
                 &nbsp;</p>
             <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 10px; top: 9px; position: absolute; height: 24px; width: 139px;" Text="Laptop Loan System" BorderColor="#9933FF" BorderStyle="Double" ForeColor="#3333CC"></asp:Label>
             <asp:Label ID="lblUserRegistration" runat="server" style="z-index: 1; left: 452px; top: 55px; position: absolute" Text="User Registration Form"></asp:Label>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>
-                        <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 479px; top: 128px; position: absolute"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 479px; top: 124px; position: absolute; margin-top: 38px"></asp:TextBox>
-                    </td>
-                    <td class="auto-style4"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
             <asp:Label ID="lblLaptopUserFirstName" runat="server" style="z-index: 1; left: 390px; top: 125px; position: absolute" Text="First Name:"></asp:Label>
             <asp:Label ID="lblLaptopUserLastName" runat="server" style="z-index: 1; left: 395px; top: 164px; position: absolute" Text="Last Name:"></asp:Label>
-            <asp:Label ID="lblLaptopUserEmail" runat="server" style="z-index: 1; left: 373px; position: absolute; bottom: 522px; top: 204px" Text="Email Address:"></asp:Label>
+            <asp:Label ID="lblLaptopUserEmail" runat="server" style="z-index: 1; left: 382px; position: absolute; bottom: 449px; top: 207px" Text="Email Address:"></asp:Label>
             <asp:Label ID="lblLaptopUserAddress" runat="server" style="z-index: 1; left: 418px; top: 246px; position: absolute" Text="Address:"></asp:Label>
             <asp:Label ID="lblLaptopUserPassword" runat="server" style="z-index: 1; left: 398px; top: 285px; position: absolute" Text="Password:"></asp:Label>
             <asp:Label ID="lblconfirmpassword" runat="server" style="z-index: 1; left: 352px; top: 325px; position: absolute" Text="Confirm Password:"></asp:Label>
@@ -87,6 +46,8 @@
         <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 458px; top: 424px; position: absolute; margin-top: 0px" Text="Register" />
         <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" style="z-index: 1; left: 550px; top: 424px; position: absolute" Text="Cancel"  />
         <asp:Label ID="lblFill" runat="server" ForeColor="Lime" style="z-index: 1; left: 419px; top: 76px; position: absolute" Text="Hello! Please fill and register now"></asp:Label>
+        <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 468px; top: 125px; position: absolute; margin-top: 0px"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 470px; top: 162px; position: absolute"></asp:TextBox>
     </form>
 </body>
 </html>

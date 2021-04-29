@@ -157,5 +157,10 @@ namespace Timetable
         {
 
         }
+
+        protected void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

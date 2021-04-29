@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace LaptopLoanProjectt
 {
-    public partial class LaptopUserDashBoard : System.Web.UI.Page
+    public partial class DeleteStudent : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnViewMyBookings_Click()
         {
 
         }

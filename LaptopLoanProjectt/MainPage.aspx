@@ -26,7 +26,7 @@
         <p>
             &nbsp;</p>
         <p>
-        <asp:Label ID="Label16" runat="server" style="z-index: 1; left: 854px; top: 485px; position: absolute; height: 105px; width: 196px" Text="Laptop Loan System Equity Rd. 22, Leicester, LE3 OSB, Leicestershire, Great Britain, Email: user@laptoploan.com, Mobile: 0783574951"></asp:Label>
+        <asp:Label ID="Label16" runat="server" style="z-index: 1; left: 853px; top: 489px; position: absolute; height: 105px; width: 196px" Text="Laptop Loan System Equity Rd. 22, Leicester, LE3 OSB, Leicestershire, Great Britain, Email: user@laptoploan.com, Mobile: 0783574951"></asp:Label>
         </p>
         <p>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 354px; top: 706px; position: absolute" Text="All rights reserved (at) LaptopLoan 2021 ©"></asp:Label>
