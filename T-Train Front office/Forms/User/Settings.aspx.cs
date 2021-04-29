@@ -55,6 +55,8 @@ namespace T_Train_Front_office.Forms.User
                         chkTwoFactor.Checked = ACustomer.TwoFactorEnabled;
                         chkTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Enabled" : "Disabled";
                         btnTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Disable 2FA" : "Enable 2FA";
+                        btnTwoFactor.Enabled = !isStaff; //staff can't disable their 2FA
+                        txtTwoFactorCode.Enabled = !isStaff; //staff can't disable their 2FA
                         lblDeletionStatus.Text = ACustomer.DeletionStarted ? $"Deletion status: Pending ({ACustomer.DeletionStartDate})" : "No pending deletion.";
                         btnDeleteAccount.Text = ACustomer.DeletionStarted ? "Stop Deletion" : "Delete Account";
                     }
