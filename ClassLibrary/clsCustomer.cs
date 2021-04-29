@@ -241,7 +241,7 @@ namespace ClassLibrary
             //toggle means switch enabled to disabled and vice versa
             DB.AddParameter("@toggle", !TwoFactorEnabled);
             //if we disable 2FA, reset the code to an empty string
-            if(TwoFactorEnabled) DB.AddParameter("@code", null);
+            if(TwoFactorEnabled) DB.AddParameter("@code", "00000000");
             else DB.AddParameter("@code", TwoFactorCode);
             //execute the procedure to update the user password
             DB.Execute("sproc_tblCustomer_ToggleTwoFactorAuth");
