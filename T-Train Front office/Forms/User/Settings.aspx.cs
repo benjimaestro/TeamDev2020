@@ -55,6 +55,8 @@ namespace T_Train_Front_office.Forms.User
                         chkTwoFactor.Checked = ACustomer.TwoFactorEnabled;
                         chkTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Enabled" : "Disabled";
                         btnTwoFactor.Text = ACustomer.TwoFactorEnabled ? "Disable 2FA" : "Enable 2FA";
+                        lblDeletionStatus.Text = ACustomer.DeletionStarted ? $"Deletion status: Pending ({ACustomer.DeletionStartDate})" : "No pending deletion.";
+                        btnDeleteAccount.Text = ACustomer.DeletionStarted ? "Stop Deletion" : "Delete Account";
                     }
                 }
             }
@@ -209,6 +211,46 @@ namespace T_Train_Front_office.Forms.User
         {
             //redirect to logout
             Response.Redirect("Logout.aspx");
+        }
+
+        protected void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            //get the form inputs
+            string currentPassword = txtDelete.Text;
+    
+            //get the current user password
+            int customerId = Convert.ToInt32(Session["customerId"]);
+            clsCustomer ACustomer = new clsCustomer();
+            bool customerFound = ACustomer.FindCustomer(customerId);
+
+            if (ACustomer.AccountPassword == ACustomer.GetHashPassword(currentPassword))
+            {
+                DateTime deletionStartDate = DateTime.Now;
+                lblDeletionError.Visible = false;
+                //update it within the class
+                ACustomer.DeletionStartDate = deletionStartDate;
+                //invoke the method
+                ACustomer.ToggleDeletion();
+                //update it within the class
+                ACustomer.DeletionStarted = !ACustomer.DeletionStarted;
+                //show a success message
+                lblDeletionSuccess.Visible = true;
+                lblDeletionSuccess.Text = !ACustomer.DeletionStarted ? "Account deletion stopped!" : "Account deletion started!";
+                //switch the button text and checkboxes
+                lblDeletionStatus.Text = ACustomer.DeletionStarted ? $"Deletion status: Pending ({deletionStartDate})" : "No pending deletion.";
+                btnDeleteAccount.Text = ACustomer.DeletionStarted ? "Stop Deletion" : "Delete Account";
+                txtDelete.Text = "";
+            }
+            else if (customerFound)
+            {
+                lblDeletionError.Text = "Entered password for your account is incorrect!";
+                lblDeletionSuccess.Visible = false;
+            }
+            else
+            {
+                //customer not found
+                Response.Redirect("Logout.aspx");
+            }
         }
     }
 }

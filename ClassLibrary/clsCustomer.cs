@@ -15,6 +15,8 @@ namespace ClassLibrary
         bool mIsStaff;
         bool mTwoFactorEnabled;
         string mTwoFactorCode;
+        bool mDeletionStarted;
+        DateTime mDeletionStartDate;
 
         public string Address 
         { 
@@ -121,6 +123,30 @@ namespace ClassLibrary
             }
         }
 
+        public bool DeletionStarted
+        {
+            get
+            {
+                return mDeletionStarted;
+            }
+            set
+            {
+                mDeletionStarted = value;
+            }
+        }
+
+        public DateTime DeletionStartDate
+        {
+            get
+            {
+                return mDeletionStartDate;
+            }
+            set
+            {
+                mDeletionStartDate = value;
+            }
+        }
+
         public string ValidateCustomer(string customerAddress, string customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
         {
             string errorMessage = "";
@@ -215,7 +241,7 @@ namespace ClassLibrary
             //toggle means switch enabled to disabled and vice versa
             DB.AddParameter("@toggle", !TwoFactorEnabled);
             //if we disable 2FA, reset the code to an empty string
-            if(TwoFactorEnabled) DB.AddParameter("@code", "");
+            if(TwoFactorEnabled) DB.AddParameter("@code", null);
             else DB.AddParameter("@code", TwoFactorCode);
             //execute the procedure to update the user password
             DB.Execute("sproc_tblCustomer_ToggleTwoFactorAuth");
@@ -259,10 +285,27 @@ namespace ClassLibrary
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
                 mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
                 mTwoFactorCode = Convert.ToString(DB.DataTable.Rows[0]["TwoFactorCode"]);
+                mDeletionStarted = Convert.ToBoolean(DB.DataTable.Rows[0]["DeletionStarted"]);
+                mDeletionStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["DeletionStartDate"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
             else return false; //no row found means no customer with this id exists
+        }
+
+        public void ToggleDeletion()
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@CustomerId", CustomerId);
+            //toggle means switch enabled to disabled and vice versa
+            DB.AddParameter("@toggle", !DeletionStarted);
+            //if we disable deletion, reset the date to a null
+            if (DeletionStarted) DB.AddParameter("@date", DateTime.Now);
+            else DB.AddParameter("@date", DeletionStartDate);
+            //execute the procedure to update the user password
+            DB.Execute("sproc_tblCustomer_ToggleDeletion");
         }
 
         public bool FindCustomerByEmail(string testEmail)
@@ -291,6 +334,8 @@ namespace ClassLibrary
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
                 mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
                 mTwoFactorCode = Convert.ToString(DB.DataTable.Rows[0]["TwoFactorCode"]);
+                mDeletionStarted = Convert.ToBoolean(DB.DataTable.Rows[0]["DeletionStarted"]);
+                mDeletionStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["DeletionStartDate"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
