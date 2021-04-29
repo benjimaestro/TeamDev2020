@@ -86,12 +86,25 @@ namespace T_Train_Front_office.Forms.User
                         //check if login succesful
                         if(loginDone)
                         {
-                            //user logged in
-                            Session["customerId"] = ACustomer.CustomerId;
-                            Session["customerIsStaff"] = ACustomer.IsStaff;
-                            Session["customerLoggedIn"] = true;
-                            //redirect user to homepage
-                            Response.Redirect("../Default.aspx");
+                            //check if account is pending deletion
+                            if(ACustomer.DeletionStarted && ACustomer.DeletionStartDate.AddDays(14) < DateTime.Now)
+                            {
+                                //delete account
+                                clsCustomerCollection CustomerManager = new clsCustomerCollection();
+                                CustomerManager.ThisCustomer = ACustomer;
+                                CustomerManager.CloseAccount();
+                                lblAccCreated.Text = "Your account was succesfully deleted!";
+                                lblAccCreated.Visible = true;
+                            }
+                            else
+                            {
+                                //user logged in
+                                Session["customerId"] = ACustomer.CustomerId;
+                                Session["customerIsStaff"] = ACustomer.IsStaff;
+                                Session["customerLoggedIn"] = true;
+                                //redirect user to homepage
+                                Response.Redirect("../Default.aspx");
+                            }
                         }
                     }
                     else
