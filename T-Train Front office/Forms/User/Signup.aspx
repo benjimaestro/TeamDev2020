@@ -39,13 +39,14 @@
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 708px; top: 180px; position: absolute" Text="Address:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 527px; top: 180px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 527px; top: 220px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 708px; top: 220px; position: absolute; height: 52px;"></asp:TextBox>
+        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 708px; top: 220px; position: absolute; height: 53px;"></asp:TextBox>
         <asp:TextBox ID="txtDateOfBirth" runat="server" style="z-index: 1; left: 527px; top: 260px; position: absolute"></asp:TextBox>
         <p>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 82px; top: 260px; position: absolute" Text="Repeat Password:"></asp:Label>
         <asp:Label ID="lblPasswordMitmatch" runat="server" style="z-index: 1; left: 82px; top: 308px; position: absolute" Text="Given passwords are not identical!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
         <asp:Label ID="lblEmailExists" runat="server" style="z-index: 1; left: 32px; top: 113px; position: absolute; height: 60px; width: 340px; bottom: 324px;" Text="There already exists an account registered with this email. Press the Forgot Password button to try and recover your account!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
         <asp:Button ID="btnResetPassword" runat="server" style="z-index: 1; left: 546px; top: 409px; position: absolute" Text="Forgot Password?" OnClick="btnResetPassword_Click" />
+        <asp:Label ID="lblPasswordInsecure" runat="server" style="z-index: 1; left: 3px; top: 330px; position: absolute" Text="Password must contain at least 1 number and 1 special character." Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
         </p>
     </form>
 </body>

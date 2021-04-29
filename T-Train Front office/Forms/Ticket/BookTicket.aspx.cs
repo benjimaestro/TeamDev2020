@@ -128,6 +128,10 @@ namespace T_Train_Front_office.Forms.Ticket
             clsTicketCollection TicketManager = new clsTicketCollection();
             TicketManager.MyTickets = TicketManager.GetUserTickets(customerId);
 
+            //fetch customer data to make sure they are not deleting their account
+            clsCustomer ACustomer = new clsCustomer();
+            bool customerFound = ACustomer.FindCustomer(customerId);
+
             //make sure the customer has not purchased this ticket before
             bool ticketFound = false;
             foreach(clsTicket Ticket in TicketManager.MyTickets)
@@ -138,7 +142,7 @@ namespace T_Train_Front_office.Forms.Ticket
                 }
             }
 
-            if(connectionFound && ticketTypeFound && !ticketFound)
+            if(connectionFound && ticketTypeFound && customerFound && !ticketFound && !ACustomer.DeletionStarted)
             {
                 //check in real-time whether the last ticket wasn't sold out
                 if(AConnection.ConnectionTicketLimit > 0)
@@ -185,7 +189,7 @@ namespace T_Train_Front_office.Forms.Ticket
             }
             else
             {
-                //something was wrong with the ticket
+                //something was wrong with the ticket or customer is deleting account
                 Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=failure");
             }
         }

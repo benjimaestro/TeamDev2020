@@ -42,15 +42,6 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Button btnHomepage;
 
         /// <summary>
-        /// btnLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
-
-        /// <summary>
         /// lblHeaderWelcome control.
         /// </summary>
         /// <remarks>
@@ -105,13 +96,13 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Button btnResetPassword;
 
         /// <summary>
-        /// btnSignup2 control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignup2;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
         /// Label20 control.
@@ -130,5 +121,14 @@ namespace T_Train_Front_office.Forms.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label21;
+
+        /// <summary>
+        /// btnRegister control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegister;
     }
 }

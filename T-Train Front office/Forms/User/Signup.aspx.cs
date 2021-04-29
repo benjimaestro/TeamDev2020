@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Linq;
 
 namespace T_Train_Front_office.Forms.User
 {
@@ -20,8 +21,9 @@ namespace T_Train_Front_office.Forms.User
         {
             //Class to store the customer data
             clsCustomer NewCustomer = new clsCustomer();
+            string passwordText = txtPassword.Text;
             
-            if(txtPassword.Text != txtRepeatPassword.Text)
+            if(passwordText != txtRepeatPassword.Text)
             {
                 lblPasswordMitmatch.Visible = true;
             }
@@ -30,7 +32,15 @@ namespace T_Train_Front_office.Forms.User
                 lblPasswordMitmatch.Visible = false;
             }
 
-            if(txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtDateOfBirth.Text == ""
+            //check if password meets the security requirements
+            bool passwordSecure = NewCustomer.ValidatePassword(passwordText);
+            if (!passwordSecure)
+            {
+                lblPasswordInsecure.Visible = true;
+            }
+            else lblPasswordInsecure.Visible = false;
+
+            if (txtFirstName.Text == "" || txtLastName.Text == "" || txtAddress.Text == "" || txtDateOfBirth.Text == "" || !passwordSecure
                 || txtEmail.Text == "" || txtPassword.Text == "" || txtRepeatPassword.Text == "" || txtPassword.Text != txtRepeatPassword.Text)
             {
                 lblMissingData.Visible = true;

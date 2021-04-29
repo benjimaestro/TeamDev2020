@@ -348,13 +348,13 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Label Label29;
 
         /// <summary>
-        /// TextBox9 control.
+        /// txtDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox txtDelete;
 
         /// <summary>
         /// btnLogout control.
@@ -436,5 +436,32 @@ namespace T_Train_Front_office.Forms.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTwoFactorDone;
+
+        /// <summary>
+        /// lblDeletionError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletionError;
+
+        /// <summary>
+        /// lblDeletionSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletionSuccess;
+
+        /// <summary>
+        /// lblDeletionStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletionStatus;
     }
 }

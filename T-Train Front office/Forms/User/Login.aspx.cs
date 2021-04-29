@@ -51,14 +51,14 @@ namespace T_Train_Front_office.Forms.User
                 codeTwoFactor = txtTwoFactor.Text;
             }
 
-            if(email != "" && password != "")
+            if(email != "" && (password != "" || txtTwoFactor.Visible == true))
             {
                 clsCustomer ACustomer = new clsCustomer();
                 bool customerFound = ACustomer.FindCustomerByEmail(email);
 
                 if(customerFound)
                 {
-                    if(ACustomer.AccountPassword == ACustomer.GetHashPassword(password))
+                    if(ACustomer.AccountPassword == ACustomer.GetHashPassword(password) || txtTwoFactor.Visible == true)
                     {
                         if(ACustomer.TwoFactorEnabled)
                         {
@@ -72,6 +72,7 @@ namespace T_Train_Front_office.Forms.User
                                 txtTwoFactor.Visible = true;
                                 txtEmail.Enabled = false;
                                 txtPassword.Enabled = false;
+                                txtPassword.Text = password;
                             }
                             else
                             {
@@ -86,12 +87,31 @@ namespace T_Train_Front_office.Forms.User
                         //check if login succesful
                         if(loginDone)
                         {
-                            //user logged in
-                            Session["customerId"] = ACustomer.CustomerId;
-                            Session["customerIsStaff"] = ACustomer.IsStaff;
-                            Session["customerLoggedIn"] = true;
-                            //redirect user to homepage
-                            Response.Redirect("../Default.aspx");
+                            //check if account is pending deletion
+                            if(ACustomer.DeletionStarted && ACustomer.DeletionStartDate.AddDays(14) < DateTime.Now)
+                            {
+                                //delete account
+                                clsCustomerCollection CustomerManager = new clsCustomerCollection();
+                                CustomerManager.ThisCustomer = ACustomer;
+                                CustomerManager.CloseAccount();
+                                //set inputs
+                                lblAccCreated.Text = "Your account was succesfully deleted!<br>Thank you for using T-Train in the past.";
+                                lblAccCreated.Visible = true;
+                                txtEmail.Text = "";
+                                txtPassword.Text = "";
+                                txtTwoFactor.Text = "";
+                                lblError.Visible = false;
+                                txtTwoFactor.Enabled = false;
+                            }
+                            else
+                            {
+                                //user logged in
+                                Session["customerId"] = ACustomer.CustomerId;
+                                Session["customerIsStaff"] = ACustomer.IsStaff;
+                                Session["customerLoggedIn"] = true;
+                                //redirect user to homepage
+                                Response.Redirect("../Default.aspx");
+                            }
                         }
                     }
                     else
