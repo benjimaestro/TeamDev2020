@@ -13,7 +13,6 @@
         </p>
         <p>
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
-            <asp:Button ID="btnLogin" runat="server" style="z-index: 1; left: 542px; top: 351px; position: absolute; height: 27px; width: 53px;" Text="Login" OnClick="btnLogin_Click" />
         </p>
         <div>
         </div>
@@ -26,12 +25,13 @@
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 395px; top: 226px; position: absolute; height: 19px; right: 550px;" Text="Email:"></asp:Label>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 469px; top: 222px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnResetPassword" runat="server" style="z-index: 1; left: 416px; top: 272px; position: absolute; height: 26px;" Text="Reset Password" OnClick="btnResetPassword_Click" />
+            <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 547px; top: 351px; position: absolute" Text="Login" />
         </p>
         <p>
-            <asp:Button ID="btnSignup2" runat="server" style="z-index: 1; left: 523px; top: 396px; position: absolute; height: 25px; width: 73px; margin-top: 0px;" Text="Register" OnClick="btnSignup2_Click" />
-        <asp:Label ID="Label20" runat="server" style="z-index: 1; left: 365px; top: 396px; position: absolute; right: 496px;" Text="Not yet registered?"></asp:Label>
-        <asp:Label ID="Label21" runat="server" style="z-index: 1; left: 365px; top: 351px; position: absolute; right: 454px;" Text="Clicked here on accident?"></asp:Label>
+        <asp:Label ID="Label20" runat="server" style="z-index: 1; left: 365px; top: 396px; position: absolute; right: 444px;" Text="Not yet registered?"></asp:Label>
+        <asp:Label ID="Label21" runat="server" style="z-index: 1; left: 365px; top: 351px; position: absolute; right: 407px;" Text="Clicked here on accident?"></asp:Label>
         </p>
+        <asp:Button ID="btnRegister" runat="server" style="z-index: 1; left: 522px; top: 396px; position: absolute" Text="Register" OnClick="btnSignup2_Click" />
     </form>
 </body>
 </html>

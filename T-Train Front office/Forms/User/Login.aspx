@@ -17,8 +17,7 @@
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />
         </p>
         <p>
-            <asp:Button ID="btnSignup2" runat="server" style="z-index: 1; left: 497px; top: 449px; position: absolute" Text="Register" OnClick="btnSignup2_Click" />
-        </p>
+            &nbsp;</p>
         <p>
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 353px; top: 68px; position: absolute" Text="Welcome to T-Train"></asp:Label>
         </p>
@@ -32,10 +31,11 @@
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 324px; top: 192px; position: absolute; right: 487px;" Font-Bold="True" ForeColor="Red"></asp:Label>
         <p>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 392px; top: 118px; position: absolute" Text="Login to your account now"></asp:Label>
-        <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 363px; top: 449px; position: absolute; right: 501px;" Text="Not yet registered?"></asp:Label>
+        <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 363px; top: 449px; position: absolute; right: 453px;" Text="Not yet registered?"></asp:Label>
         </p>
         <asp:Label ID="lblTwoFactor" runat="server" style="z-index: 1; left: 381px; top: 306px; position: absolute" Text="2FA Code:" Visible="False"></asp:Label>
         <asp:TextBox ID="txtTwoFactor" runat="server" style="z-index: 1; left: 468px; top: 306px; position: absolute" Visible="False"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 507px; top: 449px; position: absolute" Text="Register" OnClick="btnSignup2_Click" />
     </form>
 </body>
 </html>
