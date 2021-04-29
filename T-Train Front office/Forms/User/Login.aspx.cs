@@ -93,8 +93,14 @@ namespace T_Train_Front_office.Forms.User
                                 clsCustomerCollection CustomerManager = new clsCustomerCollection();
                                 CustomerManager.ThisCustomer = ACustomer;
                                 CustomerManager.CloseAccount();
-                                lblAccCreated.Text = "Your account was succesfully deleted!";
+                                //set inputs
+                                lblAccCreated.Text = "Your account was succesfully deleted!<br>Thank you for using T-Train in the past.";
                                 lblAccCreated.Visible = true;
+                                txtEmail.Text = "";
+                                txtPassword.Text = "";
+                                txtTwoFactor.Text = "";
+                                lblError.Visible = false;
+                                txtTwoFactor.Enabled = false;
                             }
                             else
                             {
