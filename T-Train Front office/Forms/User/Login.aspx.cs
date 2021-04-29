@@ -51,14 +51,14 @@ namespace T_Train_Front_office.Forms.User
                 codeTwoFactor = txtTwoFactor.Text;
             }
 
-            if(email != "" && password != "")
+            if(email != "" && (password != "" || txtTwoFactor.Visible == true))
             {
                 clsCustomer ACustomer = new clsCustomer();
                 bool customerFound = ACustomer.FindCustomerByEmail(email);
 
                 if(customerFound)
                 {
-                    if(ACustomer.AccountPassword == ACustomer.GetHashPassword(password))
+                    if(ACustomer.AccountPassword == ACustomer.GetHashPassword(password) || txtTwoFactor.Visible == true)
                     {
                         if(ACustomer.TwoFactorEnabled)
                         {
@@ -72,6 +72,7 @@ namespace T_Train_Front_office.Forms.User
                                 txtTwoFactor.Visible = true;
                                 txtEmail.Enabled = false;
                                 txtPassword.Enabled = false;
+                                txtPassword.Text = password;
                             }
                             else
                             {

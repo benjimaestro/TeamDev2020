@@ -33,22 +33,7 @@ namespace T_Train_Front_office.Forms.User
             }
 
             //check if password meets the security requirements
-            static bool IsLetter(char c)
-            {
-                return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
-            }
-
-            static bool IsDigit(char c)
-            {
-                return c >= '0' && c <= '9';
-            }
-
-            static bool IsSymbol(char c)
-            {
-                return c > 32 && c < 127 && !IsDigit(c) && !IsLetter(c);
-            }
-
-            bool passwordSecure = passwordText.Any(c => IsDigit(c)) && passwordText.Any(c => IsSymbol(c));
+            bool passwordSecure = NewCustomer.ValidatePassword(passwordText);
             if (!passwordSecure)
             {
                 lblPasswordInsecure.Visible = true;

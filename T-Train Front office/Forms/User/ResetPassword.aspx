@@ -20,7 +20,7 @@
         <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 275px; top: 345px; position: absolute" Text="Repeat New Password:"></asp:Label>
         <asp:TextBox ID="txtNewPassRep" runat="server" style="z-index: 1; left: 456px; top: 345px; position: absolute" TextMode="Password"></asp:TextBox>
             <asp:Label ID="lblPasswordError" runat="server" Font-Size="Large" style="z-index: 1; left: 49px; top: 134px; position: absolute" ForeColor="Red"></asp:Label>
-        <asp:Button ID="btnPassword" runat="server" style="z-index: 1; left: 388px; top: 399px; position: absolute" Text="Update Password" OnClick="btnPassword_Click" />
+        <asp:Button ID="btnPassword" runat="server" style="z-index: 1; left: 388px; top: 399px; position: absolute" Text="Reset Password" OnClick="btnPassword_Click" />
         <asp:Label ID="Label25" runat="server" style="z-index: 1; left: 270px; top: 210px; position: absolute; right: 320px; height: 59px;" Text="You will have received a special code to your email&lt;br&gt;address. Type that code into the box above to&lt;br&gt;confirm the account belongs to you." Font-Bold="True"></asp:Label>
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 347px; top: 450px; position: absolute; right: 362px;" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         <asp:Button ID="btnHomepage" runat="server" style="z-index: 1; left: 32px; top: 29px; position: absolute; right: 834px;" Text="Homepage" OnClick="btnHomepage_Click" />

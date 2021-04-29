@@ -39,7 +39,7 @@
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 708px; top: 180px; position: absolute" Text="Address:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 527px; top: 180px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 527px; top: 220px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 708px; top: 220px; position: absolute; height: 52px;"></asp:TextBox>
+        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 708px; top: 220px; position: absolute; height: 53px;"></asp:TextBox>
         <asp:TextBox ID="txtDateOfBirth" runat="server" style="z-index: 1; left: 527px; top: 260px; position: absolute"></asp:TextBox>
         <p>
         <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 82px; top: 260px; position: absolute" Text="Repeat Password:"></asp:Label>

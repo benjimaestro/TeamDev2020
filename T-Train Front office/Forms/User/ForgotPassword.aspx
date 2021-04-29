@@ -18,12 +18,12 @@
         </div>
         <p>
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 353px; top: 68px; position: absolute" Text="Welcome to T-Train"></asp:Label>
-        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 379px; top: 113px; position: absolute" Text="Reset the password to your account"></asp:Label>
+        <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 371px; top: 113px; position: absolute" Text="Reset the password to your account"></asp:Label>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 365px; top: 180px; position: absolute; right: 384px;" Text="Please enter a valid email address!" Font-Bold="True" ForeColor="Red" Visible="False"></asp:Label>
         </p>
         <p>
-        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 395px; top: 226px; position: absolute; height: 19px; right: 550px;" Text="Email:"></asp:Label>
-        <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 469px; top: 222px; position: absolute"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 375px; top: 226px; position: absolute; height: 19px; right: 550px;" Text="Email:"></asp:Label>
+        <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 449px; top: 222px; position: absolute"></asp:TextBox>
         <asp:Button ID="btnResetPassword" runat="server" style="z-index: 1; left: 416px; top: 272px; position: absolute; height: 26px;" Text="Reset Password" OnClick="btnResetPassword_Click" />
             <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" style="z-index: 1; left: 547px; top: 351px; position: absolute" Text="Login" />
         </p>

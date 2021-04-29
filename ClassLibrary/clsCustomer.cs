@@ -341,5 +341,26 @@ namespace ClassLibrary
             }
             else return false; //no row found means no customer with this email exists
         }
+
+        static bool IsLetter(char c)
+        {
+            return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+        }
+
+        static bool IsDigit(char c)
+        {
+            return c >= '0' && c <= '9';
+        }
+
+        static bool IsSymbol(char c)
+        {
+            return c > 32 && c < 127 && !IsDigit(c) && !IsLetter(c);
+        }
+        public bool ValidatePassword(string password)
+        {
+            //a valid password is at least 8 characters long and contains both:
+            //a special character, a digit
+            return password.Any(c => IsDigit(c)) && password.Any(c => IsSymbol(c)) && password.Length > 7;
+        }
     }
 }

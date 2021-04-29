@@ -53,7 +53,7 @@
             <asp:Label ID="Label30" runat="server" Font-Size="Large" style="z-index: 1; left: 422px; top: 601px; position: absolute" Text="Personal Details" Font-Bold="True"></asp:Label>
         </p>
         <p>
-            <asp:Label ID="lblPasswordError" runat="server" Font-Size="Large" style="z-index: 1; left: 56px; top: 430px; position: absolute" ForeColor="Red"></asp:Label>
+            <asp:Label ID="lblPasswordError" runat="server" Font-Size="Large" style="z-index: 1; left: 700px; top: 380px; position: absolute" ForeColor="Red"></asp:Label>
             <asp:Label ID="lblTwoFactor" runat="server" style="z-index: 1; left: 380px; top: 978px; position: absolute" Text="2FA Code:"></asp:Label>
             <asp:TextBox ID="txtTwoFactorCode" runat="server" style="z-index: 1; left: 469px; top: 978px; position: absolute" TextMode="Password"></asp:TextBox>
             <asp:Label ID="Label31" runat="server" style="z-index: 1; left: 106px; top: 905px; position: absolute" Text="2FA adds an extra piece of security: an 8 digit long code. Once enabled, you will be required to enter the code as you login."></asp:Label>
