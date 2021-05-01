@@ -134,7 +134,6 @@ namespace ClassLibrary
             }
 
             //Validation for payment end date
-            
             //null value is a default value
             if(paymentEndDate != null)
             {

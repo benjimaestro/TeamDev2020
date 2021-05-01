@@ -164,6 +164,10 @@ namespace ClassLibrary
             {
                 errorMessage += "First name must not contain any numbers!" + "<br />";
             }
+            else if (customerFirstName.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }
 
             //Validation for last name
             if (customerLastName.Length == 0)
@@ -177,6 +181,10 @@ namespace ClassLibrary
             else if (customerLastName.Any(char.IsDigit))
             {
                 errorMessage += "Last name must not contain any numbers!" + "<br />";
+            }
+            else if (customerLastName.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
             }
 
             //Validation for date of birth
@@ -210,6 +218,10 @@ namespace ClassLibrary
             {
                 errorMessage += "Address must be 11 characters or longer!" + "<br />";
             }
+            else if (customerAddress.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }
 
             //Validation for EMail
             if (customerEMail.Length == 0)
@@ -227,6 +239,10 @@ namespace ClassLibrary
             else if (!customerEMail.Any(c => c == '@')) //Check if @ is present in string
             {
                 errorMessage += "You must enter a valid E-Mail address!" + "<br />";
+            }
+            else if (customerEMail.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
             }
 
             return errorMessage;
