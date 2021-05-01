@@ -61,16 +61,6 @@ namespace TTrainPayment
         }
 
         [TestMethod]
-        public void TicketIdExists()
-        {
-            //Tests whether the "TicketId" property can be set
-            clsPayment APayment = new clsPayment();
-            int testTicketId = 15;
-            APayment.TicketId = testTicketId;
-            Assert.AreEqual(APayment.TicketId, testTicketId);
-        }
-
-        [TestMethod]
         public void PaymentValuePropertyExists()
         {
             //Tests whether the "PaymentValue" property can be set

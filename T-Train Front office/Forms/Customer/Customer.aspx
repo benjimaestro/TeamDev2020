@@ -19,7 +19,7 @@
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 403px; top: 208px; position: absolute" Text="Address:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 215px; top: 208px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 215px; top: 251px; position: absolute; right: 660px;"></asp:TextBox>
-        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 528px; top: 208px; position: absolute; height: 64px; width: 172px;"></asp:TextBox>
+        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 528px; top: 208px; position: absolute; height: 64px; width: 172px;" TextMode="MultiLine"></asp:TextBox>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 215px; top: 162px; position: absolute"></asp:TextBox>
             <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 403px; top: 163px; position: absolute" Text="Date of Birth:"></asp:Label>
         <asp:TextBox ID="txtDOB" runat="server" style="z-index: 1; left: 528px; top: 163px; position: absolute"></asp:TextBox>
