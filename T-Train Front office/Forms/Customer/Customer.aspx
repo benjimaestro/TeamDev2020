@@ -15,10 +15,10 @@
         <asp:Label ID="Label17" runat="server" style="z-index: 1; left: 380px; top: 839px; position: absolute" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         </div>
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 321px; top: 29px; position: absolute" Text="T-Train"></asp:Label>
-        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 124px; top: 251px; position: absolute" Text="Last Name:"></asp:Label>
+        <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 124px; top: 251px; position: absolute; right: 747px;" Text="Last Name:"></asp:Label>
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 403px; top: 208px; position: absolute" Text="Address:"></asp:Label>
         <asp:TextBox ID="txtFirstName" runat="server" style="z-index: 1; left: 215px; top: 208px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 215px; top: 255px; position: absolute; right: 660px;"></asp:TextBox>
+        <asp:TextBox ID="txtLastName" runat="server" style="z-index: 1; left: 215px; top: 251px; position: absolute; right: 660px;"></asp:TextBox>
         <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 528px; top: 208px; position: absolute; height: 64px; width: 172px;"></asp:TextBox>
         <asp:TextBox ID="txtEmail" runat="server" style="z-index: 1; left: 215px; top: 162px; position: absolute"></asp:TextBox>
             <asp:Label ID="Label9" runat="server" style="z-index: 1; left: 403px; top: 163px; position: absolute" Text="Date of Birth:"></asp:Label>
@@ -32,7 +32,7 @@
         <asp:Button ID="btnLogout" runat="server" style="z-index: 1; left: 857px; top: 29px; position: absolute" Text="Logout" OnClick="btnLogout_Click" />
         </p>
         <p>
-        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 124px; top: 163px; position: absolute; height: 19px" Text="Email:"></asp:Label>
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 124px; top: 162px; position: absolute; height: 19px" Text="Email:"></asp:Label>
         <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 124px; top: 208px; position: absolute" Text="First Name:"></asp:Label>
         </p>
         <p>

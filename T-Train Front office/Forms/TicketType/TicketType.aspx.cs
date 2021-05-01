@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Web;
 
 namespace T_Train_Front_office.Forms.Ticket_Type
 {
@@ -64,7 +65,7 @@ namespace T_Train_Front_office.Forms.Ticket_Type
 
                                 //set value of the read-only fields to the details of the connection
                                 lblId.Text = Convert.ToString(ATicketType.TicketTypeId);
-                                lblName.Text = ATicketType.TicketTypeName;
+                                lblName.Text = HttpUtility.HtmlAttributeEncode(ATicketType.TicketTypeName);
                                 lblPrice.Text = Convert.ToString(ATicketType.TicketTypePrice);
                                 lblRefundable.Text = ATicketType.TicketTypeRefundable ? "Refundable" : "Non-Refundable";
                                 lblActive.Text = ATicketType.TicketTypeActive ? "Public" : "Private";

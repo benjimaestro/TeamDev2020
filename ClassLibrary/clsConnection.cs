@@ -149,6 +149,10 @@ namespace ClassLibrary
             {
                 errorMessage += "Start Station must be 2 characters or longer!" + "<br />";
             }
+            else if (connectionStartStation.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }    
 
             //Validation for connectionEndStation
             if (String.IsNullOrEmpty(connectionEndStation) || connectionEndStation.Length == 0)
@@ -162,6 +166,10 @@ namespace ClassLibrary
             else if (connectionEndStation.Length < 2)
             {
                 errorMessage += "End station must be 2 characters or longer!" + "<br />";
+            }
+            else if (connectionEndStation.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
             }
 
             //Validation for connection date

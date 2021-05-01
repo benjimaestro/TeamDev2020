@@ -24,7 +24,7 @@
         </div>
         <asp:Label ID="lblModifyHeader" runat="server" Font-Size="X-Large" style="z-index: 1; left: 45px; top: 139px; position: absolute" Text="You are modifying this connection:" Visible="False"></asp:Label>
         <p>
-        <asp:Label ID="lblModDate" runat="server" style="z-index: 1; left: 350px; top: 199px; position: absolute" Visible="False"></asp:Label>
+        <asp:Label ID="lblModDate" runat="server" style="z-index: 1; left: 171px; top: 229px; position: absolute" Visible="False"></asp:Label>
         <asp:Label ID="lblModPublic" runat="server" style="z-index: 1; left: 548px; top: 199px; position: absolute; " Visible="False"></asp:Label>
             <asp:Button ID="btnGoBack" runat="server" style="z-index: 1; left: 76px; top: 72px; position: absolute; right: 720px;" Text="Back to connections" OnClick="btnGoBack_Click" />
         </p>

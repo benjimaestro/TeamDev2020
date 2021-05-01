@@ -15,7 +15,7 @@
             <asp:Button ID="btnMyTickets" runat="server" style="z-index: 1; left: 569px; top: 29px; position: absolute; height: 26px;" Text="My Tickets" OnClick="Button2_Click" />
         <asp:Button ID="btnSettings" runat="server" style="z-index: 1; left: 682px; top: 29px; position: absolute" Text="Account Settings" OnClick="Button3_Click" />
         <asp:Label ID="lblHeaderWelcome" runat="server" Font-Size="XX-Large" style="z-index: 1; left: 193px; top: 29px; position: absolute" Text="T-Train"></asp:Label>
-        <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 400px; top: 340px; position: absolute; right: 369px;" Text="All rights reserved (at) T-Train 2020"></asp:Label>
+        <asp:Label ID="Label18" runat="server" style="z-index: 1; left: 400px; top: 340px; position: absolute; right: 314px;" Text="All rights reserved (at) T-Train 2020"></asp:Label>
         </div>
         <asp:Label ID="Label19" runat="server" style="z-index: 1; left: 198px; top: 142px; position: absolute" Text="Your ticket has been refunded. You should expect an email with the details of the procedure soon." Visible="False"></asp:Label>
         <p>
