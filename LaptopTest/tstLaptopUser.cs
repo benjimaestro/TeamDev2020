@@ -17,13 +17,22 @@ namespace LaptopLoanTest
         string LaptopUserLastName = "Example";
         string LaptopUserPassword = "visual1234";
         string LaptopUserTelephoneNumber = "078353387368";
-
+        public bool LaptopStaff = false;
         [TestMethod]
         public void InstanceExists()
         {
             //Tests whether a class instance can be initialised
             clsLaptopUser ALaptopUser = new clsLaptopUser();
             Assert.IsNotNull(ALaptopUser);
+        }
+        [TestMethod]
+        public void LaptopStaffPropertyExists()
+        {
+            //Tests whether the "IsStaff" property can be set
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            bool testLaptopStaff = false;
+            ALaptopUser.LaptopStaff = false;
+            Assert.AreEqual(ALaptopUser.LaptopStaff, testLaptopStaff);
         }
         [TestMethod]
         public void LaptopUserIDPropertyOK()

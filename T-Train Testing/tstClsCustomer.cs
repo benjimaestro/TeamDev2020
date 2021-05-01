@@ -125,12 +125,32 @@ namespace TTrainCustomer
         }
 
         [TestMethod]
+        public void TwoFactorEnabledPropertyExists()
+        {
+            //Tests whether the "TwoFactorEnabled" property can be set
+            clsCustomer ACustomer = new clsCustomer();
+            bool testTwoFactorEnabled = true;
+            ACustomer.TwoFactorEnabled = true;
+            Assert.AreEqual(ACustomer.TwoFactorEnabled, testTwoFactorEnabled);
+        }
+
+        [TestMethod]
+        public void TwoFactorCodePropertyExists()
+        {
+            //Tests whether the "TwoFactorCode" property can be set
+            clsCustomer ACustomer = new clsCustomer();
+            string testTwoFactorCode = "02819238";
+            ACustomer.TwoFactorCode = "02819238";
+            Assert.AreEqual(ACustomer.TwoFactorCode, testTwoFactorCode);
+        }
+
+        [TestMethod]
         public void FindMethodExists()
         {
             //Put Id that exists to test this
             clsCustomer ACustomer = new clsCustomer();
-            int staffId = 1;
-            bool found = ACustomer.FindCustomer(staffId);
+            int customerId = 216;
+            bool found = ACustomer.FindCustomer(customerId);
             Assert.IsTrue(found);
         }
 

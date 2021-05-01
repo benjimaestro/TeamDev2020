@@ -22,10 +22,11 @@ namespace T_Train_Front_office.Forms.User
             clsCustomer ACustomer = new clsCustomer();
             bool customerFound = ACustomer.FindCustomer(customerId);
 
-            //check the new password matches length requirements
-            if (newPassword.Length < 8 || newPasswordRepeat.Length < 8)
+            //check the new password is secure enough
+            bool passwordSecure = ACustomer.ValidatePassword(newPassword);
+            if (!passwordSecure)
             {
-                lblPasswordError.Text = "Password must be at least 8 characters long.";
+                lblPasswordError.Text = "Password must be at least 8 characters long and<br>must contain a digit and a special character.";
             }
             else if (resetCode != Convert.ToString(Session["passChangeCode"]))
             {

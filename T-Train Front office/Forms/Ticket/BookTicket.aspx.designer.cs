@@ -96,15 +96,6 @@ namespace T_Train_Front_office.Forms.Ticket
         protected global::System.Web.UI.WebControls.Label lblConnLoc;
 
         /// <summary>
-        /// lblConnDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConnDate;
-
-        /// <summary>
         /// lblConnTime control.
         /// </summary>
         /// <remarks>
@@ -157,5 +148,14 @@ namespace T_Train_Front_office.Forms.Ticket
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStaticInstructions;
+
+        /// <summary>
+        /// lblConnDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConnDate;
     }
 }

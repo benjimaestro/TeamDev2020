@@ -51,15 +51,6 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Button btnTickets;
 
         /// <summary>
-        /// btnSettings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSettings;
-
-        /// <summary>
         /// lblHeaderWelcome control.
         /// </summary>
         /// <remarks>
@@ -312,22 +303,13 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Button btnDetails;
 
         /// <summary>
-        /// CheckBox1 control.
+        /// chkTwoFactor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
-
-        /// <summary>
-        /// CheckBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox chkTwoFactor;
 
         /// <summary>
         /// btnTwoFactor control.
@@ -366,13 +348,13 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Label Label29;
 
         /// <summary>
-        /// TextBox9 control.
+        /// txtDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox txtDelete;
 
         /// <summary>
         /// btnLogout control.
@@ -400,5 +382,86 @@ namespace T_Train_Front_office.Forms.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPasswordError;
+
+        /// <summary>
+        /// lblTwoFactor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTwoFactor;
+
+        /// <summary>
+        /// txtTwoFactorCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTwoFactorCode;
+
+        /// <summary>
+        /// Label31 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label31;
+
+        /// <summary>
+        /// lblCodeLength control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCodeLength;
+
+        /// <summary>
+        /// lblCodeDigits control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCodeDigits;
+
+        /// <summary>
+        /// lblTwoFactorDone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTwoFactorDone;
+
+        /// <summary>
+        /// lblDeletionError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletionError;
+
+        /// <summary>
+        /// lblDeletionSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletionSuccess;
+
+        /// <summary>
+        /// lblDeletionStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeletionStatus;
     }
 }

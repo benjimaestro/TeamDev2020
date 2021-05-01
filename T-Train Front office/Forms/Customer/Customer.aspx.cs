@@ -85,12 +85,11 @@ namespace T_Train_Front_office.Forms.Customer
                                         //assign details of a connection to the variables
                                         string startLocation = ConnectionDetails.ConnectionStartStation;
                                         string endLocation = ConnectionDetails.ConnectionEndStation;
-                                        DateTime date = ConnectionDetails.ConnectionDate;
-                                        //string time = ConnectionDetails.ConnectionTime;
-                                        string active = ConnectionDetails.ConnectionActive ? "Active" : "Cancelled/Expired";
+                                        string date = ConnectionDetails.ConnectionDate.ToString("dd/MM/yyyy");
+                                        string time = ConnectionDetails.ConnectionTime.ToString(@"hh\:mm");
+                                        string active = ConnectionDetails.ConnectionActive ? "Active" : "Expired";
 
-                                        ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + active;
-                                        //ATicketItem.Text = startLocation + " - " + endLocation + " " + date + " " + time + " " + active;
+                                        ATicketItem.Text = $"TICKET {active}: {startLocation} - {endLocation} {date} {time}";
                                         activeTickets++;
                                     }
                                     else
@@ -145,10 +144,9 @@ namespace T_Train_Front_office.Forms.Customer
                                     string paymentValue = Convert.ToString(UserPayments.MyPayments[i].PaymentValue);
                                     string paymentStartDate = UserPayments.MyPayments[i].PaymentStartDate.ToString("dd/MM/yyyy HH:mm:ss");
                                     string paymentEndDate = UserPayments.MyPayments[i].PaymentEndDate.ToString("dd/MM/yyyy HH:mm:ss");
-                                    string ticketId = Convert.ToString(UserPayments.MyPayments[i].TicketId);
 
                                     //assign the text to the list item
-                                    APaymentItem.Text = $"PayID: {paymentId} || Start: {paymentStartDate} || End: {paymentEndDate} || Value: {paymentValue} || TicketID: {ticketId}";
+                                    APaymentItem.Text = $"PayID: {paymentId} || Start: {paymentStartDate} || End: {paymentEndDate} || Value: {paymentValue}";
                                     
                                     //add the list item to the list
                                     lstPayments.Items.Add(APaymentItem);
@@ -177,12 +175,6 @@ namespace T_Train_Front_office.Forms.Customer
             Response.Redirect("../Customer/Customers.aspx");
         }
 
-        protected void Button14_Click(object sender, EventArgs e)
-        {
-            //redirect to cancel ticket form
-            Response.Redirect("../Ticket/Cancel.aspx");
-        }
-
         protected void btnStaffDashboard_Click(object sender, EventArgs e)
         {
             //redirect to the staff dashboard
@@ -192,14 +184,14 @@ namespace T_Train_Front_office.Forms.Customer
         protected void btnCancelTicket_Click(object sender, EventArgs e)
         {
             //get the selected ticket's id
-            string selectedValue = lstPayments.SelectedValue;
+            string selectedValue = lstTickets.SelectedValue;
             //check if the selection was made
             if (selectedValue == "" || selectedValue == "0")
             {
                 //if it was not, show an error
                 lblTicketSelected.Visible = true;
             } //if it was, redirect
-            else Response.Redirect("../Ticket/Cancel.aspx?ticketId=" + lstPayments.SelectedValue);
+            else Response.Redirect("../Ticket/Cancel.aspx?ticketId=" + lstTickets.SelectedValue);
         }
 
         protected void btnPayment_Click(object sender, EventArgs e)
@@ -215,22 +207,10 @@ namespace T_Train_Front_office.Forms.Customer
             else Response.Redirect("../Payment/Payment.aspx?paymentId=" + lstPayments.SelectedValue);
         }
 
-        protected void btnPayment2_Click(object sender, EventArgs e)
-        {
-            //redirect to a payment screen view
-            Response.Redirect("../Payment/Payment.aspx");
-        }
-
-        protected void btnPayment3_Click(object sender, EventArgs e)
-        {
-            //redirect to a payment screen view
-            Response.Redirect("../Payment/Payment.aspx");
-        }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
     }
 }

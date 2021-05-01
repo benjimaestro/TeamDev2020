@@ -78,7 +78,7 @@ namespace ClassLibrary
 
             //Generate hash based on a random number
             Random random = new Random();
-            TempPW = GetHashPassword(random.Next(1, 9999999).ToString()).Substring(0, 50); ;
+            TempPW = GetHashPassword(random.Next(1, 9999999).ToString()).Substring(0, 50);
 
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@Email", mEmail);

@@ -42,15 +42,6 @@ namespace T_Train_Front_office.Forms.User
         protected global::System.Web.UI.WebControls.Button btnHomepage;
 
         /// <summary>
-        /// btnSignup2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignup2;
-
-        /// <summary>
         /// lblHeaderWelcome control.
         /// </summary>
         /// <remarks>
@@ -148,5 +139,32 @@ namespace T_Train_Front_office.Forms.User
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label19;
+
+        /// <summary>
+        /// lblTwoFactor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTwoFactor;
+
+        /// <summary>
+        /// txtTwoFactor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTwoFactor;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

@@ -103,5 +103,10 @@ namespace Timetable
             //Redirects back to AdminDefault
             Response.Redirect("AdminDefault.aspx");
         }
+
+        protected void lstRooms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

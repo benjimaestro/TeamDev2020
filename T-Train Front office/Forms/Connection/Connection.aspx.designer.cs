@@ -96,6 +96,15 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Label lblModPublic;
 
         /// <summary>
+        /// btnGoBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGoBack;
+
+        /// <summary>
         /// lblModLocation control.
         /// </summary>
         /// <remarks>
@@ -150,15 +159,6 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Label lblModId;
 
         /// <summary>
-        /// lblTicketLimit0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTicketLimit0;
-
-        /// <summary>
         /// lblStaticId control.
         /// </summary>
         /// <remarks>
@@ -175,6 +175,15 @@ namespace T_Train_Front_office.Forms.Connection
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStaticModLimit;
+
+        /// <summary>
+        /// lblTicketLimit0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTicketLimit0;
 
         /// <summary>
         /// txtTicketLimit control.
@@ -285,15 +294,6 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// dtpDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dtpDate;
-
-        /// <summary>
         /// btnPick control.
         /// </summary>
         /// <remarks>
@@ -330,6 +330,15 @@ namespace T_Train_Front_office.Forms.Connection
         protected global::System.Web.UI.WebControls.DropDownList ddlTo;
 
         /// <summary>
+        /// dtpDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar dtpDate;
+
+        /// <summary>
         /// chkConnActive control.
         /// </summary>
         /// <remarks>
@@ -337,5 +346,41 @@ namespace T_Train_Front_office.Forms.Connection
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkConnActive;
+
+        /// <summary>
+        /// Label19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label19;
+
+        /// <summary>
+        /// lblTicketLimit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTicketLimit;
+
+        /// <summary>
+        /// ddlTicketType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTicketType;
+
+        /// <summary>
+        /// btnGoTType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGoTType;
     }
 }

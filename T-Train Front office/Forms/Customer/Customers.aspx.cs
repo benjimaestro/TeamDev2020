@@ -95,12 +95,14 @@ namespace T_Train_Front_office.Forms.Customer
                         //for each customer, add them into the list
                         for (int i = 0; i < Customers.Count; ++i)
                         {
-                            ListItem ACustomerItem = new ListItem();
-                            ACustomerItem.Text = Customers.MyCustomers[i].FirstName
+                            ListItem ACustomerItem = new ListItem
+                            {
+                                Text = Customers.MyCustomers[i].FirstName
                                 + " " + Customers.MyCustomers[i].LastName
-                                + " - " + Convert.ToString(Customers.MyCustomers[i].DateOfBirth)
-                                + " - " + Customers.MyCustomers[i].Email;
-                            ACustomerItem.Value = Convert.ToString(Customers.MyCustomers[i].CustomerId);
+                                + " - " + Customers.MyCustomers[i].DateOfBirth
+                                + " - " + Customers.MyCustomers[i].Email,
+                                Value = Convert.ToString(Customers.MyCustomers[i].CustomerId)
+                            };
                             lstCustomers.Items.Add(ACustomerItem);
                         }
                     }
@@ -125,22 +127,10 @@ namespace T_Train_Front_office.Forms.Customer
             else Response.Redirect("Customer.aspx?custId=" + lstCustomers.SelectedValue);
         }
 
-        protected void btnCustomer2_Click(object sender, EventArgs e)
-        {
-            //redirect to customer screen view
-            Response.Redirect("Customer.aspx");
-        }
-
-        protected void btnCustomer3_Click(object sender, EventArgs e)
-        {
-            //redirect to customer screen view
-            Response.Redirect("Customer.aspx");
-        }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
     }
 }

@@ -13,5 +13,20 @@ namespace LaptopLoanProjectt
         {
 
         }
+
+        protected void btnCancel_Click()
+        {
+            Response.Redirect("MainPage.aspx");
+        }
+
+        protected void btnMainPage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainPage.aspx");
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainPage.aspx");
+        }
     }
 }

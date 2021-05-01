@@ -10,7 +10,7 @@
 namespace LaptopLoanProjectt {
     
     
-    public partial class UserLogIn {
+    public partial class LaptopStaffSearch {
         
         /// <summary>
         /// form1 control.
@@ -31,156 +31,102 @@ namespace LaptopLoanProjectt {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lblUserRegistration control.
+        /// lblFines control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserRegistration;
+        protected global::System.Web.UI.WebControls.Label lblFines;
         
         /// <summary>
-        /// txtFirstName control.
+        /// ListBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
+        protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// txtLastName control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastName;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// lblLaptopUserFirstName control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLaptopUserFirstName;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// lblLaptopUserLastName control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLaptopUserLastName;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// lblLaptopUserEmail control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLaptopUserEmail;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// lblLaptopUserAddress control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLaptopUserAddress;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// lblLaptopUserPassword control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLaptopUserPassword;
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// lblconfirmpassword control.
+        /// Button4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblconfirmpassword;
+        protected global::System.Web.UI.WebControls.Button Button4;
         
         /// <summary>
-        /// lblLaptopUserTelephoneNumber control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLaptopUserTelephoneNumber;
+        protected global::System.Web.UI.WebControls.Button btnBack;
         
         /// <summary>
-        /// txtEmail control.
+        /// Button5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
-        /// <summary>
-        /// txtAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
-        
-        /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
-        /// <summary>
-        /// txtConfirmPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
-        
-        /// <summary>
-        /// txtTelephoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelephoneNumber;
-        
-        /// <summary>
-        /// btnRegister control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
-        
-        /// <summary>
-        /// btnCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button Button5;
     }
 }

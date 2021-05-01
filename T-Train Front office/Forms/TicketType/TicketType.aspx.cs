@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Web;
 
 namespace T_Train_Front_office.Forms.Ticket_Type
 {
@@ -60,11 +61,11 @@ namespace T_Train_Front_office.Forms.Ticket_Type
                             {
                                 //Change the headers and buttons to show that we are editing
                                 lblActionName.Text = "You are modifying this ticket type:";
-                                btnSaveChanges.Text = "Save changes";
+                                btnSaveChanges.Text = "Save Changes";
 
                                 //set value of the read-only fields to the details of the connection
                                 lblId.Text = Convert.ToString(ATicketType.TicketTypeId);
-                                lblName.Text = ATicketType.TicketTypeName;
+                                lblName.Text = HttpUtility.HtmlAttributeEncode(ATicketType.TicketTypeName);
                                 lblPrice.Text = Convert.ToString(ATicketType.TicketTypePrice);
                                 lblRefundable.Text = ATicketType.TicketTypeRefundable ? "Refundable" : "Non-Refundable";
                                 lblActive.Text = ATicketType.TicketTypeActive ? "Public" : "Private";
@@ -124,7 +125,7 @@ namespace T_Train_Front_office.Forms.Ticket_Type
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
 
         protected void btnTicketType_Click(object sender, EventArgs e)

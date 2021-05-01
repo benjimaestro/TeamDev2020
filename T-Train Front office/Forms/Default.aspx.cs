@@ -12,52 +12,51 @@ namespace T_Train_Front_office.Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool loggedIn = false;
-            bool isStaff = false;
-            if (Session["customerLoggedIn"] != null)
+            if(!IsPostBack)
             {
-                if(Convert.ToBoolean(Session["customerLoggedIn"]) == true)
+                bool loggedIn = false;
+                bool isStaff = false;
+                if (Session["customerLoggedIn"] != null)
                 {
-                    loggedIn = true;
-                    lblLoggedIn.Visible = true;
-                    if (Session["customerIsStaff"] != null)
+                    if (Convert.ToBoolean(Session["customerLoggedIn"]) == true)
                     {
-                        if(Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                        loggedIn = true;
+                        lblLoggedIn.Visible = true;
+                        if (Session["customerIsStaff"] != null)
                         {
-                            isStaff = true;
+                            if (Convert.ToBoolean(Session["customerIsStaff"]) == true)
+                            {
+                                isStaff = true;
+                            }
                         }
                     }
                 }
-            }
 
-            btnStaffDashboard.Visible = isStaff;
-            btnTickets.Visible = loggedIn;
-            btnSettings.Visible = loggedIn;
-            btnLogin.Visible = !loggedIn;
-            btnSignup.Visible = !loggedIn;
-            btnLogout.Visible = loggedIn;
+                btnStaffDashboard.Visible = isStaff;
+                btnTickets.Visible = loggedIn;
+                btnSettings.Visible = loggedIn;
+                btnLogin.Visible = !loggedIn;
+                btnSignup.Visible = !loggedIn;
+                btnLogout.Visible = loggedIn;
 
-            //Fill the time dropdown list
-            for(int hour = 0; hour < 24; ++hour)
-            {
-                for(int minutes = 0; minutes < 60; minutes += 15)
+                //Fill the time dropdown list
+                for (int hour = 0; hour < 24; ++hour)
                 {
-                    //format the hour
-                    string hourToAdd = Convert.ToString(hour);
-                    hourToAdd = hourToAdd.Length == 1 ? ("0" + hourToAdd) : hourToAdd;
+                    for (int minutes = 0; minutes < 60; minutes += 15)
+                    {
+                        //format the hour
+                        string hourToAdd = Convert.ToString(hour);
+                        hourToAdd = hourToAdd.Length == 1 ? ("0" + hourToAdd) : hourToAdd;
 
-                    //format the minutes
-                    string minutesToAdd = Convert.ToString(minutes);
-                    minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
+                        //format the minutes
+                        string minutesToAdd = Convert.ToString(minutes);
+                        minutesToAdd = minutesToAdd.Length == 1 ? "00" : minutesToAdd;
 
-                    //add the time to the dropdown list
-                    ddlTime.Items.Add(hourToAdd + ":" + minutesToAdd);
+                        //add the time to the dropdown list
+                        ddlTime.Items.Add(hourToAdd + ":" + minutesToAdd);
+                    }
                 }
             }
-            
-            //Fill the from ddl
-
-            //Fill the to ddl
         }
 
         protected void Button9_Click(object sender, EventArgs e)
@@ -107,24 +106,16 @@ namespace T_Train_Front_office.Forms
                 DateTime date = Convert.ToDateTime(txtDate.Text);
                 string time = ddlTime.Text;
 
-                //next assign the parameters
-                clsConnection aConnection = new clsConnection();
-                aConnection.ConnectionStartStation = from;
-                aConnection.ConnectionEndStation = to;
-                aConnection.ConnectionDate = date;
-
                 //next validate the parameters
+                clsConnection aConnection = new clsConnection();
                 string error = aConnection.ValidateConnection(date, from, to, 0);
 
-                //check if the parameters are valid
-                bool valid = (error == "");
-
                 //if they are valid, filter connections
-                if (valid)
+                if (error == "")
                 {
                     if(from == to)
                     {
-                        //if invalid, display an error message on screen
+                        //display an error message on screen
                         lblError.Text = "Start and end location cannot be the same.";
                     }
                     else
@@ -135,8 +126,7 @@ namespace T_Train_Front_office.Forms
                 }
                 else
                 {
-                    //if invalid, display an error message on screen
-                    lblError.Text = "Entered data is invalid, please try again.";
+                    throw new Exception();
                 }
             }
             catch

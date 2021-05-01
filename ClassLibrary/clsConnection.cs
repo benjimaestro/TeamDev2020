@@ -11,6 +11,7 @@ namespace ClassLibrary
         private string mConnectionStartStation;
         private int mConnectionTicketLimit;
         private int mTicketTypeId;
+        private TimeSpan mConnectionTime;
 
         public bool ConnectionActive
         {
@@ -91,6 +92,18 @@ namespace ClassLibrary
             }
         }
 
+        public TimeSpan ConnectionTime
+        {
+            get
+            {
+                return mConnectionTime;
+            }
+            set
+            {
+                mConnectionTime = value;
+            }
+        }
+
         public bool FindConnection(int connectionId)
         {
             //connect to the database
@@ -112,6 +125,7 @@ namespace ClassLibrary
                 mConnectionStartStation = Convert.ToString(DB.DataTable.Rows[0]["ConnectionStartStation"]);
                 mConnectionTicketLimit = Convert.ToInt32(DB.DataTable.Rows[0]["ConnectionTicketLimit"]);
                 mTicketTypeId = Convert.ToInt32(DB.DataTable.Rows[0]["TicketTypeId"]);
+                mConnectionTime = TimeSpan.Parse(Convert.ToString(DB.DataTable.Rows[0]["ConnectionTime"]));
                 //row was found so return true as "found" is positive, a connection was found
                 return true;
             }
@@ -135,6 +149,10 @@ namespace ClassLibrary
             {
                 errorMessage += "Start Station must be 2 characters or longer!" + "<br />";
             }
+            else if (connectionStartStation.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }    
 
             //Validation for connectionEndStation
             if (String.IsNullOrEmpty(connectionEndStation) || connectionEndStation.Length == 0)
@@ -148,6 +166,10 @@ namespace ClassLibrary
             else if (connectionEndStation.Length < 2)
             {
                 errorMessage += "End station must be 2 characters or longer!" + "<br />";
+            }
+            else if (connectionEndStation.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
             }
 
             //Validation for connection date

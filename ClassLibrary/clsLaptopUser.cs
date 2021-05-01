@@ -15,6 +15,7 @@ public class clsLaptopUser
     public int LaptopUserNo { get; set; }
     public DateTime LaptopUserCreatedAt { get; set; }
     public string LaptopUserPassword { get; set; }
+    public bool LaptopStaff { get; set; }
 
     bool FindLaptopUser(int staffID)
     {
@@ -99,7 +100,7 @@ public class clsLaptopUser
         }
         else if (LaptopUserPassword.Length > 14)
         {
-            errorMessage += "TelephoneNumber must be 16 characters or shorter!" + "<br />";
+            errorMessage += "TelephoneNumber must be 14 characters or shorter!" + "<br />";
         }
         else if (LaptopUserPassword.Length < 10)
         {

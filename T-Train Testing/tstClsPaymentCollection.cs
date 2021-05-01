@@ -175,7 +175,6 @@ namespace TTrainPayment
             APayment.PaymentStartDate = new DateTime(2021, 2, 11, 16, 30, 0);
             APayment.PaymentEndDate = new DateTime(2021, 2, 11, 16, 35, 0);
             APayment.PaymentValue = 12.25f;
-            APayment.TicketId = 2;
             APayment.CustomerId = 2;
             //assign the test object to the real object
             APaymentCollection.ThisPayment = APayment;
@@ -194,7 +193,7 @@ namespace TTrainPayment
         {
             //create an instance of the class we want to create
             clsPaymentCollection APaymentCollection = new clsPaymentCollection();
-            //set user id that we will fetch the payments for
+            //set test user id which exists just for the testing
             int customerId = 257;
             //invoke the method
             APaymentCollection.MyPayments = APaymentCollection.GetUserPayments(customerId);

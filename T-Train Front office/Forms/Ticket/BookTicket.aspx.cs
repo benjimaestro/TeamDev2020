@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Web;
 
 namespace T_Train_Front_office.Forms.Ticket
 {
@@ -38,8 +39,8 @@ namespace T_Train_Front_office.Forms.Ticket
                     int connectionId = Convert.ToInt32(Request.Params["connId"]);
                     if (connectionId > 0)
                     {
-                        clsConnection AConnection = new clsConnection();
                         //fetch the details of the connection with id given
+                        clsConnection AConnection = new clsConnection();
                         bool connectionFound = AConnection.FindConnection(connectionId);
 
                         //fetch the price
@@ -48,10 +49,10 @@ namespace T_Train_Front_office.Forms.Ticket
 
                         if(connectionFound && ticketTypeFound)
                         {
-                            lblConnLoc.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
-                            lblConnDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy HH:mm:ss");
-                            //lblConnTime.Text = AConnection.ConnectionTime;
-                            lblConnPrice.Text = Convert.ToString(ATicketType.TicketTypePrice);
+                            lblConnLoc.Text = "🚇 " + HttpUtility.HtmlAttributeEncode(AConnection.ConnectionStartStation) + " - " + HttpUtility.HtmlAttributeEncode(AConnection.ConnectionEndStation);
+                            lblConnDate.Text = "📆 " + AConnection.ConnectionDate.ToString("dd/MM/yyyy");
+                            lblConnTime.Text = "⌚ " + AConnection.ConnectionTime.ToString(@"hh\:mm");
+                            lblConnPrice.Text = "£" + Convert.ToString(ATicketType.TicketTypePrice);
                         }
                         else
                         {
@@ -101,7 +102,7 @@ namespace T_Train_Front_office.Forms.Ticket
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             //redirect to logout
-            Response.Redirect("../Default.aspx");
+            Response.Redirect("../User/Logout.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -124,40 +125,72 @@ namespace T_Train_Front_office.Forms.Ticket
             clsTicketType ATicketType = new clsTicketType();
             bool ticketTypeFound = ATicketType.FindTicketType(AConnection.TicketTypeId);
 
-            if(connectionFound && ticketTypeFound)
+            //fetch customer tickets
+            clsTicketCollection TicketManager = new clsTicketCollection();
+            TicketManager.MyTickets = TicketManager.GetUserTickets(customerId);
+
+            //fetch customer data to make sure they are not deleting their account
+            clsCustomer ACustomer = new clsCustomer();
+            bool customerFound = ACustomer.FindCustomer(customerId);
+
+            //make sure the customer has not purchased this ticket before
+            bool ticketFound = false;
+            foreach(clsTicket Ticket in TicketManager.MyTickets)
             {
-                //create a ticket
-                clsTicket NewTicket = new clsTicket();
-                NewTicket.ConnectionId = connectionId;
-                NewTicket.CustomerId = customerId;
-                NewTicket.TicketActive = true;
+                if(Ticket.ConnectionId == connectionId)
+                {
+                    ticketFound = true;
+                }
+            }
 
-                //create a payment
-                clsPayment NewPayment = new clsPayment();
-                NewPayment.CustomerId = customerId;
-                NewPayment.PaymentValue = ATicketType.TicketTypePrice;
-                NewPayment.PaymentStartDate = DateTime.Now;
-                NewPayment.PaymentEndDate = DateTime.Now.AddMinutes(1);
+            if(connectionFound && ticketTypeFound && customerFound && !ticketFound && !ACustomer.DeletionStarted)
+            {
+                //check in real-time whether the last ticket wasn't sold out
+                if(AConnection.ConnectionTicketLimit > 0)
+                {
+                    //create a ticket
+                    clsTicket NewTicket = new clsTicket
+                    {
+                        ConnectionId = connectionId,
+                        CustomerId = customerId,
+                        TicketActive = true
+                    };
 
-                //reduce remaining tickets by 1
-                AConnection.MarkTicketPurchase();
+                    //create a payment
+                    clsPayment NewPayment = new clsPayment
+                    {
+                        CustomerId = customerId,
+                        PaymentValue = ATicketType.TicketTypePrice,
+                        PaymentStartDate = DateTime.Now,
+                        PaymentEndDate = DateTime.Now.AddMinutes(1)
+                    };
 
-                //assign the ticket to the user
-                clsTicketCollection TicketManager = new clsTicketCollection();
-                TicketManager.ThisTicket = NewTicket;
-                TicketManager.AddTicket();
+                    //reduce remaining tickets by 1
+                    AConnection.MarkTicketPurchase();
 
-                //upload the payment
-                clsPaymentCollection PaymentManager = new clsPaymentCollection();
-                PaymentManager.ThisPayment = NewPayment;
-                PaymentManager.AddPayment();
+                    //assign the ticket to the user
+                    TicketManager.ThisTicket = NewTicket;
+                    TicketManager.AddTicket();
 
-                //redirect to action success
-                Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=success");
+                    //upload the payment
+                    clsPaymentCollection PaymentManager = new clsPaymentCollection
+                    {
+                        ThisPayment = NewPayment
+                    };
+                    PaymentManager.AddPayment();
+
+                    //redirect to action success
+                    Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=success");
+                }
+                else
+                {
+                    //sadly no more tickets remain for this connection
+                    Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=failure");
+                }
             }
             else
             {
-                //something was wrong with the ticket
+                //something was wrong with the ticket or customer is deleting account
                 Response.Redirect("../User/ActionSuccess.aspx?origin=payment&action=failure");
             }
         }

@@ -13,6 +13,10 @@ namespace ClassLibrary
         string mDateOfBirth;
         string mAccountPassword;
         bool mIsStaff;
+        bool mTwoFactorEnabled;
+        string mTwoFactorCode;
+        bool mDeletionStarted;
+        DateTime mDeletionStartDate;
 
         public string Address 
         { 
@@ -95,6 +99,54 @@ namespace ClassLibrary
             }
         }
 
+        public bool TwoFactorEnabled
+        {
+            get
+            {
+                return mTwoFactorEnabled;
+            }
+            set
+            {
+                mTwoFactorEnabled = value;
+            }
+        }
+
+        public string TwoFactorCode
+        {
+            get
+            {
+                return mTwoFactorCode;
+            }
+            set
+            {
+                mTwoFactorCode = value;
+            }
+        }
+
+        public bool DeletionStarted
+        {
+            get
+            {
+                return mDeletionStarted;
+            }
+            set
+            {
+                mDeletionStarted = value;
+            }
+        }
+
+        public DateTime DeletionStartDate
+        {
+            get
+            {
+                return mDeletionStartDate;
+            }
+            set
+            {
+                mDeletionStartDate = value;
+            }
+        }
+
         public string ValidateCustomer(string customerAddress, string customerDateOfBirth, string customerEMail, string customerFirstName, string customerLastName)
         {
             string errorMessage = "";
@@ -112,6 +164,10 @@ namespace ClassLibrary
             {
                 errorMessage += "First name must not contain any numbers!" + "<br />";
             }
+            else if (customerFirstName.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }
 
             //Validation for last name
             if (customerLastName.Length == 0)
@@ -125,6 +181,10 @@ namespace ClassLibrary
             else if (customerLastName.Any(char.IsDigit))
             {
                 errorMessage += "Last name must not contain any numbers!" + "<br />";
+            }
+            else if (customerLastName.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
             }
 
             //Validation for date of birth
@@ -158,6 +218,10 @@ namespace ClassLibrary
             {
                 errorMessage += "Address must be 11 characters or longer!" + "<br />";
             }
+            else if (customerAddress.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }
 
             //Validation for EMail
             if (customerEMail.Length == 0)
@@ -176,8 +240,27 @@ namespace ClassLibrary
             {
                 errorMessage += "You must enter a valid E-Mail address!" + "<br />";
             }
+            else if (customerEMail.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }
 
             return errorMessage;
+        }
+
+        public void ToggleTwoFactorAuthentication()
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@CustomerId", CustomerId);
+            //toggle means switch enabled to disabled and vice versa
+            DB.AddParameter("@toggle", !TwoFactorEnabled);
+            //if we disable 2FA, reset the code to an empty string
+            if(TwoFactorEnabled) DB.AddParameter("@code", "00000000");
+            else DB.AddParameter("@code", TwoFactorCode);
+            //execute the procedure to update the user password
+            DB.Execute("sproc_tblCustomer_ToggleTwoFactorAuth");
         }
 
         public void UpdatePassword(string newPassword)
@@ -216,10 +299,29 @@ namespace ClassLibrary
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
+                mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
+                mTwoFactorCode = Convert.ToString(DB.DataTable.Rows[0]["TwoFactorCode"]);
+                mDeletionStarted = Convert.ToBoolean(DB.DataTable.Rows[0]["DeletionStarted"]);
+                mDeletionStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["DeletionStartDate"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
             else return false; //no row found means no customer with this id exists
+        }
+
+        public void ToggleDeletion()
+        {
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@CustomerId", CustomerId);
+            //toggle means switch enabled to disabled and vice versa
+            DB.AddParameter("@toggle", !DeletionStarted);
+            //if we disable deletion, reset the date to a null
+            if (DeletionStarted) DB.AddParameter("@date", DateTime.Now);
+            else DB.AddParameter("@date", DeletionStartDate);
+            //execute the procedure to update the user password
+            DB.Execute("sproc_tblCustomer_ToggleDeletion");
         }
 
         public bool FindCustomerByEmail(string testEmail)
@@ -246,10 +348,35 @@ namespace ClassLibrary
                 mCustomerCreatedAt = Convert.ToDateTime(DB.DataTable.Rows[0]["AccountCreatedAt"]);
                 mAccountPassword = Convert.ToString(DB.DataTable.Rows[0]["AccountPassword"]);
                 mIsStaff = Convert.ToBoolean(DB.DataTable.Rows[0]["IsStaff"]);
+                mTwoFactorEnabled = Convert.ToBoolean(DB.DataTable.Rows[0]["TwoFactorEnabled"]);
+                mTwoFactorCode = Convert.ToString(DB.DataTable.Rows[0]["TwoFactorCode"]);
+                mDeletionStarted = Convert.ToBoolean(DB.DataTable.Rows[0]["DeletionStarted"]);
+                mDeletionStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["DeletionStartDate"]);
                 //row was found so return true as "found" is positive, a member was found
                 return true;
             }
             else return false; //no row found means no customer with this email exists
+        }
+
+        static bool IsLetter(char c)
+        {
+            return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+        }
+
+        static bool IsDigit(char c)
+        {
+            return c >= '0' && c <= '9';
+        }
+
+        static bool IsSymbol(char c)
+        {
+            return c > 32 && c < 127 && !IsDigit(c) && !IsLetter(c);
+        }
+        public bool ValidatePassword(string password)
+        {
+            //a valid password is at least 8 characters long and contains both:
+            //a special character, a digit
+            return password.Any(c => IsDigit(c)) && password.Any(c => IsSymbol(c)) && password.Length > 7;
         }
     }
 }

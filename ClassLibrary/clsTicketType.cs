@@ -109,6 +109,10 @@ namespace ClassLibrary
             {
                 errorMessage += "Ticket type name must be 40 characters or shorter!" + "<br />";
             }
+            else if (ticketTypeName.Contains("script"))
+            {
+                errorMessage += "Illegal input detected!" + "<br />";
+            }
 
             //Validation for ticket type price
             float testNumber;
