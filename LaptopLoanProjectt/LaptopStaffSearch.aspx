@@ -28,18 +28,21 @@
         <p>
         <asp:Label ID="lblFines" runat="server" Font-Size="XX-Large" Text="Search Students" CssClass="auto-style17"></asp:Label>
         </p>
-        <asp:ListBox ID="ListBox1" runat="server" style="z-index: 1; left: 18px; top: 219px; position: absolute; height: 268px; width: 298px"></asp:ListBox>
-        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 11px; top: 141px; position: absolute" Text="Search Students"></asp:Label>
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 10px; top: 142px; position: absolute" Text="Search Students"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 114px; top: 140px; position: absolute"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 311px; top: 140px; position: absolute; width: 98px" Text="Search Student" />
-        <asp:Button ID="Button2" runat="server" style="z-index: 1; left: 425px; top: 139px; position: absolute; height: 27px" Text="Show All" />
+        <asp:Button ID="btnSearchStudent" runat="server" style="z-index: 1; left: 311px; top: 140px; position: absolute; width: 98px" Text="Search Student"  />
+        
         <asp:Label ID="lblError" runat="server" ForeColor="Red" style="z-index: 1; left: 331px; top: 239px; position: absolute" Text="lblError"></asp:Label>
-        <asp:Button ID="Button3" runat="server" style="z-index: 1; left: 19px; top: 503px; position: absolute; height: 23px; width: 110px" Text="Add New Student" />
-        <asp:Button ID="Button4" runat="server" ForeColor="Red" style="z-index: 1; left: 202px; top: 503px; position: absolute; width: 101px" Text="Delete Student" />
-        <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 163px; top: 563px; position: absolute" Text="Back" />
-        <asp:Button ID="Button5" runat="server" style="z-index: 1; left: 139px; top: 504px; position: absolute; width: 49px; height: 23px;" Text="Edit" />
+        <asp:Button ID="btnAddNewStudent" runat="server"  style="z-index: 1; left: 19px; top: 503px; position: absolute; height: 23px; width: 110px" Text="Add New Student" />
+        <asp:Button ID="btnEdit" runat="server"  style="z-index: 1; left: 139px; top: 504px; position: absolute; width: 49px; height: 23px;" Text="Edit" />
+        
+        <p>
+            <asp:Button ID="btnShowAll" runat="server"  style="z-index: 1; left: 429px; top: 139px; position: absolute" Text="Show All" />
+        </p>
+        <asp:ListBox ID="lstLaptopUsers" runat="server" OnSelectedIndexChanged="lstLaptopUsers_SelectedIndexChanged" style="z-index: 1; left: 20px; top: 215px; position: absolute; height: 254px; width: 281px"></asp:ListBox>
         <p>
             &nbsp;</p>
+        <asp:Button ID="btnBack" runat="server"  style="z-index: 1; left: 203px; top: 501px; position: absolute" Text="Back" />
     </form>
 </body>
 </html>

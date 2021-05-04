@@ -212,5 +212,10 @@ namespace T_Train_Front_office.Forms.Customer
             //redirect to logout
             Response.Redirect("../User/Logout.aspx");
         }
+
+        protected void lstTickets_SelectedIndexChanged()
+        {
+
+        }
     }
 }

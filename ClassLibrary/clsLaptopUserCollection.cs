@@ -1,11 +1,15 @@
 ﻿using System.Collections.Generic;
 using System;
+
+
 namespace ClassLibrary
 {
     public class clsLaptopUserCollection
     {
         //private data member for the allLaptopUsers list
-        private List<clsLaptopUser> mAllLaptopUsers = new List<clsLaptopUser>();
+        List<clsLaptopUser> mAllLaptopUsers = new List<clsLaptopUser>();
+        public List<clsLaptopUser> MyLaptopUsers;
+        public List<clsLaptopUser> MAllLaptopUsers;
 
         //public property for Count
         public int Count
@@ -37,23 +41,42 @@ namespace ClassLibrary
                 mAllLaptopUsers = value;
             }
         }
-            //public constructor for the class
-            public clsLaptopUserCollection()
+
+        public clsLaptopUser ThisLaptopUser { get; set; }
+
+        //public constructor for the class
+        public clsLaptopUserCollection()
             {
-            //create an instance of the LaptopUser class to store a LaptopUser
-            clsLaptopUser ALaptopUser = new clsLaptopUser();
-            //set the LaptopUser to Eddie Rose
-            ALaptopUser.LaptopUser = "Eddie Rose";
-            //add the LaptopUse to the private list of LaptopUser
-            mAllLaptopUsers.Add(ALaptopUser);
-            //re initialise the aLaptopUser object to accept a new item
-            ALaptopUser = new clsLaptopUser();
-            //set the LaptopUser to Anna Kate
-            ALaptopUser.LaptopUser = "Anna Kate";
-            //add the second LaptopUser to the private list of Laptops
-            mAllLaptopUsers.Add(ALaptopUser);
-            //the private list now contains two LaptopUsers
+                //Runs when instance of class is created
+                //Populates list with all users
+                clsDataConnection DB = new clsDataConnection();
+                DB.Execute("sproc_tblLaptopUser_SelectAll");
+                PopulateList(DB);
             }
+        void PopulateList(clsDataConnection DB)
+        {
+            //Populates list with whatever table is given to it
+            Int32 Index = 0;
+            Int32 RecordCount;
+            RecordCount = DB.Count;
+            mAllLaptopUsers = new List<clsLaptopUser>();
+            while (Index < RecordCount)
+            {
+                clsLaptopUser LaptopUser = new clsLaptopUser();
+                LaptopUser.LaptopUserId = Convert.ToInt32(DB.DataTable.Rows[Index]["LaptopUserId"]);
+                LaptopUser.LaptopUserEmail = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserEmail"]);
+                LaptopUser.LaptopUserPassword = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserPassword"]);
+                LaptopUser.LaptopUserFirstName = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserFirstName"]);
+                LaptopUser.LaptopUserLastName = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserLastName"]);
+                LaptopUser.LaptopStaff = Convert.ToBoolean(DB.DataTable.Rows[Index]["LaptopStaff"]);
+                LaptopUser.LaptopUserTelephoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserTelephoneNumber"]);
+                LaptopUser.LaptopUserAddress = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserTelephoneNumber"]);
+                mAllLaptopUsers.Add(LaptopUser);
+
+                Index++;
+            }
+        }
+    }
     }
 
-}
+

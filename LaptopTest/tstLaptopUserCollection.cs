@@ -2,6 +2,7 @@
 using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using LaptopLoanTest;
 
 namespace LaptopTest
 {
@@ -16,6 +17,58 @@ namespace LaptopTest
                 //test to see that it exists
                 Assert.IsNotNull(AllLaptopUsers);
             }
+
+        [TestMethod]
+        public void AllLaptopUsersExists()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUserCollection AllLaptopUsers = new clsLaptopUserCollection();
+            //create some test data to assign to the property
+            List<clsLaptopUser> testList = new List<clsLaptopUser>();
+            //a test object
+            clsLaptopUser ALaptopUser = new clsLaptopUser
+            {
+
+                LaptopUserAddress = "8 GinStreet, Nottingham, NT1 111, United Kingdom",
+                LaptopUserEmail = "Visualove@gmail.com",
+                LaptopUserFirstName = "Eddie",
+                LaptopUserLastName = "Example",
+                LaptopUserPassword = "visual1234",
+                LaptopUserTelephoneNumber = "078353387368",
+                LaptopStaff = false
+
+            };
+            //assign the test object to the collection class
+            AllLaptopUsers.ThisLaptopUser = ALaptopUser;
+            //test to see that the two values are the same
+            Assert.AreEqual(AllLaptopUsers.ThisLaptopUser, ALaptopUser);
+        }
+
+        //[TestMethod]
+        public void ListAndCountExist()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUserCollection AllLaptopUsers = new clsLaptopUserCollection();
+            //create some test data to assign to the property
+            List<clsLaptopUser> testList = new List<clsLaptopUser>();
+            //a test object
+            clsLaptopUser ALaptopUser = new clsLaptopUser
+            {
+                LaptopUserAddress = "8 GinStreet, Nottingham, NT1 111, United Kingdom",
+                LaptopUserEmail = "Visualove@gmail.com",
+                LaptopUserFirstName = "Eddie",
+                LaptopUserLastName = "Example",
+                LaptopUserPassword = "visual1234",
+                LaptopUserTelephoneNumber = "078353387368",
+                LaptopStaff = false
+            };
+            //add the test object to the list
+            testList.Add(ALaptopUser);
+            //assign the list to the collection class
+            AllLaptopUsers.MyLaptopUsers = testList;
+            //test to see that the two values are the same
+            Assert.AreEqual(AllLaptopUsers.Count, testList.Count);
+        }
 
         [TestMethod]
         public void CountPropertyOK()
@@ -41,7 +94,7 @@ namespace LaptopTest
             //create the item of test data
             clsLaptopUser TestItem = new clsLaptopUser();
             //set its properties
-            TestItem.LaptopUserNo = 1;
+            TestItem.LaptopUserId = 1;
             TestItem.LaptopUser = "Eddie Rose";
             //add the item tot the test list
             TestList.Add(TestItem);
@@ -62,7 +115,7 @@ namespace LaptopTest
             //create the item of test data
             clsLaptopUser TestItem = new clsLaptopUser();
             //set its properties
-            TestItem.LaptopUserNo = 1;
+            TestItem.LaptopUserId = 1;
             TestItem.LaptopUser = "Eddie Rose";
             //add the item tot the test list
             TestList.Add(TestItem);

@@ -169,5 +169,10 @@ namespace T_Train_Front_office.Forms.Ticket_Type
                 lstTicketTypes.Items.Add(ATicketTypeItem);
             }
         }
+
+        protected void lstTicketTypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
