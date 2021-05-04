@@ -109,7 +109,9 @@ namespace T_Train_Front_office.Forms.Connection
 
                                 //set value of the read-only fields to the details of the connection
                                 lblModId.Text = Convert.ToString(AConnection.ConnectionId);
-                                lblModLocation.Text = AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
+                                lblModLocation.Text = HttpUtility.HtmlAttributeEncode(
+                                    $"{AConnection.ConnectionStartStation} - {AConnection.ConnectionEndStation}"
+                                );
                                 lblModDate.Text = AConnection.ConnectionDate.ToString("dd/MM/yyyy");
                                 lblModTime.Text = AConnection.ConnectionTime.ToString(@"hh\:mm");
                                 lblModPublic.Text = AConnection.ConnectionActive ? "Active" : "Private";

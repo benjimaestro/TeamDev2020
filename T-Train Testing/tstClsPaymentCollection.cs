@@ -175,7 +175,6 @@ namespace TTrainPayment
             APayment.PaymentStartDate = new DateTime(2021, 2, 11, 16, 30, 0);
             APayment.PaymentEndDate = new DateTime(2021, 2, 11, 16, 35, 0);
             APayment.PaymentValue = 12.25f;
-            APayment.TicketId = 2;
             APayment.CustomerId = 2;
             //assign the test object to the real object
             APaymentCollection.ThisPayment = APayment;

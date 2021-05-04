@@ -39,9 +39,9 @@
         <asp:Label ID="Label24" runat="server" style="z-index: 1; left: 335px; top: 432px; position: absolute" Text="New Password:"></asp:Label>
         <asp:Button ID="btnDeleteAccount" runat="server" style="z-index: 1; left: 419px; top: 1316px; position: absolute" Text="Delete Account" OnClick="btnDeleteAccount_Click" />
         <p>
-        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 484px; top: 767px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtAddress" runat="server" style="z-index: 1; left: 484px; top: 767px; position: absolute; height: 47px;" TextMode="MultiLine"></asp:TextBox>
         </p>
-        <asp:Button ID="btnDetails" runat="server" style="z-index: 1; left: 431px; top: 811px; position: absolute" Text="Save Details" OnClick="btnDetails_Click" />
+        <asp:Button ID="btnDetails" runat="server" style="z-index: 1; left: 431px; top: 835px; position: absolute" Text="Save Details" OnClick="btnDetails_Click" />
         <asp:CheckBox ID="chkTwoFactor" runat="server" style="z-index: 1; left: 575px; top: 939px; position: absolute" Text="Disabled" Enabled="False" />
         <asp:Button ID="btnTwoFactor" runat="server" style="z-index: 1; left: 415px; top: 1015px; position: absolute" Text="Enable/Disable 2FA" OnClick="Button6_Click" />
         <asp:Label ID="Label27" runat="server" Font-Size="Large" style="z-index: 1; left: 424px; top: 1063px; position: absolute" Text="Delete Account" Font-Bold="True"></asp:Label>

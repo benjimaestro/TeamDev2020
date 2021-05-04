@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Web;
 
 namespace T_Train_Front_office.Forms.Ticket
 {
@@ -56,7 +57,7 @@ namespace T_Train_Front_office.Forms.Ticket
                             //fill the data regarding the customer
                             if(customerFound)
                             {
-                                lblCustomerName.Text = ACustomer.FirstName + " " + ACustomer.LastName;
+                                lblCustomerName.Text = HttpUtility.HtmlAttributeEncode(ACustomer.FirstName + " " + ACustomer.LastName);
                                 //customer exists so we can go back to them
                                 btnCustomer.Visible = true;
                             }
@@ -68,7 +69,7 @@ namespace T_Train_Front_office.Forms.Ticket
                             //fill the data regarding the connection
                             if(connectionFound)
                             {
-                                lblConnLocation.Text = "🚇 " + AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation;
+                                lblConnLocation.Text = "🚇 " + HttpUtility.HtmlAttributeEncode(AConnection.ConnectionStartStation + " - " + AConnection.ConnectionEndStation);
                                 lblConnDate.Text = "📆 " + AConnection.ConnectionDate.ToString("dd/MM/yyyy");
                                 lblConnTime.Text = "⌚ " + AConnection.ConnectionTime.ToString(@"hh\:mm");
                             }

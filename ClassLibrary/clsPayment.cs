@@ -8,7 +8,6 @@ namespace ClassLibrary
         private DateTime mPaymentStartDate;
         private int mCustomerId;
         private int mPaymentId;
-        private int mTicketId;
         private float mPaymentValue;
 
         public DateTime PaymentEndDate
@@ -55,17 +54,6 @@ namespace ClassLibrary
                 mPaymentId = value;
             }
         }
-        public int TicketId
-        {
-            get
-            {
-                return mTicketId;
-            }
-            set
-            {
-                mTicketId = value;
-            }
-        }
         public float PaymentValue
         {
             get
@@ -101,31 +89,6 @@ namespace ClassLibrary
                 return true;
             }
             else return false; //no row found means no payment with this id exists
-        }
-        public bool FindPaymentByTickedId(int ticketId)
-        {
-            //connect to the database
-            clsDataConnection DB = new clsDataConnection();
-            //set the parameters for the stored procedure
-            //the parameter is the function argument
-            DB.AddParameter("@TicketId", ticketId);
-            //execute the procedure to get data
-            DB.Execute("sproc_tblPayment_FilterByTicketId");
-            //if there was a row returned, get data from it
-            if (DB.Count == 1)
-            {
-                //primary key
-                mPaymentId = Convert.ToInt32(DB.DataTable.Rows[0]["PaymentId"]);
-                //common attributes
-                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
-                mPaymentEndDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentEndDate"]);
-                mPaymentStartDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentStartDate"]);
-                mPaymentValue = float.Parse(Convert.ToString(DB.DataTable.Rows[0]["PaymentValue"]));
-                mTicketId = ticketId;
-                //row was found so return true as "found" is positive, a payment was found
-                return true;
-            }
-            else return false; //no row found means no payment with this ticket id exists
         }
 
         public string ValidatePayment(DateTime paymentStartDate, DateTime paymentEndDate, float paymentValue)
@@ -171,7 +134,6 @@ namespace ClassLibrary
             }
 
             //Validation for payment end date
-            
             //null value is a default value
             if(paymentEndDate != null)
             {
