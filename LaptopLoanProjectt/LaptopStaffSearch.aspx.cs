@@ -23,7 +23,7 @@ namespace LaptopLoanProjectt
             lstLaptopUsers.Items.Clear();
             lstLaptopUsers.DataSource = LaptopUsers.AllLaptopUsers;
             lstLaptopUsers.DataValueField = "LaptopUserId";
-            lstLaptopUsers.DataTextField = "LaptopUser";
+            lstLaptopUsers.DataTextField = "FullNameEmail";
             lstLaptopUsers.DataBind();
         }
 

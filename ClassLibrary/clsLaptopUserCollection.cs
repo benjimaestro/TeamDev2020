@@ -70,7 +70,7 @@ namespace ClassLibrary
                 LaptopUser.LaptopUserLastName = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserLastName"]);
                 LaptopUser.LaptopStaff = Convert.ToBoolean(DB.DataTable.Rows[Index]["LaptopStaff"]);
                 LaptopUser.LaptopUserTelephoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserTelephoneNumber"]);
-                LaptopUser.LaptopUserAddress = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserTelephoneNumber"]);
+                LaptopUser.LaptopUserAddress = Convert.ToString(DB.DataTable.Rows[Index]["LaptopUserAddress"]);
                 mAllLaptopUsers.Add(LaptopUser);
 
                 Index++;

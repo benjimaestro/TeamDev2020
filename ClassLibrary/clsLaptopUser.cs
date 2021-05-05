@@ -24,6 +24,10 @@ namespace ClassLibrary
             throw new NotImplementedException();
         }
 
+        public string FullNameEmail
+        {
+            get { return $"{LaptopUserFirstName} {LaptopUserLastName} ({LaptopUserEmail})"; }
+        }
         public string Valid(string LaptopUserAddress, string LaptopUserEmail, string LaptopUserFirstName, string LaptopUserLastName, string LaptopUserPassword, string LaptopUserTelephoneNumber)
         {
             return "";
