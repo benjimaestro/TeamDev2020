@@ -2,21 +2,22 @@
 using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using LaptopLoanTest;
+
 
 namespace LaptopTest
 {
     [TestClass]
-        public class tstLaptopUserCollection
+    public class tstLaptopUserCollection
+    {
+
+        [TestMethod]
+        public void InstanceOK()
         {
-            [TestMethod]
-            public void InstanceOK()
-            {
-                // create an instance of the class we want to create
-                clsLaptopUserCollection AllLaptopUsers = new clsLaptopUserCollection();
-                //test to see that it exists
-                Assert.IsNotNull(AllLaptopUsers);
-            }
+            // create an instance of the class we want to create
+            clsLaptopUserCollection AllLaptopUsers = new clsLaptopUserCollection();
+            //test to see that it exists
+            Assert.IsNotNull(AllLaptopUsers);
+        }
 
         [TestMethod]
         public void AllLaptopUsersExists()
@@ -44,7 +45,37 @@ namespace LaptopTest
             Assert.AreEqual(AllLaptopUsers.ThisLaptopUser, ALaptopUser);
         }
 
-        //[TestMethod]
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsLaptopUserCollection AllLaptopUsers = new clsLaptopUserCollection();
+            clsLaptopUser ALaptopUser = new clsLaptopUser
+            {
+                //ASSIGN PROPERTIES
+                LaptopUserAddress = "8 GinStreet, Nottingham, NT1 111, United Kingdom",
+                LaptopUserEmail = "Visualove@gmail.com",
+                LaptopUserFirstName = "Eddie",
+                LaptopUserLastName = "Rose",
+                LaptopUserPassword = "visual1234",
+                LaptopUserTelephoneNumber = "078353387368",
+            };
+            ALaptopUser.LaptopUserPassword = ALaptopUser.GetHashPassword("testpassword2");
+            //set LaptopStaff to test data
+            AllLaptopUsers.ThisLaptopUser = ALaptopUser;
+            //store the primary key
+            //add the record
+            int primaryKey = AllLaptopUsers.CreateAccount();
+            //set the primary key of the test data
+            ALaptopUser.LaptopUserId = (primaryKey);
+            //find the record
+            AllLaptopUsers.ThisLaptopUser.FindLaptopUserId(primaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllLaptopUsers.ThisLaptopUser, ALaptopUser);
+            //delete record so theres no redundant records
+            AllLaptopUsers.CloseAccount();
+        }
+
+        [TestMethod]
         public void ListAndCountExist()
         {
             //create an instance of the class we want to create
@@ -65,7 +96,7 @@ namespace LaptopTest
             //add the test object to the list
             testList.Add(ALaptopUser);
             //assign the list to the collection class
-            AllLaptopUsers.MyLaptopUsers = testList;
+            AllLaptopUsers.MAllLaptopUsers = testList;
             //test to see that the two values are the same
             Assert.AreEqual(AllLaptopUsers.Count, testList.Count);
         }
@@ -76,7 +107,7 @@ namespace LaptopTest
             // create an instance of the class we want to create
             clsLaptopUserCollection AllLaptopUsers = new clsLaptopUserCollection();
             //create some test data to assign to the property
-            Int32 SomeCount = 9;
+            Int32 SomeCount = 10;
             //assign the data to the property
             AllLaptopUsers.Count = SomeCount;
             //test to see that the two values are the same
@@ -125,6 +156,10 @@ namespace LaptopTest
             Assert.AreEqual(LaptopUsers.Count, TestList.Count);
 
         }
+
+
+
+
         //[TestMethod]
         public void TwoLaptopUsersPresent()
         {
@@ -133,7 +168,9 @@ namespace LaptopTest
             //test to see that the two values are the same
             Assert.AreEqual(LaptopUsers.Count, 2);
         }
-    }
+
+
+    }     
    
 
 }

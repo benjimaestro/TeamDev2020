@@ -37,5 +37,10 @@ namespace LaptopLoanProjectt
         {
 
         }
+
+        protected void btnAddNewStudent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

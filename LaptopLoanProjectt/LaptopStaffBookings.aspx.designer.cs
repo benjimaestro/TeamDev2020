@@ -49,13 +49,13 @@ namespace LaptopLoanProjectt {
         protected global::System.Web.UI.WebControls.ListBox ListBox1;
         
         /// <summary>
-        /// Button1 control.
+        /// btnShowAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnShowAll;
         
         /// <summary>
         /// Label2 control.
@@ -67,13 +67,13 @@ namespace LaptopLoanProjectt {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Button2 control.
+        /// BtnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button BtnEdit;
         
         /// <summary>
         /// Button3 control.
@@ -85,13 +85,13 @@ namespace LaptopLoanProjectt {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// Button4 control.
+        /// btnBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Button btnBack;
         
         /// <summary>
         /// btnAddNewBooking control.

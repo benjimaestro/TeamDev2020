@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace LaptopLoanProjectt
 {
@@ -11,12 +14,17 @@ namespace LaptopLoanProjectt
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("MainPage.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

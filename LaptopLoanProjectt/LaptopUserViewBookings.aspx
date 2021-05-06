@@ -32,12 +32,13 @@
         <p>
         <asp:Label ID="lblTitle" runat="server" Font-Size="XX-Large" Text="View Bookings" CssClass="auto-style17"></asp:Label>
         </p>
-        <asp:ListBox ID="lstBookings" runat="server" style="z-index: 1; left: 18px; top: 196px; position: absolute; height: 263px; width: 380px"></asp:ListBox>
+        <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 69px; top: 224px; position: absolute" Text="Josh"></asp:Label>
+        <asp:ListBox ID="lstBookings" runat="server" style="z-index: 1; left: 34px; top: 198px; position: absolute; height: 263px; width: 380px"></asp:ListBox>
         <asp:Button ID="btnAddNewBooking" runat="server" style="z-index: 1; left: 21px; top: 480px; position: absolute; width: 117px" Text="Add New Booking" />
         <asp:Button ID="btnDeleteBooking" runat="server" ForeColor="Red" style="z-index: 1; left: 284px; top: 480px; position: absolute; width: 110px" Text="Delete Booking" />
-        <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 355px; top: 532px; position: absolute" Text="Back" />
+        <asp:Button ID="btnBack" runat="server" style="z-index: 1; left: 355px; top: 532px; position: absolute; height: 25px; width: 43px;" Text="Back" />
         <asp:Label ID="lblError" runat="server" ForeColor="Red" style="z-index: 1; left: 447px; top: 231px; position: absolute" Text="lblError"></asp:Label>
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 144px; top: 480px; position: absolute; width: 96px" Text="Edit" />
+        <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 144px; top: 480px; position: absolute; width: 96px" Text="Edit" OnClick="Button1_Click" />
     </form>
 </body>
 </html>

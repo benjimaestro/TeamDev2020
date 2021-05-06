@@ -8,14 +8,14 @@ namespace LaptopLoanTest
     public class tstLaptopUser
 
     {
-        public object ALaptopUser { get; set; }
+        
 
         //good test data
         //create some test data to pass to the method
         string LaptopUserAddress = "8 GinStreet, Nottingham, NT1 111, United Kingdom";
         string LaptopUserEmail = "Visualove@gmail.com";
         string LaptopUserFirstName = "Eddie";
-        string LaptopUserLastName = "Example";
+        string LaptopUserLastName = "Rose";
         string LaptopUserPassword = "visual1234";
         string LaptopUserTelephoneNumber = "078353387368";
         public bool LaptopStaff = false;
@@ -40,28 +40,45 @@ namespace LaptopLoanTest
         {
             clsLaptopUser LaptopUser = new clsLaptopUser();
             Int32 TestData = 1;
-            LaptopUser.ID = TestData;
-            Assert.AreEqual(LaptopUser.ID, TestData);
+            LaptopUser.LaptopUserId = TestData;
+            Assert.AreEqual(LaptopUser.LaptopUserId, TestData);
         }
-
+ 
 
         [TestMethod]
         public void LaptopUserActivePropertyExists()
         {
             //Tests whether the "LaptopUserActive" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            bool testLaptopUserActive = true;
-            ALaptopUser.LaptopUserActive = testLaptopUserActive;
-            Assert.AreEqual(ALaptopUser.LaptopUserActive, testLaptopUserActive);
+            Boolean testData = true;
+            ALaptopUser.LaptopUserActive = testData;
+            Assert.AreEqual(ALaptopUser.LaptopUserActive, testData);
         }
         [TestMethod]
         public void LaptopUserEmailExists()
         {
             //Tests whether the "email" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            string testEmail = "Visualove@gmail.com";
-            ALaptopUser.LaptopUserEmail = testEmail;
-            Assert.AreEqual(ALaptopUser.LaptopUserEmail, testEmail);
+            string testData = "Visualove@gmail.com";
+            ALaptopUser.LaptopUserEmail = testData;
+            Assert.AreEqual(ALaptopUser.LaptopUserEmail, testData);
+        }
+        [TestMethod]
+        public void UpdateLaptopUserPasswordExists()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //declare a test password and hash it
+            string testLaptopUserPassword = "treysongz12";
+            testLaptopUserPassword = ALaptopUser.GetHashPassword(testLaptopUserPassword);
+            //use the admin test user it to try and update
+            ALaptopUser.LaptopUserId = 2001;
+            //call the method
+            ALaptopUser.UpdateLaptopUserPassword(testLaptopUserPassword);
+            //now fetch the customer details
+            _ = ALaptopUser.FindLaptopUserId(ALaptopUser.LaptopUserId);
+            //compare the two passwords
+            Assert.AreEqual(ALaptopUser.LaptopUserPassword, testLaptopUserPassword);
         }
 
         [TestMethod]
@@ -69,38 +86,208 @@ namespace LaptopLoanTest
         {
             //Tests whether the "firstName" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            string testFirstName = "Eddie";
-            ALaptopUser.LaptopUserFirstName = testFirstName;
-            Assert.AreEqual(ALaptopUser.LaptopUserFirstName, testFirstName);
+            string testData = "Eddie";
+            ALaptopUser.LaptopUserFirstName = testData;
+            Assert.AreEqual(ALaptopUser.LaptopUserFirstName, testData);
         }
         [TestMethod]
         public void LaptopUserLastNameExists()
         {
             //Tests whether the "lastName" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            string testLastName = "Example";
-            ALaptopUser.LaptopUserLastName = testLastName;
-            Assert.AreEqual(ALaptopUser.LaptopUserLastName, testLastName);
+            string testData = "Rose";
+            ALaptopUser.LaptopUserLastName = testData;
+            Assert.AreEqual(ALaptopUser.LaptopUserLastName, testData);
         }
        
-        //[TestMethod]
+        [TestMethod]
         public void FindMethodExistss()
         {
             //Put Id that exists to test this
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            int LaptopUserId = 1;
-            bool found = ALaptopUser.FindLaptopUserId(LaptopUserId);
-            Assert.IsTrue(found);
-        }//
-       // [TestMethod]
-        public void TestLaptopUserNotFound()
+            Boolean Found = false;
+            Int32 LaptopUserId = 21;
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            Assert.IsTrue(Found);
+        }
+        [TestMethod]
+        public void TestLaptopUserIdFound()
         {
-            //Put Id that does not exist to test this
+            //create an instance of the class we want to create
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            int LaptopUserId = 2436;
-            bool found = ALaptopUser.FindLaptopUserId(LaptopUserId);
-            Assert.IsFalse(found);
-        }//
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the LaptopUserId
+            if (ALaptopUser.LaptopUserId != 21) 
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+        [TestMethod]
+        public void TestLaptopUserAddressFound()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the LaptopUserId
+            if (ALaptopUser.LaptopUserAddress != "Test Address") 
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLaptopUserEmailFound()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the LaptopUserId
+            if (ALaptopUser.LaptopUserEmail != "Test@email.com")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLaptopUserFirstNameFound()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the LaptopUserId
+            if (ALaptopUser.LaptopUserFirstName != "Test")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLaptopUserLastNameFound()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the LaptopUserId
+            if (ALaptopUser.LaptopUserLastName != "Testing")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLaptopUserPasswordFound()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the LaptopUserId
+            if (ALaptopUser.LaptopUserPassword != "testpw")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLaptopUserTelephoneNumberFound()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to store the result of the search
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the LaptopUserId
+            if (ALaptopUser.LaptopUserTelephoneNumber != "07777777777")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        
+
+        [TestMethod]
+        public void TestLaptopUserCreatedAtFound()
+        {
+            //create an instance of the class we want to create
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 LaptopUserId = 21;
+            //invoke the method
+            Found = ALaptopUser.FindLaptopUserId(LaptopUserId);
+            //check the property
+            if (ALaptopUser.LaptopUserCreatedAt != Convert.ToDateTime("01/05/2021"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+
         [TestMethod]
         public void ValidMethodOK()
         {
@@ -118,9 +305,9 @@ namespace LaptopLoanTest
         {
             //Tests whether the "Password" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            string testPassword = "visual123";
-            ALaptopUser.LaptopUserPassword = testPassword;
-            Assert.AreEqual(ALaptopUser.LaptopUserPassword, testPassword);
+            string testData = "visual123";
+            ALaptopUser.LaptopUserPassword = testData;
+            Assert.AreEqual(ALaptopUser.LaptopUserPassword, testData);
         }
 
         [TestMethod]
@@ -186,9 +373,9 @@ namespace LaptopLoanTest
         {
             //Tests whether the "Password" property can be set
             clsLaptopUser ALaptopUser = new clsLaptopUser();
-            string testTelephoneNumber = "07835338736";
-            ALaptopUser.LaptopUserTelephoneNumber = testTelephoneNumber;
-            Assert.AreEqual(ALaptopUser.LaptopUserTelephoneNumber, testTelephoneNumber);
+            string testData = "07835338736";
+            ALaptopUser.LaptopUserTelephoneNumber = testData;
+            Assert.AreEqual(ALaptopUser.LaptopUserTelephoneNumber, testData);
         }
         [TestMethod]
         public void LaptopUserFirstNameMaxLessOne()
@@ -674,6 +861,15 @@ namespace LaptopLoanTest
             //test to see that the result is correct
             Assert.AreEqual(error, "");
         }
+       // [TestMethod]
+        public void LaptopUserNotFound()
+        {
+            //Put Id that does not exist to test this
+            clsLaptopUser ALaptopUser = new clsLaptopUser();
+            int LaptopUserId = 8000;
+            bool found = ALaptopUser.FindLaptopUser(LaptopUserId);
+            Assert.IsFalse(found);
+        }
         [TestMethod]
         public void LaptopUserAddressMax()
         {
@@ -1066,3 +1262,4 @@ namespace LaptopLoanTest
 
     }
 }
+
