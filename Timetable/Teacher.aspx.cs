@@ -159,7 +159,7 @@ namespace Timetable
                 string Error = add();
                 if (Error == "")
                 {
-                    if (Mode != "Admin") { Response.Redirect("TeacherDefault"); }
+                    if (Mode != "Adm    in") { Response.Redirect("TeacherDefault"); }
                     else { Response.Redirect("ManageTeachers.aspx"); }
                 }
                 else { lblError.Text = Error; }

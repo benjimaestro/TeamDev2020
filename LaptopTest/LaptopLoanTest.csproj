@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="tstBooking.cs" />
     <Compile Include="tstLaptop.cs" />
     <Compile Include="TstLaptopCollection.cs" />
     <Compile Include="tstLaptopUser.cs" />
