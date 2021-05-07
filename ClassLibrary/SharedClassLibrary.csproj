@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAbstractUser.cs" />
+    <Compile Include="clsBooking.cs" />
     <Compile Include="clsConnection.cs" />
     <Compile Include="clsConnectionCollection.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsCustomerCollection.cs" />
     <Compile Include="clsDataConnection.cs" />
+    <Compile Include="clsLaptop.cs" />
     <Compile Include="clsLaptopUser.cs" />
     <Compile Include="clsLaptopUserCollection.cs" />
     <Compile Include="clsMessage.cs" />

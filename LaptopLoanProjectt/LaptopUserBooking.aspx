@@ -30,6 +30,8 @@
         <asp:Label ID="lblFines" runat="server" Font-Size="XX-Large" Text="Make A Booking" CssClass="auto-style17"></asp:Label>
         </p>
         <asp:Calendar ID="Calendar1" runat="server" style="z-index: 1; left: 43px; top: 194px; position: absolute; height: 188px; width: 259px; margin-top: 0px"></asp:Calendar>
+        <asp:DropDownList ID="DropDownList1" runat="server" style="z-index: 1; left: 400px; top: 279px; position: absolute">
+        </asp:DropDownList>
     </form>
 </body>
 </html>

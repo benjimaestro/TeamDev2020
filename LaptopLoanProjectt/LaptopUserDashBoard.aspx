@@ -17,7 +17,7 @@
         <p>
             &nbsp;</p>
         <asp:Button ID="btnBookALaptop" runat="server" style="z-index: 1; left: 594px; top: 201px; position: absolute; width: 130px; height: 29px" Text="Book A Laptop" />
-        <asp:Button ID="btnViewMyBookings" runat="server" OnClick="btnViewMyBookings_Click" style="z-index: 1; left: 595px; top: 253px; position: absolute; width: 128px; height: 27px" Text="View My Bookings" />
+        <asp:Button ID="btnViewMyBookings" runat="server"  style="z-index: 1; left: 595px; top: 253px; position: absolute; width: 128px; height: 27px" Text="View My Bookings" />
         <asp:Button ID="btnFines" runat="server" style="z-index: 1; left: 594px; top: 299px; position: absolute; width: 127px; height: 29px" Text="Fines" />
         <asp:Button ID="btnLogOut" runat="server" style="z-index: 1; left: 423px; top: 400px; position: absolute" Text="Log Out" />
         <asp:Label ID="Label1" runat="server" ForeColor="Blue" style="z-index: 1; left: 600px; top: 132px; position: absolute" Text="Welcome Back User!"></asp:Label>

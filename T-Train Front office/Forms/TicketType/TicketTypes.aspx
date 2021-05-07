@@ -40,7 +40,7 @@
         <asp:Label ID="lblTypeSelected" runat="server" style="z-index: 1; left: 544px; top: 508px; position: absolute" Text="You must select a ticket type first!" Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
         <asp:Button ID="btnAllTypes" runat="server" style="z-index: 1; left: 317px; top: 297px; position: absolute" Text="Show All" OnClick="btnAllTypes_Click" />
         </p>
-        <asp:ListBox ID="lstTicketTypes" runat="server" style="z-index: 1; left: 86px; top: 431px; position: absolute; height: 182px; width: 395px" Visible="False"></asp:ListBox>
+        <asp:ListBox ID="lstTicketTypes" runat="server" style="z-index: 1; left: 86px; top: 431px; position: absolute; height: 182px; width: 395px" Visible="False" OnSelectedIndexChanged="lstTicketTypes_SelectedIndexChanged"></asp:ListBox>
     </form>
 </body>
 </html>

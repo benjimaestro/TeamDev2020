@@ -69,8 +69,8 @@ namespace ClassLibrary
                 case "TTrain":
                     Sproc = "sproc_tblCustomer_ForgotPassword";
                     break;
-                case "Laptop":
-                    Sproc = "";
+                case "LaptopLoanProjectt":
+                    Sproc = "sproc_tblLaptopUser_ForgotLaptopUserPassword";
                     break;
                 default:
                     break;

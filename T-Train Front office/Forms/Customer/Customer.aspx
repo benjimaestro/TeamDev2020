@@ -43,7 +43,7 @@
         <p>
         <asp:Label ID="Label20" runat="server" Font-Size="X-Large" style="z-index: 1; left: 401px; top: 107px; position: absolute" Text="Customer Details" Font-Bold="True"></asp:Label>
         </p>
-        <asp:ListBox ID="lstTickets" runat="server" style="z-index: 1; left: 58px; top: 353px; position: absolute; height: 182px; width: 378px" Visible="False"></asp:ListBox>
+        <asp:ListBox ID="lstTickets" runat="server" style="z-index: 1; left: 58px; top: 353px; position: absolute; height: 182px; width: 378px" Visible="False" OnSelectedIndexChanged="lstTickets_SelectedIndexChanged"></asp:ListBox>
         <p>
         <asp:Label ID="lblPaymentSelected" runat="server" style="z-index: 1; left: 678px; top: 696px; position: absolute" Text="You have to select a payment first." Font-Size="Large" ForeColor="Red" Visible="False"></asp:Label>
         <asp:Label ID="Label21" runat="server" Font-Size="X-Large" style="z-index: 1; left: 453px; top: 303px; position: absolute" Text="Tickets" Font-Bold="True"></asp:Label>
